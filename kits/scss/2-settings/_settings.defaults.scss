@@ -1,0 +1,57 @@
+/* ==========================================================================
+   DEFAULTS
+   ========================================================================== */
+
+/**
+ *
+ * These variables are defaults; they should not be modified or
+ * adjusted directly; you should predefine the variables in your own project.
+ *
+ */
+
+
+
+/*
+   High-level base settings.
+   ========================================================================== */
+/**
+ * These variables are framework variables, sourced from variables defined
+ * above. Feel free to use these variables throughout your project, but do not
+ * modify or reassign them.
+ */
+
+$base-font-family-sans-serif:          "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$base-font-family-serif:               Georgia, Cambria, "Times New Roman", Times, serif !default;
+$base-font-family-monospace:           Consolas, "Liberation Mono", Courier, monospace !default;
+
+$base-font-family:                     $base-font-family-sans-serif !default;
+$base-font-size:                       16px !default;
+
+$base-line-height:                     28px !default;
+$base-text-color:                      #333 !default;
+$base-text-color-alt:                  #fff !default;
+$base-background-color:                #fff !default;
+
+$base-spacing-unit:                    $base-line-height;
+$base-spacing-unit--small:             round($base-spacing-unit / 2);
+$base-spacing-unit--large:             round($base-spacing-unit * 2);
+
+$base-radius:                          4px !default;
+
+/*
+   Namespace.
+   ========================================================================== */
+/**
+ * Would you like classes to be prepended with a namespace? If so,
+ * define it here.
+ */
+
+$namespace: null !default;
+
+
+/**
+ * If we have included this file, set a variable to tell the rest of the
+ * framework that we have some base settings.
+ */
+
+$base-settings-imported: true;

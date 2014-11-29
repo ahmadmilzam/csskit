@@ -1,0 +1,56 @@
+/* ==========================================================================
+   PAGE
+   ========================================================================== */
+/**
+ * High-, page-level styling.
+ *
+ * 1. Set the default `font-family`, `font-size` and `line-height` for the entire project,
+ *    sourced from our default variables. The `font-size` is calculated to exist
+ *    in ems, the `line-height` is calculated to exist unitlessly.
+ * 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+ *    navigating between pages that do/do not have enough content to produce
+ *    scrollbars naturally.
+ * 3. Ensure the page always fills at least the entire height of the viewport.
+ * 4. Prevent certain mobile browsers from automatically zooming fonts.
+ * 5. Fonts on OSX will look more consistent with other systems that do not
+ *    render text using sub-pixel anti-aliasing.
+ */
+html {
+  font-family: $base-font-family-sans-serif;
+  font-size: ($base-font-size / 16px) * 1em; /* [1] */
+  line-height: $base-line-height / $base-font-size; /* [1] */
+  background-color: $base-background-color;
+  color: $base-text-color;
+  overflow-y: scroll; /* [2] */
+  min-height: 100%; /* [3] */
+  -webkit-text-size-adjust: 100%; /* [4] */
+  -ms-text-size-adjust: 100%; /* [4] */
+  -moz-osx-font-smoothing: grayscale; /* [5] */
+  -webkit-font-smoothing: antialiased; /* [5] */
+}
+
+hr{
+  border-bottom:1px solid #DDD;
+  border-left:none;
+  border-right:none;
+  border-top:none;
+  margin: half($base-spacing-unit) 0
+}
+
+blockquote {
+  padding: half($base-spacing-unit) $base-spacing-unit;
+  margin: 0 0 $base-spacing-unit;
+  font-size: rem-calc(18);
+  border-left: 5px solid #eee;
+
+  footer, small{
+    display: block;
+    font-size: 80%;
+    line-height: 1.42857143;
+    color: #777;
+
+    &:before{
+      content: '\2014 \00A0';
+    }
+  }
+}

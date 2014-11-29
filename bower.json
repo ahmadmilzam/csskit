@@ -1,0 +1,18 @@
+{
+  "name": "starterkit",
+  "version": "0.0.1",
+  "authors": [
+    "Ahmad Milzam <email@ahmadmilzam.com>"
+  ],
+  "description": "starter kit for frontend development",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "libs",
+    "test",
+    "tests"
+  ]
+}

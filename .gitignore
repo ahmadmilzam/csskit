@@ -1,0 +1,15 @@
+*.DS_Store
+*.sublime-*
+.sass-cache/*
+dist
+bower_components
+node_modules
+vendor
+pkg
+lib
+libs
+docs/*
+test/
+tests/
+reference/*
+tmp

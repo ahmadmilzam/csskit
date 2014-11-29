@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Main File
+   ========================================================================== */
+
+
+//tools
+@import "1-tools/tools.functions";
+@import "1-tools/tools.mixins";
+@import "1-tools/tools.mixins-ui";
+@import "1-tools/tools.grids";
+@import "1-tools/tools.responsive";
+
+
+//settings
+@import "2-settings/settings.defaults";
+@import "2-settings/settings.colors";
+@import "2-settings/settings.forms";
+@import "2-settings/settings.grids";
+@import "2-settings/settings.responsive";
+
+
+//generic
+@import "3-generic/generic.normalize";
+@import "3-generic/generic.reset";
+@import "3-generic/generic.box-sizing";
+
+
+//base
+@import "4-base/base.page";
+@import "4-base/base.headings";
+@import "4-base/base.forms";
+
+
+//objects
+$enable-button--alert: true;
+$enable-button--warning: true;
+$enable-button--success: true;
+$enable-button--info: true;
+$enable-button--secondary: true;
+@import "5-objects/objects.buttons";
+
+$enable-box--primary: true;
+$enable-box--alert: true;
+$enable-box--warning: true;
+$enable-box--success: true;
+$enable-box--info: true;
+@import "5-objects/objects.box";
+
+
+//components import your custom components here.
+@import "6-components/components.grids";
+
+
+//trumps
+@import "7-trumps/trumps.clearfix";
+

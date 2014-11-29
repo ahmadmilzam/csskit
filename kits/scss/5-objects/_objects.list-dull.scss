@@ -1,0 +1,15 @@
+/* ==========================================================================
+   LIST-DULL
+   ========================================================================== */
+/**
+ * The list-dull object simply removes any indents and bullet points from lists.
+ */
+// Predefine the variables below in order to alter and enable specific features.
+$list-bare-namespace: $namespace !default;
+
+.#{$list-bare-namespace}list-dull,
+%#{$list-bare-namespace}list-dull {
+  margin:  0;
+  padding: 0;
+  list-style: none;
+}

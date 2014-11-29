@@ -1,0 +1,15 @@
+/* ==========================================================================
+   PARAGRAPHS
+   ========================================================================== */
+/**
+ * The `.lead` class is used to make the introductory text (usually a paragraph)
+ * of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
+ *
+ * Predefine the variables below in order to alter and enable specific features.
+ */
+$lead-size:   1.125 !default;
+
+.#{$namespace}lead,
+%#{$namespace}lead {
+    @include font-size($base-font-size * $lead-size);
+}

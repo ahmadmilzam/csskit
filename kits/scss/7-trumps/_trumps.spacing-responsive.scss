@@ -1,0 +1,406 @@
+/*------------------------------------*\
+    #SPACING-RESPONSIVE
+    \*------------------------------------*/
+
+/**
+ * Margin and padding helper classes. Use these to tweak layout on a micro
+ * level.
+ *
+ * `.(m|p)(t|r|b|l|h|v)(-|+|0) {}` = margin/padding top/right/bottom/left/horizontal/vertical less/more/none
+ */
+
+// Predefine the variables below in order to alter and enable specific features.
+$enable-responsive-margins:                   false !default;
+$enable-responsive-margins--tiny:             false !default;
+$enable-responsive-margins--small:            false !default;
+$enable-responsive-margins--large:            false !default;
+$enable-responsive-margins--huge:             false !default;
+
+$enable-responsive-margins--negative:         false !default;
+$enable-responsive-margins--negative-tiny:    false !default;
+$enable-responsive-margins--negative-small:   false !default;
+$enable-responsive-margins--negative-large:   false !default;
+$enable-responsive-margins--negative-huge:    false !default;
+
+$enable-responsive-margins--none:             false !default;
+
+$enable-responsive-paddings:                  false !default;
+$enable-responsive-paddings--tiny:            false !default;
+$enable-responsive-paddings--small:           false !default;
+$enable-responsive-paddings--large:           false !default;
+$enable-responsive-paddings--huge:            false !default;
+
+$enable-responsive-paddings--none:            false !default;
+
+
+// Internally used mixin to quickly generate our different variants based upon
+// the breakpoints defined in `settings.responsive`.
+
+@mixin generate-spacing() {
+
+  // Loop through our previously-defined breakpoints.
+  @each $breakpoint in $breakpoints {
+
+    $generate-spacing-alias:      nth($breakpoint, 1) !global;
+    $generate-spacing-condition:  nth($breakpoint, 2);
+
+    // This isn't ideal, but we definitely don't want to generate widths
+    // for retina devices. Exclude retina media-qeuries manually.
+    @if ($generate-spacing-alias != "retina") {
+
+      @include media-query($generate-spacing-alias) {
+        @content;
+      } // Close media query.
+
+    } // Close retina check.
+
+    // Take the global variable back out of scope.
+    $generate-spacing-alias: null !global;
+
+  } // Close breakpoints loop.
+
+}
+
+
+@if ($enable-responsive-margins == true) {
+
+  /**
+   * Margin helper classes.
+   *
+   * Add margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-m      { margin:           $margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mt     { margin-top:       $margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mr     { margin-right:     $margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mb     { margin-bottom:    $margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ml     { margin-left:      $margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mh     { margin-right:     $margin !important; margin-left:      $margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mv     { margin-top:       $margin !important; margin-bottom:    $margin !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--tiny == true) {
+
+  /**
+   * Add tiny margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-m--     { margin:           quarter($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mt--    { margin-top:       quarter($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mr--    { margin-right:     quarter($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mb--    { margin-bottom:    quarter($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ml--    { margin-left:      quarter($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mh--    { margin-right:     quarter($margin) !important; margin-left:     quarter($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mv--    { margin-top:       quarter($margin) !important; margin-bottom:   quarter($margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--small == true) {
+
+  /**
+   * Add small margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-m-      { margin:           halve($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mt-     { margin-top:       halve($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mr-     { margin-right:     halve($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mb-     { margin-bottom:    halve($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ml-     { margin-left:      halve($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mh-     { margin-right:     halve($margin) !important; margin-left:   halve($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mv-     { margin-top:       halve($margin) !important; margin-bottom: halve($margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--large == true) {
+
+  /**
+   * Add large margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-m\+     { margin:           double($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mt\+    { margin-top:       double($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mr\+    { margin-right:     double($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mb\+    { margin-bottom:    double($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ml\+    { margin-left:      double($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mh\+    { margin-right:     double($margin) !important; margin-left:      double($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mv\+    { margin-top:       double($margin) !important; margin-bottom:    double($margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--huge == true) {
+
+  /**
+   * Add huge margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-m\+\+   { margin:           quadruple($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mt\+\+  { margin-top:       quadruple($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mr\+\+  { margin-right:     quadruple($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mb\+\+  { margin-bottom:    quadruple($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ml\+\+  { margin-left:      quadruple($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mh\+\+  { margin-right:     quadruple($margin) !important; margin-left:   quadruple($margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mv\+\+  { margin-top:       quadruple($margin) !important; margin-bottom: quadruple($margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--none == true) {
+
+  /**
+   * Remove margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-m0      { margin:           0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mt0     { margin-top:       0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mr0     { margin-right:     0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mb0     { margin-bottom:    0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ml0     { margin-left:      0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mh0     { margin-right:     0 !important; margin-left:      0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-mv0     { margin-top:       0 !important; margin-bottom:    0 !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--negative == true) {
+
+  /**
+   * Negative margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}--m      { margin:           -$margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mt     { margin-top:       -$margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mr     { margin-right:     -$margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mb     { margin-bottom:    -$margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--ml     { margin-left:      -$margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mh     { margin-right:     -$margin !important; margin-left:      -$margin !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mv     { margin-top:       -$margin !important; margin-bottom:    -$margin !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--negative-tiny == true) {
+
+  /**
+   * Tiny negative margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}--m--    { margin:           quarter(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mt--   { margin-top:       quarter(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mr--   { margin-right:     quarter(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mb--   { margin-bottom:    quarter(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--ml--   { margin-left:      quarter(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mh--   { margin-right:     quarter(-$margin) !important; margin-left:     quarter(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mv--   { margin-top:       quarter(-$margin) !important; margin-bottom:   quarter(-$margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--negative-small == true) {
+
+  /**
+   * Small negative margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}--m-     { margin:           halve(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mt-    { margin-top:       halve(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mr-    { margin-right:     halve(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mb-    { margin-bottom:    halve(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--ml-    { margin-left:      halve(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mh-    { margin-right:     halve(-$margin) !important; margin-left:   halve(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mv-    { margin-top:       halve(-$margin) !important; margin-bottom: halve(-$margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--negative-large == true) {
+
+  /**
+   * Large negative margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}--m\+    { margin:           double(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mt\+   { margin-top:       double(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mr\+   { margin-right:     double(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mb\+   { margin-bottom:    double(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--ml\+   { margin-left:      double(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mh\+   { margin-right:     double(-$margin) !important; margin-left:      double(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mv\+   { margin-top:       double(-$margin) !important; margin-bottom:    double(-$margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-margins--negative-huge == true) {
+
+  /**
+   * Huge negative margins.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}--m\+\+  { margin:           quadruple(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mt\+\+ { margin-top:       quadruple(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mr\+\+ { margin-right:     quadruple(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mb\+\+ { margin-bottom:    quadruple(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--ml\+\+ { margin-left:      quadruple(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mh\+\+ { margin-right:     quadruple(-$margin) !important; margin-left:   quadruple(-$margin) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}--mv\+\+ { margin-top:       quadruple(-$margin) !important; margin-bottom: quadruple(-$margin) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-paddings == true) {
+
+  /**
+   * Padding helper classes.
+   *
+   * Add paddings.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-p       { padding:          $padding !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pt      { padding-top:      $padding !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pr      { padding-right:    $padding !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pb      { padding-bottom:   $padding !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pl      { padding-left:     $padding !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ph      { padding-right:    $padding !important; padding-left:    $padding !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pv      { padding-top:      $padding !important; padding-bottom:  $padding !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-paddings--tiny == true) {
+
+  /**
+   * Add tiny paddings.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-p--     { padding:           quarter($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pt--    { padding-top:       quarter($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pr--    { padding-right:     quarter($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pb--    { padding-bottom:    quarter($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pl--    { padding-left:      quarter($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ph--    { padding-right:     quarter($padding) !important; padding-left:      quarter($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pv--    { padding-top:       quarter($padding) !important; padding-bottom:    quarter($padding) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-paddings--small == true) {
+
+  /**
+   * Add small paddings.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-p-      { padding:           halve($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pt-     { padding-top:       halve($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pr-     { padding-right:     halve($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pb-     { padding-bottom:    halve($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pl-     { padding-left:      halve($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ph-     { padding-right:     halve($padding) !important; padding-left:    halve($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pv-     { padding-top:       halve($padding) !important; padding-bottom:  halve($padding) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-paddings--large == true) {
+
+  /**
+   * Add large paddings.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-p\+     { padding:           double($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pt\+    { padding-top:       double($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pr\+    { padding-right:     double($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pb\+    { padding-bottom:    double($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pl\+    { padding-left:      double($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ph\+    { padding-right:     double($padding) !important; padding-left:   double($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pv\+    { padding-top:       double($padding) !important; padding-bottom: double($padding) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-paddings--huge == true) {
+
+  /**
+   * Add huge paddings.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-p\+\+   { padding:           quadruple($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pt\+\+  { padding-top:       quadruple($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pr\+\+  { padding-right:     quadruple($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pb\+\+  { padding-bottom:    quadruple($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pl\+\+  { padding-left:      quadruple($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ph\+\+  { padding-right:     quadruple($padding) !important; padding-left:    quadruple($padding) !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pv\+\+  { padding-top:       quadruple($padding) !important; padding-bottom:  quadruple($padding) !important; }
+
+  }
+
+}
+
+
+@if ($enable-responsive-paddings--none == true) {
+
+  /**
+   * Remove paddings.
+   */
+  @include generate-spacing() {
+
+    .#{$spacing-namespace}#{$generate-spacing-alias}-p0      { padding:          0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pt0     { padding-top:      0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pr0     { padding-right:    0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pb0     { padding-bottom:   0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pl0     { padding-left:     0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-ph0     { padding-right:    0 !important; padding-left:     0 !important; }
+    .#{$spacing-namespace}#{$generate-spacing-alias}-pv0     { padding-top:      0 !important; padding-bottom:   0 !important; }
+
+  }
+
+}
