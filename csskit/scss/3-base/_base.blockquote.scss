@@ -1,0 +1,46 @@
+/* ==========================================================================
+   BLOCKQUOTE
+   ========================================================================== */
+
+/**
+ * Default styling for Blockquote element
+ */
+
+$import-base-blockquote: false !default;
+
+$blockquote-font-size: rem-calc(18) !default;
+$blockquote-footer-font-size: 80% !default;
+$blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%) !default;
+$blockquote-padding: half($base-spacing-unit) $base-spacing-unit !default;
+$blockquote-border-width: rem-calc(5) !default;
+$blockquote-border-color: #eee !default;
+
+@mixin import-base-blockquote {
+
+  blockquote {
+    padding: $blockquote-padding;
+    margin: 0 0 $base-spacing-unit;
+    font-size: $blockquote-font-size;
+    border-left: $blockquote-border-width solid $blockquote-border-color;
+
+    footer, small{
+      display: block;
+      font-size: $blockquote-footer-font-size;
+      line-height: 1.42857143;
+      color: $blockquote-footer-font-color;
+
+      &:before{
+        content: '\2014 \00A0';
+      }
+    }
+  }
+
+}
+
+
+
+
+//export them
+@if $import-base-blockquote == true{
+  @include import-base-blockquote;
+}

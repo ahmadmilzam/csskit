@@ -13,6 +13,8 @@
     "lib",
     "libs",
     "test",
-    "tests"
+    "tests",
+    "ref",
+    "reference"
   ]
 }

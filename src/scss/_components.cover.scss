@@ -1,0 +1,20 @@
+$cover-height: rem-calc(50);
+$cover-height--large: rem-calc(150);
+
+.cover-bar{
+  height: $cover-height;
+  line-height: $cover-height;
+  @media #{$large-up}{
+    height: $cover-height--large;
+    line-height: $cover-height--large;
+  }
+}
+
+  .cover-bar__title{
+    color: white;
+    font-size: rem-calc($heading-size-4);
+    letter-spacing: rem-calc(3);
+    @media #{$large-up}{
+      font-size: rem-calc($heading-size-1);
+    }
+  }

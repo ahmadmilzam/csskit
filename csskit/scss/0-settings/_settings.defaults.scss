@@ -1,0 +1,117 @@
+/* ==========================================================================
+   DEFAULTS
+   ========================================================================== */
+/**
+ *
+ * These variables are defaults; they should not be modified or
+ * adjusted directly; you should predefine the variables in your own project.
+ *
+ */
+
+
+
+
+/*
+   High-level base settings.
+   ========================================================================== */
+/**
+ * These variables are framework variables, sourced from variables defined
+ * above. Feel free to use these variables throughout your project, but do not
+ * modify or reassign them.
+ */
+$base-font-family-sans-serif:          "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !default;
+$base-font-family-serif:               Georgia, Cambria, "Times New Roman", Times, serif !default;
+$base-font-family-monospace:           Consolas, "Liberation Mono", Courier, monospace !default;
+
+$base-font-family:                     $base-font-family-sans-serif !default;
+$base-font-size:                       16px !default;
+$base-font-weight:                     normal !default;
+
+$base-line-height:                     28px !default;
+$base-text-color:                      #333 !default;
+$base-text-color-alt:                  #fff !default;
+$base-background-color:                #fff !default;
+
+$base-spacing-unit:                    $base-line-height;
+$base-spacing-unit--small:             round($base-spacing-unit / 2);
+$base-spacing-unit--large:             round($base-spacing-unit * 2);
+
+$base-radius:                          4px !default;
+
+
+
+
+/*
+   High Level Colors Setting
+   ========================================================================== */
+/**
+ * We use these as default colors throughout
+ * Ref: http://www.flatuicolorpicker.com/
+ */
+$color-primary:                         #3A539B !default; // CHAMBRAY
+$color-secondary:                       #bdc3c7 !default; // SILVER
+$color-alert:                           #EF4836 !default; // FLAMINGO
+$color-success:                         #2ECC71 !default; // SHAMROCK
+$color-warning:                         #F7CA18 !default; // RIPE LEMON
+$color-info:                            #3498DB !default; // CURIOUS BLUE
+
+
+
+
+/*
+   Grids settings.
+   ========================================================================== */
+
+/**
+ * We use these as default total columns throughout the framework.
+ * Ref: http://www.foundation.zurb.com/
+ */
+$columns-total:                         12 !default;
+$columns-gutter:                        24px !default;
+$container-width:                       1000px !default;
+
+
+
+
+/*
+   SETTINGS-RESPONSIVE
+   ========================================================================== */
+/**
+ * Hold our breakpoint range and conditions.
+ *
+ * These can be invoked later on using this line of code:
+ *
+ * @media #{conditions}{
+ *   @content;
+ * }
+ */
+
+$screen: "only screen";
+
+$small-range:                           (0px, 720px) !default;
+$medium-range:                          (721px, 1024px) !default;
+$large-range:                           (1025px, 1440px) !default;
+$xlarge-range:                          (1441px, 1920px) !default;
+$xxlarge-range:                         (1921px, 99999999px) !default;
+
+$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)" !default;
+
+
+
+/*
+   Namespace.
+   ========================================================================== */
+/**
+ * Would you like classes to be prepended with a namespace? If so,
+ * define it here.
+ */
+
+$namespace: null !default;
+
+
+/**
+ * If we have included this file, set a variable to tell the rest of the
+ * framework that we have some base settings.
+ */
+
+$imported-default-settings: true;

@@ -6,8 +6,7 @@ module.exports = function(grunt) {
       options:{
         require: 'susy',
         loadPath: [
-          'libs',
-          'kits/scss'
+          'csskit/scss'
         ]
       },
       dist: {
@@ -15,17 +14,63 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'dist/css/app.min.css': 'src/scss/app.scss',
+          'dist/css/app.min.css': 'src/scss/app.scss'
         }
       },
       dev:{
         options: {
-          style: 'nested'
+          style: 'expanded'
         },
         files: {
-          'dist/css/app.css': 'src/scss/app.scss',
+          'dist/css/app.css': 'src/scss/app.scss'
         }
       }
+    },
+
+    autoprefixer: {
+      dev: {
+        options: {
+          browsers: [
+            'last 2 versions',
+            'ie 9'
+          ],
+          map: true
+        },
+        src: 'dist/css/app.css',
+        dest: 'dist/css/app.css'
+      },
+      dist: {
+        options: {
+          browsers: [
+            'last 2 versions',
+            'ie 9'
+          ],
+          map: false
+        },
+        src: 'dist/css/app.min.css',
+        dest: 'dist/css/app.min.css'
+      },
+    },
+
+    watch: {
+      grunt: {
+        files: ['Gruntfile.js'],
+        tasks: ['development-task']
+      },
+      sass: {
+        files: [
+          'csskit/scss/**/*.scss',
+          'src/scss/**/*.scss'
+        ],
+        tasks: ['development-task']
+      }
+      // js: {
+      //   files: [
+      //     'kits/js/**/*.js',
+      //     'src/js/**/*.js'
+      //   ],
+      //   tasks: ['development-task']
+      // }
     },
 
     // concat: {
@@ -53,27 +98,6 @@ module.exports = function(grunt) {
     //   }
     // },
 
-    watch: {
-      grunt: {
-        files: ['Gruntfile.js'],
-        tasks: ['development-task']
-      },
-      sass: {
-        files: [
-          'kits/scss/**/*.scss',
-          'src/scss/**/*.scss'
-        ],
-        tasks: ['development-task']
-      }
-      // js: {
-      //   files: [
-      //     'kits/js/**/*.js',
-      //     'src/js/**/*.js'
-      //   ],
-      //   tasks: ['development-task']
-      // }
-    },
-
     // uglify: {
     //   options: {
     //     mangle: true,
@@ -90,21 +114,23 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-autoprefixer');
   // grunt.loadNpmTasks('grunt-contrib-concat');
   // grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask(
     'development-task',
     [
-      'sass:dev'
-      // 'concat:vendor'
+      'sass:dev',
+      'autoprefixer:dev'
     ]
   );
 
   grunt.registerTask(
     'production-task',
     [
-      'sass:dist'
+      'sass:dist',
+      'autoprefixer:dist'
       // 'concat:vendor',
       // 'uglify'
     ]

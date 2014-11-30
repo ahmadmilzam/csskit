@@ -1,0 +1,11 @@
+.section{
+  @include box-shadow();
+  padding: rem-calc($base-spacing-unit/2);
+}
+
+  .section__title{
+    @extend %uppercase;
+    border-bottom: 1px solid #d9d9d9;
+    padding-top: rem-calc($base-spacing-unit/2);
+    padding-top: rem-calc($base-spacing-unit/2);
+  }

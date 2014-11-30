@@ -1,0 +1,327 @@
+/* ==========================================================================
+   BUTTONS
+   ========================================================================== */
+/**
+ * A simple button object.
+ */
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings and module settings files?"
+}
+
+
+/**
+ * Here we set a variable assuming that `box-sizing: border-box;` is not
+ * set globally. If it has been previously been defined,
+ * the following variable will be overriden and will be set to `true`.
+ */
+$global-border-box: false !default;
+
+
+$import-object-btn:                  false !default;
+
+$btn-namespace:                      $namespace !default;
+
+$btn-padding:                        half($base-spacing-unit) !default;
+$btn-padding--small:                 half($btn-padding) !default;
+$btn-padding--large:                 double($btn-padding) !default;
+$btn-background:                     $color-primary !default;
+$btn-color:                          #fff !default;
+$btn-border-width:                   1px !default;
+$btn-border-style:                   solid !default;
+$btn-border-color:                   $btn-background !default;
+$btn-radius:                         0 !default;
+
+$enable-btn--small:                  false !default;
+$enable-btn--large:                  false !default;
+$enable-btn--full:                   false !default;
+$enable-btn--pill:                   false !default;
+
+$enable-button--alert:               false !default;
+$enable-button--warning:             false !default;
+$enable-button--success:             false !default;
+$enable-button--info:                false !default;
+$enable-button--secondary:           false !default;
+
+
+
+
+@mixin import-object-btn {
+
+  /**
+   * 1. Allow us to style box model properties.
+   * 2. Line different sized buttons up a little nicer.
+   * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+   *    buttons).
+   * 4. Reset/normalize some styles.
+   * 5. Force all button-styled elements to appear clickable.
+   * 6. Fixes odd inner spacing in IE7.
+   * 7. Subtract the border size from the padding value so that buttons do not
+   *    grow larger as we add borders.
+   */
+  .#{$btn-namespace}btn,
+  %#{$btn-namespace}btn {
+    display: inline-block; /* [1] */
+    vertical-align: middle; /* [2] */
+    font: inherit; /* [3] */
+    text-align: center; /* [4] */
+    border: none; /* [4] */
+    margin:  0; /* [4] */
+    cursor: pointer; /* [5] */
+    overflow: visible; /* [6] */
+    padding: $btn-padding - $btn-border-width  double($btn-padding) - $btn-border-width; /* [7] */
+    background-color: $btn-background;
+
+    @if($btn-border-width != 0) {
+      border-width: $btn-border-width;
+      border-style: $btn-border-style;
+      border-color: $btn-border-color;
+    }
+
+    @if($btn-radius != 0) {
+      border-radius: $btn-radius;
+    }
+
+    @include transition(background-color);
+
+    &,
+    &:hover,
+    &:active,
+    &:focus {
+      text-decoration: none; /* [4] */
+      color: $btn-color;
+    }
+
+    &:hover,
+    &:focus{
+      background-color: lighten($color-primary, 10%);
+    }
+    &:active{
+      background-color: darken($color-primary, 10%);
+    }
+
+  }
+
+  /**
+   * Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+   */
+  .#{$btn-namespace}btn::-moz-focus-inner,
+  %#{$btn-namespace}btn::-moz-focus-inner {
+    border:  0;
+    padding: 0;
+  }
+
+  @if ($enable-button--alert == true) {
+
+    .#{$btn-namespace}btn--alert,
+    %#{$btn-namespace}btn--alert {
+      background-color: $color-alert;
+      border-color: darken($color-alert, 5%);
+
+      // We control the text color for you based on the background color.
+      $bg-lightness: lightness($color-alert);
+      &,
+      &:hover,
+      &:focus,
+      &:active{
+        color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      }
+
+      &:hover,
+      &:focus{
+        background-color: lighten($color-alert, 5%);
+      }
+      &:active{
+        background-color: darken($color-alert, 5%);
+      }
+    }
+
+  }/* close enable-btn--alert */
+
+  @if ($enable-button--success == true) {
+
+    .#{$btn-namespace}btn--success,
+    %#{$btn-namespace}btn--success {
+      background-color: $color-success;
+      border-color: darken($color-success, 5%);
+
+      // We control the text color for you based on the background color.
+      $bg-lightness: lightness($color-success);
+      &,
+      &:hover,
+      &:focus,
+      &:active{
+        color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      }
+
+      &:hover,
+      &:focus{
+        background-color: lighten($color-success, 5%);
+      }
+      &:active{
+        background-color: darken($color-success, 5%);
+      }
+    }
+
+  }/* close enable-btn--success */
+
+  @if ($enable-button--warning == true) {
+
+    .#{$btn-namespace}btn--warning,
+    %#{$btn-namespace}btn--warning {
+      background-color: $color-warning;
+      border-color: darken($color-warning, 5%);
+
+      // We control the text color for you based on the background color.
+      $bg-lightness: lightness($color-warning);
+      &,
+      &:hover,
+      &:focus,
+      &:active{
+        color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      }
+
+      &:hover,
+      &:focus{
+        background-color: lighten($color-warning, 5%);
+      }
+      &:active{
+        background-color: darken($color-warning, 5%);
+      }
+    }
+
+  }/* close enable-btn--warning */
+
+  @if ($enable-button--info == true) {
+
+    .#{$btn-namespace}btn--info,
+    %#{$btn-namespace}btn--info {
+      background-color: $color-info;
+      border-color: darken($color-info, 5%);
+
+      // We control the text color for you based on the background color.
+      $bg-lightness: lightness($color-info);
+      &,
+      &:hover,
+      &:focus,
+      &:active{
+        color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      }
+
+      &:hover,
+      &:focus{
+        background-color: lighten($color-info, 5%);
+      }
+      &:active{
+        background-color: darken($color-info, 5%);
+      }
+    }
+
+  }/* close enable-btn--info */
+
+  @if ($enable-button--secondary == true) {
+
+    .#{$btn-namespace}btn--secondary,
+    %#{$btn-namespace}btn--secondary {
+      background-color: $color-secondary;
+      border-color: darken($color-secondary, 5%);
+
+      // We control the text color for you based on the background color.
+      $bg-lightness: lightness($color-secondary);
+
+      &,
+      &:hover,
+      &:focus,
+      &:active{
+        color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      }
+
+      &:hover,
+      &:focus{
+        background-color: lighten($color-secondary, 5%);
+      }
+      &:active{
+        background-color: darken($color-secondary, 5%);
+      }
+    }
+
+  }/* close enable-btn--secondary */
+
+  @if ($enable-btn--small == true) {
+
+      /**
+       * Small buttons.
+       */
+
+      .#{$btn-namespace}btn--small,
+      %#{$btn-namespace}btn--small {
+        padding: $btn-padding--small - $btn-border-width  double($btn-padding--small) - $btn-border-width; /* [7] */
+      }
+
+  }
+
+  @if ($enable-btn--large == true) {
+
+      /**
+       * Large buttons.
+       */
+
+      .#{$btn-namespace}btn--large,
+      %#{$btn-namespace}btn--large {
+          padding: $btn-padding--large - $btn-border-width  double($btn-padding--large) - $btn-border-width; /* [7] */
+      }
+
+  }
+
+  @if ($enable-btn--full == true) {
+
+      /**
+       * Full-width buttons.
+       */
+
+      .#{$btn-namespace}btn--full,
+      %#{$btn-namespace}btn--full {
+          width: 100%;
+
+          @if $global-border-box == false {
+              /**
+               * Remove paddings so that widths and paddings don’t conflict.
+               */
+              padding-right: 0;
+              padding-left:  0;
+          }
+
+      }
+
+  }
+
+  @if ($enable-btn--pill == true) {
+
+      /**
+       * Round-ended buttons.
+       *
+       * 1. Overly-large value to ensure the radius rounds the whole end of the
+       *    button.
+       */
+
+      .#{$btn-namespace}btn--pill,
+      %#{$btn-namespace}btn--pill {
+          border-radius: 100px; /* [1] */
+      }
+
+  }
+
+}
+
+
+
+
+//export them
+@if $import-object-btn == true{
+  @include import-object-btn;
+}

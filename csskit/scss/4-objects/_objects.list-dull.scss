@@ -1,0 +1,43 @@
+/* ==========================================================================
+   LIST-DULL
+   ========================================================================== */
+/**
+ * The list-dull object simply removes any indents and bullet points from lists.
+ */
+
+
+
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings and module settings files?"
+}
+
+
+$import-object-list-dull:            false !default;
+
+$list-dull-namespace:                $namespace !default;
+
+
+@mixin import-object-list-dull {
+
+  .#{$list-dull-namespace}list-dull,
+  %#{$list-dull-namespace}list-dull {
+    margin:  0;
+    padding: 0;
+    list-style: none;
+  }
+
+}
+
+
+
+
+//export them
+@if $import-object-list-dull == true{
+  @include import-object-list-dull;
+}

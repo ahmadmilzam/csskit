@@ -1,0 +1,186 @@
+/* ==========================================================================
+   Common CSS3 Mixins
+   ========================================================================== */
+
+
+
+/*===============================
+=            COLUMNS            =
+===============================*/
+
+@mixin columns($count: 3, $gap: 10) {
+  -webkit-column-count: $count;
+     -moz-column-count: $count;
+          column-count: $count;
+
+  -webkit-column-gap: $gap;
+     -moz-column-gap: $gap;
+          column-gap: $gap;
+}
+
+/*-----  End of COLUMNS  ------*/
+
+
+/*======================================
+=            DOUBLE BORDERS            =
+======================================*/
+
+@mixin double-borders(
+  $colorOne: #3C3C3C,
+  $colorTwo: #999999,
+  $radius: 0) {
+
+  border: 1px solid $colorOne;
+
+  -webkit-box-shadow: 0 0 0 1px $colorTwo;
+     -moz-box-shadow: 0 0 0 1px $colorTwo;
+          box-shadow: 0 0 0 1px $colorTwo;
+
+    @include border-radius( $radius );
+}
+
+/*-----  End of DOUBLE BORDERS  ------*/
+
+
+/*===================================
+=            TEXT SHADOW            =
+===================================*/
+
+@mixin text-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4)) {
+  text-shadow: $x $y $blur $color;
+}
+
+/*-----  End of TEXT SHADOW  ------*/
+
+
+/*==================================
+=            BOX SHADOW            =
+==================================*/
+
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+  @if ($inset != "") {
+    -webkit-box-shadow: $inset $x $y $blur $color;
+       -moz-box-shadow: $inset $x $y $blur $color;
+            box-shadow: $inset $x $y $blur $color;
+  } @else {
+    -webkit-box-shadow: $x $y $blur $color;
+       -moz-box-shadow: $x $y $blur $color;
+            box-shadow: $x $y $blur $color;
+  }
+}
+
+/*-----  End of BOX SHADOW  ------*/
+
+
+/*=================================
+=            TRANSFORM            =
+=================================*/
+
+@mixin transform($params) {
+  -webkit-transform: $params;
+          transform: $params;
+}
+
+/*-----  End of TRANSFORM  ------*/
+
+
+/*==============================
+=            ROTATE            =
+==============================*/
+
+@mixin rotate($deg: 0) {
+  -webkit-transform: rotate($deg + deg); /* Chrome, Safari, Opera */
+      -ms-transform: rotate($deg + deg); /* IE 9 */
+          transform: rotate($deg + deg);
+}
+
+/*-----  End of ROTATE  ------*/
+
+
+/*=============================
+=            SCALE            =
+=============================*/
+
+@mixin scale($x, $y, $both: "") {
+  @if ($both != "") {
+    -webkit-transform: scale($both); /* Chrome, Safari, Opera */
+        -ms-transform: scale($both); /* IE 9 */
+            transform: scale($both);
+  } @else {
+    -webkit-transform: scale($x,$y); /* Chrome, Safari, Opera */
+        -ms-transform: scale($x,$y); /* IE 9 */
+            transform: scale($x,$y);
+  }
+}
+
+/*-----  End of SCALE  ------*/
+
+
+/*==================================
+=            TRANSITION            =
+==================================*/
+
+@mixin transition($property: all, $length: 0.3s, $easing: ease-out, $delay: 0s) {
+  @if($property == transform){
+    -webkit-transition: -webkit-#{$property} $duration $easing $delay;        -webkit-transition: -webkit-#{$property} $duration $easing $delay;
+            transition: $property $duration $easing $delay;                 transition: $property $duration $easing $delay;
+  } @else{
+    -webkit-transition: $property $length $easing $delay;
+            transition: $property $length $easing $delay;
+  }
+}
+
+/*-----  End of TRANSITION  ------*/
+
+
+/*=======================================
+=            Vertical Middle            =
+=======================================*/
+
+@mixin vertical-middle{
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+     -moz-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+/*-----  End of Vertical Middle  ------*/
+
+
+/*=====================================
+=            Border Radius            =
+======================================*/
+
+// All side border-radius
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  background-clip: padding-box;  /* stops bg color from leaking outside the border: */
+}
+
+// Single side border-radius
+@mixin border-top-radius($radius) {
+  border-top-right-radius: $radius !important;
+  border-top-left-radius: $radius !important;
+  background-clip: padding-box;
+}
+@mixin border-right-radius($radius) {
+  border-bottom-right-radius: $radius !important;
+  border-top-right-radius: $radius !important;
+  background-clip: padding-box;
+}
+@mixin border-bottom-radius($radius) {
+  border-bottom-right-radius: $radius !important;
+  border-bottom-left-radius: $radius !important;
+  background-clip: padding-box;
+}
+@mixin border-left-radius($radius) {
+  border-top-left-radius: $radius !important;
+  border-bottom-left-radius: $radius !important;
+  background-clip: padding-box;
+}
+
+@mixin circle-radius{
+  border-radius: 50%;
+}
+
+/*-----  End of Border Radius  ------*/

@@ -1,0 +1,36 @@
+/* ==========================================================================
+   LIST
+   ========================================================================== */
+
+$import-base-lists: false !default;
+
+@mixin import-base-lists {
+
+  /**
+   * Set Default list style positon inside
+   */
+  ul,
+  ol {
+    list-style-position: inside;
+  }
+  /**
+   * Remove extra vertical spacing when nesting lists.
+   */
+  li {
+
+    > ul,
+    > ol {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+
+
+
+//export them
+@if $import-base-lists == true{
+  @include import-base-lists;
+}
