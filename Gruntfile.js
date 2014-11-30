@@ -28,17 +28,6 @@ module.exports = function(grunt) {
     },
 
     autoprefixer: {
-      dev: {
-        options: {
-          browsers: [
-            'last 2 versions',
-            'ie 9'
-          ],
-          map: true
-        },
-        src: 'dist/css/app.css',
-        dest: 'dist/css/app.css'
-      },
       dist: {
         options: {
           browsers: [
@@ -121,8 +110,7 @@ module.exports = function(grunt) {
   grunt.registerTask(
     'development-task',
     [
-      'sass:dev',
-      'autoprefixer:dev'
+      'sass:dev'
     ]
   );
 

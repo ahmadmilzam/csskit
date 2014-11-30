@@ -2,32 +2,23 @@
    Miscellaneous Helper Classes
    ========================================================================== */
 
-$import-trump-misc: false !default;
 
 // Generates Miscellaneous classes
-@mixin import-trumps-misc{
 
-  .left,
-  %left{ float: left !important; }
+.left,
+%left{ float: left !important; }
 
-  .right,
-  %right{ float: right !important; }
+.right,
+%right{ float: right !important; }
 
-  .hide,
-  %hide{ display: none; }
+.hide,
+%hide{ display: none; }
 
-  .uppercase,
-  %uppercase{ text-transform: uppercase; }
+.uppercase,
+%uppercase{ text-transform: uppercase; }
 
-  .lowercase,
-  %lowercase{ text-transform: lowercase; }
+.lowercase,
+%lowercase{ text-transform: lowercase; }
 
-  .capitalize,
-  %capitalize{ text-transform: capitalize; }
-
-}
-
-//export them
-@if $import-trump-misc == true {
-  @include import-trumps-misc;
-}
+.capitalize,
+%capitalize{ text-transform: capitalize; }

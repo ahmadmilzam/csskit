@@ -1,9 +1,9 @@
 /* ==========================================================================
-   MODULES SETTINGS
+   TRUMPS SETTINGS
    ========================================================================== */
 /**
  *
- * This file contain all available feature in csskit;
+ * This file contain all available trumps settings in csskit;
  * By default, csskit disable all feature, so that you can get
  * as little as you need.
  *
@@ -18,10 +18,8 @@
 /*
    TRUMP ALIGNMENT
    ========================================================================== */
-$import-trump-alignment:             true;
-$import-trump-reponsive-alignment:   true;
 
-$enable-xlarge-alignment-clasess:    true;
+// $enable-xlarge-alignment-clasess:    true;
 
 
 
@@ -29,13 +27,10 @@ $enable-xlarge-alignment-clasess:    true;
 /*
    TRUMP VISIBILITY
    ========================================================================== */
-$import-trump-reponsive-visibility:  true;
 
-$import-visibility-trumps:           true;
-
-$enable-xlarge-visibility-clasess:   true;
-$enable-accessibility-classes:       true;
-$enable-table-classes:               true;
+// $enable-xlarge-visibility-clasess:   true;
+// $enable-accessibility-classes:       true;
+// $enable-table-classes:               true;
 
 
 
@@ -43,45 +38,30 @@ $enable-table-classes:               true;
 /*
    TRUMP SPACING
    ========================================================================== */
-$import-trump-spacing:               true;
 
-$spacing-namespace:                  null;
+// $spacing-namespace:                  null;
 
-$spacing-margin:                     $base-spacing-unit;
-$spacing-padding:                    $base-spacing-unit;
+// $spacing-margin:                     $base-spacing-unit;
+// $spacing-padding:                    $base-spacing-unit;
 
-$enable-margins:                     true;
-$enable-margins--tiny:               true;
-$enable-margins--small:              true;
-$enable-margins--large:              true;
-$enable-margins--huge:               true;
+// $enable-margins:                     true;
+// $enable-margins--tiny:               true;
+// $enable-margins--small:              true;
+// $enable-margins--large:              true;
+// $enable-margins--huge:               true;
 
-$enable-margins--negative:           true;
-$enable-margins--negative-tiny:      true;
-$enable-margins--negative-small:     true;
-$enable-margins--negative-large:     true;
-$enable-margins--negative-huge:      true;
+// $enable-margins--negative:           true;
+// $enable-margins--negative-tiny:      true;
+// $enable-margins--negative-small:     true;
+// $enable-margins--negative-large:     true;
+// $enable-margins--negative-huge:      true;
 
-$enable-margins--none:               true;
+// $enable-margins--none:               true;
 
-$enable-paddings:                    true;
-$enable-paddings--tiny:              true;
-$enable-paddings--small:             true;
-$enable-paddings--large:             true;
-$enable-paddings--huge:              true;
+// $enable-paddings:                    true;
+// $enable-paddings--tiny:              true;
+// $enable-paddings--small:             true;
+// $enable-paddings--large:             true;
+// $enable-paddings--huge:              true;
 
-$enable-paddings--none:              true;
-
-
-
-/*
-   TRUMP PRINT
-   ========================================================================== */
-$import-trump-print:                 true;
-
-
-
- /*
-    TRUMP MISCELLANEOUS
-    ========================================================================== */
-$import-trump-misc:                  true;
+// $enable-paddings--none:              true;

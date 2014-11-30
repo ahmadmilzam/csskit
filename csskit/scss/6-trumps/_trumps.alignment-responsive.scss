@@ -11,7 +11,7 @@ $imported-default-settings: false !default;
   @warn "Oops! Have you included a default settings file?"
 }
 
-$import-trumps-reponsive-alignment: false !default;
+$enable-xlarge-alignment-clasess: false !default;
 
 // Text alignment class names
 $alignment-class-names:
@@ -59,19 +59,12 @@ $alignment-class-breakpoints-queries:
 }
 
 // Generates text align and justify classes
-@mixin import-trumps-alignment-responsive{
 
-  @for $i from 1 through length($alignment-class-names) {
-    @media #{(nth($alignment-class-breakpoints-queries, $i))} {
-      .#{(nth($alignment-class-names, $i))}-text-left { text-align: left !important; }
-      .#{(nth($alignment-class-names, $i))}-text-right   { text-align: right !important; }
-      .#{(nth($alignment-class-names, $i))}-text-center  { text-align: center !important; }
-      .#{(nth($alignment-class-names, $i))}-text-justify { text-align: justify !important; }
-    }
+@for $i from 1 through length($alignment-class-names) {
+  @media #{(nth($alignment-class-breakpoints-queries, $i))} {
+    .#{(nth($alignment-class-names, $i))}-text-left { text-align: left !important; }
+    .#{(nth($alignment-class-names, $i))}-text-right   { text-align: right !important; }
+    .#{(nth($alignment-class-names, $i))}-text-center  { text-align: center !important; }
+    .#{(nth($alignment-class-names, $i))}-text-justify { text-align: justify !important; }
   }
-}
-
-//export them
-@if $import-trumps-reponsive-alignment == true {
-  @include import-trumps-alignment-responsive;
 }

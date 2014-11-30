@@ -20,47 +20,34 @@ $imported-module-settings: false !default;
 }
 
 
-$import-object-tabs:                 true !default;
-
 $tabs-namespace:                     $namespace !default;
 
 
-@mixin import-object-tabs {
 
-  /**
-   * 1. Reset any residual styles (most likely from lists).
-   * 2. Tables for layout!
-   * 3. Force all `table-cell` children to have equal widths.
-   * 4. Force the object to be the full width of its parent. Combined with [2],
-   *    this makes the object behave in a quasi-`display: block;` manner.
-   */
-  .#{$tabs-namespace}tabs,
-  %#{$tabs-namespace}tabs {
-    margin:  0; /* [1] */
-    padding: 0; /* [1] */
-    list-style: none; /* [1] */
-    display: table; /* [2] */
-    table-layout: fixed; /* [3] */
-    width: 100%; /* [4] */
-    text-align: center;
+/**
+ * 1. Reset any residual styles (most likely from lists).
+ * 2. Tables for layout!
+ * 3. Force all `table-cell` children to have equal widths.
+ * 4. Force the object to be the full width of its parent. Combined with [2],
+ *    this makes the object behave in a quasi-`display: block;` manner.
+ */
+.#{$tabs-namespace}tabs,
+%#{$tabs-namespace}tabs {
+  margin:  0; /* [1] */
+  padding: 0; /* [1] */
+  list-style: none; /* [1] */
+  display: table; /* [2] */
+  table-layout: fixed; /* [3] */
+  width: 100%; /* [4] */
+  text-align: center;
+}
+
+  .#{$tabs-namespace}tabs__item,
+  %#{$tabs-namespace}tabs__item {
+      display: table-cell; /* [2] */
   }
 
-    .#{$tabs-namespace}tabs__item,
-    %#{$tabs-namespace}tabs__item {
-        display: table-cell; /* [2] */
+    .#{$tabs-namespace}tabs__link,
+    %#{$tabs-namespace}tabs__link {
+      display: block;
     }
-
-      .#{$tabs-namespace}tabs__link,
-      %#{$tabs-namespace}tabs__link {
-        display: block;
-      }
-
-}
-
-
-
-
-//export them
-@if $import-object-tabs == true{
-  @include import-object-tabs;
-}

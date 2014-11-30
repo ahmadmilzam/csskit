@@ -18,26 +18,12 @@ $imported-default-settings: false !default;
 }
 
 
-$import-object-list-dull:            false !default;
-
 $list-dull-namespace:                $namespace !default;
 
 
-@mixin import-object-list-dull {
-
-  .#{$list-dull-namespace}list-dull,
-  %#{$list-dull-namespace}list-dull {
-    margin:  0;
-    padding: 0;
-    list-style: none;
-  }
-
-}
-
-
-
-
-//export them
-@if $import-object-list-dull == true{
-  @include import-object-list-dull;
+.#{$list-dull-namespace}list-dull,
+%#{$list-dull-namespace}list-dull {
+  margin:  0;
+  padding: 0;
+  list-style: none;
 }

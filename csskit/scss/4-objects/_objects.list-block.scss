@@ -18,7 +18,6 @@ $imported-default-settings: false !default;
 }
 
 
-$import-object-list-block:           false !default;
 
 $list-block-namespace:               $namespace !default;
 
@@ -34,99 +33,88 @@ $enable-list-block--large:           false !default;
 $enable-list-block--huge:            false !default;
 
 
-@mixin import-object-list-block{
 
-  .#{$list-block-namespace}list-block,
-  %#{$list-block-namespace}list-block {
-    margin:  0;
-    padding: 0;
-    list-style: none;
+.#{$list-block-namespace}list-block,
+%#{$list-block-namespace}list-block {
+  margin:  0;
+  padding: 0;
+  list-style: none;
 
-    > li {
-      @extend %#{$list-block-namespace}list-block__item;
-    }
+  > li {
+    @extend %#{$list-block-namespace}list-block__item;
+  }
+}
+
+  .#{$list-block-namespace}list-block__item,
+  %#{$list-block-namespace}list-block__item {
+    padding: $list-block-padding;
   }
 
-    .#{$list-block-namespace}list-block__item,
-    %#{$list-block-namespace}list-block__item {
-      padding: $list-block-padding;
-    }
 
+@if ($enable-list-block--tiny == true) {
 
-  @if ($enable-list-block--tiny == true) {
+  /**
+   * Tiny list-blocks.
+   */
+  .#{$list-block-namespace}list-block--tiny,
+  %#{$list-block-namespace}list-block--tiny {
 
-    /**
-     * Tiny list-blocks.
-     */
-    .#{$list-block-namespace}list-block--tiny,
-    %#{$list-block-namespace}list-block--tiny {
-
-      > .#{$list-block-namespace}list-block__item,
-      > %#{$list-block-namespace}list-block__item {
-        padding: $list-block-padding--tiny;
-      }
-
-    }
-
-  }
-
-  @if ($enable-list-block--small == true) {
-
-    /**
-     * Small list-blocks.
-     */
-    .#{$list-block-namespace}list-block--small,
-    %#{$list-block-namespace}list-block--small {
-
-      > .#{$list-block-namespace}list-block__item,
-      > %#{$list-block-namespace}list-block__item {
-        padding: $list-block-padding--small;
-      }
-
-    }
-
-  }
-
-  @if ($enable-list-block--large == true) {
-
-    /**
-     * Large list-blocks.
-     */
-    .#{$list-block-namespace}list-block--large,
-    %#{$list-block-namespace}list-block--large {
-
-        > .#{$list-block-namespace}list-block__item,
-        > %#{$list-block-namespace}list-block__item {
-          padding: $list-block-padding--large;
-        }
-
-    }
-
-  }
-
-  @if ($enable-list-block--huge == true) {
-
-    /**
-     * Huge list-blocks.
-     */
-    .#{$list-block-namespace}list-block--huge,
-    %#{$list-block-namespace}list-block--huge {
-
-      > .#{$list-block-namespace}list-block__item,
-      > %#{$list-block-namespace}list-block__item {
-        padding: $list-block-padding--huge;
-      }
-
+    > .#{$list-block-namespace}list-block__item,
+    > %#{$list-block-namespace}list-block__item {
+      padding: $list-block-padding--tiny;
     }
 
   }
 
 }
 
+@if ($enable-list-block--small == true) {
 
+  /**
+   * Small list-blocks.
+   */
+  .#{$list-block-namespace}list-block--small,
+  %#{$list-block-namespace}list-block--small {
 
+    > .#{$list-block-namespace}list-block__item,
+    > %#{$list-block-namespace}list-block__item {
+      padding: $list-block-padding--small;
+    }
 
-//export them
-@if $import-object-list-block == true{
-  @include import-object-list-block;
+  }
+
+}
+
+@if ($enable-list-block--large == true) {
+
+  /**
+   * Large list-blocks.
+   */
+  .#{$list-block-namespace}list-block--large,
+  %#{$list-block-namespace}list-block--large {
+
+      > .#{$list-block-namespace}list-block__item,
+      > %#{$list-block-namespace}list-block__item {
+        padding: $list-block-padding--large;
+      }
+
+  }
+
+}
+
+@if ($enable-list-block--huge == true) {
+
+  /**
+   * Huge list-blocks.
+   */
+  .#{$list-block-namespace}list-block--huge,
+  %#{$list-block-namespace}list-block--huge {
+
+    > .#{$list-block-namespace}list-block__item,
+    > %#{$list-block-namespace}list-block__item {
+      padding: $list-block-padding--huge;
+    }
+
+  }
+
 }

@@ -16,8 +16,6 @@ $imported-default-settings: false !default;
 }
 
 
-$import-object-box:                  false !default;
-
 $box-namespace:                      $namespace !default;
 
 $box-padding:                        $base-spacing-unit !default;
@@ -40,153 +38,141 @@ $enable-box--warning:                false !default;
 $enable-box--info:                   false !default;
 
 
-@mixin import-object-box {
+/**
+ * 1. So we can apply the `.box` class to naturally-inline elements.
+ */
+.#{$box-namespace}box,
+%#{$box-namespace}box {
+  @extend %clearfix;
+  display: block; /* [1] */
+  padding: $box-padding;
+  background-color: $color-secondary;
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+
+@if ($enable-box--primary == true) {
+  /**
+   * Box Colors (i.e. no padding) box.
+   */
+  .#{$box-namespace}box--primary,
+  %#{$box-namespace}box--primary {
+    background-color: $color-primary;
+
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-primary);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--primary */
+
+@if ($enable-box--alert == true) {
+  .#{$box-namespace}box--alert,
+  %#{$box-namespace}box--alert {
+    background-color: $color-alert;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-alert);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--alert */
+
+@if ($enable-box--success == true) {
+  .#{$box-namespace}box--success,
+  %#{$box-namespace}box--success {
+    background-color: $color-success;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-success);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--success */
+
+@if ($enable-box--warning == true) {
+  .#{$box-namespace}box--warning,
+  %#{$box-namespace}box--warning {
+    background-color: $color-warning;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-warning);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--warning */
+
+@if ($enable-box--info == true) {
+  .#{$box-namespace}box--info,
+  %#{$box-namespace}box--info {
+    background-color: $color-info;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-info);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--info */
+
+
+@if ($enable-box--flush == true) {
 
   /**
-   * 1. So we can apply the `.box` class to naturally-inline elements.
+   * Flush (i.e. no padding) box.
    */
-  .#{$box-namespace}box,
-  %#{$box-namespace}box {
-    @extend %clearfix;
-    display: block; /* [1] */
-    padding: $box-padding;
-    background-color: $color-secondary;
+   .#{$box-namespace}box--flush,
+   %#{$box-namespace}box--flush {
+    padding: 0;
+  }
 
-    > :last-child {
-      margin-bottom: 0;
+}
+
+  @if ($enable-box--tiny == true) {
+
+    /**
+     * Tiny box.
+     */
+    .#{$box-namespace}box--tiny,
+    %#{$box-namespace}box--tiny {
+      padding: $box-padding--tiny;
     }
 
   }
 
-
-  @if ($enable-box--primary == true) {
-    /**
-     * Box Colors (i.e. no padding) box.
-     */
-    .#{$box-namespace}box--primary,
-    %#{$box-namespace}box--primary {
-      background-color: $color-primary;
-
-
-      // We control the text color for you based on the background color.
-      $bg-lightness: lightness($color-primary);
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
-    }
-  }/* close box--primary */
-
-  @if ($enable-box--alert == true) {
-    .#{$box-namespace}box--alert,
-    %#{$box-namespace}box--alert {
-      background-color: $color-alert;
-
-      // We control the text color for you based on the background color.
-      $bg-lightness: lightness($color-alert);
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
-    }
-  }/* close box--alert */
-
-  @if ($enable-box--success == true) {
-    .#{$box-namespace}box--success,
-    %#{$box-namespace}box--success {
-      background-color: $color-success;
-
-      // We control the text color for you based on the background color.
-      $bg-lightness: lightness($color-success);
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
-    }
-  }/* close box--success */
-
-  @if ($enable-box--warning == true) {
-    .#{$box-namespace}box--warning,
-    %#{$box-namespace}box--warning {
-      background-color: $color-warning;
-
-      // We control the text color for you based on the background color.
-      $bg-lightness: lightness($color-warning);
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
-    }
-  }/* close box--warning */
-
-  @if ($enable-box--info == true) {
-    .#{$box-namespace}box--info,
-    %#{$box-namespace}box--info {
-      background-color: $color-info;
-
-      // We control the text color for you based on the background color.
-      $bg-lightness: lightness($color-info);
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
-    }
-  }/* close box--info */
-
-
-  @if ($enable-box--flush == true) {
+  @if ($enable-box--small == true) {
 
     /**
-     * Flush (i.e. no padding) box.
+     * Small box.
      */
-     .#{$box-namespace}box--flush,
-     %#{$box-namespace}box--flush {
-      padding: 0;
+    .#{$box-namespace}box--small,
+    %#{$box-namespace}box--small {
+      padding: $box-padding--small;
     }
 
   }
 
-    @if ($enable-box--tiny == true) {
+  @if ($enable-box--large == true) {
 
-      /**
-       * Tiny box.
-       */
-      .#{$box-namespace}box--tiny,
-      %#{$box-namespace}box--tiny {
-        padding: $box-padding--tiny;
-      }
+    /**
+     * Large box.
+     */
 
+    .#{$box-namespace}box--large,
+    %#{$box-namespace}box--large {
+      padding: $box-padding--large;
     }
 
-    @if ($enable-box--small == true) {
+  }
 
-      /**
-       * Small box.
-       */
-      .#{$box-namespace}box--small,
-      %#{$box-namespace}box--small {
-        padding: $box-padding--small;
-      }
+  @if ($enable-box--huge == true) {
 
+    /**
+     * Huge box.
+     */
+
+    .#{$box-namespace}box--huge,
+    %#{$box-namespace}box--huge {
+      padding: $box-padding--huge;
     }
 
-    @if ($enable-box--large == true) {
-
-      /**
-       * Large box.
-       */
-
-      .#{$box-namespace}box--large,
-      %#{$box-namespace}box--large {
-        padding: $box-padding--large;
-      }
-
-    }
-
-    @if ($enable-box--huge == true) {
-
-      /**
-       * Huge box.
-       */
-
-      .#{$box-namespace}box--huge,
-      %#{$box-namespace}box--huge {
-        padding: $box-padding--huge;
-      }
-
-    }
-
-}
-
-
-
-
-//export them
-@if $import-object-box == true{
-  @include import-object-box;
-}
+  }

@@ -18,8 +18,6 @@ $imported-module-settings: false !default;
 }
 
 
-$import-object-tables:               false !default;
-
 $table-namespace:                    $namespace !default;
 
 $table-padding--compact:             quarter($base-spacing-unit) !default;
@@ -39,155 +37,40 @@ $enable-table--rows:                 false !default;
 $enable-table--columns:              false !default;
 
 
-@mixin import-object-tables{
+.#{$table-namespace}table,
+%#{$table-namespace}table {
+  width: 100%;
+  thead > tr > th {
+    vertical-align: bottom;
+    border-bottom: 1px solid scale-color($table-border-color, $lightness: -20%);
+  }
+}
 
-  .#{$table-namespace}table,
-  %#{$table-namespace}table {
-    width: 100%;
-    thead > tr > th {
-      vertical-align: bottom;
-      border-bottom: 1px solid scale-color($table-border-color, $lightness: -20%);
-    }
+
+@if ($enable-table--fixed == true) {
+
+  /**
+   * Force tables into having equal-width columns.
+   */
+  .#{$table-namespace}table--fixed,
+  %#{$table-namespace}table--fixed {
+    table-layout: fixed;
   }
 
-
-  @if ($enable-table--fixed == true) {
-
-    /**
-     * Force tables into having equal-width columns.
-     */
-    .#{$table-namespace}table--fixed,
-    %#{$table-namespace}table--fixed {
-      table-layout: fixed;
-    }
-
-  }
+}
 
 
-  @if ($enable-table--compact == true) {
+@if ($enable-table--compact == true) {
 
-    /**
-     * Tables with very tightly packed cells.
-     */
-    .#{$table-namespace}table--compact,
-    %#{$table-namespace}table--compact {
+  /**
+   * Tables with very tightly packed cells.
+   */
+  .#{$table-namespace}table--compact,
+  %#{$table-namespace}table--compact {
 
-      th,
-      td {
-        padding: $table-padding--compact;
-      }
-
-    }
-
-  }
-
-
-  @if ($enable-table--cosy == true) {
-
-    /**
-     * Lightly packed cells.
-     */
-    .#{$table-namespace}table--cosy,
-    %#{$table-namespace}table--cosy {
-
-      th,
-      td {
-        padding: $table-padding--cosy;
-      }
-
-    }
-
-  }
-
-
-  @if ($enable-table--comfy == true) {
-
-    /**
-     * Tables with very widely padded cells.
-     */
-    .#{$table-namespace}table--comfy,
-    %#{$table-namespace}table--comfy {
-
-      th,
-      td {
-        padding: $table-padding--comfy;
-      }
-
-    }
-
-  }
-
-
-  @if ($enable-table--cells == true) {
-
-    /**
-     * Add borders around a `table`.
-     */
-    .#{$table-namespace}table--cells,
-    %#{$table-namespace}table--cells {
-
-      th,
-      td {
-        border: $table-border-width $table-border-style $table-border-color;
-      }
-
-    }
-
-  }
-
-
-  @if ($enable-table--rows == true) {
-
-    /**
-     * Add borders only to `table`’s rows.
-     */
-    .#{$table-namespace}table--rows,
-    %#{$table-namespace}table--rows {
-
-      &,
-      th,
-      td {
-        border: 0 $table-border-style $table-border-color;
-      }
-
-    }
-
-    .#{$table-namespace}table--rows,
-    %#{$table-namespace}table--rows {
-      border-top-width: $table-border-width;
-
-      th,
-      td {
-        border-bottom-width: $table-border-width;
-      }
-    }
-
-  }
-
-
-  @if ($enable-table--columns == true) {
-
-    /**
-     * Add borders only to `table`’s columns.
-     */
-    .#{$table-namespace}table--columns,
-    %#{$table-namespace}table--columns {
-
-      &,
-      th,
-      td {
-        border: 0 $table-border-style $table-border-color;
-      }
-    }
-
-    .#{$table-namespace}table--columns,
-    %#{$table-namespace}table--columns {
-      border-left-width: $table-border-width;
-
-      th,
-      td {
-        border-right-width: $table-border-width;
-      }
+    th,
+    td {
+      padding: $table-padding--compact;
     }
 
   }
@@ -195,9 +78,112 @@ $enable-table--columns:              false !default;
 }
 
 
+@if ($enable-table--cosy == true) {
+
+  /**
+   * Lightly packed cells.
+   */
+  .#{$table-namespace}table--cosy,
+  %#{$table-namespace}table--cosy {
+
+    th,
+    td {
+      padding: $table-padding--cosy;
+    }
+
+  }
+
+}
 
 
-//export them
-@if $import-object-tables == true{
-  @include import-object-tables;
+@if ($enable-table--comfy == true) {
+
+  /**
+   * Tables with very widely padded cells.
+   */
+  .#{$table-namespace}table--comfy,
+  %#{$table-namespace}table--comfy {
+
+    th,
+    td {
+      padding: $table-padding--comfy;
+    }
+
+  }
+
+}
+
+
+@if ($enable-table--cells == true) {
+
+  /**
+   * Add borders around a `table`.
+   */
+  .#{$table-namespace}table--cells,
+  %#{$table-namespace}table--cells {
+
+    th,
+    td {
+      border: $table-border-width $table-border-style $table-border-color;
+    }
+
+  }
+
+}
+
+
+@if ($enable-table--rows == true) {
+
+  /**
+   * Add borders only to `table`’s rows.
+   */
+  .#{$table-namespace}table--rows,
+  %#{$table-namespace}table--rows {
+
+    &,
+    th,
+    td {
+      border: 0 $table-border-style $table-border-color;
+    }
+
+  }
+
+  .#{$table-namespace}table--rows,
+  %#{$table-namespace}table--rows {
+    border-top-width: $table-border-width;
+
+    th,
+    td {
+      border-bottom-width: $table-border-width;
+    }
+  }
+
+}
+
+
+@if ($enable-table--columns == true) {
+
+  /**
+   * Add borders only to `table`’s columns.
+   */
+  .#{$table-namespace}table--columns,
+  %#{$table-namespace}table--columns {
+
+    &,
+    th,
+    td {
+      border: 0 $table-border-style $table-border-color;
+    }
+  }
+
+  .#{$table-namespace}table--columns,
+  %#{$table-namespace}table--columns {
+    border-left-width: $table-border-width;
+
+    th,
+    td {
+      border-right-width: $table-border-width;
+    }
+  }
+
 }

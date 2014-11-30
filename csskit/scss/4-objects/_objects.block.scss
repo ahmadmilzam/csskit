@@ -16,8 +16,6 @@ $imported-default-settings: false !default;
 }
 
 
-$import-object-block:                false !default;
-
 $block-namespace:                    $namespace !default;
 
 $block-gutter:                       $base-spacing-unit !default;
@@ -34,133 +32,122 @@ $enable-block--huge:                 false !default;
 $enable-block--center:               false !default;
 $enable-block--right:                false !default;
 
-@mixin import-object-block {
+
+/**
+ * Stacked image-with-text object. A simple abstraction to cover a very commonly
+ * occurring design pattern.
+ */
+.#{$block-namespace}block,
+%#{$block-namespace}block {
+  display: block;
+}
+
 
   /**
-   * Stacked image-with-text object. A simple abstraction to cover a very commonly
-   * occurring design pattern.
+   * 1. Eliminate whitespace around images.
    */
-  .#{$block-namespace}block,
-  %#{$block-namespace}block {
-    display: block;
+  .#{$block-namespace}block__img,
+  %#{$block-namespace}block__img {
+    vertical-align: middle; /* [1] */
+    margin-bottom: $block-gutter;
+
+    @if ($enable-block--flush == true) {
+
+      /**
+       * No space between the image and the text content.
+       */
+      .#{$block-namespace}block--flush > &,
+      %#{$block-namespace}block--flush > & {
+        margin-bottom: 0;
+      }
+
+    }
+
+    @if ($enable-block--tiny == true) {
+
+      /**
+       * Tiny space between the image and the text content.
+       */
+      .#{$block-namespace}block--tiny > &,
+      %#{$block-namespace}block--tiny > & {
+        margin-bottom: $block-gutter--tiny;
+      }
+
+    }
+
+    @if ($enable-block--small == true) {
+
+      /**
+       * Small space between the image and the text content.
+       */
+      .#{$block-namespace}block--small > &,
+      %#{$block-namespace}block--small > & {
+        margin-bottom: $block-gutter--small
+      }
+
+    }
+
+    @if ($enable-block--large == true) {
+
+      /**
+       * Large space between the image and the text content.
+       */
+      .#{$block-namespace}block--large > &,
+      %#{$block-namespace}block--large > & {
+        margin-bottom: $block-gutter--large;
+      }
+
+    }
+
+    @if ($enable-block--huge == true) {
+
+      /**
+       * Huge space between the image and the text content.
+       */
+      .#{$block-namespace}block--huge > &,
+      %#{$block-namespace}block--huge > & {
+        margin-bottom: $block-gutter--huge;
+      }
+
+    }
   }
 
 
-    /**
-     * 1. Eliminate whitespace around images.
-     */
-    .#{$block-namespace}block__img,
-    %#{$block-namespace}block__img {
-      vertical-align: middle; /* [1] */
-      margin-bottom: $block-gutter;
-
-      @if ($enable-block--flush == true) {
-
-        /**
-         * No space between the image and the text content.
-         */
-        .#{$block-namespace}block--flush > &,
-        %#{$block-namespace}block--flush > & {
-          margin-bottom: 0;
-        }
-
-      }
-
-      @if ($enable-block--tiny == true) {
-
-        /**
-         * Tiny space between the image and the text content.
-         */
-        .#{$block-namespace}block--tiny > &,
-        %#{$block-namespace}block--tiny > & {
-          margin-bottom: $block-gutter--tiny;
-        }
-
-      }
-
-      @if ($enable-block--small == true) {
-
-        /**
-         * Small space between the image and the text content.
-         */
-        .#{$block-namespace}block--small > &,
-        %#{$block-namespace}block--small > & {
-          margin-bottom: $block-gutter--small
-        }
-
-      }
-
-      @if ($enable-block--large == true) {
-
-        /**
-         * Large space between the image and the text content.
-         */
-        .#{$block-namespace}block--large > &,
-        %#{$block-namespace}block--large > & {
-          margin-bottom: $block-gutter--large;
-        }
-
-      }
-
-      @if ($enable-block--huge == true) {
-
-        /**
-         * Huge space between the image and the text content.
-         */
-        .#{$block-namespace}block--huge > &,
-        %#{$block-namespace}block--huge > & {
-          margin-bottom: $block-gutter--huge;
-        }
-
-      }
-    }
 
 
 
-
-
-    /**
-     * Text-content.
-     */
-    .#{$block-namespace}block__body,
-    %#{$block-namespace}block__body {
-        display: block;
-    }
-
-
-
-
-
-  @if ($enable-block--huge == true) {
-
-    /**
-     * Right-aligned blocks.
-     */
-    .#{$block-namespace}block--right,
-    %#{$block-namespace}block--right {
-      text-align: right;
-    }
-
+  /**
+   * Text-content.
+   */
+  .#{$block-namespace}block__body,
+  %#{$block-namespace}block__body {
+      display: block;
   }
 
-  @if ($enable-block--center == true) {
 
-    /**
-     * Center-aligned blocks.
-     */
-    .#{$block-namespace}block--center,
-    %#{$block-namespace}block--center {
-      text-align: center;
-    }
 
+
+
+@if ($enable-block--huge == true) {
+
+  /**
+   * Right-aligned blocks.
+   */
+  .#{$block-namespace}block--right,
+  %#{$block-namespace}block--right {
+    text-align: right;
   }
 
 }
 
+@if ($enable-block--center == true) {
 
+  /**
+   * Center-aligned blocks.
+   */
+  .#{$block-namespace}block--center,
+  %#{$block-namespace}block--center {
+    text-align: center;
+  }
 
-
-//export them
-@if $import-object-block == true{
-  @include import-object-block;
 }

@@ -20,8 +20,6 @@ $imported-module-settings: false !default;
 }
 
 
-$import-object-list-ui:              false !default;
-
 $list-ui-namespace:                  $namespace !default;
 
 $list-ui-padding:                    $base-spacing-unit !default;
@@ -40,108 +38,96 @@ $enable-list-ui--large:              false !default;
 $enable-list-ui--huge:               false !default;
 
 
-@mixin import-object-list-ui{
+.#{$list-ui-namespace}list-ui,
+%#{$list-ui-namespace}list-ui,
+.#{$list-ui-namespace}list-ui__item,
+%#{$list-ui-namespace}list-ui__item {
+  border: 0 $list-ui-border-style $list-ui-border-color;
+}
 
-  .#{$list-ui-namespace}list-ui,
-  %#{$list-ui-namespace}list-ui,
+.#{$list-ui-namespace}list-ui,
+%#{$list-ui-namespace}list-ui {
+  margin:  0;
+  padding: 0;
+  list-style: none;
+  border-top-width: $list-ui-border-width;
+
+  > li {
+    @extend %#{$list-ui-namespace}list-ui__item;
+  }
+}
+
   .#{$list-ui-namespace}list-ui__item,
   %#{$list-ui-namespace}list-ui__item {
-    border: 0 $list-ui-border-style $list-ui-border-color;
-  }
-
-  .#{$list-ui-namespace}list-ui,
-  %#{$list-ui-namespace}list-ui {
-    margin:  0;
-    padding: 0;
-    list-style: none;
-    border-top-width: $list-ui-border-width;
-
-    > li {
-      @extend %#{$list-ui-namespace}list-ui__item;
-    }
-  }
-
-    .#{$list-ui-namespace}list-ui__item,
-    %#{$list-ui-namespace}list-ui__item {
-      padding: $list-ui-padding;
-      border-bottom-width: $list-ui-border-width;
-    }
-
-
-  @if ($enable-list-ui--tiny == true) {
-
-    /**
-     * Tiny list-uis.
-     */
-    .#{$list-ui-namespace}list-ui--tiny,
-    %#{$list-ui-namespace}list-ui--tiny {
-
-      > .#{$list-ui-namespace}list-ui__item,
-      > %#{$list-ui-namespace}list-ui__item {
-          padding: $list-ui-padding--tiny;
-      }
-
-    }
-
-  }
-
-  @if ($enable-list-ui--small == true) {
-
-    /**
-     * Small list-uis.
-     */
-    .#{$list-ui-namespace}list-ui--small,
-    %#{$list-ui-namespace}list-ui--small {
-
-      > .#{$list-ui-namespace}list-ui__item,
-      > %#{$list-ui-namespace}list-ui__item {
-        padding: $list-ui-padding--small;
-      }
-
-    }
+    padding: $list-ui-padding;
+    border-bottom-width: $list-ui-border-width;
   }
 
 
-  @if ($enable-list-ui--large == true) {
+@if ($enable-list-ui--tiny == true) {
 
-    /**
-     * Large list-uis.
-     */
-    .#{$list-ui-namespace}list-ui--large,
-    %#{$list-ui-namespace}list-ui--large {
+  /**
+   * Tiny list-uis.
+   */
+  .#{$list-ui-namespace}list-ui--tiny,
+  %#{$list-ui-namespace}list-ui--tiny {
 
-      > .#{$list-ui-namespace}list-ui__item,
-      > %#{$list-ui-namespace}list-ui__item {
-        padding: $list-ui-padding--large;
-      }
-
-    }
-
-  }
-
-  @if ($enable-list-ui--huge == true) {
-
-    /**
-     * Huge list-uis.
-     */
-    .#{$list-ui-namespace}list-ui--huge,
-    %#{$list-ui-namespace}list-ui--huge {
-
-      > .#{$list-ui-namespace}list-ui__item,
-      > %#{$list-ui-namespace}list-ui__item {
-        padding: $list-ui-padding--huge;
-      }
-
+    > .#{$list-ui-namespace}list-ui__item,
+    > %#{$list-ui-namespace}list-ui__item {
+        padding: $list-ui-padding--tiny;
     }
 
   }
 
 }
 
+@if ($enable-list-ui--small == true) {
+
+  /**
+   * Small list-uis.
+   */
+  .#{$list-ui-namespace}list-ui--small,
+  %#{$list-ui-namespace}list-ui--small {
+
+    > .#{$list-ui-namespace}list-ui__item,
+    > %#{$list-ui-namespace}list-ui__item {
+      padding: $list-ui-padding--small;
+    }
+
+  }
+}
 
 
+@if ($enable-list-ui--large == true) {
 
-//export them
-@if $import-object-list-ui == true{
-  @include import-object-list-ui;
+  /**
+   * Large list-uis.
+   */
+  .#{$list-ui-namespace}list-ui--large,
+  %#{$list-ui-namespace}list-ui--large {
+
+    > .#{$list-ui-namespace}list-ui__item,
+    > %#{$list-ui-namespace}list-ui__item {
+      padding: $list-ui-padding--large;
+    }
+
+  }
+
+}
+
+@if ($enable-list-ui--huge == true) {
+
+  /**
+   * Huge list-uis.
+   */
+  .#{$list-ui-namespace}list-ui--huge,
+  %#{$list-ui-namespace}list-ui--huge {
+
+    > .#{$list-ui-namespace}list-ui__item,
+    > %#{$list-ui-namespace}list-ui__item {
+      padding: $list-ui-padding--huge;
+    }
+
+  }
+
 }

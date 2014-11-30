@@ -1,28 +1,20 @@
 /* ==========================================================================
-   MODULES SETTINGS
+   BASE SETTINGS
    ========================================================================== */
 /**
  *
- * This file contain all available feature in csskit;
+ * This file contain all available base settings in csskit;
  * By default, csskit disable all feature, so that you can get
  * as little as you need.
- *
- * If you want to enable some OBJECT feture or modifier.
- * All you have to do is unncomment these variables.
- * And the framework will import them to your compiled css.
  */
 
 
-/*
-   BASE PAGE
-   ========================================================================== */
-$import-base-page: true;
+
 
 
 /*
    BASE HEADINGS
    ========================================================================== */
-$import-base-headings: true;
 
 // $heading-size-1:       36px;
 // $heading-size-2:       30px;
@@ -39,7 +31,6 @@ $import-base-headings: true;
 /*
    BASE PARAGRAPHS
    ========================================================================== */
-$import-base-paragraphs: true;
 
 // $lead-size:   1.250;
 
@@ -48,7 +39,6 @@ $import-base-paragraphs: true;
 /*
    BASE LINKS
    ========================================================================== */
-$import-base-links: true;
 
 // $anchor-font-color: $color-info;
 // $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
@@ -56,24 +46,10 @@ $import-base-links: true;
 // $anchor-text-decoration-hover: none;
 
 
-/*
-   IMAGES
-   ========================================================================== */
-$import-base-images: true;
-
-
-
-/*
-   LISTS
-   ========================================================================== */
-$import-base-lists: true;
-
-
 
 /*
    FORMS
    ========================================================================== */
-$import-base-forms: true;
 
 // $form-font-size:                        $base-font-size;
 // $form-content-bg:                       darken(#fff, 2%);
@@ -92,7 +68,6 @@ $import-base-forms: true;
 /*
    BLOCKQUOTE
    ========================================================================== */
-$import-base-blockquote: true;
 
 // $blockquote-font-size: rem-calc(18);
 // $blockquote-footer-font-size: 80%;
@@ -105,7 +80,6 @@ $import-base-blockquote: true;
 /*
    HR
    ========================================================================== */
-$import-base-hr: true;
 
 // $hr-border-width:  1px;
 // $hr-border-style:  solid;

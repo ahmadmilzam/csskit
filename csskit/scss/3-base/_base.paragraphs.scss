@@ -12,8 +12,6 @@ $imported-default-settings: false !default;
 }
 
 
-$import-base-paragraphs: false !default;
-
 $lead-size:   1.250 !default;
 
 
@@ -23,23 +21,12 @@ $lead-size:   1.250 !default;
  *
  * Predefine the variables below in order to alter and enable specific features.
  */
-@mixin import-base-paragraphs {
 
-  p{
-    margin-bottom: $base-spacing-unit;
-  }
-
-  .#{$namespace}lead,
-  %#{$namespace}lead {
-    @include font-size($base-font-size * $lead-size);
-  }
-
+p{
+  margin-bottom: $base-spacing-unit;
 }
 
-
-
-
-//export them
-@if $import-base-paragraphs == true{
-  @include import-base-paragraphs;
+.#{$namespace}lead,
+%#{$namespace}lead {
+  @include font-size($base-font-size * $lead-size);
 }

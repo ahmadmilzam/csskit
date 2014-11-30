@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MODULES SETTINGS
+   OBJECTS SETTINGS
    ========================================================================== */
 /**
  *
@@ -18,7 +18,6 @@
 /*
    OBJECT BLOCK
    ========================================================================== */
-$import-object-block:                true;
 
 $block-namespace:                    $namespace;
 
@@ -42,7 +41,6 @@ $enable-block--right:                true;
 /*
    OBJECT BOX
    ========================================================================== */
-$import-object-box:                  true;
 
 $box-namespace:                      $namespace;
 
@@ -71,7 +69,6 @@ $enable-box--info:                   true;
 /*
    OBJECT BUTTONS
    ========================================================================== */
-$import-object-btn:                  true;
 
 $btn-namespace:                      $namespace;
 
@@ -102,7 +99,6 @@ $enable-button--secondary:           true;
 /*
    OBJECT FLAG
    ========================================================================== */
-$import-object-flag:                 true;
 
 $flag-namespace:                     $namespace;
 
@@ -129,7 +125,6 @@ $flag-collapse-at:                   upper-bound($small-range);
 /*
    OBJECT LIST BLOCK
    ========================================================================== */
-$import-object-list-block:           true;
 
 $list-block-namespace:               $namespace;
 
@@ -150,7 +145,6 @@ $enable-list-block--huge:            true;
 /*
    OBJECT LIST DULL
    ========================================================================== */
-$import-object-list-dull:            true;
 
 $list-dull-namespace:                $namespace;
 
@@ -160,7 +154,6 @@ $list-dull-namespace:                $namespace;
 /*
    OBJECT LIST INLINE
    ========================================================================== */
-$import-object-list-inline:          true;
 
 $list-inline-namespace:              $namespace;
 
@@ -173,7 +166,6 @@ $list-inline-delimit-character:      ",\00A0";
 /*
    OBJECT LIST UI
    ========================================================================== */
-$import-object-list-ui:              true;
 
 $list-ui-namespace:                  $namespace;
 
@@ -198,7 +190,6 @@ $enable-list-ui--huge:               true;
 /*
    OBJECT MEDIA
    ========================================================================== */
-$import-object-media:                true;
 
 $media-namespace:                    $namespace;
 
@@ -223,7 +214,6 @@ $enable-media--responsive:           true;
 /*
    OBJECT PACK
    ========================================================================== */
-$import-object-pack:                 true;
 
 $pack-namespace:                     $namespace;
 
@@ -248,7 +238,6 @@ $enable-pack--bottom:                true;
 /*
    OBJECT TABLES
    ========================================================================== */
-$import-object-tables:               true;
 
 $table-namespace:                    $namespace;
 
@@ -274,6 +263,5 @@ $enable-table--columns:              true;
 /*
    OBJECT TABS
    ========================================================================== */
-$import-object-tabs:                 true;
 
 $tabs-namespace:                     $namespace;

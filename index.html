@@ -16,6 +16,68 @@
     </div>
   </header>
 
+  <div class="layout mb+">
+    <div class="layout__item">
+      <h1>What is CSSKit?</h1>
+      <p class="lead">
+        CSSKit is a powerful, Sass-based, BEM, OOCSS framework designed with scalability
+        and performance in mind. It has a tiny footprint (the [Starter
+        Kit]) comes in at 1KB, gzipped), and
+        can be <strong>scaled as much</strong> or <strong>as little as you need</strong>.
+      </p>
+      <p>
+        CSSKit provides a solid architectural foundation upon which you can build any
+        size or style of website or app.
+        CSSKit is what you make of it-it helps you get started, and then gets out of your way.
+      </p>
+      <p>
+        CSSKit is a framework in its truest sense. It is not a UI Toolkit, with
+        opinionated views on design; it is not one giant download, with hundreds of
+        unnecessary lines of CSS; it is not a 1001-UI-components-plus-the-kitchen-sink,
+        with loads of bloated rules. It is a collection of tiny, composable,
+        configurable, interdependent modules that you can piece together how you want
+        to, when you want to. CSSKit's focus is less upon the actual code within it,
+        but upon the principles of a solid, scalable CSS architecture.
+      </p>
+
+      <h2>OFF by default!</h2>
+      <p>
+        In the interests of reducing the amount of code in your project, all of
+        CSSKit's module-variants are turned off by default. This gives CSSKit two
+        layers of reduced bloat:
+      </p>
+
+      <ol>
+        <li>
+          <strong>You only include the specific files you need</strong>, so you’re immediately
+          starting with a very trimmed down codebase.
+        </li>
+        <li>
+          <strong>Any variants are switched off by default</strong>, so if you just want buttons,
+           you don't get every different size and permutation of them unless you
+           explicitly tell inuitcss you want them.
+        </li>
+      </ol>
+
+      <p>
+        To turn features on, just set their switches to true before you
+        <code>@import</code> the file:
+        <pre>
+          <code>
+            $enable-btn--full:    true;
+            $enable-btn--large:   true;
+            @import "bower_components/objects/objects.buttons";
+          </code>
+        </pre>
+      </p>
+
+
+      <p class="lead">
+        Say goodbye to bloated old UI Toolkits and opinionated, monolithic libraries.
+      </p>
+    </div>
+  </div>
+
   <!-- components - grid sample -->
   <div class="layout section mb+">
     <div class="layout__item">

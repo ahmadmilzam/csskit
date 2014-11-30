@@ -86,7 +86,7 @@ $imported-default-settings: false !default;
  *
  *
  */
-.base-font-size{font-size:$base-font-size;}
+
 @function rem-calc($values, $base-value: $base-font-size) {
   $max: length($values);
 
