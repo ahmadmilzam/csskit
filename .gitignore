@@ -1,4 +1,9 @@
 *.DS_Store
+*.zip
+*.rar
+*.png
+*.jpg
+*.gif
 *.sublime-*
 .sass-cache/*
 dist

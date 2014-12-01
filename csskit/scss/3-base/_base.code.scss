@@ -1,0 +1,64 @@
+/* ==========================================================================
+   CODE
+   ========================================================================== */
+
+
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included a default settings file?"
+}
+
+code,
+kbd,
+pre,
+samp {
+  font-family: $base-font-family-monospace;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: $color-alert;
+  background-color: darken($base-background-color, 2%);
+  border-radius: $base-radius;
+}
+kbd {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: $base-background-color;
+  background-color: $base-text-color;
+  border-radius: $base-radius;
+  @include box-shadow(0px, -1px, 0, "inset");
+}
+kbd kbd {
+  padding: 0;
+  font-size: 100%;
+  font-weight: bold;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+pre {
+  display: block;
+  padding: half($base-spacing-unit);
+  margin: 0 0 half($base-spacing-unit);
+  font-size: 13px;
+  line-height: 1.42857143;
+  color: $base-text-color;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: darken($base-background-color, 2%);
+  border: 1px solid #ccc;
+  border-radius: $base-radius;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit;
+  white-space: pre-wrap;
+  background-color: transparent;
+  border-radius: 0;
+}

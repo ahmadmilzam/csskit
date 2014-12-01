@@ -1,6 +1,7 @@
 .section{
   @include box-shadow(0px);
   padding: rem-calc($base-spacing-unit/2);
+  border-radius: $base-radius;
 }
 
   .section__title{

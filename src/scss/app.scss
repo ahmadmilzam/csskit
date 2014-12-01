@@ -88,10 +88,11 @@
  * [3] Paragraphs
  * [4] Links
  * [5] Images
- * [5] List
- * [6] Hr
- * [7] Blockquote
- * [8] Forms
+ * [6] List
+ * [7] Hr
+ * [8] Blockquote
+ * [9] Forms
+ * [10] Code
  */
 //list of variable to change base settings
 @import "override-base";
@@ -123,6 +124,9 @@
 
 /* [9] */
 @import "3-base/base.forms";
+
+/* [10] */
+@import "3-base/base.code";
 
 
 

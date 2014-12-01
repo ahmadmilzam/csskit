@@ -14,7 +14,7 @@ $imported-default-settings: false !default;
 
 
 $form-font-size:                        $base-font-size !default;
-$form-content-bg:                       darken(#fff, 2%) !default;
+$form-content-bg:                       darken($base-background-color, 2%) !default;
 $form-border-width:                     1px !default;
 $form-border-color:                     #ddd !default;
 $form-border-color-hover:               darken($form-border-color, 5%) !default;
