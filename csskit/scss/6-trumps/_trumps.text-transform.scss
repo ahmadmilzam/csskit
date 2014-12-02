@@ -1,18 +1,6 @@
 /* ==========================================================================
-   Miscellaneous Helper Classes
+   Text Transform Helper Classes
    ========================================================================== */
-
-
-// Generates Miscellaneous classes
-
-.left,
-%left{ float: left !important; }
-
-.right,
-%right{ float: right !important; }
-
-.hide,
-%hide{ display: none; }
 
 .uppercase,
 %uppercase{ text-transform: uppercase; }

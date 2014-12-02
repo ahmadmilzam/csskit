@@ -1,0 +1,197 @@
+/* ==========================================================================
+   NAV
+   ========================================================================== */
+
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+$imported-module-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings and module settings files?"
+}
+
+
+$nav-namespace:                   $namespace !default;
+
+$nav--keyword-delimit-character:  "\002C" "\00A0" !default;
+
+$enable-nav--block:               false !default;
+$enable-nav--stacked:             false !default;
+$enable-nav--banner:              false !default;
+$enable-nav--fit:                 false !default;
+$enable-nav--keyword:             false !default;
+
+/**
+ * Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+ * When used on an `ol` or `ul`, this class throws the list into horizontal mode
+ * e.g.:
+ *
+   <ul class=nav>
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Demo: jsfiddle.net/inuitcss/Vnph4
+ *
+ */
+.#{$nav-namespace}nav,
+%#{$nav-namespace}nav {
+  list-style:none;
+  margin-left:0;
+  @extend %clearfix;
+
+  > li{
+    &,
+    > a{
+      display:inline-block;
+    }
+  }
+}
+
+
+/**
+ * `.nav--stacked` extends `.nav` and throws the list into vertical mode, e.g.:
+ *
+    <ul class="nav  nav--stacked">
+      <li><a href=#>Home</a></li>
+      <li><a href=#>About</a></li>
+      <li><a href=#>Portfolio</a></li>
+      <li><a href=#>Contact</a></li>
+    </ul>
+ *
+ */
+@if $enable-nav--stacked == true{
+
+  .#{$nav-namespace}nav--stacked,
+  %#{$nav-namespace}nav--stacked{
+
+    > li{
+      display:list-item;
+
+      > a{
+        display:block;
+      }
+    }
+  }
+}
+
+
+/**
+ * `.nav--banner` extends `.nav` and centres the list, e.g.:
+ *
+   <ul class="nav  nav--banner">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+@if $enable-nav--banner == true {
+
+  .#{$nav-namespace}nav--banner,
+  %#{$nav-namespace}nav--banner{
+    text-align:center;
+  }
+
+}
+
+
+/**
+ * Give nav links a big, blocky hit area. Extends `.nav`, e.g.:
+ *
+   <ul class="nav  nav--block">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ */
+@if $enable-nav--block == true {
+
+  .#{$nav-namespace}nav--block,
+  %#{$nav-namespace}nav--block{
+    line-height:1;
+
+    /**
+     * Remove whitespace caused by `inline-block`.
+     */
+    letter-spacing:-0.31em;
+    word-spacing:-0.43em;
+    white-space:nowrap;
+
+    > li{
+      letter-spacing:normal;
+      word-spacing:normal;
+
+      > a{
+        padding: half($base-spacing-unit);
+      }
+    }
+  }
+
+}
+
+
+/**
+ * Force a nav to occupy 100% of the available width of its parent. Extends
+ * `.nav`, e.g.:
+ *
+   <ul class="nav  nav--fit">
+       <li><a href=#>Home</a></li>
+       <li><a href=#>About</a></li>
+       <li><a href=#>Portfolio</a></li>
+       <li><a href=#>Contact</a></li>
+   </ul>
+ *
+ * Thanks to @pimpl for this idea!
+ */
+@if $enable-nav--fit == true {
+
+  .#{$nav-namespace}nav--fit,
+  %#{$nav-namespace}nav--fit{
+    display:table;
+    width:100%;
+
+    > li{
+      display:table-cell;
+
+      > a{
+        display:block;
+      }
+    }
+  }
+
+}
+
+
+/**
+ * Make a list of keywords. Extends `.nav`, e.g.:
+ *
+   `<ul class="nav  nav--keywords>`
+ *
+ */
+@if $enable-nav--keyword == true {
+
+  .#{$nav-namespace}nav--keywords,
+  %#{$nav-namespace}nav--keywords{
+
+    > li{
+
+      &:after{
+        content: $nav--keyword-delimit-character;
+      }
+
+      &:last-child:after{
+          display:none;
+      }
+    }
+  }
+
+}

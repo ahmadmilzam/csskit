@@ -46,7 +46,6 @@ $enable-box--info:                   false !default;
   @extend %clearfix;
   display: block; /* [1] */
   padding: $box-padding;
-  background-color: $color-secondary;
 
   > :last-child {
     margin-bottom: 0;
@@ -113,6 +112,17 @@ $enable-box--info:                   false !default;
     color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
   }
 }/* close box--info */
+
+@if ($enable-box--secondary == true) {
+  .#{$box-namespace}box--secondary,
+  %#{$box-namespace}box--secondary {
+    background-color: $color-secondary;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-secondary);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--secondary */
 
 
 @if ($enable-box--flush == true) {

@@ -14,7 +14,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'dist/css/app.min.css': 'src/scss/app.scss'
+          'dist/css/app.min.css': 'src/scss/app.scss',
         }
       },
       dev:{
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
           style: 'expanded'
         },
         files: {
-          'dist/css/app.css': 'src/scss/app.scss'
+          'dist/css/app.css': 'src/scss/app.scss',
         }
       }
     },

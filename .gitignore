@@ -13,6 +13,7 @@ vendor
 pkg
 lib
 libs
+example
 docs/*
 test/
 tests/

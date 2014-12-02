@@ -188,6 +188,23 @@
 
 
 /*
+   OBJECT NAV
+   ========================================================================== */
+
+//$nav-namespace:                   $namespace;
+
+//$nav--keyword-delimit-character:  "\002C" "\00A0";
+
+//$enable-nav--block:               true;
+//$enable-nav--stacked:             true;
+//$enable-nav--banner:              true;
+//$enable-nav--fit:                 true;
+//$enable-nav--keyword:             true;
+
+
+
+
+/*
    OBJECT MEDIA
    ========================================================================== */
 

@@ -349,7 +349,7 @@ $flag-collapse-at:                   720px !default;
 
         /**
          * Disable reversal of content because there is no concept of
-         * ‘reversed’ in a stacked layout.
+         * 'reversed' in a stacked layout.
          */
         direction: ltr;
       }
@@ -370,6 +370,9 @@ $flag-collapse-at:                   720px !default;
         padding-right: 0;
         padding-left:  0;
         margin-bottom: $flag-gutter;
+        > img{
+          max-width: 100%;
+        }
       }
 
       @if ($enable-flag--tiny == true) {

@@ -16,7 +16,8 @@
     </div>
   </header>
 
-  <div class="layout mb+">
+  <!-- intro -->
+  <div class="layout">
     <div class="layout__item">
       <h1>What is CSSKit?</h1>
       <p class="lead">
@@ -77,59 +78,12 @@
       </p>
     </div>
   </div>
-
-  <!-- components - grid sample -->
-  <div class="layout section mb+">
-    <div class="layout__item">
-      <h2 class="section__title mb+">Components Grid</h2>
-
-      <h3>2 columns layout</h3>
-      <div class="[ layout layout--2col ] mb">
-        <div class="layout__item debug-layout">
-          <h4>Column 1</h4>
-        </div>
-        <div class="layout__item debug-layout">
-          <h4>Column 2</h4>
-        </div>
-      </div>
-
-      <h3>3 columns layout</h3>
-      <div class="[ layout layout--3col ] mb">
-        <div class="layout__item debug-layout">
-          <h4>Column 1</h4>
-        </div>
-        <div class="layout__item debug-layout">
-          <h4>Column 2</h4>
-        </div>
-        <div class="layout__item debug-layout">
-          <h4>Column 3</h4>
-        </div>
-      </div>
-
-      <h3>4 columns layout</h3>
-      <div class="[ layout layout--4col ] mb">
-        <div class="layout__item debug-layout">
-          <h4>Column 1</h4>
-        </div>
-        <div class="layout__item debug-layout">
-          <h4>Column 2</h4>
-        </div>
-        <div class="layout__item debug-layout">
-          <h4>Column 3</h4>
-        </div>
-        <div class="layout__item debug-layout">
-          <h4>Column 4</h4>
-        </div>
-      </div>
-
-    </div>
-  </div>
-  <!-- components - grid sample -->
+  <!-- intro -->
 
   <!-- base - typograph sample -->
-  <div class="layout section mb+">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb+">Base Typograph</h2>
+      <h2 class="layout__heading mb+">Base Typograph</h2>
 
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
@@ -200,9 +154,9 @@
   <!-- base - typograph sample -->
 
   <!-- base - form sample -->
-  <div class="layout section mb+">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb+">Base Form Elements</h2>
+      <h2 class="layout__heading mb+">Base Form Elements</h2>
       <fieldset>
         <h3>Fieldset</h3>
         <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nullam dignissim convallis est. Quisque aliquam. Donec faucibus. Nunc iaculis suscipit dui. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.</p>
@@ -289,10 +243,11 @@
   </div>
   <!-- base - form sample -->
 
-  <!-- object - block -->
-  <div class="layout section mb+">
+  <!-- object - button -->
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb">Object Button</h2>
+      <h2 class="layout__heading mb">Object Button</h2>
+      <p>A simple button object.</p>
 
       <h3 class="mt">Button Default</h3>
       <a class="btn">btn</a>
@@ -322,12 +277,15 @@
       <a class="btn btn--full">btn btn--full</a>
     </div>
   </div>
-  <!-- object - block -->
+  <!-- object - button -->
 
   <!-- object - block -->
-  <div class="layout section mb+">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb">Object Block</h2>
+      <h2 class="layout__heading mb">Object Block</h2>
+      <p>
+        The block object simply stacks an image on top of some text-like content.
+      </p>
 
       <h3>Block Default</h3>
       <div class="block">
@@ -343,13 +301,19 @@
   <!-- object - block -->
 
   <!-- object - box sample -->
-  <div class="layout section mb+">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb+">Object Box</h2>
+      <h2 class="layout__heading mb+">Object Box</h2>
+      <p>The box object simply boxes off content.</p>
+
+      <div class="box text-center">
+        <h6>Box default</h6>
+      </div>
+
       <div class="layout layout--2col">
         <div class="layout__item">
-          <div class="box">
-            <h6>Box default</h6>
+          <div class="box box--secondary">
+            <h6>Box secondary</h6>
           </div>
         </div>
         <div class="layout__item">
@@ -382,10 +346,62 @@
   </div>
   <!-- object - box sample -->
 
-  <!-- object - flag -->
-  <div class="layout section mb+">
+  <!-- object - media -->
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb">Object Flag</h2>
+      <h2 class="layout__heading mb">Object Media</h2>
+      <p>
+        Place any image- and text-like content side-by-side, as per: <br>
+        stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+      </p>
+
+      <h3>Media Default</h3>
+      <div class="[ media ] mb">
+        <div class="media__img">
+          <img src="http://www.fillmurray.com/g/400/300" alt="fillmurray">
+        </div>
+        <div class="media__body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Media Reverse</h3>
+      <div class="[ media media--rev ] mb">
+        <div class="media__img">
+          <img src="http://www.fillmurray.com/g/400/300" alt="fillmurray">
+        </div>
+        <div class="media__body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Media Responsive</h3>
+      <div class="[ media media--responsive ] mb">
+        <div class="media__img">
+          <img src="http://www.fillmurray.com/g/400/300" alt="fillmurray">
+        </div>
+        <div class="media__body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- object - media -->
+
+  <!-- object - flag -->
+  <div class="layout">
+    <div class="layout__item">
+      <h2 class="layout__heading mb">Object Flag</h2>
+
+      <p>
+        The flag object is a design pattern similar to the media object, however it
+        utilises <code>display: table[-cell];</code> to give us control over the vertical
+        alignments of the text and image.
+      </p>
 
       <h3>Flag Default</h3>
       <div class="[ flag ] mb">
@@ -397,6 +413,8 @@
         </div>
       </div>
 
+      <hr>
+
       <h3>Flag Reverse</h3>
       <div class="[ flag flag--rev ] mb">
         <div class="flag__img">
@@ -406,6 +424,8 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
         </div>
       </div>
+
+      <hr>
 
       <h3>Flag Top</h3>
       <div class="[ flag flag--top ] mb">
@@ -417,8 +437,10 @@
         </div>
       </div>
 
+      <hr>
+
       <h3>Flag Bottom</h3>
-      <div class="[ flag flag--bottom ] mb">
+      <div class="[ flag flag--bottom flag--rev ] mb">
         <div class="flag__img">
           <img src="http://www.fillmurray.com/g/400/300" alt="fillmurray">
         </div>
@@ -426,6 +448,8 @@
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
         </div>
       </div>
+
+      <hr>
 
       <h3>Flag Responsive</h3>
       <div class="[ flag flag--responsive ] mb">
@@ -442,11 +466,14 @@
   <!-- object - flag -->
 
   <!-- object - list(s) -->
-  <div class="layout section mb">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb">Object List(s) Family</h2>
+      <h2 class="layout__heading mb">Object List</h2>
 
       <h3>Dull List</h3>
+      <p>
+        The list-dull object simply removes any indents and bullet points from lists.
+      </p>
       <ul class="list-dull mb">
         <li><a href="">List Link 1</a></li>
         <li><a href="">List Link 2</a></li>
@@ -455,7 +482,10 @@
         <li><a href="">List Link 5</a></li>
       </ul>
 
+      <hr>
+
       <h3>Inline List</h3>
+      <p>The list-inline object simply displays a list of items in one line.</p>
       <ul class="list-inline mb">
         <li><a href="">List Link 1</a></li>
         <li><a href="">List Link 2</a></li>
@@ -464,7 +494,34 @@
         <li><a href="">List Link 5</a></li>
       </ul>
 
+      <hr>
+
+      <h3>Inline List Delimited</h3>
+      <p>
+        Comma delimited list to semantically mark up lists of tags, etc.
+        <br>
+        <small>
+          This component requires that you remove the whitespace between LIs.
+          The simplest (and valid) way to achieve this is by omitting the
+          closing <code>li</code> tag.
+        </small>
+      </p>
+
+      <hr>
+
+      <ul class="list-inline list-inline--delimited mb">
+        <li><a href="">List Link 1</a>
+        <li><a href="">List Link 2</a>
+        <li><a href="">List Link 3</a>
+        <li><a href="">List Link 4</a>
+        <li><a href="">List Link 5</a>
+      </ul>
+
+      <hr>
+
       <h3>Block List</h3>
+      <p>The list-block object creates blocky list items out of a <code>ul</code> or <code>ol</code>.</p>
+
       <ul class="list-block mb">
         <li class="debug-layout"><a href="">List Link 1</a></li>
         <li class="debug-layout"><a href="">List Link 2</a></li>
@@ -473,7 +530,12 @@
         <li class="debug-layout"><a href="">List Link 5</a></li>
       </ul>
 
+      <hr>
+
       <h3>UI List</h3>
+      <p>
+        The UI list object creates blocky list items with a keyline separator out of a <code>ul</code> or <code>ol</code>.
+      </p>
       <ul class="list-ui mb">
         <li class="list-ui__item"><a href="">List Link 1</a></li>
         <li class="list-ui__item"><a href="">List Link 2</a></li>
@@ -485,48 +547,93 @@
   </div>
   <!-- object - list(s) -->
 
-  <!-- object - media -->
-  <div class="layout section mb+">
+  <!-- object - Nav -->
+  <div class="layout mb">
     <div class="layout__item">
-      <h2 class="section__title mb">Object Media</h2>
+      <h2 class="layout__heading mb">Object Nav</h2>
 
-      <h3>Media Default</h3>
-      <div class="[ media ] mb">
-        <div class="media__img">
-          <img src="http://www.fillmurray.com/g/400/300" alt="fillmurray">
-        </div>
-        <div class="media__body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
-        </div>
-      </div>
+      <h3>Nav Default</h3>
+      <p>
+        Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
+        <br>
+        When used on an <code>ol</code> or <code>ul</code>, this class throws the list into horizontal mode
+      </p>
+      <ul class="[ nav ] mb">
+        <li><a href=#>Home</a></li>
+        <li><a href=#>About</a></li>
+        <li><a href=#>Portfolio</a></li>
+        <li><a href=#>Contact</a></li>
+      </ul>
 
-      <h3>Media Reverse</h3>
-      <div class="[ media media--rev ] mb">
-        <div class="media__img">
-          <img src="http://www.fillmurray.com/g/400/300" alt="fillmurray">
-        </div>
-        <div class="media__body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
-        </div>
-      </div>
+      <hr>
 
-      <h3>Media Responsive</h3>
-      <div class="[ media media--responsive ] mb">
-        <div class="media__img">
-          <img src="http://www.fillmurray.com/g/400/300" alt="fillmurray">
-        </div>
-        <div class="media__body">
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
-        </div>
-      </div>
+      <h3>Nav Stacked</h3>
+      <p>
+        <code>.nav--stacked</code> extends <code>.nav</code> and throws the list into vertical mode, e.g.:
+      </p>
+      <ul class="[ nav nav--stacked ] mb">
+        <li><a href=#>Home</a></li>
+        <li><a href=#>About</a></li>
+        <li><a href=#>Portfolio</a></li>
+        <li><a href=#>Contact</a></li>
+      </ul>
+
+      <hr>
+
+      <h3>Nav Block</h3>
+      <p>Give nav links a big, blocky hit area.</p>
+      <ul class="[ nav nav--block ] mb">
+        <li><a class="debug-layout" href=#>Home</a></li>
+        <li><a class="debug-layout" href=#>About</a></li>
+        <li><a class="debug-layout" href=#>Portfolio</a></li>
+        <li><a class="debug-layout" href=#>Contact</a></li>
+      </ul>
+
+      <hr>
+
+      <h3>Nav Banner</h3>
+      <p>Make the link's aligment center</p>
+      <ul class="[ nav nav--banner ] mb">
+        <li><a href="">Nav Link 1</a></li>
+        <li><a href="">Nav Link 2</a></li>
+        <li><a href="">Nav Link 3</a></li>
+        <li><a href="">Nav Link 4</a></li>
+        <li><a href="">Nav Link 5</a></li>
+      </ul>
+
+      <hr>
+
+      <h3>Nav Fit</h3>
+      <p>
+        Force a nav to occupy 100% of the available width of its parent.
+      </p>
+      <ul class="[ nav nav--fit ] mb">
+        <li><a href="">List Link 1</a></li>
+        <li><a href="">List Link 2</a></li>
+        <li><a href="">List Link 3</a></li>
+        <li><a href="">List Link 4</a></li>
+        <li><a href="">List Link 5</a></li>
+      </ul>
+
+      <hr>
+
+      <h3>Nav Keyword</h3>
+      <p>Make a list of keywords.</p>
+      <ul class="[ nav nav--keywords ] mb">
+        <li><a href="">post</a></li>
+        <li><a href="">food</a></li>
+        <li><a href="">lifestyle</a></li>
+        <li><a href="">health</a></li>
+        <li><a href="">sport</a></li>
+      </ul>
     </div>
   </div>
-  <!-- object - media -->
+  <!-- object - Nav -->
 
   <!-- object - pack -->
-  <div class="layout section mb+">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb">Object Pack</h2>
+      <h2 class="layout__heading mb">Object Pack</h2>
 
       <h3>Pack Default with height: 400px</h3>
       <div class="pack">
@@ -551,12 +658,12 @@
 
 
   <!-- object - table sample -->
-  <div class="layout section mb+">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb+">Object Table</h2>
+      <h2 class="layout__heading mb+">Object Table</h2>
 
       <h3>Table Fixed</h3>
-      <table class="[ table table--fixed ] mb">
+      <table class="[ table table--fixed ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -582,7 +689,7 @@
       <hr>
 
       <h3>Table Compact</h3>
-      <table class="[ table table--compact ] mb">
+      <table class="[ table table--compact ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -608,7 +715,7 @@
       <hr>
 
       <h3>Table Cosy</h3>
-      <table class="[ table table--cosy ] mb">
+      <table class="[ table table--cosy ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -634,7 +741,7 @@
       <hr>
 
       <h3>Table Comfy</h3>
-      <table class="[ table table--comfy ] mb">
+      <table class="[ table table--comfy ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -660,7 +767,7 @@
       <hr>
 
       <h3>Table Cells</h3>
-      <table class="[ table table--cells ] mb">
+      <table class="[ table table--cells ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -686,7 +793,7 @@
       <hr>
 
       <h3>Table Rows</h3>
-      <table class="[ table table--rows ] mb">
+      <table class="[ table table--rows ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -712,7 +819,7 @@
       <hr>
 
       <h3>Table Columns</h3>
-      <table class="[ table table--columns ] mb">
+      <table class="[ table table--columns ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -738,7 +845,7 @@
       <hr>
 
       <h3>Table Compact + Cells</h3>
-      <table class="[ table table--compact table--cells ] mb">
+      <table class="[ table table--compact table--cells ] mb+">
         <thead>
           <tr>
             <th>Table Head 1</th>
@@ -765,9 +872,10 @@
   <!-- object - table sample -->
 
   <!-- object - tabs -->
-  <div class="layout section mb+">
+  <div class="layout">
     <div class="layout__item">
-      <h2 class="section__title mb">Object Tabs</h2>
+      <h2 class="layout__heading mb">Object Tabs</h2>
+      <p>A simple abstraction for making equal-width navigation tabs.</p>
 
       <h3>Tabs default</h3>
       <ul class="tabs">
@@ -779,6 +887,128 @@
     </div>
   </div>
   <!-- object - tabs -->
+
+  <!-- components - grid sample -->
+  <div class="layout">
+    <div class="layout__item">
+      <h2 class="layout__heading mb+">Components Grid</h2>
+      <p class="lead">
+        In a world of agile development and
+        super-tablet-multi-magic-laptop-phones,
+        the best layouts can't be contained in a
+        single framework or technique.
+        CSS Libraries are a bloated mess of opinions about how to do your job.
+        Why let the table-saw tell you where to put the kitchen?
+        If we can create them ourself?
+      </p>
+      <p>The only component that CSSKit has is Grids Component. But not a bunch of html classes, only collection of mixin to help you create your own grid.</p>
+
+      <h3>2 columns layout example</h3>
+      <pre>
+        <code>
+          .layout{
+            @include grid-row();
+
+            .layout{
+              @include grid-row($container-width, nested);
+            }
+          }
+            .layout__item{
+            @include grid-column($columns:false, $position:true);
+
+            .layout--2col > &amp;{
+              @media #{$large-up}{
+                @include grid-column($columns:6);
+              }
+            }
+        </code>
+      </pre>
+      <h3><small>Output:</small></h3>
+      <div class="[ layout layout--2col ] mb+">
+        <div class="layout__item debug-layout">
+          <h4>Column 1</h4>
+        </div>
+        <div class="layout__item debug-layout">
+          <h4>Column 2</h4>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>3 columns layout example</h3>
+      <pre>
+        <code>
+          .layout{
+            @include grid-row();
+
+            .layout{
+              @include grid-row($container-width, nested);
+            }
+          }
+            .layout__item{
+            @include grid-column($columns:false, $position:true);
+
+            .layout--3col > &amp;{
+              @media #{$large-up}{
+                @include grid-column($columns:4);
+              }
+            }
+        </code>
+      </pre>
+      <h3><small>Output:</small></h3>
+      <div class="[ layout layout--3col ] mb">
+        <div class="layout__item debug-layout">
+          <h4>Column 1</h4>
+        </div>
+        <div class="layout__item debug-layout">
+          <h4>Column 2</h4>
+        </div>
+        <div class="layout__item debug-layout">
+          <h4>Column 3</h4>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>4 columns layout example</h3>
+      <pre>
+        <code>
+          .layout{
+            @include grid-row();
+
+            .layout{
+              @include grid-row($container-width, nested);
+            }
+          }
+            .layout__item{
+            @include grid-column($columns:false, $position:true);
+
+            .layout--3col > &amp;{
+              @media #{$large-up}{
+                @include grid-column($columns:4);
+              }
+            }
+        </code>
+      </pre>
+      <h3><small>Output:</small></h3>
+      <div class="[ layout layout--4col ] mb">
+        <div class="layout__item debug-layout">
+          <h4>Column 1</h4>
+        </div>
+        <div class="layout__item debug-layout">
+          <h4>Column 2</h4>
+        </div>
+        <div class="layout__item debug-layout">
+          <h4>Column 3</h4>
+        </div>
+        <div class="layout__item debug-layout">
+          <h4>Column 4</h4>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- components - grid sample -->
 
 </body>
 </html>

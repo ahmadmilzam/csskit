@@ -2,10 +2,8 @@
    DEFAULTS
    ========================================================================== */
 /**
- *
- * These variables are defaults; they should not be modified or
- * adjusted directly; you should predefine the variables in your own project.
- *
+ * THESE VARIABLES ARE DEFAULT; DO NOT MODIFY OR ADJUST THE VARIABLES DIRECTLY.
+ * YOU SHOULD PREDEFINE THE VARIABLES IN ABOVE FILES
  */
 
 
@@ -64,7 +62,6 @@ $color-info:                            #3498DB !default; // CURIOUS BLUE
 
 /**
  * We use these as default total columns throughout the framework.
- * Ref: http://www.foundation.zurb.com/
  */
 $columns-total:                         12 !default;
 $columns-gutter:                        24px !default;
