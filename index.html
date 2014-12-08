@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, minimum-scale=1.0">
-  <title>Starter Kit</title>
+  <title>CSSKit</title>
   <link rel="stylesheet" href="dist/css/app.css">
 </head>
 <body>
@@ -17,13 +17,13 @@
   </header>
 
   <!-- intro -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h1>What is CSSKit?</h1>
       <p class="lead">
-        CSSKit is a powerful, Sass-based, BEM, OOCSS framework designed with scalability
-        and performance in mind. It has a tiny footprint (the [Starter
-        Kit]) comes in at 1KB, gzipped), and
+        CSSKit is a powerful, <a href="http://sass-lang.com/">Sass-based</a>, <a href="http://bem.info/">BEM</a>, <a href="https://github.com/stubbornella/oocss/wiki">OOCSS</a> framework designed with scalability
+        and performance in mind. It has a tiny footprint (the Starter
+        Kit comes in at 1KB, gzipped), and
         can be <strong>scaled as much</strong> or <strong>as little as you need</strong>.
       </p>
       <p>
@@ -81,9 +81,13 @@
   <!-- intro -->
 
   <!-- base - typograph sample -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb+">Base Typograph</h2>
+
+      <h6 class="giga">This is Giga size</h6>
+      <h6 class="mega">This is Mega size</h6>
+      <h6 class="kilo">This is kilo size</h6>
 
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
@@ -154,7 +158,7 @@
   <!-- base - typograph sample -->
 
   <!-- base - form sample -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb+">Base Form Elements</h2>
       <fieldset>
@@ -236,6 +240,7 @@
             <input class="btn btn--info" type="submit" value="Submit">
             <input class="btn btn--success" type="submit" value="Submit">
             <input class="btn btn--secondary" type="submit" value="Submit">
+            <input class="btn btn--border" type="submit" value="Submit">
           </p>
         </form>
       </fieldset>
@@ -244,7 +249,7 @@
   <!-- base - form sample -->
 
   <!-- object - button -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object Button</h2>
       <p>A simple button object.</p>
@@ -280,7 +285,7 @@
   <!-- object - button -->
 
   <!-- object - block -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object Block</h2>
       <p>
@@ -301,7 +306,7 @@
   <!-- object - block -->
 
   <!-- object - box sample -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb+">Object Box</h2>
       <p>The box object simply boxes off content.</p>
@@ -347,7 +352,7 @@
   <!-- object - box sample -->
 
   <!-- object - media -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object Media</h2>
       <p>
@@ -393,7 +398,7 @@
   <!-- object - media -->
 
   <!-- object - flag -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object Flag</h2>
 
@@ -466,7 +471,7 @@
   <!-- object - flag -->
 
   <!-- object - list(s) -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object List</h2>
 
@@ -548,7 +553,7 @@
   <!-- object - list(s) -->
 
   <!-- object - Nav -->
-  <div class="layout mb">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object Nav</h2>
 
@@ -631,7 +636,7 @@
   <!-- object - Nav -->
 
   <!-- object - pack -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object Pack</h2>
 
@@ -658,7 +663,7 @@
 
 
   <!-- object - table sample -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb+">Object Table</h2>
 
@@ -872,7 +877,7 @@
   <!-- object - table sample -->
 
   <!-- object - tabs -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb">Object Tabs</h2>
       <p>A simple abstraction for making equal-width navigation tabs.</p>
@@ -889,7 +894,7 @@
   <!-- object - tabs -->
 
   <!-- components - grid sample -->
-  <div class="layout">
+  <div class="layout mb+">
     <div class="layout__item">
       <h2 class="layout__heading mb+">Components Grid</h2>
       <p class="lead">
@@ -906,30 +911,26 @@
       <h3>2 columns layout example</h3>
       <pre>
         <code>
-          .layout{
-            @include grid-row();
-
-            .layout{
-              @include grid-row($container-width, nested);
+          .layout__aside{
+            @media #{$large-up}{
+              @include grid-column(4);
             }
           }
-            .layout__item{
-            @include grid-column($columns:false, $position:true);
 
-            .layout--2col > &amp;{
-              @media #{$large-up}{
-                @include grid-column($columns:6);
-              }
+          .layout__main{
+            @media #{$large-up}{
+              @include grid-column(8, true);
             }
+          }
         </code>
       </pre>
       <h3><small>Output:</small></h3>
-      <div class="[ layout layout--2col ] mb+">
-        <div class="layout__item debug-layout">
-          <h4>Column 1</h4>
+      <div class="[ layout ] mb+">
+        <div class="layout__aside debug-layout">
+          <h4>Sidebar</h4>
         </div>
-        <div class="layout__item debug-layout">
-          <h4>Column 2</h4>
+        <div class="layout__main debug-layout">
+          <h4>Main content</h4>
         </div>
       </div>
 

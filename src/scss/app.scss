@@ -155,6 +155,7 @@ $namespace: null;
  * [6] Hr
  * [7] Blockquote
  * [8] Forms
+ * [9] Code
  */
 
 /* [1] */
@@ -167,6 +168,11 @@ $heading-size-3:       24px;
 $heading-size-4:       20px;
 $heading-size-5:       18px;
 $heading-size-6:       16px;
+
+$heading-size-giga:    62px;
+$heading-size-mega:    52px;
+$heading-size-kilo:    44px;
+
 $heading-line-height:  1.5;
 $header-font-family:   $base-font-family;
 $header-font-weight:   $base-font-weight;
@@ -222,6 +228,9 @@ $form-label-font-color:                 scale-color($base-text-color, $lightness
 $form-label-small-transform:            capitalize;
 $form-label-bottom-margin:              rem-calc(5);
 @import "3-base/base.forms";
+
+
+@import "3-base/base.codes";
 
 
 
@@ -301,6 +310,7 @@ $btn-padding--small:                 half($btn-padding);
 $btn-padding--large:                 double($btn-padding);
 $btn-background:                     $color-primary;
 $btn-color:                          #fff;
+$btn-color-alt:                      #333;
 $btn-border-width:                   1px;
 $btn-border-style:                   solid;
 $btn-border-color:                   $btn-background;
@@ -310,6 +320,8 @@ $enable-btn--small:                  true;
 $enable-btn--large:                  true;
 $enable-btn--full:                   true;
 $enable-btn--pill:                   true;
+$enable-btn--border:                 true;
+
 
 $enable-button--alert:               true;
 $enable-button--warning:             true;
@@ -491,7 +503,8 @@ $tabs-namespace:                     $namespace;
  * @import "components.mycomponents2";
  */
 
-
+@import "components.cover";
+@import "components.grids";
 
 
 /*

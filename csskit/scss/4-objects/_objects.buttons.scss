@@ -30,6 +30,7 @@ $btn-padding--small:                 half($btn-padding) !default;
 $btn-padding--large:                 double($btn-padding) !default;
 $btn-background:                     $color-primary !default;
 $btn-color:                          #fff !default;
+$btn-color-alt:                      #333 !default;
 $btn-border-width:                   1px !default;
 $btn-border-style:                   solid !default;
 $btn-border-color:                   $btn-background !default;
@@ -39,6 +40,7 @@ $enable-btn--small:                  false !default;
 $enable-btn--large:                  false !default;
 $enable-btn--full:                   false !default;
 $enable-btn--pill:                   false !default;
+$enable-btn--border:                 false !default;
 
 $enable-button--alert:               false !default;
 $enable-button--warning:             false !default;
@@ -125,7 +127,7 @@ $enable-button--secondary:           false !default;
     &:hover,
     &:focus,
     &:active{
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
     }
 
     &:hover,
@@ -152,7 +154,7 @@ $enable-button--secondary:           false !default;
     &:hover,
     &:focus,
     &:active{
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
     }
 
     &:hover,
@@ -179,7 +181,7 @@ $enable-button--secondary:           false !default;
     &:hover,
     &:focus,
     &:active{
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
     }
 
     &:hover,
@@ -206,7 +208,7 @@ $enable-button--secondary:           false !default;
     &:hover,
     &:focus,
     &:active{
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
     }
 
     &:hover,
@@ -234,7 +236,7 @@ $enable-button--secondary:           false !default;
     &:hover,
     &:focus,
     &:active{
-      color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
     }
 
     &:hover,
@@ -250,64 +252,87 @@ $enable-button--secondary:           false !default;
 
 @if ($enable-btn--small == true) {
 
-    /**
-     * Small buttons.
-     */
+  /**
+   * Small buttons.
+   */
 
-    .#{$btn-namespace}btn--small,
-    %#{$btn-namespace}btn--small {
-      padding: $btn-padding--small - $btn-border-width  double($btn-padding--small) - $btn-border-width; /* [7] */
-    }
+  .#{$btn-namespace}btn--small,
+  %#{$btn-namespace}btn--small {
+    padding: $btn-padding--small - $btn-border-width  double($btn-padding--small) - $btn-border-width; /* [7] */
+  }
 
 }
 
 @if ($enable-btn--large == true) {
 
-    /**
-     * Large buttons.
-     */
+  /**
+   * Large buttons.
+   */
 
-    .#{$btn-namespace}btn--large,
-    %#{$btn-namespace}btn--large {
-        padding: $btn-padding--large - $btn-border-width  double($btn-padding--large) - $btn-border-width; /* [7] */
-    }
+  .#{$btn-namespace}btn--large,
+  %#{$btn-namespace}btn--large {
+    padding: $btn-padding--large - $btn-border-width  double($btn-padding--large) - $btn-border-width; /* [7] */
+  }
 
 }
 
 @if ($enable-btn--full == true) {
 
-    /**
-     * Full-width buttons.
-     */
+  /**
+   * Full-width buttons.
+   */
 
-    .#{$btn-namespace}btn--full,
-    %#{$btn-namespace}btn--full {
-        width: 100%;
+  .#{$btn-namespace}btn--full,
+  %#{$btn-namespace}btn--full {
+    width: 100%;
 
-        @if $global-border-box == false {
-            /**
-             * Remove paddings so that widths and paddings don’t conflict.
-             */
-            padding-right: 0;
-            padding-left:  0;
-        }
-
+    @if $global-border-box == false {
+      /**
+       * Remove paddings so that widths and paddings don’t conflict.
+       */
+      padding-right: 0;
+      padding-left:  0;
     }
+  }
 
 }
 
 @if ($enable-btn--pill == true) {
 
-    /**
-     * Round-ended buttons.
-     *
-     * 1. Overly-large value to ensure the radius rounds the whole end of the
-     *    button.
-     */
+  /**
+   * Round-ended buttons.
+   *
+   * 1. Overly-large value to ensure the radius rounds the whole end of the
+   *    button.
+   */
 
-    .#{$btn-namespace}btn--pill,
-    %#{$btn-namespace}btn--pill {
-        border-radius: 100px; /* [1] */
+  .#{$btn-namespace}btn--pill,
+  %#{$btn-namespace}btn--pill {
+      border-radius: 100px; /* [1] */
+  }
+
+}
+
+@if ($enable-btn--border == true){
+
+  /**
+   * Round-ended buttons.
+   *
+   * 1. Overly-large value to ensure the radius rounds the whole end of the
+   *    button.
+   */
+
+  .#{$btn-namespace}btn--border,
+  %#{$btn-namespace}btn--border {
+    background-color: transparent;
+    border-style: solid;
+    border-color: $btn-border-color;
+    color: $btn-border-color;
+    @if($btn-border-width != 1px) {
+      border-width: $btn-border-width;
     }
-
+    @else {
+      border-width: 2px;
+    }
+  }
 }

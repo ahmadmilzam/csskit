@@ -28,5 +28,5 @@ p{
 
 .#{$namespace}lead,
 %#{$namespace}lead {
-  @include font-size($base-font-size * $lead-size);
+  @include font-size($base-font-size * $lead-size, none);
 }

@@ -11,9 +11,11 @@ $imported-default-settings: false !default;
   @warn "Oops! Have you included a default settings file?"
 }
 
-$enable-xlarge-visibility-clasess:   false !default;
-$enable-accessibility-classes:       false !default;
-$enable-table-classes:               false !default;
+$enable-xlarge-responsive-visibility-clasess:    false !default;
+$enable-xxlarge-responsive-visibility-clasess:   false !default;
+
+$enable-accessibility-classes:                   false !default;
+$enable-table-classes:                           false !default;
 
 $visibility-breakpoint-sizes:
     small,
@@ -25,7 +27,21 @@ $visibility-breakpoint-queries:
   unquote($medium-up),
   unquote($large-up);
 
-@if $enable-xlarge-visibility-clasess == true {
+@if $enable-xlarge-responsive-visibility-clasess == true {
+  $visibility-breakpoint-sizes:
+    small,
+    medium,
+    large,
+    xlarge;
+
+  $visibility-breakpoint-queries:
+    unquote($small-up),
+    unquote($medium-up),
+    unquote($large-up),
+    unquote($xlarge-up);
+}
+
+@if $enable-xxlarge-responsive-visibility-clasess == true {
   $visibility-breakpoint-sizes:
     small,
     medium,

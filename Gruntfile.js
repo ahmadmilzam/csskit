@@ -4,7 +4,6 @@ module.exports = function(grunt) {
 
     sass: {
       options:{
-        require: 'susy',
         loadPath: [
           'csskit/scss'
         ]

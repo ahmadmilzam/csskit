@@ -18,6 +18,7 @@
     background-color: #ccc;
   }
 }
+
 .layout{
   @include grid-row();
 
@@ -25,6 +26,12 @@
     @include grid-row($container-width, nested);
   }
 }
+  .layout__heading{
+    @extend %uppercase;
+    border-bottom: 1px solid #d9d9d9;
+    padding-top: rem-calc($base-spacing-unit/2);
+  }
+
   .layout__item{
     @include grid-column($columns:false, $position:true);
 
@@ -50,6 +57,7 @@
       @include grid-column(4);
     }
   }
+
   .layout__main{
     @media #{$large-up}{
       @include grid-column(8, true);

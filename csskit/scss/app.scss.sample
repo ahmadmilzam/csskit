@@ -48,14 +48,6 @@
 // $color-info:                            #3498DB; // CURIOUS BLUE
 
 
-/**
- * We use these as default total columns throughout the framework.
- */
-
-// $columns-total:                         12;
-// $columns-gutter:                        24px;
-// $container-width:                       1000px;
-
 
 /**
  * Hold our breakpoint range and conditions.
@@ -67,7 +59,7 @@
  * }
  */
 
-$screen: "only screen";
+// $screen: "only screen";
 
 // $small-range:                           (0px, 720px);
 // $medium-range:                          (721px, 1024px);
@@ -75,7 +67,7 @@ $screen: "only screen";
 // $xlarge-range:                          (1441px, 1920px);
 // $xxlarge-range:                         (1921px, 99999999px);
 
-$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+// $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 
 
 /**
@@ -107,12 +99,8 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
  *     css
  */
 
-@import "1-tools/tools.functions-base";
-@import "1-tools/tools.functions-grids";
-@import "1-tools/tools.functions-responsive";
-
-@import "1-tools/tools.mixins-base";
-@import "1-tools/tools.mixins-css";
+@import "1-tools/tools.functions";
+@import "1-tools/tools.mixins";
 
 
 
@@ -151,10 +139,11 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
  * [3] Paragraphs
  * [4] Links
  * [5] Images
- * [5] List
- * [6] Hr
- * [7] Blockquote
- * [8] Forms
+ * [6] List
+ * [7] Hr
+ * [8] Blockquote
+ * [9] Forms
+ * [10] Codes
  */
 
 /* [1] */
@@ -165,8 +154,13 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $heading-size-2:       30px;
 // $heading-size-3:       24px;
 // $heading-size-4:       20px;
-// $heading-size-5:       18px;
-// $heading-size-6:       16px;
+// $heading-size-5:       16px;
+// $heading-size-6:       14px;
+
+// $heading-size-giga:    67px;
+// $heading-size-mega:    58px;
+// $heading-size-kilo:    41px;
+
 // $heading-line-height:  1.5;
 // $header-font-family:   $base-font-family;
 // $header-font-weight:   $base-font-weight;
@@ -198,7 +192,7 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $hr-border-style:  solid;
 // $hr-border-color:  $color-secondary;
 // $hr-margin:        rem-calc($base-spacing-unit);
-@import "3-base/base.hr";
+// @import "3-base/base.hr";
 
 /* [8] */
 // $blockquote-font-size: rem-calc(18);
@@ -207,7 +201,7 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $blockquote-padding: half($base-spacing-unit) $base-spacing-unit;
 // $blockquote-border-width: rem-calc(5);
 // $blockquote-border-color: #eee;
-@import "3-base/base.blockquote";
+// @import "3-base/base.blockquote";
 
 /* [9] */
 // $form-font-size:                        $base-font-size;
@@ -223,6 +217,8 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $form-label-bottom-margin:              rem-calc(5);
 @import "3-base/base.forms";
 
+/* [9] */
+@import "3-base/base.codes";
 
 
 /*
@@ -236,15 +232,16 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
  * [2]  Box
  * [3]  Buttons
  * [4]  Flag
- * [5]  List Block
- * [6]  List Dull
- * [7]  List Inline
- * [8]  List UI
- * [9]  Nav
- * [10] Media
- * [11] Pack
- * [12] Table
- * [13] Tabs
+ * [5]  Grids
+ * [6]  List Block
+ * [7]  List Dull
+ * [8]  List Inline
+ * [9]  List UI
+ * [10]  Nav
+ * [11] Media
+ * [12] Pack
+ * [13] Table
+ * [14] Tabs
  */
 
 /* [1] */
@@ -340,10 +337,45 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-flag--responsive:            true;
 // $flag-collapse-at:                   upper-bound($small-range);
 
-@import "4-objects/objects.flag";
+// @import "4-objects/objects.flag";
 
 
 /* [5] */
+$columns-total:                         12;
+$columns-gutter:                        $base-spacing-unit;
+$container-width:                       rem-calc(1000);
+$default-float:                         left;
+$opposite-float:                        right;
+
+$enable-xl-grid-classes:                false;
+$enable-xxl-grid-classes:               false;
+
+/*
+   Default grid classess=
+   ========================================================================== */
+$enable-default-grid-classes:           true;
+
+$enable-grid-flush:                     true;
+$enable-grid-pull:                      true;
+$enable-grid-push:                      true;
+$enable-grid-offset:                    true;
+$enable-grid-reset:                     true;
+$enable-grid-centered:                  true;
+$enable-grid-uncentered:                true;
+
+/*
+   Old school minimal grid classes
+   ========================================================================== */
+$enable-old-school-grid-classes:        true;
+
+$enable-grid-half:                      true;
+$enable-grid-third:                     true;
+$enable-grid-fourth:                    true;
+$enable-grid-fifth:                     true;
+
+@import "4-objects/objects.grids";
+
+/* [6] */
 // $list-block-namespace:               $namespace;
 
 // $list-block-padding:                 $base-spacing-unit;
@@ -357,23 +389,23 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-list-block--large:           true;
 // $enable-list-block--huge:            true;
 
-@import "4-objects/objects.list-block";
-
-
-/* [6] */
-// $list-dull-namespace:                $namespace;
-@import "4-objects/objects.list-dull";
+// @import "4-objects/objects.list-block";
 
 
 /* [7] */
+// $list-dull-namespace:                $namespace;
+// @import "4-objects/objects.list-dull";
+
+
+/* [8] */
 // $list-inline-namespace:              $namespace;
 
 // $enable-list-inline--delimited:      true;
 // $list-inline-delimit-character:      ",\00A0";
 
-@import "4-objects/objects.list-inline";
+// @import "4-objects/objects.list-inline";
 
-/* [8] */
+/* [9] */
 // $list-ui-namespace:                  $namespace;
 
 // $list-ui-padding:                    $base-spacing-unit;
@@ -391,10 +423,10 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-list-ui--large:              true;
 // $enable-list-ui--huge:               true;
 
-@import "4-objects/objects.list-ui";
+// @import "4-objects/objects.list-ui";
 
 
-/* [9] */
+/* [10] */
 //$nav-namespace:                   $namespace;
 
 // $nav--keyword-delimit-character:  "\002C" "\00A0";
@@ -405,10 +437,10 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-nav--fit:                 true;
 // $enable-nav--keyword:             true;
 
-@import "4-objects/objects.nav";
+// @import "4-objects/objects.nav";
 
 
-/* [10] */
+/* [11] */
 // $media-namespace:                    $namespace;
 
 // $media-gutter:                       $base-spacing-unit;
@@ -426,10 +458,10 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-media--flush:                true;
 // $enable-media--responsive:           true;
 
-@import "4-objects/objects.media";
+// @import "4-objects/objects.media";
 
 
-/* [11] */
+/* [12] */
 // $pack-namespace:                     $namespace;
 
 // $pack-gutter:                        $base-spacing-unit;
@@ -447,10 +479,10 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-pack--middle:                true;
 // $enable-pack--bottom:                true;
 
-@import "4-objects/objects.pack";
+// @import "4-objects/objects.pack";
 
 
-/* [12] */
+/* [13] */
 // $table-namespace:                    $namespace;
 
 // $table-padding--compact:             quarter($base-spacing-unit);
@@ -469,12 +501,12 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-table--rows:                 true;
 // $enable-table--columns:              true;
 
-@import "4-objects/objects.tables";
+// @import "4-objects/objects.tables";
 
 
-/* [13] */
+/* [14] */
 // $tabs-namespace:                     $namespace;
-@import "4-objects/objects.tabs";
+// @import "4-objects/objects.tabs";
 
 
 
@@ -541,19 +573,51 @@ $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 // $enable-paddings:                    true;
 // $enable-paddings--tiny:              true;
 // $enable-paddings--small:             true;
+// $enable-paddings--large:             true;
 // $enable-paddings--huge:              true;
 
 // $enable-paddings--none:              true;
 
 @import "6-trumps/trumps.spacing";
 
+// $enable-responsive-margins:                   true;
+// $enable-responsive-margins--tiny:             true;
+// $enable-responsive-margins--small:            true;
+// $enable-responsive-margins--large:            true;
+// $enable-responsive-margins--huge:             true;
+
+// $enable-responsive-margins--negative:         true;
+// $enable-responsive-margins--negative-tiny:    true;
+// $enable-responsive-margins--negative-small:   true;
+// $enable-responsive-margins--negative-large:   true;
+// $enable-responsive-margins--negative-huge:    true;
+
+// $enable-responsive-margins--none:             true;
+
+// $enable-responsive-paddings:                  true;
+// $enable-responsive-paddings--tiny:            true;
+// $enable-responsive-paddings--small:           true;
+// $enable-responsive-paddings--large:           true;
+// $enable-responsive-paddings--huge:            true;
+
+// $enable-responsive-paddings--none:            true;
+
+
+// $enable-xlarge-responsive-spacing-clasess:    true;
+// $enable-xxlarge-responsive-spacing-clasess:   true;
+
+@import "6-trumps/trumps.spacing-responsive";
+
 
 /* [3] */
-// $enable-xlarge-visibility-clasess:   true;
+
 // $enable-accessibility-classes:       true;
 // $enable-table-classes:               true;
 
 @import "6-trumps/trumps.visibility";
+
+// $enable-xlarge-responsive-visibility-clasess:    true;
+// $enable-xxlarge-responsive-visibility-clasess:   true;
 @import "6-trumps/trumps.visibility-responsive";
 
 /* [4] */

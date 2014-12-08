@@ -19,7 +19,7 @@ $form-border-width:                     1px !default;
 $form-border-color:                     #ddd !default;
 $form-border-color-hover:               darken($form-border-color, 5%) !default;
 $form-label-pointer:                    pointer !default;
-$form-label-font-weight:                bold !default;
+$form-label-font-weight:                normal !default;
 $form-label-line-height:                1.5 !default;
 $form-label-font-color:                 scale-color($base-text-color, $lightness: 30%) !default;
 $form-label-small-transform:            capitalize !default;

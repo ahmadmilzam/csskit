@@ -50,7 +50,8 @@ $enable-media--responsive:           false !default;
     float: left;
     margin-right: $media-gutter;
 
-    > img {
+    > img,
+    .img {
       display: block;
     }
   }
