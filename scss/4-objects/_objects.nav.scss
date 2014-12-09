@@ -42,7 +42,7 @@ $enable-nav--keyword:             false !default;
 .#{$nav-namespace}nav,
 %#{$nav-namespace}nav {
   list-style:none;
-  margin-left:0;
+  margin:0;
   @extend %clearfix;
 
   > li{

@@ -8,6 +8,8 @@
 ul,
 ol {
   list-style-position: inside;
+  margin-left: 0;
+  margin-bottom: $base-spacing-unit;
 }
 /**
  * Remove extra vertical spacing when nesting lists.

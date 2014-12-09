@@ -26,6 +26,7 @@ $imported-default-settings: false !default;
  */
 html {
   font-family: $base-font-family-sans-serif;
+  font-weight: $base-font-weight;
   font-size: ($base-font-size / 16px) * 1em; /* [1] */
   line-height: $base-line-height / $base-font-size; /* [1] */
   background-color: $base-background-color;

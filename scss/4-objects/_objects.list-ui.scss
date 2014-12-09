@@ -28,15 +28,17 @@ $list-ui-padding--small:             half($list-ui-padding) !default;
 $list-ui-padding--large:             double($list-ui-padding) !default;
 $list-ui-padding--huge:              quadruple($list-ui-padding) !default;
 
-$list-ui-border-width:               1px;
-$list-ui-border-style:               solid;
-$list-ui-border-color:               #ccc;
+$list-ui-border-width:               1px !default;
+$list-ui-border-style:               solid !default;
+$list-ui-border-color:               #ccc !default;
 
 $enable-list-ui--tiny:               false !default;
 $enable-list-ui--small:              false !default;
 $enable-list-ui--large:              false !default;
 $enable-list-ui--huge:               false !default;
 
+$enable-remove-border-at-first-item: false !default;
+$enable-remove-border-at-last-item:  false !default;
 
 .#{$list-ui-namespace}list-ui,
 %#{$list-ui-namespace}list-ui,
@@ -47,10 +49,12 @@ $enable-list-ui--huge:               false !default;
 
 .#{$list-ui-namespace}list-ui,
 %#{$list-ui-namespace}list-ui {
-  margin:  0;
   padding: 0;
   list-style: none;
-  border-top-width: $list-ui-border-width;
+
+  @if $enable-remove-border-at-first-item{
+    border-top-width: 0;
+  }
 
   > li {
     @extend %#{$list-ui-namespace}list-ui__item;
@@ -61,6 +65,12 @@ $enable-list-ui--huge:               false !default;
   %#{$list-ui-namespace}list-ui__item {
     padding: $list-ui-padding;
     border-bottom-width: $list-ui-border-width;
+
+    @if $enable-remove-border-at-last-item {
+      &:last-child{
+        border-bottom-width: 0px;
+      }
+    }
   }
 
 

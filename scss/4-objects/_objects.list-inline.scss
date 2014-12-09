@@ -27,10 +27,9 @@ $list-inline-delimit-character:      ",\00A0" !default;
 
 .#{$list-inline-namespace}list-inline,
 %#{$list-inline-namespace}list-inline {
-  margin:  0;
+  margin: 0;
   padding: 0;
   list-style: none;
-
   > li {
     display: inline-block;
   }
