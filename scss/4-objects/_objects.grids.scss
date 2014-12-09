@@ -23,7 +23,6 @@ $imported-default-settings: false !default;
 /**
  * We use these as default total columns throughout the framework.
  */
-$columns-total:                         12 !default;
 $columns-gutter:                        $base-spacing-unit !default;
 $container-width:                       1000px !default;
 $default-float:                         left !default;
@@ -32,13 +31,28 @@ $opposite-float:                        right !default;
 $enable-xl-grid-classes:                false !default;
 $enable-xxl-grid-classes:               false !default;
 
-
-
 /*
-   Default grid classess=
+   Default grid classess
    ========================================================================== */
 $enable-default-grid-classes:           true !default;
 
+$enable-grid-half:                      true !default;
+$enable-grid-third:                     true !default;
+$enable-grid-fourth:                    true !default;
+$enable-grid-fifth:                     true !default;
+
+
+/*
+   Old school grid classes
+   ========================================================================== */
+$enable-old-school-grid-classes:        false !default;
+
+$columns-total:                         12 !default;
+
+
+/*
+   Grid unit modifier
+   ========================================================================== */
 $enable-grid-flush:                     false !default;
 $enable-grid-pull:                      false !default;
 $enable-grid-push:                      false !default;
@@ -48,21 +62,7 @@ $enable-grid-centered:                  false !default;
 $enable-grid-uncentered:                false !default;
 
 
-
-
-/*
-   Old school minimal grid classes
-   ========================================================================== */
-
-$enable-old-school-grid-classes:        false !default;
-
-$enable-grid-half:                      false !default;
-$enable-grid-third:                     false !default;
-$enable-grid-fourth:                    false !default;
-$enable-grid-fifth:                     false !default;
-
-
-// standard full width grid
+// standard grid
 .layout {
   @include grid-row;
 
@@ -98,15 +98,136 @@ $enable-grid-fifth:                     false !default;
   @include grid-column($columns:false, $position:true);
 }
 
-.layout__unit { @include grid-column($columns:full); }
-
 .layout__unit + .layout__unit:last-child { float: $opposite-float; }
 .layout__unit + .layout__unit.end { float: $default-float; }
 
-// Create default presentational classes for grid
-//
-// $size - Name of class to use, i.e. "large" will generate .large-1, .large-2, etc.
-@mixin generate-default-grid-classes($size) {
+
+/*
+   Default Grid Classes
+   ========================================================================== */
+@mixin generate-default-grid-classes($size, $total-col: false){
+
+  @for $i from 1 through $total-col - 1 {
+    @if percentage(($i / $total-col)) != 50% or $total-col == 2 {
+      .#{$size}-#{$i}-#{$total-col} {
+        @include grid-column($columns:$i,$total-columns: $total-col, $flush:null,$float:false);
+      }
+    }
+  }
+}
+
+@if $enable-default-grid-classes {
+
+  // small grid rules collection
+  @media #{$small-up} {
+
+    .small-1 {
+      @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+    }
+
+    @if $enable-grid-half {
+      @include generate-default-grid-classes($size:small, $total-col: 2);
+    }
+    @if $enable-grid-third {
+      @include generate-default-grid-classes($size:small, $total-col: 3);
+    }
+    @if $enable-grid-fourth {
+      @include generate-default-grid-classes($size:small, $total-col: 4);
+    }
+    @if $enable-grid-fifth {
+      @include generate-default-grid-classes($size:small, $total-col: 5);
+    }
+  }
+
+  // medium grid rules collection
+  @media #{$medium-up} {
+    .medium-1 {
+      @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+    }
+
+    @if $enable-grid-half {
+      @include generate-default-grid-classes($size:medium, $total-col: 2);
+    }
+    @if $enable-grid-third {
+      @include generate-default-grid-classes($size:medium, $total-col: 3);
+    }
+    @if $enable-grid-fourth {
+      @include generate-default-grid-classes($size:medium, $total-col: 4);
+    }
+    @if $enable-grid-fifth {
+      @include generate-default-grid-classes($size:medium, $total-col: 5);
+    }
+  }
+
+  // large grid rules collection
+  @media #{$large-up} {
+    .large-1 {
+      @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+    }
+
+    @if $enable-grid-half {
+      @include generate-default-grid-classes($size:large, $total-col: 2);
+    }
+    @if $enable-grid-third {
+      @include generate-default-grid-classes($size:large, $total-col: 3);
+    }
+    @if $enable-grid-fourth {
+      @include generate-default-grid-classes($size:large, $total-col: 4);
+    }
+    @if $enable-grid-fifth {
+      @include generate-default-grid-classes($size:large, $total-col: 5);
+    }
+  }
+
+  // if include xl grid classes collection
+  @if $enable-xl-grid-classes {
+    @media #{$xlarge-up} {
+      .xlarge-1 {
+        @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+      }
+      @if $enable-grid-half {
+        @include generate-default-grid-classes($size:xlarge, $total-col: 2);
+      }
+      @if $enable-grid-third {
+        @include generate-default-grid-classes($size:xlarge, $total-col: 3);
+      }
+      @if $enable-grid-fourth {
+        @include generate-default-grid-classes($size:xlarge, $total-col: 4);
+      }
+      @if $enable-grid-fifth {
+        @include generate-default-grid-classes($size:xlarge, $total-col: 5);
+      }
+    }
+  }
+
+  // if include xxl grid classes
+  @if $enable-xxl-grid-classes {
+    @media #{$xxlarge-up} {
+      .xxlarge-1 {
+        @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+      }
+      @if $enable-grid-half {
+        @include generate-default-grid-classes($size:xxlarge, $total-col: 2);
+      }
+      @if $enable-grid-third {
+        @include generate-default-grid-classes($size:xxlarge, $total-col: 3);
+      }
+      @if $enable-grid-fourth {
+        @include generate-default-grid-classes($size:xxlarge, $total-col: 4);
+      }
+      @if $enable-grid-fifth {
+        @include generate-default-grid-classes($size:xxlarge, $total-col: 5);
+      }
+    }
+  }
+
+}
+
+
+/*
+   Old school minimal grid classes
+   ========================================================================== */
+@mixin generate-old-school-grid-classes($size) {
 
   @for $i from 1 through $columns-total {
     .#{$size}-#{$i}-#{$columns-total} { @include grid-column($columns:$i,$flush:null,$float:false); }
@@ -185,129 +306,31 @@ $enable-grid-fifth:                     false !default;
   }
 }
 
-@if $enable-default-grid-classes {
+@if $enable-old-school-grid-classes {
 
   @media #{$small-up} {
-    @include generate-default-grid-classes($size:small);
+    @include generate-old-school-grid-classes($size:small);
   }
 
   @media #{$medium-up} {
-    @include generate-default-grid-classes($size:medium);
+    @include generate-old-school-grid-classes($size:medium);
   }
 
   @media #{$large-up} {
-    @include generate-default-grid-classes($size:large);
+    @include generate-old-school-grid-classes($size:large);
   }
 
   // if include xl grid classes
   @if $enable-xl-grid-classes {
     @media #{$xlarge-up} {
-      @include generate-default-grid-classes($size:xlarge);
+      @include generate-old-school-grid-classes($size:xlarge);
     }
   }
 
   // if include xxl grid classes
   @if $enable-xxl-grid-classes {
     @media #{$xxlarge-up} {
-      @include generate-default-grid-classes($size:xxlarge);
+      @include generate-old-school-grid-classes($size:xxlarge);
     }
   }
-}
-
-
-@mixin generate-old-school-grid-classes($size, $total-col: false){
-
-  @for $i from 1 through $total-col - 1 {
-    @if percentage(($i / $total-col)) != 50% or $total-col == 2 {
-      .#{$size}-#{$i}-#{$total-col} { @include grid-column($columns:$i,$total-columns: $total-col, $flush:null,$float:false); }
-    }
-  }
-}
-
-@if $enable-old-school-grid-classes {
-
-  // small grid rules collection
-  @media #{$small-up} {
-    @if $enable-grid-half {
-      @include generate-old-school-grid-classes($size:small, $total-col: 2);
-    }
-    @if $enable-grid-third {
-      @include generate-old-school-grid-classes($size:small, $total-col: 3);
-    }
-    @if $enable-grid-fourth {
-      @include generate-old-school-grid-classes($size:small, $total-col: 4);
-    }
-    @if $enable-grid-fifth {
-      @include generate-old-school-grid-classes($size:small, $total-col: 5);
-    }
-  }
-
-  // medium grid rules collection
-  @media #{$medium-up} {
-    @if $enable-grid-half {
-      @include generate-old-school-grid-classes($size:medium, $total-col: 2);
-    }
-    @if $enable-grid-third {
-      @include generate-old-school-grid-classes($size:medium, $total-col: 3);
-    }
-    @if $enable-grid-fourth {
-      @include generate-old-school-grid-classes($size:medium, $total-col: 4);
-    }
-    @if $enable-grid-fifth {
-      @include generate-old-school-grid-classes($size:medium, $total-col: 5);
-    }
-  }
-
-  // large grid rules collection
-  @media #{$large-up} {
-    @if $enable-grid-half {
-      @include generate-old-school-grid-classes($size:large, $total-col: 2);
-    }
-    @if $enable-grid-third {
-      @include generate-old-school-grid-classes($size:large, $total-col: 3);
-    }
-    @if $enable-grid-fourth {
-      @include generate-old-school-grid-classes($size:large, $total-col: 4);
-    }
-    @if $enable-grid-fifth {
-      @include generate-old-school-grid-classes($size:large, $total-col: 5);
-    }
-  }
-
-  // if include xl grid classes collection
-  @if $enable-xl-grid-classes {
-    @media #{$xlarge-up} {
-      @if $enable-grid-half {
-        @include generate-old-school-grid-classes($size:xlarge, $total-col: 2);
-      }
-      @if $enable-grid-third {
-        @include generate-old-school-grid-classes($size:xlarge, $total-col: 3);
-      }
-      @if $enable-grid-fourth {
-        @include generate-old-school-grid-classes($size:xlarge, $total-col: 4);
-      }
-      @if $enable-grid-fifth {
-        @include generate-old-school-grid-classes($size:xlarge, $total-col: 5);
-      }
-    }
-  }
-
-  // if include xxl grid classes
-  @if $enable-xxl-grid-classes {
-    @media #{$xxlarge-up} {
-      @if $enable-grid-half {
-        @include generate-old-school-grid-classes($size:xxlarge, $total-col: 2);
-      }
-      @if $enable-grid-third {
-        @include generate-old-school-grid-classes($size:xxlarge, $total-col: 3);
-      }
-      @if $enable-grid-fourth {
-        @include generate-old-school-grid-classes($size:xxlarge, $total-col: 4);
-      }
-      @if $enable-grid-fifth {
-        @include generate-old-school-grid-classes($size:xxlarge, $total-col: 5);
-      }
-    }
-  }
-
 }

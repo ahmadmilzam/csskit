@@ -192,6 +192,7 @@
 // $hr-border-style:  solid;
 // $hr-border-color:  $color-secondary;
 // $hr-margin:        rem-calc($base-spacing-unit);
+
 // @import "3-base/base.hr";
 
 /* [8] */
@@ -201,6 +202,7 @@
 // $blockquote-padding: half($base-spacing-unit) $base-spacing-unit;
 // $blockquote-border-width: rem-calc(5);
 // $blockquote-border-color: #eee;
+
 // @import "3-base/base.blockquote";
 
 /* [9] */
@@ -215,10 +217,11 @@
 // $form-label-font-color:                 scale-color($base-text-color, $lightness: 30%);
 // $form-label-small-transform:            capitalize;
 // $form-label-bottom-margin:              rem-calc(5);
-@import "3-base/base.forms";
+
+// @import "3-base/base.forms";
 
 /* [9] */
-@import "3-base/base.codes";
+// @import "3-base/base.codes";
 
 
 /*
@@ -228,11 +231,11 @@
  * Objects, abstractions, and design patterns
  * (e.g. .media {}, .button{}, .list{}).
  *
- * [1]  Block
- * [2]  Box
- * [3]  Buttons
- * [4]  Flag
- * [5]  Grids
+ * [1]  Grids
+ * [2]  Block
+ * [3]  Box
+ * [4]  Buttons
+ * [5]  Flag
  * [6]  List Block
  * [7]  List Dull
  * [8]  List Inline
@@ -244,7 +247,47 @@
  * [14] Tabs
  */
 
-/* [1] */
+/* [5] */
+$columns-gutter:                        $base-spacing-unit;
+$container-width:                       rem-calc(1000);
+$default-float:                         left;
+$opposite-float:                        right;
+
+// grid extra large classes
+$enable-xl-grid-classes:                false;
+$enable-xxl-grid-classes:               false;
+
+/*
+   Default grid classess
+   ========================================================================== */
+// $enable-default-grid-classes:           false;
+
+// $enable-grid-half:                      false;
+// $enable-grid-third:                     false;
+// $enable-grid-fourth:                    false;
+// $enable-grid-fifth:                     false;
+
+/*
+   Old school grid classes
+   ========================================================================== */
+// $enable-old-school-grid-classes:        true;
+
+/*
+   Grid unit modifier
+   ========================================================================== */
+// $enable-grid-flush:                     true;
+// $enable-grid-pull:                      true;
+// $enable-grid-push:                      true;
+// $enable-grid-offset:                    true;
+// $enable-grid-reset:                     true;
+// $enable-grid-centered:                  true;
+// $enable-grid-uncentered:                true;
+
+
+@import "4-objects/objects.grids";
+
+
+/* [2] */
 // $block-namespace:                    $namespace;
 
 // $block-gutter:                       $base-spacing-unit;
@@ -262,10 +305,10 @@
 // $enable-block--right:                true;
 
 
-@import "4-objects/objects.block";
+// @import "4-objects/objects.block";
 
 
-/* [2] */
+/* [3] */
 // $box-namespace:                      $namespace;
 
 // $box-padding:                        $base-spacing-unit;
@@ -290,7 +333,7 @@
 @import "4-objects/objects.box";
 
 
-/* [3] */
+/* [4] */
 // $btn-namespace:                      $namespace;
 
 // $btn-padding:                        half($base-spacing-unit);
@@ -317,7 +360,7 @@
 @import "4-objects/objects.buttons";
 
 
-/* [4] */
+/* [5] */
 // $flag-namespace:                     $namespace;
 
 // $flag-gutter:                        $base-spacing-unit;
@@ -339,41 +382,6 @@
 
 // @import "4-objects/objects.flag";
 
-
-/* [5] */
-$columns-total:                         12;
-$columns-gutter:                        $base-spacing-unit;
-$container-width:                       rem-calc(1000);
-$default-float:                         left;
-$opposite-float:                        right;
-
-$enable-xl-grid-classes:                false;
-$enable-xxl-grid-classes:               false;
-
-/*
-   Default grid classess=
-   ========================================================================== */
-$enable-default-grid-classes:           true;
-
-$enable-grid-flush:                     true;
-$enable-grid-pull:                      true;
-$enable-grid-push:                      true;
-$enable-grid-offset:                    true;
-$enable-grid-reset:                     true;
-$enable-grid-centered:                  true;
-$enable-grid-uncentered:                true;
-
-/*
-   Old school minimal grid classes
-   ========================================================================== */
-$enable-old-school-grid-classes:        true;
-
-$enable-grid-half:                      true;
-$enable-grid-third:                     true;
-$enable-grid-fourth:                    true;
-$enable-grid-fifth:                     true;
-
-@import "4-objects/objects.grids";
 
 /* [6] */
 // $list-block-namespace:               $namespace;
@@ -536,9 +544,9 @@ $enable-grid-fifth:                     true;
  * [1+] Alignment Responsive
  * [2] Spacing
  * [2+] Spacing Responsive
- * [3+] Visibility Responsive
- * [4] Text transform
- * [5] Float
+ * [3] Float
+ * [4+] Visibility Responsive
+ * [5] Text transform
  * [6] Clearfix
  * [7] Print
  */
@@ -608,9 +616,10 @@ $enable-grid-fifth:                     true;
 
 @import "6-trumps/trumps.spacing-responsive";
 
-
 /* [3] */
+@import "6-trumps/trumps.float";
 
+/* [4] */
 // $enable-accessibility-classes:       true;
 // $enable-table-classes:               true;
 
@@ -620,17 +629,11 @@ $enable-grid-fifth:                     true;
 // $enable-xxlarge-responsive-visibility-clasess:   true;
 @import "6-trumps/trumps.visibility-responsive";
 
-/* [4] */
-@import "6-trumps/trumps.text-transform";
-
-
 /* [5] */
-@import "6-trumps/trumps.float";
-
+@import "6-trumps/trumps.text-transform";
 
 /* [6] */
 @import "6-trumps/trumps.clearfix";
-
 
 /* [7] */
 @import "6-trumps/trumps.print";

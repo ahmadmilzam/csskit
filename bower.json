@@ -17,5 +17,13 @@
     "ref",
     "reference"
   ],
-  "homepage": "https://github.com/ahmadmilzam/csskit"
+  "homepage": "https://github.com/ahmadmilzam/csskit",
+  "main": "scss/app.scss",
+  "keywords": [
+    "css",
+    "css",
+    "framework",
+    "bem",
+    "oocss"
+  ]
 }

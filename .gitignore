@@ -4,9 +4,11 @@
 *.png
 *.jpg
 *.gif
+*.log
 *.sublime-*
 .sass-cache/*
 dist
+css
 bower_components
 node_modules
 vendor

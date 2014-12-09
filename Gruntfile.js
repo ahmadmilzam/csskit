@@ -4,24 +4,21 @@ module.exports = function(grunt) {
 
     sass: {
       options:{
-        loadPath: [
-          'csskit/scss'
-        ]
-      },
-      dist: {
-        options: {
-          style: 'compressed'
-        },
-        files: {
-          'dist/css/app.min.css': 'src/scss/app.scss',
-        }
       },
       dev:{
         options: {
           style: 'expanded'
         },
         files: {
-          'dist/css/app.css': 'src/scss/app.scss',
+          'css/app.css': 'scss/app.scss',
+        }
+      },
+      dist: {
+        options: {
+          style: 'compressed'
+        },
+        files: {
+          'css/app.min.css': 'scss/app.scss',
         }
       }
     },
@@ -47,64 +44,16 @@ module.exports = function(grunt) {
       },
       sass: {
         files: [
-          'csskit/scss/**/*.scss',
-          'src/scss/**/*.scss'
+          'scss/**/*.scss'
         ],
         tasks: ['development-task']
       }
-      // js: {
-      //   files: [
-      //     'kits/js/**/*.js',
-      //     'src/js/**/*.js'
-      //   ],
-      //   tasks: ['development-task']
-      // }
-    },
-
-    // concat: {
-    //   options: {
-    //     banner: '\n'
-    //   },
-    //   vendor: {
-    //     src: [
-    //       // required library script
-    //       'src/js/libs/jquery.min.js',
-    //       'src/js/libs/velocity.js',
-    //       'libs/foundation/js/foundation/foundation.js',
-    //       'libs/foundation/js/foundation/foundation.abide.js',
-    //       'libs/foundation/js/foundation/foundation.interchange.js',
-    //       'libs/fastclick/lib/fastclick.js',
-
-    //       'src/js/libs/wow.js',
-    //       'src/js/libs/carousel.js',
-    //       'src/js/libs/clearform.js',
-
-    //       // my script
-    //       'src/js/app.js'
-    //     ],
-    //     dest: 'js/app.js'
-    //   }
-    // },
-
-    // uglify: {
-    //   options: {
-    //     mangle: true,
-    //     compress: true,
-    //     report: 'gzip'
-    //   },
-    //   target: {
-    //     files: {
-    //       'js/app.min.js':['js/app.js']
-    //     }
-    //   }
-    // }
+    }
   });
 
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-autoprefixer');
-  // grunt.loadNpmTasks('grunt-contrib-concat');
-  // grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask(
     'development-task',
@@ -118,8 +67,6 @@ module.exports = function(grunt) {
     [
       'sass:dist',
       'autoprefixer:dist'
-      // 'concat:vendor',
-      // 'uglify'
     ]
   );
 

@@ -1,32 +1,37 @@
 {
-  "name": "frontend-starter-kit",
+  "name": "csskit-framework",
   "version": "0.0.1",
-  "description": "This is my selective library for agile frontend development",
+  "description": "SASS Based, BEM, OOCSS Framework",
   "main": "Gruntfile.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {},
   "devDependencies": {
     "grunt": "^0.4.5",
+    "grunt-autoprefixer": "^2.0.0",
     "grunt-contrib-concat": "^0.5.0",
     "grunt-contrib-sass": "^0.8.1",
-    "grunt-contrib-uglify": "^0.6.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-autoprefixer": "^2.0.0"
+    "grunt-contrib-watch": "^0.6.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "github.com/ahmadmilzam/starter-kit"
+    "url": "https://github.com/ahmadmilzam/csskit.git"
   },
   "keywords": [
-    "frontend",
-    "starter",
-    "kit"
+    "css",
+    "css",
+    "framework",
+    "bem",
+    "oocss"
   ],
-  "author": "Ahmad Milzam",
+  "author": "Ahmad Milzam <email@ahmadmilzam.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ahmadmilzam/starter-kit/issues"
+    "url": "https://github.com/ahmadmilzam/csskit/issues"
   },
-  "homepage": "https://github.com/ahmadmilzam/starter-kit"
+  "homepage": "https://github.com/ahmadmilzam/csskit"
 }
