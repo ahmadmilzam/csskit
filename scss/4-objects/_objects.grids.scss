@@ -265,7 +265,7 @@ $enable-grid-uncentered:                false !default;
 
     .#{$size}-reset-order {
       margin-#{$default-float}: 0;
-      margin-#{$opposite-direction}: 0;
+      margin-#{$opposite-float}: 0;
       left: auto;
       right: auto;
       float: $default-float;
@@ -300,7 +300,7 @@ $enable-grid-uncentered:                false !default;
     }
 
     .layout__unit.#{$size}-uncentered.opposite {
-      float: $opposite-direction;
+      float: $opposite-float;
     }
 
   }
