@@ -7,8 +7,8 @@
  */
 ul,
 ol {
-  list-style-position: inside;
-  margin-left: 0;
+  // list-style-position: inside;
+  margin-left: $base-spacing-unit;
   margin-bottom: $base-spacing-unit;
 }
 /**
