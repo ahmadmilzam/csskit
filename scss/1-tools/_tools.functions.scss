@@ -182,7 +182,9 @@ $imported-default-settings: false !default;
   }
 
   // Clearfix for all rows
-  @extend %clearfix;
+  @if $behavior != nested or $behavior != nested-flush {
+    @extend %clearfix;
+  }
 
 }/* close grid-row */
 
