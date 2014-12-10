@@ -182,7 +182,7 @@ $imported-default-settings: false !default;
   }
 
   // Clearfix for all rows
-  @if $behavior != nested or $behavior != nested-flush {
+  @if $behavior == false {
     @extend %clearfix;
   }
 
