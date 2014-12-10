@@ -22,7 +22,6 @@ $heading-size-4:       20px !default;
 $heading-size-5:       18px !default;
 $heading-size-6:       16px !default;
 
-$heading-line-height:  1.5 !default;
 $header-font-family:   $base-font-family !default;
 $header-font-weight:   $base-font-weight !default;
 
@@ -43,37 +42,37 @@ h1,h2,h3,h4,h5,h6{
 h1,
 .#{$namespace}alpha,
 %#{$namespace}alpha {
-  @include font-size($heading-size-1, $heading-line-height);
+  @include font-size($heading-size-1);
 }
 
 h2,
 .#{$namespace}beta,
 %#{$namespace}beta {
-  @include font-size($heading-size-2, $heading-line-height);
+  @include font-size($heading-size-2);
 }
 
 h3,
 .#{$namespace}gamma,
 %#{$namespace}gamma {
-  @include font-size($heading-size-3, $heading-line-height);
+  @include font-size($heading-size-3);
 }
 
 h4,
 .#{$namespace}delta,
 %#{$namespace}delta {
-  @include font-size($heading-size-4, $heading-line-height);
+  @include font-size($heading-size-4);
 }
 
 h5,
 .#{$namespace}epsilon,
 %#{$namespace}epsilon {
-  @include font-size($heading-size-5, $heading-line-height);
+  @include font-size($heading-size-5);
 }
 
 h6,
 .#{$namespace}zeta,
 %#{$namespace}zeta {
-  @include font-size($heading-size-6, $heading-line-height);
+  @include font-size($heading-size-6);
 }
 
 
@@ -81,15 +80,15 @@ h6,
 //are the seldom used ones that make stuff massive!
 .#{$namespace}giga,
 %#{$namespace}giga {
-  @include font-size($heading-size-giga, $heading-line-height);
+  @include font-size($heading-size-giga);
 }
 
 .#{$namespace}mega,
 %#{$namespace}mega {
-  @include font-size($heading-size-mega, $heading-line-height);
+  @include font-size($heading-size-mega);
 }
 
 .#{$namespace}kilo,
 %#{$namespace}kilo {
-  @include font-size($heading-size-kilo, $heading-line-height);
+  @include font-size($heading-size-kilo);
 }
