@@ -34,8 +34,6 @@ $header-font-weight:   $base-font-weight !default;
 h1,h2,h3,h4,h5,h6{
   font-weight: $header-font-weight;
   font-family: $header-font-family;
-  margin-top: 0;
-  margin-bottom: half($base-spacing-unit);
   text-rendering: optimizeLegibility;
 }
 

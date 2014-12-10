@@ -22,10 +22,6 @@ $lead-size:   1.250 !default;
  * Predefine the variables below in order to alter and enable specific features.
  */
 
-p{
-  margin-top: 0;
-  margin-bottom: $base-spacing-unit;
-}
 
 .#{$namespace}lead,
 %#{$namespace}lead {

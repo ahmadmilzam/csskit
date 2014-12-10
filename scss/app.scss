@@ -114,6 +114,7 @@
  * [1] Normalize
  * [2] Reset
  * [3] Box Sizing
+ * [4] Shared
  */
 
 /* [1] */
@@ -125,7 +126,8 @@
 /* [3] */
 @import "2-generic/generic.box-sizing";
 
-
+/* [4] */
+@import "2-generic/generic.shared";
 
 
 /*
