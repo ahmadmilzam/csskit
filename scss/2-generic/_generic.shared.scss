@@ -14,7 +14,7 @@ table,
 fieldset, figure,
 pre,
 %margin-bottom {
-  margin-bottom: rem-calc($inuit-base-spacing-unit);
+  margin-bottom: rem-calc($base-spacing-unit);
 }
 
 
@@ -27,5 +27,5 @@ pre,
  */
 ul, ol, dd,
 %margin-left {
-  margin-left: rem-calc($inuit-base-spacing-unit);
+  margin-left: rem-calc($base-spacing-unit);
 }
