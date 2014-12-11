@@ -12,7 +12,7 @@ $imported-default-settings: false !default;
 }
 
 
-$lead-size:   1.250 !default;
+$lead-size:   1.25 !default;
 
 
 /**
@@ -25,5 +25,5 @@ $lead-size:   1.250 !default;
 
 .#{$namespace}lead,
 %#{$namespace}lead {
-  font-size: rem-calc(($base-font-size * $lead-size));
+  @include font-size(($base-font-size * $lead-size));
 }

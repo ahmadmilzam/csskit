@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
     sass: {
       options:{
+        loadPath: 'scss/'
       },
       dev:{
         options: {
@@ -11,14 +12,17 @@ module.exports = function(grunt) {
         },
         files: {
           'css/app.css': 'scss/app.scss',
+          'css/style.css': 'css/style.scss',
         }
       },
       dist: {
         options: {
-          style: 'compressed'
+          style: 'compressed',
+          sourcemap: 'none',
         },
         files: {
           'css/app.min.css': 'scss/app.scss',
+          'css/style.css': 'css/style.scss',
         }
       }
     },
@@ -32,8 +36,8 @@ module.exports = function(grunt) {
           ],
           map: false
         },
-        src: 'dist/css/app.min.css',
-        dest: 'dist/css/app.min.css'
+        src: 'css/app.css',
+        dest: 'css/app.min.css'
       },
     },
 
@@ -44,7 +48,8 @@ module.exports = function(grunt) {
       },
       sass: {
         files: [
-          'scss/**/*.scss'
+          'scss/**/*.scss',
+          'css/**/*.scss'
         ],
         tasks: ['development-task']
       }
