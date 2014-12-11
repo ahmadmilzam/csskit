@@ -25,5 +25,5 @@ $lead-size:   1.250 !default;
 
 .#{$namespace}lead,
 %#{$namespace}lead {
-  @include font-size($base-font-size * $lead-size, none);
+  font-size: rem-calc(($base-font-size * $lead-size));
 }
