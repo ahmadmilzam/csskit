@@ -128,7 +128,7 @@ $enable-block--right:                false !default;
 
 
 
-@if ($enable-block--huge == true) {
+@if ($enable-block--right == true) {
 
   /**
    * Right-aligned blocks.
