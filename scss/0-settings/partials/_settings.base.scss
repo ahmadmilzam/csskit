@@ -19,6 +19,6 @@ $base-text-color:                      #333 !default;
 $base-text-color-alt:                  #fff !default;
 $base-background-color:                #fff !default;
 
-$base-spacing-unit:                    $base-line-height;
+$base-spacing-unit:                    $base-line-height !default;
 
-$enable-debug-typography:              false !default;
+$base-radius:                          3px !default;
