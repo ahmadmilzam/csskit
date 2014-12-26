@@ -12,7 +12,7 @@ $imported-default-settings: false !default;
 }
 
 /**
- * High-, page-level styling.
+ * High, page-level styling.
  *
  * 1. Set the default `font-family`, `font-size` and `line-height` for the entire project,
  *    sourced from our default variables. The `font-size` is calculated to exist
@@ -37,3 +37,4 @@ html {
   -moz-osx-font-smoothing: grayscale; /* [4] */
   -webkit-font-smoothing: antialiased; /* [4] */
 }
+

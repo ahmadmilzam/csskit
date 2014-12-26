@@ -1,0 +1,77 @@
+$enable-box--primary:                false !default;
+$enable-box--secondary:              false !default;
+$enable-box--alert:                  false !default;
+$enable-box--success:                false !default;
+$enable-box--warning:                false !default;
+$enable-box--info:                   false !default;
+
+
+@if ($enable-box--primary == true) {
+  /**
+   * Box Colors (i.e. no padding) box.
+   */
+  .#{$box-namespace}box--primary,
+  %#{$box-namespace}box--primary {
+    background-color: $color-primary;
+
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-primary);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--primary */
+
+@if ($enable-box--alert == true) {
+  .#{$box-namespace}box--alert,
+  %#{$box-namespace}box--alert {
+    background-color: $color-alert;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-alert);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--alert */
+
+@if ($enable-box--success == true) {
+  .#{$box-namespace}box--success,
+  %#{$box-namespace}box--success {
+    background-color: $color-success;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-success);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--success */
+
+@if ($enable-box--warning == true) {
+  .#{$box-namespace}box--warning,
+  %#{$box-namespace}box--warning {
+    background-color: $color-warning;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-warning);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--warning */
+
+@if ($enable-box--info == true) {
+  .#{$box-namespace}box--info,
+  %#{$box-namespace}box--info {
+    background-color: $color-info;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-info);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--info */
+
+@if ($enable-box--secondary == true) {
+  .#{$box-namespace}box--secondary,
+  %#{$box-namespace}box--secondary {
+    background-color: $color-secondary;
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-secondary);
+    color: if($bg-lightness > 70%, $base-text-color, $base-text-color-alt);
+  }
+}/* close box--secondary */

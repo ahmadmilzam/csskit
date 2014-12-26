@@ -1,0 +1,29 @@
+/* debug */
+@if $enable-debug-typography {
+  html{
+    background-color: #fff;
+    background-image: -webkit-linear-gradient(transparent 50%, rgba(0, 0, 0, .1) 50%);
+    background-size: $base-line-height*2 $base-line-height*2;
+  }
+}
+
+
+@if $enable-debug-whitespace{
+  h1,h2,h3,h4,h5,h6,
+  ul, ol, dl,
+  blockquote, p, address,
+  table,
+  fieldset, figure,
+  pre{
+    outline: 1px solid aqua;
+  }
+  div {
+    outline: 1px solid magenta;
+  }
+  :first-child {
+    outline: 1px solid yellow;
+  }
+  :last-child {
+    outline: 1px solid green;
+  }
+}

@@ -12,7 +12,7 @@ $imported-default-settings: false !default;
 }
 
 
-$anchor-font-color: $color-info !default;
+$anchor-font-color: #3498DB !default;
 $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%) !default;
 $anchor-text-decoration: none !default;
 $anchor-text-decoration-hover: none !default;

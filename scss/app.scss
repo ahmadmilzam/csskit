@@ -29,23 +29,6 @@
 
 // $base-line-height:                     28px;
 // $base-spacing-unit:                    $base-line-height;
-// $base-spacing-unit--small:             round($base-spacing-unit / 2);
-// $base-spacing-unit--large:             round($base-spacing-unit * 2);
-
-// $base-radius:                          4px;
-
-
-/**
- * We use these as default colors throughout
- * Ref: http://www.flatuicolorpicker.com/
- */
-
-// $color-primary:                         #3A539B; // CHAMBRAY
-// $color-secondary:                       #bdc3c7; // SILVER
-// $color-alert:                           #EF4836; // FLAMINGO
-// $color-success:                         #2ECC71; // SHAMROCK
-// $color-warning:                         #F7CA18; // RIPE LEMON
-// $color-info:                            #3498DB; // CURIOUS BLUE
 
 
 
@@ -61,11 +44,11 @@
 
 // $screen: "only screen";
 
-// $small-range:                           (0px, 720px);
-// $medium-range:                          (721px, 1024px);
-// $large-range:                           (1025px, 1440px);
-// $xlarge-range:                          (1441px, 1920px);
-// $xxlarge-range:                         (1921px, 99999999px);
+// $small-range:                           (0em, 45em); // 0px - 720px
+// $medium-range:                          (45.063em, 64em); // 721px - 1024px
+// $large-range:                           (64.063em, 90em); // 1025px - 1440px
+// $xlarge-range:                          (90.063em, 120em); //1441px - 1920px
+// $xxlarge-range:                         (120.063em, 99999999em); //1921px - 99999999px
 
 // $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 
@@ -78,7 +61,12 @@
 // $namespace: null;
 
 
-@import "0-settings/settings.defaults";
+// base line debuger
+// $enable-debug-typography:                true;
+// whitespace debuger
+// $enable-debug-whitespace:                true;
+
+@import "0-settings/settings.all";
 
 
 
@@ -86,21 +74,9 @@
 /*
    TOOLS
    ========================================================================== */
-/**
- * Site-wide mixins and functions.
- *
- * [1] Function
- *     base
- *     grids
- *     responsive
- *
- * [2] Mixins
- *     base
- *     css
- */
+// Site-wide mixins and functions.
 
-@import "1-tools/tools.functions";
-@import "1-tools/tools.mixins";
+@import "1-tools/tools.all";
 
 
 
@@ -151,51 +127,52 @@
 /* [1] */
 @import "3-base/base.page";
 
+
 /* [2] */
-// $heading-size-1:       36px;
-// $heading-size-2:       30px;
-// $heading-size-3:       24px;
-// $heading-size-4:       20px;
-// $heading-size-5:       18px;
-// $heading-size-6:       1rem;
-// $heading-line-height:  1.1;
+// $heading-size-min:          $base-font-size;
+// $heading-size-max:          36px;
 
-// $heading-size-giga:    67px;
-// $heading-size-mega:    58px;
-// $heading-size-kilo:    41px;
+// max font size and line height for small device
+// $heading-size-max-small:    30px;
+// $heading-line-height-small: 1.3;
 
-// $header-font-family:   $base-font-family;
-// $header-font-weight:   $base-font-weight;
+// $header-font-family:        $base-font-family;
+// $header-font-weight:        $base-font-weight;
 
 @import "3-base/base.headings";
 
+
 /* [3] */
-// $lead-size:   1.250;
+// $lede-size:   1.25;
 
 @import "3-base/base.paragraphs";
 
 
 /* [4] */
-// $anchor-font-color: $color-info;
+// $anchor-font-color: $your-color;
 // $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
 
 @import "3-base/base.links";
 
+
 /* [5] */
 @import "3-base/base.images";
+
 
 /* [6] */
 @import "3-base/base.lists";
 
+
 /* [7] */
 // $hr-border-width:  1px;
 // $hr-border-style:  solid;
-// $hr-border-color:  $color-secondary;
+// $hr-border-color:  $your-color;
 // $hr-margin:        rem-calc($base-spacing-unit);
 
-// @import "3-base/base.hr";
+@import "3-base/base.hr";
+
 
 /* [8] */
 // $blockquote-font-size: rem-calc(18);
@@ -205,32 +182,46 @@
 // $blockquote-border-width: rem-calc(5);
 // $blockquote-border-color: #eee;
 
-// @import "3-base/base.blockquote";
+@import "3-base/base.blockquote";
+
 
 /* [9] */
 // $form-font-size:                        $base-font-size;
-// $form-content-bg:                       darken(#fff, 2%);
 // $form-border-width:                     1px;
 // $form-border-color:                     #ddd;
 // $form-border-color-hover:               darken($form-border-color, 5%);
 // $form-label-pointer:                    pointer;
-// $form-label-font-weight:                bold;
-// $form-label-line-height:                1.5;
+// $form-label-font-weight:                normal;
 // $form-label-font-color:                 scale-color($base-text-color, $lightness: 30%);
 // $form-label-small-transform:            capitalize;
 // $form-label-bottom-margin:              rem-calc(5);
 
-// @import "3-base/base.forms";
+@import "3-base/base.forms";
 
-/* [9] */
-// @import "3-base/base.codes";
+
+/* [10] */
+// $code-font-family: $base-font-family-monospace !default;
+// $code-font-size: 80% !default;
+
+// $code-padding: rem-calc(quarter($base-spacing-unit)) !default;
+// $code-bg-color: darken($base-background-color, 2%) !default;
+
+// $code-border-color: #ccc !default;
+// $code-border-width: 1px !default;
+// $code-border-style: solid !default;
+
+// $code-tab-size: 4 !default;
+
+@import "3-base/base.codes";
+
+
 
 
 /*
-   OBJECTS
+   Modules
    ========================================================================== */
 /**
- * Objects, abstractions, and design patterns
+ * modules, abstractions, and design patterns
  * (e.g. .media {}, .button{}, .list{}).
  *
  * [1]  Grids
@@ -242,11 +233,10 @@
  * [7]  List Dull
  * [8]  List Inline
  * [9]  List UI
- * [10]  Nav
- * [11] Media
- * [12] Pack
- * [13] Table
- * [14] Tabs
+ * [10] Media
+ * [11] Pack
+ * [12] Table
+ * [13] Tabs
  */
 
 /* [1] */
@@ -256,12 +246,15 @@ $default-float:                         left;
 $opposite-float:                        right;
 
 // grid extra large classes
-$enable-xl-grid-classes:                false;
-$enable-xxl-grid-classes:               false;
+// $enable-xl-grid-classes:                true;
+// $enable-xxl-grid-classes:               true;
 
 /*
    Default grid classess
    ========================================================================== */
+// Uncomment these variables bellow
+// if you want to create your own grid classes
+
 // $enable-default-grid-classes:           false;
 
 // $enable-grid-half:                      false;
@@ -270,23 +263,21 @@ $enable-xxl-grid-classes:               false;
 // $enable-grid-fifth:                     false;
 
 /*
-   Old school grid classes
-   ========================================================================== */
-// $enable-old-school-grid-classes:        true;
-
-/*
    Grid unit modifier
    ========================================================================== */
-// $enable-grid-flush:                     true;
-// $enable-grid-pull:                      true;
-// $enable-grid-push:                      true;
-// $enable-grid-offset:                    true;
-// $enable-grid-reset:                     true;
-// $enable-grid-centered:                  true;
-// $enable-grid-uncentered:                true;
+// These modifier will be disabled automatically
+// as you disable the default grid classes
+
+$enable-grid-flush:                     true;
+$enable-grid-pull:                      true;
+$enable-grid-push:                      true;
+$enable-grid-offset:                    true;
+$enable-grid-reset:                     true;
+$enable-grid-centered:                  true;
+$enable-grid-uncentered:                true;
 
 
-@import "4-objects/objects.grids";
+@import "4-modules/modules.grids";
 
 
 /* [2] */
@@ -307,7 +298,7 @@ $enable-xxl-grid-classes:               false;
 // $enable-block--right:                true;
 
 
-// @import "4-objects/objects.block";
+// @import "4-modules/modules.block";
 
 
 /* [3] */
@@ -325,14 +316,8 @@ $enable-xxl-grid-classes:               false;
 // $enable-box--large:                  true;
 // $enable-box--huge:                   true;
 
-// $enable-box--primary:                true;
-// $enable-box--secondary:              true;
-// $enable-box--alert:                  true;
-// $enable-box--success:                true;
-// $enable-box--warning:                true;
-// $enable-box--info:                   true;
 
-@import "4-objects/objects.box";
+// @import "4-modules/modules.box";
 
 
 /* [4] */
@@ -341,7 +326,7 @@ $enable-xxl-grid-classes:               false;
 // $btn-padding:                        half($base-spacing-unit);
 // $btn-padding--small:                 half($btn-padding);
 // $btn-padding--large:                 double($btn-padding);
-// $btn-background:                     $color-primary;
+// $btn-background:                     $your-color;
 // $btn-color:                          #fff;
 // $btn-border-width:                   1px;
 // $btn-border-style:                   solid;
@@ -352,14 +337,10 @@ $enable-xxl-grid-classes:               false;
 // $enable-btn--large:                  true;
 // $enable-btn--full:                   true;
 // $enable-btn--pill:                   true;
+// $enable-btn--border:                 true;
+// $enable-btn--disabled:               true;
 
-// $enable-button--alert:               true;
-// $enable-button--warning:             true;
-// $enable-button--success:             true;
-// $enable-button--info:                true;
-// $enable-button--secondary:           true;
-
-@import "4-objects/objects.buttons";
+@import "4-modules/modules.buttons";
 
 
 /* [5] */
@@ -382,7 +363,7 @@ $enable-xxl-grid-classes:               false;
 // $enable-flag--responsive:            true;
 // $flag-collapse-at:                   upper-bound($small-range);
 
-// @import "4-objects/objects.flag";
+// @import "4-modules/modules.flag";
 
 
 /* [6] */
@@ -399,12 +380,12 @@ $enable-xxl-grid-classes:               false;
 // $enable-list-block--large:           true;
 // $enable-list-block--huge:            true;
 
-// @import "4-objects/objects.list-block";
+// @import "4-modules/modules.list-block";
 
 
 /* [7] */
 // $list-dull-namespace:                $namespace;
-// @import "4-objects/objects.list-dull";
+// @import "4-modules/modules.list-dull";
 
 
 /* [8] */
@@ -413,7 +394,7 @@ $enable-xxl-grid-classes:               false;
 // $enable-list-inline--delimited:      true;
 // $list-inline-delimit-character:      ",\00A0";
 
-// @import "4-objects/objects.list-inline";
+// @import "4-modules/modules.list-inline";
 
 /* [9] */
 // $list-ui-namespace:                  $namespace;
@@ -436,24 +417,10 @@ $enable-xxl-grid-classes:               false;
 // $enable-remove-border-at-first-item: true;
 // $enable-remove-border-at-last-item:  true;
 
-// @import "4-objects/objects.list-ui";
+// @import "4-modules/modules.list-ui";
 
 
 /* [10] */
-//$nav-namespace:                   $namespace;
-
-// $nav--keyword-delimit-character:  "\002C" "\00A0";
-
-// $enable-nav--block:               true;
-// $enable-nav--stacked:             true;
-// $enable-nav--banner:              true;
-// $enable-nav--fit:                 true;
-// $enable-nav--keyword:             true;
-
-// @import "4-objects/objects.nav";
-
-
-/* [11] */
 // $media-namespace:                    $namespace;
 
 // $media-gutter:                       $base-spacing-unit;
@@ -471,10 +438,10 @@ $enable-xxl-grid-classes:               false;
 // $enable-media--flush:                true;
 // $enable-media--responsive:           true;
 
-// @import "4-objects/objects.media";
+// @import "4-modules/modules.media";
 
 
-/* [12] */
+/* [11] */
 // $pack-namespace:                     $namespace;
 
 // $pack-gutter:                        $base-spacing-unit;
@@ -492,10 +459,10 @@ $enable-xxl-grid-classes:               false;
 // $enable-pack--middle:                true;
 // $enable-pack--bottom:                true;
 
-// @import "4-objects/objects.pack";
+// @import "4-modules/modules.pack";
 
 
-/* [13] */
+/* [12] */
 // $table-namespace:                    $namespace;
 
 // $table-padding--compact:             quarter($base-spacing-unit);
@@ -514,12 +481,12 @@ $enable-xxl-grid-classes:               false;
 // $enable-table--rows:                 true;
 // $enable-table--columns:              true;
 
-// @import "4-objects/objects.tables";
+// @import "4-modules/modules.tables";
 
 
-/* [14] */
+/* [13] */
 // $tabs-namespace:                     $namespace;
-// @import "4-objects/objects.tabs";
+// @import "4-modules/modules.tabs";
 
 
 
@@ -539,31 +506,44 @@ $enable-xxl-grid-classes:               false;
 
 
 /*
-   TRUMPS
+   Helpers
    ========================================================================== */
 /**
  * High-specificity, very explicit selectors.
  * Overrides and helper classes (e.g. .hidden {}).
  *
- * [1] Alignment
- * [1+] Alignment Responsive
- * [2] Spacing
- * [2+] Spacing Responsive
- * [3] Float
- * [4+] Visibility Responsive
- * [5] Text transform
- * [6] Clearfix
+ * [1] Clearfix
+ * [2] Float
+ * [3] Text transform
+ * [4] Alignment
+ * [4+] Alignment Responsive
+ * [5] Spacing
+ * [5+] Spacing Responsive
+ * [6] Visibility
+ * [6+] Visibility Responsive
  * [7] Print
  */
 
 /* [1] */
-// $enable-xlarge-alignment-clasess:    true;
-
-@import "6-trumps/trumps.alignment";
-@import "6-trumps/trumps.alignment-responsive";
+@import "6-helpers/helpers.clearfix";
 
 
 /* [2] */
+// @import "6-helpers/helpers.float";
+
+
+/* [3] */
+// @import "6-helpers/helpers.text-transform";
+
+
+/* [4] */
+// $enable-xlarge-alignment-clasess:    true;
+
+// @import "6-helpers/helpers.alignment";
+// @import "6-helpers/helpers.alignment-responsive";
+
+
+/* [5] */
 // $spacing-namespace:                  $namespace;
 
 // $spacing-margin:                     $base-spacing-unit;
@@ -591,7 +571,8 @@ $enable-xxl-grid-classes:               false;
 
 // $enable-paddings--none:              true;
 
-@import "6-trumps/trumps.spacing";
+// @import "6-helpers/helpers.spacing";
+
 
 // $enable-responsive-margins:                   true;
 // $enable-responsive-margins--tiny:             true;
@@ -619,26 +600,20 @@ $enable-xxl-grid-classes:               false;
 // $enable-xlarge-responsive-spacing-clasess:    true;
 // $enable-xxlarge-responsive-spacing-clasess:   true;
 
-@import "6-trumps/trumps.spacing-responsive";
+// @import "6-helpers/helpers.spacing-responsive";
 
-/* [3] */
-@import "6-trumps/trumps.float";
 
-/* [4] */
+/* [6] */
 // $enable-accessibility-classes:       true;
 // $enable-table-classes:               true;
 
-@import "6-trumps/trumps.visibility";
+// @import "6-helpers/helpers.visibility";
+
 
 // $enable-xlarge-responsive-visibility-clasess:    true;
 // $enable-xxlarge-responsive-visibility-clasess:   true;
-@import "6-trumps/trumps.visibility-responsive";
+// @import "6-helpers/helpers.visibility-responsive";
 
-/* [5] */
-@import "6-trumps/trumps.text-transform";
-
-/* [6] */
-@import "6-trumps/trumps.clearfix";
 
 /* [7] */
-@import "6-trumps/trumps.print";
+// @import "6-helpers/helpers.print";

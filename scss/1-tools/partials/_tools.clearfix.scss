@@ -1,0 +1,14 @@
+/*
+   Clearfix hack by Nicolas Gallagher (https://github.com/necolas)
+   ========================================================================== */
+/**
+ * We use this to do clear floats
+ */
+@mixin clearfix {
+  &:before,
+  &:after{
+    content: " ";
+    display: table;
+  }
+  &:after { clear: both; }
+}

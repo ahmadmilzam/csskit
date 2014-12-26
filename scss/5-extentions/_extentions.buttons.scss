@@ -1,0 +1,183 @@
+$enable-button--alert:               false !default;
+$enable-button--warning:             false !default;
+$enable-button--success:             false !default;
+$enable-button--info:                false !default;
+$enable-button--secondary:           false !default;
+$enable-button--border:                 false !default;
+
+
+@if ($enable-button--alert == true) {
+
+  .#{$btn-namespace}btn--alert,
+  %#{$btn-namespace}btn--alert {
+    background-color: $color-alert;
+    border-color: darken($color-alert, 5%);
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-alert);
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
+    }
+
+    &:hover,
+    &:focus{
+      background-color: lighten($color-alert, 5%);
+    }
+    &:active{
+      background-color: darken($color-alert, 5%);
+    }
+  }
+
+}/* close enable-btn--alert */
+
+@if ($enable-button--success == true) {
+
+  .#{$btn-namespace}btn--success,
+  %#{$btn-namespace}btn--success {
+    background-color: $color-success;
+    border-color: darken($color-success, 5%);
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-success);
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
+    }
+
+    &:hover,
+    &:focus{
+      background-color: lighten($color-success, 5%);
+    }
+    &:active{
+      background-color: darken($color-success, 5%);
+    }
+  }
+
+}/* close enable-btn--success */
+
+@if ($enable-button--warning == true) {
+
+  .#{$btn-namespace}btn--warning,
+  %#{$btn-namespace}btn--warning {
+    background-color: $color-warning;
+    border-color: darken($color-warning, 5%);
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-warning);
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
+    }
+
+    &:hover,
+    &:focus{
+      background-color: lighten($color-warning, 5%);
+    }
+    &:active{
+      background-color: darken($color-warning, 5%);
+    }
+  }
+
+}/* close enable-btn--warning */
+
+@if ($enable-button--info == true) {
+
+  .#{$btn-namespace}btn--info,
+  %#{$btn-namespace}btn--info {
+    background-color: $color-info;
+    border-color: darken($color-info, 5%);
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-info);
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
+    }
+
+    &:hover,
+    &:focus{
+      background-color: lighten($color-info, 5%);
+    }
+    &:active{
+      background-color: darken($color-info, 5%);
+    }
+  }
+
+}/* close enable-btn--info */
+
+@if ($enable-button--secondary == true) {
+
+  .#{$btn-namespace}btn--secondary,
+  %#{$btn-namespace}btn--secondary {
+    background-color: $color-secondary;
+    border-color: darken($color-secondary, 5%);
+
+    // We control the text color for you based on the background color.
+    $bg-lightness: lightness($color-secondary);
+
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      color: if($bg-lightness > 80%, $btn-color-alt, $btn-color);
+    }
+
+    &:hover,
+    &:focus{
+      background-color: lighten($color-secondary, 5%);
+    }
+    &:active{
+      background-color: darken($color-secondary, 5%);
+    }
+  }
+
+}/* close enable-btn--secondary */
+
+
+@if ($enable-button--border == true){
+
+  /**
+   * Round-ended buttons.
+   *
+   * 1. Overly-large value to ensure the radius rounds the whole end of the
+   *    button.
+   */
+
+  .#{$btn-namespace}btn--border,
+  %#{$btn-namespace}btn--border {
+
+    border-style: solid;
+    border-color: $btn-border-color;
+    color: $btn-border-color;
+    @if($btn-border-width != 1px) {
+      border-width: $btn-border-width;
+    }
+    @else {
+      border-width: 2px;
+    }
+
+    &,
+    &:hover,
+    &:focus,
+    &:active{
+      background: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active{
+      background: none;
+      border-color: $btn-border-color;
+      color: $btn-border-color;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+/*
+   Math Helpers.
+   ========================================================================== */
+/**
+ * Half and double numbers, returning rounded integers. E.g.:
+ * .foo{
+ *  padding: half(30px)
+ * }
+ */
+
+@function quarter($number) {
+  @return round($number / 4);
+}
+
+@function half($number) {
+  @return round($number / 2);
+}
+
+@function double($number) {
+  @return round($number * 2);
+}
+
+@function quadruple($number) {
+  @return round($number * 4);
+}
+
+// Calculates the value of a number raised to the power of an exponent.
+@function pow($x, $y) {
+  $ret: 1;
+
+  @if $y > 0 {
+    @for $i from 1 through $y {
+        $ret: $ret * $x;
+    }
+  }
+
+  @else {
+    @for $i from $y to 0 {
+        $ret: $ret / $x;
+    }
+  }
+
+  @return $ret;
+}

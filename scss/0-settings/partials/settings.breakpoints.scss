@@ -1,0 +1,34 @@
+/*
+   SETTINGS-BREAKPOINTS
+   ========================================================================== */
+/**
+ * Hold our breakpoint range and conditions.
+ *
+ * These can be invoked later on using this line of code:
+ *
+ * @media #{conditions}{
+ *   @content;
+ * }
+ *
+ * Using Relative Units for Widths
+ *
+ * You may have noticed that we use em for
+ * our default CSS Media Query widths instead of px.
+ * This was a conscious decision since it
+ * allows the Media Queries to respond appropriately
+ * when people zoom the webpage.
+ * Check out this article by Brad Frost
+ * http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/#relative
+ * for some background information on using relative units
+ * within Media Queries.
+ */
+
+$screen: "only screen";
+
+$small-range:                           (0em, 45em) !default; // 0px - 720px
+$medium-range:                          (45.063em, 64em) !default; // 721px - 1024px
+$large-range:                           (64.063em, 90em) !default; // 1025px - 1440px
+$xlarge-range:                          (90.063em, 120em) !default; //1441px - 1920px
+$xxlarge-range:                         (120.063em, 99999999em) !default; //1921px - 99999999px
+
+$retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)" !default;
