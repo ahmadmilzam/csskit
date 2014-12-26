@@ -8,10 +8,10 @@
 </head>
 <body>
 
-  <header class="[ box box--primary box--large ] cover-bar mb++">
+  <header class="[ box box--primary box--large ] cover-bar mb+">
     <div class="layout">
       <div class="layout__unit small-1">
-        <div class="kilo">CSSKit kitchen sink v.0.0.1</div>
+        <div class="h4">CSSKit kitchen sink v.0.0.1</div>
       </div>
     </div>
   </header>
@@ -20,16 +20,23 @@
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h1>What is CSSKit?</h1>
-      <p class="lead">
-        CSSKit is a powerful, <a href="http://sass-lang.com/">Sass-based</a>, <a href="http://bem.info/">BEM</a>, <a href="https://github.com/stubbornella/oocss/wiki">OOCSS</a> framework designed with scalability
-        and performance in mind. It has a tiny footprint (the Starter
-        Kit comes in at 1KB, gzipped), and
+      <p class="lede">
+        CSSKit is a powerful,
+        <a href="http://sass-lang.com/">Sass-based</a>,
+        <a href="http://bem.info/">BEM</a>,
+        <a href="https://github.com/stubbornella/oocss/wiki">OOCSS</a>
+        framework designed with scalability
+        and performance in mind. It has a tiny
+        footprint (the Essential Kit comes in at 3KB, gzipped), and
         can be <strong>scaled as much</strong> or <strong>as little as you need</strong>.
+      </p>
+      <p>
+        OOCSS is really about a way to weiting CSS that avoid duplicating code by separating styles into letered abstractions.
       </p>
       <p>
         CSSKit provides a solid architectural foundation upon which you can build any
         size or style of website or app.
-        CSSKit is what you make of it-it helps you get started, and then gets out of your way.
+        CSSKit is what you make of it, it helps you get started, and then gets out of your way.
       </p>
       <p>
         CSSKit is a framework in its truest sense. It is not a UI Toolkit, with
@@ -63,13 +70,13 @@
       <p>
         To turn features on, just set their switches to true before you
         <code>@import</code> the file:
-        <pre>
-          <code>
-            $enable-btn--full:    true;
-            $enable-btn--large:   true;
-            @import "bower_components/objects/objects.buttons";
-          </code>
-        </pre>
+<pre>
+  <code>
+    $enable-btn--full:    true;
+    $enable-btn--large:   true;
+    @import "bower_components/modules/modules.buttons";
+  </code>
+</pre>
       </p>
 
 
@@ -84,10 +91,6 @@
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2 class="layout__heading mb+">Base Typograph</h2>
-
-      <h6 class="giga">This is Giga size</h6>
-      <h6 class="mega">This is Mega size</h6>
-      <h6 class="kilo">This is kilo size</h6>
 
       <h1>Heading 1</h1>
       <h2>Heading 2</h2>
@@ -234,13 +237,7 @@
           </p>
 
           <p>
-            <input class="btn" type="submit" value="Submit">
-            <input class="btn btn--alert" type="submit" value="Submit">
-            <input class="btn btn--warning" type="submit" value="Submit">
-            <input class="btn btn--info" type="submit" value="Submit">
-            <input class="btn btn--success" type="submit" value="Submit">
-            <input class="btn btn--secondary" type="submit" value="Submit">
-            <input class="btn btn--border" type="submit" value="Submit">
+            <input class="btn btn--full" type="submit" value="Submit">
           </p>
         </form>
       </fieldset>
@@ -248,48 +245,56 @@
   </div>
   <!-- base - form sample -->
 
-  <!-- object - button -->
+  <!-- module - button -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object Button</h2>
-      <p>A simple button object.</p>
+      <h2 class="layout__heading mb">Module Button</h2>
+      <p>A simple button module.</p>
 
-      <h3 class="mt">Button Default</h3>
-      <a class="btn">btn</a>
+      <div class="layout mb">
+        <div class="layout__unit small-1 medium-1-2">
+          <h3 class="mt">Button Default</h3>
+          <a class="btn">btn</a>
+        </div>
+        <div class="layout__unit small-1 medium-1-2">
+          <h3 class="mt">Button Default</h3>
+          <a class="btn btn--disabled">btn btn--disabled</a>
+        </div>
+        <div class="layout__unit small-1 medium-1-2">
+          <h3 class="mt">Button Pill</h3>
+          <a class="btn btn--pill">btn btn--pill</a>
+        </div>
+        <div class="layout__unit small-1 medium-1-2">
+          <h3 class="mt">Button Border</h3>
+          <a class="btn btn--border">btn btn--border</a>
+        </div>
+        <div class="layout__unit small-1 medium-1">
+          <h3 class="mt">Button Full</h3>
+          <a class="btn btn--full">btn btn--full</a>
+        </div>
+      </div>
 
-      <h3 class="mt">Button Primary</h3>
-      <a class="btn btn--primary">btn btn--primary</a>
+      <div class="layout mb">
+        <div class="layout__unit small-1 medium-1-2">
+          <h3 class="mt">Button Small</h3>
+          <a class="btn btn--small">btn btn--small</a>
+        </div>
+        <div class="layout__unit small-1 medium-1-2">
+          <h3 class="mt">Button Large</h3>
+          <a class="btn btn--large">btn btn--large</a>
+        </div>
+      </div>
 
-      <h3 class="mt">Button Secondary</h3>
-      <a class="btn btn--secondary">btn btn--secondary</a>
-
-      <h3 class="mt">Button Alert</h3>
-      <a class="btn btn--alert">btn btn--alert</a>
-
-      <h3 class="mt">Button Success</h3>
-      <a class="btn btn--success">btn btn--success</a>
-
-      <h3 class="mt">Button Warning</h3>
-      <a class="btn btn--warning">btn btn--warning</a>
-
-      <h3 class="mt">Button Info</h3>
-      <a class="btn btn--info">btn btn--info</a>
-
-      <h3 class="mt">Button Pill</h3>
-      <a class="btn btn--pill">btn btn--pill</a>
-
-      <h3 class="mt">Button Full</h3>
-      <a class="btn btn--full">btn btn--full</a>
     </div>
   </div>
-  <!-- object - button -->
+  <!-- module - button -->
 
-  <!-- object - block -->
+  <!-- module - block -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object Block</h2>
+      <h2 class="layout__heading mb">Module Block</h2>
       <p>
-        The block object simply stacks an image on top of some text-like content.
+        The block module simply stacks an image on top of some text-like content.
       </p>
 
       <h3>Block Default</h3>
@@ -303,53 +308,29 @@
       </div>
     </div>
   </div>
-  <!-- object - block -->
+  <!-- module - block -->
 
-  <!-- object - box sample -->
+  <!-- module - box sample -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb+">Object Box</h2>
-      <p>The box object simply boxes off content.</p>
+      <h2 class="layout__heading mb+">Module Box</h2>
+      <p>The box module simply boxes off content.</p>
 
-      <div class="box text-center">
-        <h6>Box default</h6>
+      <div class="box debug-layout text-center">
+        <h6>Box module</h6>
       </div>
 
-      <div class="layout">
-        <div class="layout__unit small-1 medium-1-2">
-          <div class="box box--primary">
-            <h6>Box primary</h6>
-          </div>
-          <div class="box box--secondary">
-            <h6>Box secondary</h6>
-          </div>
-          <div class="box box--info">
-            <h6>Box info</h6>
-          </div>
-        </div>
-        <div class="layout__unit small-1 medium-1-2">
-          <div class="box box--success">
-            <h6>Box success</h6>
-          </div>
-          <div class="box box--alert">
-            <h6>Box alert</h6>
-          </div>
-          <div class="box box--warning">
-            <h6>Box warning</h6>
-          </div>
-        </div>
-      </div>
     </div>
   </div>
-  <!-- object - box sample -->
+  <!-- module - box sample -->
 
-  <!-- object - media -->
+  <!-- module - media -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object Media</h2>
+      <h2 class="layout__heading mb">Module Media</h2>
       <p>
         Place any image- and text-like content side-by-side, as per: <br>
-        stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+        stubbornella.org/content/2010/06/25/the-media-module-saves-hundreds-of-lines-of-code
       </p>
 
       <h3>Media Default</h3>
@@ -387,15 +368,15 @@
       </div>
     </div>
   </div>
-  <!-- object - media -->
+  <!-- module - media -->
 
-  <!-- object - flag -->
+  <!-- module - flag -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object Flag</h2>
+      <h2 class="layout__heading mb">Module Flag</h2>
 
       <p>
-        The flag object is a design pattern similar to the media object, however it
+        The flag module is a design pattern similar to the media module, however it
         utilises <code>display: table[-cell];</code> to give us control over the vertical
         alignments of the text and image.
       </p>
@@ -460,16 +441,16 @@
 
     </div>
   </div>
-  <!-- object - flag -->
+  <!-- module - flag -->
 
-  <!-- object - list(s) -->
+  <!-- module - list(s) -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object List</h2>
+      <h2 class="layout__heading mb">Module List</h2>
 
       <h3>Dull List</h3>
       <p>
-        The list-dull object simply removes any indents and bullet points from lists.
+        The list-dull module simply removes any indents and bullet points from lists.
       </p>
       <ul class="list-dull mb">
         <li><a href="">List Link 1</a></li>
@@ -482,7 +463,7 @@
       <hr>
 
       <h3>Inline List</h3>
-      <p>The list-inline object simply displays a list of items in one line.</p>
+      <p>The list-inline module simply displays a list of items in one line.</p>
       <ul class="list-inline mb">
         <li><a href="">List Link 1</a></li>
         <li><a href="">List Link 2</a></li>
@@ -517,7 +498,7 @@
       <hr>
 
       <h3>Block List</h3>
-      <p>The list-block object creates blocky list items out of a <code>ul</code> or <code>ol</code>.</p>
+      <p>The list-block module creates blocky list items out of a <code>ul</code> or <code>ol</code>.</p>
 
       <ul class="list-block mb">
         <li class="debug-layout"><a href="">List Link 1</a></li>
@@ -531,112 +512,29 @@
 
       <h3>UI List</h3>
       <p>
-        The UI list object creates blocky list items with a keyline separator out of a <code>ul</code> or <code>ol</code>.
+        The UI list module creates blocky list items with a keyline separator out of a <code>ul</code> or <code>ol</code>.
       </p>
       <ul class="list-ui mb">
-        <li class="list-ui__item"><a href="">List Link 1</a></li>
-        <li class="list-ui__item"><a href="">List Link 2</a></li>
-        <li class="list-ui__item"><a href="">List Link 3</a></li>
-        <li class="list-ui__item"><a href="">List Link 4</a></li>
-        <li class="list-ui__item"><a href="">List Link 5</a></li>
-      </ul>
-    </div>
-  </div>
-  <!-- object - list(s) -->
-
-  <!-- object - Nav -->
-  <div class="layout mb+">
-    <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object Nav</h2>
-
-      <h3>Nav Default</h3>
-      <p>
-        Nav abstraction as per: csswizardry.com/2011/09/the-nav-abstraction
-        <br>
-        When used on an <code>ol</code> or <code>ul</code>, this class throws the list into horizontal mode
-      </p>
-      <ul class="[ nav ] mb">
-        <li><a href=#>Home</a></li>
-        <li><a href=#>About</a></li>
-        <li><a href=#>Portfolio</a></li>
-        <li><a href=#>Contact</a></li>
-      </ul>
-
-      <hr>
-
-      <h3>Nav Stacked</h3>
-      <p>
-        <code>.nav--stacked</code> extends <code>.nav</code> and throws the list into vertical mode, e.g.:
-      </p>
-      <ul class="[ nav nav--stacked ] mb">
-        <li><a href=#>Home</a></li>
-        <li><a href=#>About</a></li>
-        <li><a href=#>Portfolio</a></li>
-        <li><a href=#>Contact</a></li>
-      </ul>
-
-      <hr>
-
-      <h3>Nav Block</h3>
-      <p>Give nav links a big, blocky hit area.</p>
-      <ul class="[ nav nav--block ] mb">
-        <li><a class="debug-layout" href=#>Home</a></li>
-        <li><a class="debug-layout" href=#>About</a></li>
-        <li><a class="debug-layout" href=#>Portfolio</a></li>
-        <li><a class="debug-layout" href=#>Contact</a></li>
-      </ul>
-
-      <hr>
-
-      <h3>Nav Banner</h3>
-      <p>Make the link's aligment center</p>
-      <ul class="[ nav nav--banner ] mb">
-        <li><a href="">Nav Link 1</a></li>
-        <li><a href="">Nav Link 2</a></li>
-        <li><a href="">Nav Link 3</a></li>
-        <li><a href="">Nav Link 4</a></li>
-        <li><a href="">Nav Link 5</a></li>
-      </ul>
-
-      <hr>
-
-      <h3>Nav Fit</h3>
-      <p>
-        Force a nav to occupy 100% of the available width of its parent.
-      </p>
-      <ul class="[ nav nav--fit ] mb">
         <li><a href="">List Link 1</a></li>
         <li><a href="">List Link 2</a></li>
         <li><a href="">List Link 3</a></li>
         <li><a href="">List Link 4</a></li>
         <li><a href="">List Link 5</a></li>
       </ul>
-
-      <hr>
-
-      <h3>Nav Keyword</h3>
-      <p>Make a list of keywords.</p>
-      <ul class="[ nav nav--keywords ] mb">
-        <li><a href="">post</a></li>
-        <li><a href="">food</a></li>
-        <li><a href="">lifestyle</a></li>
-        <li><a href="">health</a></li>
-        <li><a href="">sport</a></li>
-      </ul>
     </div>
   </div>
-  <!-- object - Nav -->
+  <!-- module - list(s) -->
 
-  <!-- object - pack -->
+  <!-- module - pack -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object Pack</h2>
+      <h2 class="layout__heading mb">Module Pack</h2>
 
       <h3>Pack Default with height: 400px</h3>
       <div class="pack">
         <div class="pack__item">
           <p class="lead">
-            The pack object simply causes any number of elements pack up horizontally to
+            The pack module simply causes any number of elements pack up horizontally to
             automatically fill an equal, fluid width of their parent.
           </p>
           <p>
@@ -651,13 +549,13 @@
       </div>
     </div>
   </div>
-  <!-- object - pack -->
+  <!-- module - pack -->
 
 
-  <!-- object - table sample -->
+  <!-- module - table sample -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb+">Object Table</h2>
+      <h2 class="layout__heading mb+">Module Table</h2>
 
       <h3>Table Fixed</h3>
       <table class="[ table table--fixed ] mb+">
@@ -866,12 +764,12 @@
       </table>
     </div>
   </div>
-  <!-- object - table sample -->
+  <!-- module - table sample -->
 
-  <!-- object - tabs -->
+  <!-- module - tabs -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb">Object Tabs</h2>
+      <h2 class="layout__heading mb">Module Tabs</h2>
       <p>A simple abstraction for making equal-width navigation tabs.</p>
 
       <h3>Tabs default</h3>
@@ -883,12 +781,13 @@
       </ul>
     </div>
   </div>
-  <!-- object - tabs -->
+  <!-- module - tabs -->
 
-  <!-- components - grid sample -->
+  <!-- module - grid sample -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
-      <h2 class="layout__heading mb+">Components Grid</h2>
+      <h2 class="layout__heading mb+">Module Grid</h2>
+
       <p class="lead">
         In a world of agile development and
         super-tablet-multi-magic-laptop-phones,
@@ -898,7 +797,6 @@
         Why let the table-saw tell you where to put the kitchen?
         If we can create them ourself?
       </p>
-      <!-- <p>The only component that CSSKit has is Grids Component. But not a bunch of html classes, only collection of mixin to help you create your own grid.</p> -->
 
       <h3>2 equal columns layout example</h3>
 
@@ -939,7 +837,6 @@
       <hr>
 
       <h3>4 columns layout example</h3>
-
       <div class="layout mb">
         <div class="layout__unit small-1-4 debug-layout">
           <small><code>layout__unit small-1-4</code></small>
@@ -964,8 +861,9 @@
         </div>
       </div>
 
-      <h3>5 columns layout example</h3>
+      <hr>
 
+      <h3>5 columns layout example</h3>
       <div class="layout mb">
         <div class="layout__unit small-1-5 debug-layout">
           <small><code>layout__unit small-1-5</code></small>
@@ -993,9 +891,79 @@
         </div>
       </div>
 
+      <hr>
+
+      <h3>Grid Offset</h3>
+      <div class="layout mb">
+        <div class="layout__unit small-1-5 debug-layout">
+          <small><code>layout__unit small-2-5</code></small>
+        </div>
+        <div class="layout__unit small-4-5 debug-layout">
+          <small><code>layout__unit small-3-5</code></small>
+        </div>
+      </div>
+      <div class="layout mb">
+        <div class="layout__unit small-1-5 debug-layout">
+          <small><code>layout__unit small-2-5</code></small>
+        </div>
+        <div class="layout__unit small-3-5 small-offset-1-5 debug-layout">
+          <small><code>layout__unit small-3-5</code></small>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Incomplete Grid</h3>
+      <div class="layout mb">
+        <div class="layout__unit small-1-5 debug-layout">
+          <small><code>layout__unit small-1-5</code></small>
+        </div>
+        <div class="layout__unit small-2-5 debug-layout">
+          <small><code>layout__unit small-2-5</code></small>
+        </div>
+        <div class="layout__unit small-1-5 end debug-layout">
+          <small><code>layout__unit small-3-5 end</code></small>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Flushed Grid</h3>
+      <div class="layout layout--flush mb">
+        <div class="layout__unit small-1-2 debug-layout">
+          <small><code>layout__unit small-1-2</code></small>
+        </div>
+        <div class="layout__unit small-1-2 debug-layout">
+          <small><code>layout__unit small-1-2</code></small>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Centered Column</h3>
+      <div class="layout layout--flush mb">
+        <div class="layout__unit small-1-2 small-centered debug-layout">
+          <small><code>layout__unit small-1-2 small-centered</code></small>
+        </div>
+      </div>
+
+      <hr>
+
+      <h3>Grid Ordering</h3>
+      <div class="layout mb">
+        <div class="layout__unit small-2-5 small-push-3-5 debug-layout">
+          <p>First in source code, Last in browser</p>
+          <small><code>layout__unit small-1-5 small-push-4-5</code></small>
+        </div>
+        <div class="layout__unit small-3-5 small-pull-2-5 debug-layout">
+          <p>Last in source code, First in browser</p>
+          <small><code>layout__unit small-4-5 small-pull-1-5</code></small>
+        </div>
+      </div>
+
     </div>
   </div>
-  <!-- components - grid sample -->
+  <!-- module - grid sample -->
 
 </body>
 </html>

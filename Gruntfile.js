@@ -1,4 +1,10 @@
 module.exports = function(grunt) {
+
+  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-autoprefixer');
+  grunt.loadNpmTasks('grunt-contrib-cssmin');
+
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
 
@@ -21,23 +27,35 @@ module.exports = function(grunt) {
           sourcemap: 'none',
         },
         files: {
-          'css/app.min.css': 'scss/app.scss',
+          'css/app.css': 'scss/app.scss',
           'css/style.css': 'css/style.scss',
         }
       }
     },
 
+    // Auto Prefixer
     autoprefixer: {
       dist: {
         options: {
           browsers: [
             'last 2 versions',
+            '> 1%',
             'ie 9'
           ],
           map: false
         },
-        src: 'css/app.css',
-        dest: 'css/app.min.css'
+        files: {
+          'css/app.css': ['css/app.css']
+        }
+      }
+    },
+
+    // Minify CSS
+    cssmin: {
+      combine: {
+        files: {
+          'css/app.min.css': ['css/app.css']
+        },
       },
     },
 
@@ -56,10 +74,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.loadNpmTasks('grunt-contrib-sass');
-  grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-autoprefixer');
-
   grunt.registerTask(
     'development-task',
     [
@@ -71,7 +85,8 @@ module.exports = function(grunt) {
     'production-task',
     [
       'sass:dist',
-      'autoprefixer:dist'
+      'autoprefixer:dist',
+      'cssmin:combine'
     ]
   );
 

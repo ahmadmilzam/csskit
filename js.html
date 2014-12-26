@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+  <title>CSSKit</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <ol id="olList">
+    <li class="list__item">list 1</li>
+    <li class="list__item">list 2</li>
+    <li class="list__item">list 3</li>
+  </ol>
+
+  <script>
+    var list = document.getElementById('olList'),
+    listItem = list.getElementsByClassName('list__item');
+
+    console.log(list);
+    console.log(listItem);
+    var handler = function(event){
+      console.log(event);
+    }
+
+
+    for(var i=0; i<listItem.length; i++) {
+
+      listItem[i].addEventListener('click', function(event){
+        var target = event.target || event.srcElement;
+        console.log(event);
+        console.log(target);
+        console.log(this);
+      }, false);
+
+      // listItem[i].onclick = function(e) {
+
+      //   e = e || event;
+      //   var target = e.target || e.srcElement;
+      //   console.log(e);
+      //   console.log(target);
+      //   console.log(this);
+
+      //   this.style.backgroundColor='yellow';
+
+      //   alert("target = "+target.className+", this="+this.className);
+
+      //   this.style.backgroundColor = '';
+      // }
+    }
+  </script>
+
+</body>
+</html>
