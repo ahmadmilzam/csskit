@@ -11,11 +11,9 @@ $imported-default-settings: false !default;
   @warn "Oops! Have you included a default settings file?"
 }
 
-$code-font-family: $base-font-family-monospace !default;
-$code-font-size: 80% !default;
 
-$code-padding: rem-calc(quarter($base-spacing-unit)) !default;
-$code-bg-color: darken($base-background-color, 2%) !default;
+$code-font-family: $base-font-family-monospace !default;
+$code-font-size: 14px !default;
 
 $code-border-color: #ccc !default;
 $code-border-width: 1px !default;
@@ -31,42 +29,21 @@ samp {
 }
 
 code {
-  padding: $code-padding;
-  font-size: $code-font-size;
-  background-color: $code-bg-color;
+  @include font-size($code-font-size);
 }
 
-kbd {
-  padding: $code-padding;
-  font-size: $code-font-size;
-  color: $base-background-color;
-  background-color: $base-text-color;
-}
-kbd kbd {
-  padding: 0;
-  font-size: 100%;
-  font-weight: bold;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
 pre {
   display: block;
-  padding: $code-padding;
-  line-height: 1.5;
-  color: $base-text-color;
-  background-color: $code-bg-color;
   border: $code-border-width $code-border-style $code-border-color;
-  white-space: pre-wrap;
+  white-space: pre;
   word-break: break-all;
   word-wrap: break-word;
+  word-wrap: normal;
+  overflow: auto;
   -moz-tab-size: $code-tab-size;
        tab-size: $code-tab-size;
-}
-pre code {
-  padding: 0;
-  font-size: inherit;
-  color: inherit;
-  white-space: pre-wrap;
-  background-color: transparent;
-  border-radius: 0;
+  &,
+  code, kbd, samp {
+      color: inherit;
+  }
 }

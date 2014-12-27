@@ -15,13 +15,13 @@ $imported-default-settings: false !default;
 $hr-border-width:  1px !default;
 $hr-border-style:  solid !default;
 $hr-border-color:  #ccc !default;
-$hr-margin:        rem-calc($base-spacing-unit) !default;
+$hr-margin:        $base-spacing-unit !default;
 
 
 hr{
   border: $hr-border-style $hr-border-color;
   border-width: $hr-border-width 0 0;
-  margin: $hr-margin 0 ($hr-margin - rem-calc($hr-border-width));
+  margin: rem-calc($hr-margin 0 ($hr-margin - $hr-border-width));
   clear: both;
   height: 0;
 }

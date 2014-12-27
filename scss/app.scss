@@ -170,49 +170,41 @@
 /* [7] */
 // $hr-border-width:  1px;
 // $hr-border-style:  solid;
-// $hr-border-color:  $your-color;
-// $hr-margin:        rem-calc($base-spacing-unit);
+// $hr-border-color:  #ccc;
+// $hr-margin:        $base-spacing-unit;
 
 @import "3-base/base.hr";
 
 
 /* [8] */
-// $blockquote-font-size: rem-calc(18);
-// $blockquote-footer-font-size: 80%;
+// $blockquote-footer-font-size: 12px;
 // $blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%);
-// $blockquote-padding: half($base-spacing-unit) $base-spacing-unit;
-// $blockquote-border-width: rem-calc(5);
-// $blockquote-border-color: #eee;
 
 @import "3-base/base.blockquote";
 
 
 /* [9] */
 // $form-font-size:                        $base-font-size;
+// $form-border-style:                     solid;
 // $form-border-width:                     1px;
 // $form-border-color:                     #ddd;
 // $form-border-color-hover:               darken($form-border-color, 5%);
-// $form-label-pointer:                    pointer;
-// $form-label-font-weight:                normal;
-// $form-label-font-color:                 scale-color($base-text-color, $lightness: 30%);
-// $form-label-small-transform:            capitalize;
-// $form-label-bottom-margin:              rem-calc(5);
+// $form-label-margin-bottom:              quarter($base-spacing-unit);
+// $form-input-padding:                    half($base-spacing-unit);
+// $form-input-margin-bottom:              half($base-spacing-unit);
 
 @import "3-base/base.forms";
 
 
 /* [10] */
-// $code-font-family: $base-font-family-monospace !default;
-// $code-font-size: 80% !default;
+// $code-font-family: $base-font-family-monospace;
+// $code-font-size: 14px;
 
-// $code-padding: rem-calc(quarter($base-spacing-unit)) !default;
-// $code-bg-color: darken($base-background-color, 2%) !default;
+// $code-border-color: #ccc;
+// $code-border-width: 1px;
+// $code-border-style: solid;
 
-// $code-border-color: #ccc !default;
-// $code-border-width: 1px !default;
-// $code-border-style: solid !default;
-
-// $code-tab-size: 4 !default;
+// $code-tab-size: 4;
 
 @import "3-base/base.codes";
 
