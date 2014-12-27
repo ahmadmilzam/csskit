@@ -68,7 +68,7 @@ select {
   margin-bottom: rem-calc($form-input-margin-bottom);
   padding: rem-calc($form-input-padding);
 
-  border: $form-border-width $form-border-color $form-border-color;
+  border: $form-border-width $form-border-style $form-border-color;
 }
 
 textarea {
