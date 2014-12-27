@@ -65,6 +65,7 @@
 
 // base line debuger
 // $enable-debug-typography:                true;
+
 // whitespace debuger
 // $enable-debug-whitespace:                true;
 
@@ -206,7 +207,7 @@
 
 // $code-tab-size: 4;
 
-@import "3-base/base.codes";
+// @import "3-base/base.codes";
 
 
 
@@ -262,13 +263,13 @@ $opposite-float:                        right;
 // These modifier will be disabled automatically
 // as you disable the default grid classes
 
-$enable-grid-flush:                     true;
-$enable-grid-pull:                      true;
-$enable-grid-push:                      true;
-$enable-grid-offset:                    true;
-$enable-grid-reset:                     true;
-$enable-grid-centered:                  true;
-$enable-grid-uncentered:                true;
+// $enable-grid-flush:                     true;
+// $enable-grid-pull:                      true;
+// $enable-grid-push:                      true;
+// $enable-grid-offset:                    true;
+// $enable-grid-reset:                     true;
+// $enable-grid-centered:                  true;
+// $enable-grid-uncentered:                true;
 
 
 @import "4-modules/modules.grids";
