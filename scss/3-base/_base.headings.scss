@@ -18,9 +18,6 @@ $heading-size-max:           36px !default;
 $heading-size-max-small:     30px !default;
 $heading-line-height-small:  1.3 !default;
 
-$heading-font-family:        false !default;
-$heading-font-weight:        false !default;
-
 /**
  * A modified version of heading-size mixin from
  * https://gist.github.com/lolmaus/7825675
@@ -84,15 +81,10 @@ $heading-font-weight:        false !default;
 
 
 h1,h2,h3,h4,h5,h6{
-  @if $heading-font-weight{
-    font-weight: $heading-font-weight;
-  }
-  @if $heading-font-family{
-    font-family: $heading-font-family;
-  }
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
 }
+
 @include heading-sizes($max-size: $heading-size-max-small, $line-height: $heading-line-height-small);
 
 @media #{$large-up}{
