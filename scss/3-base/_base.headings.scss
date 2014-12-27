@@ -11,15 +11,15 @@ $imported-default-settings: false !default;
   @warn "Oops! Have you included a default settings file?"
 }
 
-$heading-size-min:           $base-font-size !default;
+$heading-size-min:           16px !default;
 $heading-size-max:           36px !default;
 
 // max font size and line height for small device
 $heading-size-max-small:     30px !default;
 $heading-line-height-small:  1.3 !default;
 
-$heading-font-family:        $base-font-family !default;
-$heading-font-weight:        $base-font-weight !default;
+$heading-font-family:        false !default;
+$heading-font-weight:        false !default;
 
 /**
  * A modified version of heading-size mixin from
@@ -68,7 +68,6 @@ $heading-font-weight:        $base-font-weight !default;
         @include font-size($size);
       }
 
-
       @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal){
         @include font-size($size, $line-height);
       }
@@ -85,8 +84,12 @@ $heading-font-weight:        $base-font-weight !default;
 
 
 h1,h2,h3,h4,h5,h6{
-  font-weight: $header-font-weight;
-  font-family: $header-font-family;
+  @if $header-font-weight{
+    font-weight: $header-font-weight;
+  }
+  @if $header-font-family{
+    font-family: $header-font-family;
+  }
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
 }
