@@ -34,6 +34,7 @@ $btn-border-width:                   1px !default;
 $btn-border-style:                   solid !default;
 $btn-border-color:                   $btn-background !default;
 $btn-radius:                         0 !default;
+$btn-lightness-factor:               20% !default;
 
 $enable-btn--small:                  false !default;
 $enable-btn--large:                  false !default;
@@ -89,10 +90,10 @@ $enable-btn--disabled:               false !default;
 
   &:hover,
   &:focus{
-    background-color: lighten($btn-background, 10%);
+    background-color: scale-color($btn-background, $lightness: $btn-lightness-factor);
   }
   &:active{
-    background-color: darken($btn-background, 10%);
+    background-color: scale-color($btn-background, $lightness: -$btn-lightness-factor);
   }
 
 }
