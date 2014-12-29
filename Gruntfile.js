@@ -21,13 +21,14 @@ module.exports = function(grunt) {
     project: {
       src: 'src',
       app: 'app',
+      docs: 'docs',
       assets: 'assets',
       css: {
         main: [
           '<%= project.src %>/scss/app.scss'
         ],
         docs: [
-          'docs/src/scss/docs.scss'
+          '<%= project.docs %>/<%= project.src %>/scss/docs.scss'
         ]
       }
     },
@@ -63,7 +64,7 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= project.app %>/<%= project.assets %>/css/app.css' : '<%= project.css.main %>',
-          '<%= project.app %>/<%= project.assets %>/css/docs.css' : '<%= project.css.docs %>',
+          '<%= project.docs %>/<%= project.assets %>/css/docs.css' : '<%= project.css.docs %>',
         }
       }
     },
@@ -86,7 +87,7 @@ module.exports = function(grunt) {
         },
         files: {
           '<%= project.app %>/<%= project.assets %>/css/app.css' : ['<%= project.app %>/<%= project.assets %>/css/app.css'],
-          '<%= project.app %>/<%= project.assets %>/css/docs.css' : ['<%= project.app %>/<%= project.assets %>/css/docs.css']
+          '<%= project.docs %>/<%= project.assets %>/css/docs.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.css']
         }
       }
     },
@@ -98,8 +99,8 @@ module.exports = function(grunt) {
     cssmin: {
       combine: {
         files: {
-          '<%= project.app %>/<%= project.assets %>/css/app.min.css': ['<%= project.app %>/<%= project.assets %>/css/app.min.css'],
-          '<%= project.app %>/<%= project.assets %>/css/docs.min.css': ['<%= project.app %>/<%= project.assets %>/css/docs.min.css'],
+          '<%= project.app %>/<%= project.assets %>/css/app.min.css' : ['<%= project.app %>/<%= project.assets %>/css/app.min.css'],
+          '<%= project.docs %>/<%= project.assets %>/css/docs.min.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.min.css'],
         },
       },
     },
@@ -117,7 +118,7 @@ module.exports = function(grunt) {
       sass: {
         files: [
           '<%= project.src %>/scss/**/*.{scss, sass}',
-          'docs/src/scss/**/*.{scss, sass}'
+          '<%= project.docs %>/<%= project.src %>/scss/**/*.{scss, sass}'
         ],
         tasks: ['sass:compile']
       }
