@@ -1,0 +1,64 @@
+/**
+ * Button group horizontal
+ * 1. Add clearfix for button group container
+ * 2. Reset applied border left
+ * 3. Reset applied border radius
+ * 4. Make them float left
+ * 5. Give appropriate border radius to first and last child
+ */
+.btn-group-horizontal{
+
+  @extend %clearfix; /* [1] */
+
+  .btn{
+    // border-color: darken($btn-background, $btn-lightness-factor); /* [2] */
+    border-left-width: 0; /* [2] */
+    border-radius: 0; /* [3] */
+    float: left; /* [4] */
+
+    &:first-child{
+      border-left-width: $btn-border-width;
+      border-radius: $btn-radius 0 0 $btn-radius; /* [5] */
+    }
+    &:last-child{
+      border-radius: 0 $btn-radius $btn-radius 0; /* [5] */
+    }
+  }
+
+}
+
+/**
+ * Button group horizontal
+ * 1. Set button display to block
+ * 2. Reset applied border top and bottom
+ * 3. Reset applied border radius
+ * 4. Give appropriate border radius to first and last child
+ */
+.btn-group-vertical{
+  .btn{
+    display: block; /* [1] */
+    border-bottom-width: 0; /* [2] */
+    border-radius: 0; /* [3] */
+
+    &:first-child{
+      border-radius: $btn-radius $btn-radius 0 0 ; /* [4] */
+    }
+
+    &:last-child{
+      border-bottom-width: $btn-border-width;
+      border-radius: 0 0 $btn-radius $btn-radius; /* [5] */
+    }
+  }
+}
+
+.btn--dropdown{
+  position: relative;
+  &::after{
+    content: '';
+    position: absolute;
+    right: rem-calc(quarter($base-spacing-unit));
+
+    @include vertical-middle;
+    @include triangle (rem-calc(10), $btn-color, down);
+  }
+}

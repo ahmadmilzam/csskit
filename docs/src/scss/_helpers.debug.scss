@@ -1,0 +1,6 @@
+.debug-layout{
+   background-color: #eee;
+   &:nth-child(even){
+      background-color: #ddd;
+   }
+}
