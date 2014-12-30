@@ -4,7 +4,7 @@
 /**
  * Half and double numbers, returning rounded integers. E.g.:
  * .foo{
- *  padding: half(30px)
+ *  padding: halve(30px)
  * }
  */
 
@@ -12,7 +12,7 @@
   @return round($number / 4);
 }
 
-@function half($number) {
+@function halve($number) {
   @return round($number / 2);
 }
 

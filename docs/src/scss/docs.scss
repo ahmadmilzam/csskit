@@ -197,7 +197,7 @@ $hr-border-color:  $color-divider;
 // $blockquote-font-size: rem-calc(18);
 // $blockquote-footer-font-size: 80%;
 // $blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%);
-// $blockquote-padding: half($base-spacing-unit) $base-spacing-unit;
+// $blockquote-padding: halve($base-spacing-unit) $base-spacing-unit;
 // $blockquote-border-width: rem-calc(5);
 // $blockquote-border-color: #eee;
 
@@ -307,7 +307,7 @@ $enable-grid-uncentered:                true;
 
 // $block-gutter:                       $base-spacing-unit;
 // $block-gutter--tiny:                 quarter($block-gutter);
-// $block-gutter--small:                half($block-gutter);
+// $block-gutter--small:                halve($block-gutter);
 // $block-gutter--large:                double($block-gutter);
 // $block-gutter--huge:                 quadruple($block-gutter);
 
@@ -328,7 +328,7 @@ $enable-block--right:                true;
 
 // $box-padding:                        $base-spacing-unit;
 // $box-padding--tiny:                  quarter($box-padding);
-// $box-padding--small:                 half($box-padding);
+// $box-padding--small:                 halve($box-padding);
 // $box-padding--large:                 double($box-padding);
 // $box-padding--huge:                  quadruple($box-padding);
 
@@ -344,8 +344,8 @@ $enable-box--huge:                   true;
 /* [4] */
 // $btn-namespace:                      $namespace;
 
-// $btn-padding:                        half($base-spacing-unit);
-// $btn-padding--small:                 half($btn-padding);
+// $btn-padding:                        halve($base-spacing-unit);
+// $btn-padding--small:                 halve($btn-padding);
 // $btn-padding--large:                 double($btn-padding);
 $btn-lightness-factor:               20%;
 $btn-background:                     $color-primary;
@@ -371,7 +371,7 @@ $enable-btn--disabled:               true;
 
 // $flag-gutter:                        $base-spacing-unit;
 // $flag-gutter--tiny:                  quarter($flag-gutter);
-// $flag-gutter--small:                 half($flag-gutter);
+// $flag-gutter--small:                 halve($flag-gutter);
 // $flag-gutter--large:                 double($flag-gutter);
 // $flag-gutter--huge:                  quadruple($flag-gutter);
 
@@ -394,7 +394,7 @@ $enable-flag--responsive:            true;
 
 // $list-block-padding:                 $base-spacing-unit;
 // $list-block-padding--tiny:           quarter($list-block-padding);
-// $list-block-padding--small:          half($list-block-padding);
+// $list-block-padding--small:          halve($list-block-padding);
 // $list-block-padding--large:          double($list-block-padding);
 // $list-block-padding--huge:           quadruple($list-block-padding);
 
@@ -424,7 +424,7 @@ $enable-list-inline--delimited:      true;
 
 // $list-ui-padding:                    $base-spacing-unit;
 // $list-ui-padding--tiny:              quarter($list-ui-padding);
-// $list-ui-padding--small:             half($list-ui-padding);
+// $list-ui-padding--small:             halve($list-ui-padding);
 // $list-ui-padding--large:             double($list-ui-padding);
 // $list-ui-padding--huge:              quadruple($list-ui-padding);
 
@@ -450,7 +450,7 @@ $enable-remove-border-at-last-item:  true;
 
 // $media-gutter:                       $base-spacing-unit;
 // $media-gutter--tiny:                 quarter($media-gutter);
-// $media-gutter--small:                half($media-gutter);
+// $media-gutter--small:                halve($media-gutter);
 // $media-gutter--large:                double($media-gutter);
 // $media-gutter--huge:                 quadruple($media-gutter);
 // $media-collapse-at:                  720px;
@@ -471,7 +471,7 @@ $enable-media--responsive:           true;
 
 // $pack-gutter:                        $base-spacing-unit;
 // $pack-gutter--tiny:                  quarter($pack-gutter);
-// $pack-gutter--small:                 half($pack-gutter);
+// $pack-gutter--small:                 halve($pack-gutter);
 // $pack-gutter--large:                 double($pack-gutter);
 // $pack-gutter--huge:                  quadruple($pack-gutter);
 
@@ -491,7 +491,7 @@ $enable-pack--bottom:                true;
 // $table-namespace:                    $namespace;
 
 // $table-padding--compact:             quarter($base-spacing-unit);
-// $table-padding--cosy:                half($base-spacing-unit);
+// $table-padding--cosy:                halve($base-spacing-unit);
 // $table-padding--comfy:               $base-spacing-unit;
 
 // $table-border-width:                 1px;
@@ -530,6 +530,7 @@ $enable-table--columns:              true;
 @import "components.topbar";
 @import "components.tab";
 @import "components.form";
+@import "components.selection";
 
 
 

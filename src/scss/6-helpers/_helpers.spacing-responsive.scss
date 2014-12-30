@@ -130,13 +130,13 @@ $spacing-breakpoint-queries:
        * Add small margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-m-      { margin:           half($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mt-     { margin-top:       half($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mr-     { margin-right:     half($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mb-     { margin-bottom:    half($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ml-     { margin-left:      half($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mh-     { margin-right:     half($spacing-margin) !important; margin-left:   half($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mv-     { margin-top:       half($spacing-margin) !important; margin-bottom: half($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-m-      { margin:           halve($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mt-     { margin-top:       halve($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mr-     { margin-right:     halve($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mb-     { margin-bottom:    halve($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ml-     { margin-left:      halve($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mh-     { margin-right:     halve($spacing-margin) !important; margin-left:   halve($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mv-     { margin-top:       halve($spacing-margin) !important; margin-bottom: halve($spacing-margin) !important; }
 
     }
 
@@ -232,13 +232,13 @@ $spacing-breakpoint-queries:
        * Small negative margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}--m-     { margin:           half(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mt-    { margin-top:       half(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mr-    { margin-right:     half(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mb-    { margin-bottom:    half(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--ml-    { margin-left:      half(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mh-    { margin-right:     half(-$spacing-margin) !important; margin-left:   half(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mv-    { margin-top:       half(-$spacing-margin) !important; margin-bottom: half(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--m-     { margin:           halve(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mt-    { margin-top:       halve(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mr-    { margin-right:     halve(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mb-    { margin-bottom:    halve(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--ml-    { margin-left:      halve(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mh-    { margin-right:     halve(-$spacing-margin) !important; margin-left:   halve(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mv-    { margin-top:       halve(-$spacing-margin) !important; margin-bottom: halve(-$spacing-margin) !important; }
 
     }
 
@@ -319,13 +319,13 @@ $spacing-breakpoint-queries:
        * Add small paddings.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-p-      { padding:           half($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pt-     { padding-top:       half($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pr-     { padding-right:     half($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pb-     { padding-bottom:    half($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pl-     { padding-left:      half($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ph-     { padding-right:     half($spacing-padding) !important; padding-left:    half($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pv-     { padding-top:       half($spacing-padding) !important; padding-bottom:  half($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-p-      { padding:           halve($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pt-     { padding-top:       halve($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pr-     { padding-right:     halve($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pb-     { padding-bottom:    halve($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pl-     { padding-left:      halve($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ph-     { padding-right:     halve($spacing-padding) !important; padding-left:    halve($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pv-     { padding-top:       halve($spacing-padding) !important; padding-bottom:  halve($spacing-padding) !important; }
 
     }
 

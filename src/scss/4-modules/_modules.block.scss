@@ -20,7 +20,7 @@ $block-namespace:                    $namespace !default;
 
 $block-gutter:                       $base-spacing-unit !default;
 $block-gutter--tiny:                 quarter($block-gutter) !default;
-$block-gutter--small:                half($block-gutter) !default;
+$block-gutter--small:                halve($block-gutter) !default;
 $block-gutter--large:                double($block-gutter) !default;
 $block-gutter--huge:                 quadruple($block-gutter) !default;
 

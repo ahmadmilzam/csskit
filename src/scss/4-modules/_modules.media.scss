@@ -24,7 +24,7 @@ $media-namespace:                    $namespace !default;
 
 $media-gutter:                       $base-spacing-unit !default;
 $media-gutter--tiny:                 quarter($media-gutter) !default;
-$media-gutter--small:                half($media-gutter) !default;
+$media-gutter--small:                halve($media-gutter) !default;
 $media-gutter--large:                double($media-gutter) !default;
 $media-gutter--huge:                 quadruple($media-gutter) !default;
 $media-collapse-at:                  720px !default;

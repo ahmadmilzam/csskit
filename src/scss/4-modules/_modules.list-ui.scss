@@ -24,7 +24,7 @@ $list-ui-namespace:                  $namespace !default;
 
 $list-ui-padding:                    $base-spacing-unit !default;
 $list-ui-padding--tiny:              quarter($list-ui-padding) !default;
-$list-ui-padding--small:             half($list-ui-padding) !default;
+$list-ui-padding--small:             halve($list-ui-padding) !default;
 $list-ui-padding--large:             double($list-ui-padding) !default;
 $list-ui-padding--huge:              quadruple($list-ui-padding) !default;
 

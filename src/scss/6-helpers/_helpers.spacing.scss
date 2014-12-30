@@ -90,13 +90,13 @@ $enable-paddings--none:              false !default;
    * Add small margins.
    */
 
-  .#{$spacing-namespace}m-      { margin:           half($spacing-margin) !important; }
-  .#{$spacing-namespace}mt-     { margin-top:       half($spacing-margin) !important; }
-  .#{$spacing-namespace}mr-     { margin-right:     half($spacing-margin) !important; }
-  .#{$spacing-namespace}mb-     { margin-bottom:    half($spacing-margin) !important; }
-  .#{$spacing-namespace}ml-     { margin-left:      half($spacing-margin) !important; }
-  .#{$spacing-namespace}mh-     { margin-right:     half($spacing-margin) !important; margin-left:   half($spacing-margin) !important; }
-  .#{$spacing-namespace}mv-     { margin-top:       half($spacing-margin) !important; margin-bottom: half($spacing-margin) !important; }
+  .#{$spacing-namespace}m-      { margin:           halve($spacing-margin) !important; }
+  .#{$spacing-namespace}mt-     { margin-top:       halve($spacing-margin) !important; }
+  .#{$spacing-namespace}mr-     { margin-right:     halve($spacing-margin) !important; }
+  .#{$spacing-namespace}mb-     { margin-bottom:    halve($spacing-margin) !important; }
+  .#{$spacing-namespace}ml-     { margin-left:      halve($spacing-margin) !important; }
+  .#{$spacing-namespace}mh-     { margin-right:     halve($spacing-margin) !important; margin-left:   halve($spacing-margin) !important; }
+  .#{$spacing-namespace}mv-     { margin-top:       halve($spacing-margin) !important; margin-bottom: halve($spacing-margin) !important; }
 
 }
 
@@ -192,13 +192,13 @@ $enable-paddings--none:              false !default;
    * Small negative margins.
    */
 
-  .#{$spacing-namespace}-m-     { margin:           half(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mt-    { margin-top:       half(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mr-    { margin-right:     half(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mb-    { margin-bottom:    half(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-ml-    { margin-left:      half(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mh-    { margin-right:     half(-$spacing-margin) !important; margin-left:   half(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mv-    { margin-top:       half(-$spacing-margin) !important; margin-bottom: half(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-m-     { margin:           halve(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mt-    { margin-top:       halve(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mr-    { margin-right:     halve(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mb-    { margin-bottom:    halve(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-ml-    { margin-left:      halve(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mh-    { margin-right:     halve(-$spacing-margin) !important; margin-left:   halve(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mv-    { margin-top:       halve(-$spacing-margin) !important; margin-bottom: halve(-$spacing-margin) !important; }
 
 }
 
@@ -279,13 +279,13 @@ $enable-paddings--none:              false !default;
    * Add small paddings.
    */
 
-  .#{$spacing-namespace}p-      { padding:           half($spacing-padding) !important; }
-  .#{$spacing-namespace}pt-     { padding-top:       half($spacing-padding) !important; }
-  .#{$spacing-namespace}pr-     { padding-right:     half($spacing-padding) !important; }
-  .#{$spacing-namespace}pb-     { padding-bottom:    half($spacing-padding) !important; }
-  .#{$spacing-namespace}pl-     { padding-left:      half($spacing-padding) !important; }
-  .#{$spacing-namespace}ph-     { padding-right:     half($spacing-padding) !important; padding-left:    half($spacing-padding) !important; }
-  .#{$spacing-namespace}pv-     { padding-top:       half($spacing-padding) !important; padding-bottom:  half($spacing-padding) !important; }
+  .#{$spacing-namespace}p-      { padding:           halve($spacing-padding) !important; }
+  .#{$spacing-namespace}pt-     { padding-top:       halve($spacing-padding) !important; }
+  .#{$spacing-namespace}pr-     { padding-right:     halve($spacing-padding) !important; }
+  .#{$spacing-namespace}pb-     { padding-bottom:    halve($spacing-padding) !important; }
+  .#{$spacing-namespace}pl-     { padding-left:      halve($spacing-padding) !important; }
+  .#{$spacing-namespace}ph-     { padding-right:     halve($spacing-padding) !important; padding-left:    halve($spacing-padding) !important; }
+  .#{$spacing-namespace}pv-     { padding-top:       halve($spacing-padding) !important; padding-bottom:  halve($spacing-padding) !important; }
 
 }
 

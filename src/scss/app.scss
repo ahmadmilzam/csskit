@@ -187,8 +187,8 @@
 // $form-border-color:                     #ddd;
 // $form-border-color-hover:               darken($form-border-color, 5%);
 // $form-label-margin-bottom:              quarter($base-spacing-unit);
-// $form-input-padding:                    half($base-spacing-unit);
-// $form-input-margin-bottom:              half($base-spacing-unit);
+// $form-input-padding:                    halve($base-spacing-unit);
+// $form-input-margin-bottom:              halve($base-spacing-unit);
 
 @import "3-base/base.forms";
 
@@ -276,7 +276,7 @@ $opposite-float:                        right;
 
 // $block-gutter:                       $base-spacing-unit;
 // $block-gutter--tiny:                 quarter($block-gutter);
-// $block-gutter--small:                half($block-gutter);
+// $block-gutter--small:                halve($block-gutter);
 // $block-gutter--large:                double($block-gutter);
 // $block-gutter--huge:                 quadruple($block-gutter);
 
@@ -297,7 +297,7 @@ $opposite-float:                        right;
 
 // $box-padding:                        $base-spacing-unit;
 // $box-padding--tiny:                  quarter($box-padding);
-// $box-padding--small:                 half($box-padding);
+// $box-padding--small:                 halve($box-padding);
 // $box-padding--large:                 double($box-padding);
 // $box-padding--huge:                  quadruple($box-padding);
 
@@ -314,8 +314,8 @@ $opposite-float:                        right;
 /* [4] */
 // $btn-namespace:                      $namespace;
 
-// $btn-padding:                        half($base-spacing-unit);
-// $btn-padding--small:                 half($btn-padding);
+// $btn-padding:                        halve($base-spacing-unit);
+// $btn-padding--small:                 halve($btn-padding);
 // $btn-padding--large:                 double($btn-padding);
 // $btn-background:                     $your-color;
 // $btn-color:                          #fff;
@@ -339,7 +339,7 @@ $opposite-float:                        right;
 
 // $flag-gutter:                        $base-spacing-unit;
 // $flag-gutter--tiny:                  quarter($flag-gutter);
-// $flag-gutter--small:                 half($flag-gutter);
+// $flag-gutter--small:                 halve($flag-gutter);
 // $flag-gutter--large:                 double($flag-gutter);
 // $flag-gutter--huge:                  quadruple($flag-gutter);
 
@@ -362,7 +362,7 @@ $opposite-float:                        right;
 
 // $list-block-padding:                 $base-spacing-unit;
 // $list-block-padding--tiny:           quarter($list-block-padding);
-// $list-block-padding--small:          half($list-block-padding);
+// $list-block-padding--small:          halve($list-block-padding);
 // $list-block-padding--large:          double($list-block-padding);
 // $list-block-padding--huge:           quadruple($list-block-padding);
 
@@ -392,7 +392,7 @@ $opposite-float:                        right;
 
 // $list-ui-padding:                    $base-spacing-unit;
 // $list-ui-padding--tiny:              quarter($list-ui-padding);
-// $list-ui-padding--small:             half($list-ui-padding);
+// $list-ui-padding--small:             halve($list-ui-padding);
 // $list-ui-padding--large:             double($list-ui-padding);
 // $list-ui-padding--huge:              quadruple($list-ui-padding);
 
@@ -416,7 +416,7 @@ $opposite-float:                        right;
 
 // $media-gutter:                       $base-spacing-unit;
 // $media-gutter--tiny:                 quarter($media-gutter);
-// $media-gutter--small:                half($media-gutter);
+// $media-gutter--small:                halve($media-gutter);
 // $media-gutter--large:                double($media-gutter);
 // $media-gutter--huge:                 quadruple($media-gutter);
 // $media-collapse-at:                  720px;
@@ -437,7 +437,7 @@ $opposite-float:                        right;
 
 // $pack-gutter:                        $base-spacing-unit;
 // $pack-gutter--tiny:                  quarter($pack-gutter);
-// $pack-gutter--small:                 half($pack-gutter);
+// $pack-gutter--small:                 halve($pack-gutter);
 // $pack-gutter--large:                 double($pack-gutter);
 // $pack-gutter--huge:                  quadruple($pack-gutter);
 
@@ -457,7 +457,7 @@ $opposite-float:                        right;
 // $table-namespace:                    $namespace;
 
 // $table-padding--compact:             quarter($base-spacing-unit);
-// $table-padding--cosy:                half($base-spacing-unit);
+// $table-padding--cosy:                halve($base-spacing-unit);
 // $table-padding--comfy:               $base-spacing-unit;
 
 // $table-border-width:                 1px;

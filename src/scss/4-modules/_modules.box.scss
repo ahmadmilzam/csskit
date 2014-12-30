@@ -20,7 +20,7 @@ $box-namespace:                      $namespace !default;
 
 $box-padding:                        $base-spacing-unit !default;
 $box-padding--tiny:                  quarter($box-padding) !default;
-$box-padding--small:                 half($box-padding) !default;
+$box-padding--small:                 halve($box-padding) !default;
 $box-padding--large:                 double($box-padding) !default;
 $box-padding--huge:                  quadruple($box-padding) !default;
 

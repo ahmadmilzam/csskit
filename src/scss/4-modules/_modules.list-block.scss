@@ -23,7 +23,7 @@ $list-block-namespace:               $namespace !default;
 
 $list-block-padding:                 $base-spacing-unit !default;
 $list-block-padding--tiny:           quarter($list-block-padding) !default;
-$list-block-padding--small:          half($list-block-padding) !default;
+$list-block-padding--small:          halve($list-block-padding) !default;
 $list-block-padding--large:          double($list-block-padding) !default;
 $list-block-padding--huge:           quadruple($list-block-padding) !default;
 

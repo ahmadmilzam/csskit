@@ -19,8 +19,8 @@ $form-border-width:                     1px !default;
 $form-border-color:                     #ddd !default;
 $form-border-color-hover:               darken($form-border-color, 5%) !default;
 $form-label-margin-bottom:              quarter($base-spacing-unit) !default;
-$form-input-padding:                    half($base-spacing-unit) !default;
-$form-input-margin-bottom:              half($base-spacing-unit) !default;
+$form-input-padding:                    halve($base-spacing-unit) !default;
+$form-input-margin-bottom:              halve($base-spacing-unit) !default;
 
 
 fieldset {
@@ -84,7 +84,7 @@ input[type="radio"] {
 }
 
 input[type="file"] {
-  margin-bottom: half($base-spacing-unit);
-  padding-bottom: half($base-spacing-unit);
+  margin-bottom: halve($base-spacing-unit);
+  padding-bottom: halve($base-spacing-unit);
   width: 100%;
 }

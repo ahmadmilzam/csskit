@@ -24,7 +24,7 @@ $flag-namespace:                     $namespace !default;
 
 $flag-gutter:                        $base-spacing-unit !default;
 $flag-gutter--tiny:                  quarter($flag-gutter) !default;
-$flag-gutter--small:                 half($flag-gutter) !default;
+$flag-gutter--small:                 halve($flag-gutter) !default;
 $flag-gutter--large:                 double($flag-gutter) !default;
 $flag-gutter--huge:                  quadruple($flag-gutter) !default;
 

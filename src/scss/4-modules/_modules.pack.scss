@@ -25,7 +25,7 @@ $pack-namespace:                     $namespace !default;
 
 $pack-gutter:                        $base-spacing-unit !default;
 $pack-gutter--tiny:                  quarter($pack-gutter) !default;
-$pack-gutter--small:                 half($pack-gutter) !default;
+$pack-gutter--small:                 halve($pack-gutter) !default;
 $pack-gutter--large:                 double($pack-gutter) !default;
 $pack-gutter--huge:                  quadruple($pack-gutter) !default;
 

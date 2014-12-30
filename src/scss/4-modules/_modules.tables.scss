@@ -21,7 +21,7 @@ $imported-module-settings: false !default;
 $table-namespace:                    $namespace !default;
 
 $table-padding--compact:             quarter($base-spacing-unit) !default;
-$table-padding--cosy:                half($base-spacing-unit) !default;
+$table-padding--cosy:                halve($base-spacing-unit) !default;
 $table-padding--comfy:               $base-spacing-unit !default;
 
 $table-border-width:                 1px !default;
