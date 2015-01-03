@@ -14,10 +14,7 @@
  * modify or reassign them.
  */
 
-// $base-font-family-sans-serif:          "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
-// $base-font-family-serif:               Georgia, Cambria, "Times New Roman", Times, serif;
-// $base-font-family-monospace:           Consolas, "Liberation Mono", Courier, monospace;
-// $base-font-family:                     $base-font-family-sans-serif;
+// $base-font-family:                     "Helvetica Neue", Helvetica, Arial, sans-serif;
 // $base-font-size:                       16px;
 // $base-font-weight:                     normal;
 
@@ -221,7 +218,7 @@ $hr-border-color:  $color-divider;
 
 
 /* [10] */
-// $code-font-family: $base-font-family-monospace !default;
+// $code-font-family: Consolas, "Liberation Mono", Courier, monospace !default;
 // $code-font-color: scale-color($color-alert, $lightness: 10%) !default;
 // $code-font-size: 80% !default;
 
