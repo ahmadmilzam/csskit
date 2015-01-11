@@ -97,13 +97,13 @@ $spacing-breakpoint-queries:
        * Add margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-m       { margin:           $spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mt      { margin-top:       $spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mr      { margin-right:     $spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mb      { margin-bottom:    $spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ml      { margin-left:      $spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mh      { margin-right:     $spacing-margin !important; margin-left:      $spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mv      { margin-top:       $spacing-margin !important; margin-bottom:    $spacing-margin !important; }
+      .#{$spacing-namespace}#{$breakpoint}-m       { margin:           rem-calc($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mt      { margin-top:       rem-calc($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mr      { margin-right:     rem-calc($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mb      { margin-bottom:    rem-calc($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ml      { margin-left:      rem-calc($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mh      { margin-right:     rem-calc($spacing-margin) !important; margin-left:      rem-calc($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mv      { margin-top:       rem-calc($spacing-margin) !important; margin-bottom:    rem-calc($spacing-margin) !important; }
 
     }
 
@@ -113,13 +113,13 @@ $spacing-breakpoint-queries:
        * Add tiny margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-m--     { margin:           quarter($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mt--    { margin-top:       quarter($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mr--    { margin-right:     quarter($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mb--    { margin-bottom:    quarter($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ml--    { margin-left:      quarter($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mh--    { margin-right:     quarter($spacing-margin) !important; margin-left:     quarter($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mv--    { margin-top:       quarter($spacing-margin) !important; margin-bottom:   quarter($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-m--     { margin:           rem-calc( quarter($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mt--    { margin-top:       rem-calc( quarter($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mr--    { margin-right:     rem-calc( quarter($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mb--    { margin-bottom:    rem-calc( quarter($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ml--    { margin-left:      rem-calc( quarter($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mh--    { margin-right:     rem-calc( quarter($spacing-margin) ) !important; margin-left:     rem-calc( quarter($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mv--    { margin-top:       rem-calc( quarter($spacing-margin) ) !important; margin-bottom:   rem-calc( quarter($spacing-margin) ) !important; }
 
     }
 
@@ -130,13 +130,13 @@ $spacing-breakpoint-queries:
        * Add small margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-m-      { margin:           halve($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mt-     { margin-top:       halve($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mr-     { margin-right:     halve($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mb-     { margin-bottom:    halve($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ml-     { margin-left:      halve($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mh-     { margin-right:     halve($spacing-margin) !important; margin-left:   halve($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mv-     { margin-top:       halve($spacing-margin) !important; margin-bottom: halve($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-m-      { margin:           rem-calc( halve($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mt-     { margin-top:       rem-calc( halve($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mr-     { margin-right:     rem-calc( halve($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mb-     { margin-bottom:    rem-calc( halve($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ml-     { margin-left:      rem-calc( halve($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mh-     { margin-right:     rem-calc( halve($spacing-margin) ) !important; margin-left:   rem-calc( halve($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mv-     { margin-top:       rem-calc( halve($spacing-margin) ) !important; margin-bottom: rem-calc( halve($spacing-margin) ) !important; }
 
     }
 
@@ -147,13 +147,13 @@ $spacing-breakpoint-queries:
        * Add large margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-m\+     { margin:           scaleup($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mt\+    { margin-top:       scaleup($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mr\+    { margin-right:     scaleup($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mb\+    { margin-bottom:    scaleup($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ml\+    { margin-left:      scaleup($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mh\+    { margin-right:     scaleup($spacing-margin) !important; margin-left:      scaleup($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mv\+    { margin-top:       scaleup($spacing-margin) !important; margin-bottom:    scaleup($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-m\+     { margin:           rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mt\+    { margin-top:       rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mr\+    { margin-right:     rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mb\+    { margin-bottom:    rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ml\+    { margin-left:      rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mh\+    { margin-right:     rem-calc( double($spacing-margin) ) !important; margin-left:      rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mv\+    { margin-top:       rem-calc( double($spacing-margin) ) !important; margin-bottom:    rem-calc( double($spacing-margin) ) !important; }
 
     }
 
@@ -164,13 +164,13 @@ $spacing-breakpoint-queries:
        * Add huge margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-m\+\+   { margin:           double($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mt\+\+  { margin-top:       double($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mr\+\+  { margin-right:     double($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mb\+\+  { margin-bottom:    double($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ml\+\+  { margin-left:      double($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mh\+\+  { margin-right:     double($spacing-margin) !important; margin-left:   double($spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-mv\+\+  { margin-top:       double($spacing-margin) !important; margin-bottom: double($spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-m\+\+   { margin:           rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mt\+\+  { margin-top:       rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mr\+\+  { margin-right:     rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mb\+\+  { margin-bottom:    rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ml\+\+  { margin-left:      rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mh\+\+  { margin-right:     rem-calc( double($spacing-margin) ) !important; margin-left:   rem-calc( double($spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-mv\+\+  { margin-top:       rem-calc( double($spacing-margin) ) !important; margin-bottom: rem-calc( double($spacing-margin) ) !important; }
 
     }
 
@@ -198,13 +198,13 @@ $spacing-breakpoint-queries:
        * Negative margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}--m      { margin:           -$spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mt     { margin-top:       -$spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mr     { margin-right:     -$spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mb     { margin-bottom:    -$spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}--ml     { margin-left:      -$spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mh     { margin-right:     -$spacing-margin !important; margin-left:      -$spacing-margin !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mv     { margin-top:       -$spacing-margin !important; margin-bottom:    -$spacing-margin !important; }
+      .#{$spacing-namespace}#{$breakpoint}--m      { margin:           rem-calc(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mt     { margin-top:       rem-calc(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mr     { margin-right:     rem-calc(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mb     { margin-bottom:    rem-calc(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--ml     { margin-left:      rem-calc(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mh     { margin-right:     rem-calc(-$spacing-margin) !important; margin-left:      rem-calc(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mv     { margin-top:       rem-calc(-$spacing-margin) !important; margin-bottom:    rem-calc(-$spacing-margin) !important; }
 
     }
 
@@ -215,13 +215,13 @@ $spacing-breakpoint-queries:
        * Tiny negative margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}--m--    { margin:           quarter(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mt--   { margin-top:       quarter(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mr--   { margin-right:     quarter(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mb--   { margin-bottom:    quarter(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--ml--   { margin-left:      quarter(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mh--   { margin-right:     quarter(-$spacing-margin) !important; margin-left:     quarter(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mv--   { margin-top:       quarter(-$spacing-margin) !important; margin-bottom:   quarter(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--m--    { margin:           rem-calc( quarter(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mt--   { margin-top:       rem-calc( quarter(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mr--   { margin-right:     rem-calc( quarter(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mb--   { margin-bottom:    rem-calc( quarter(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--ml--   { margin-left:      rem-calc( quarter(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mh--   { margin-right:     rem-calc( quarter(-$spacing-margin) ) !important; margin-left:     rem-calc( quarter(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mv--   { margin-top:       rem-calc( quarter(-$spacing-margin) ) !important; margin-bottom:   rem-calc( quarter(-$spacing-margin) ) !important; }
 
     }
 
@@ -232,13 +232,13 @@ $spacing-breakpoint-queries:
        * Small negative margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}--m-     { margin:           halve(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mt-    { margin-top:       halve(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mr-    { margin-right:     halve(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mb-    { margin-bottom:    halve(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--ml-    { margin-left:      halve(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mh-    { margin-right:     halve(-$spacing-margin) !important; margin-left:   halve(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mv-    { margin-top:       halve(-$spacing-margin) !important; margin-bottom: halve(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--m-     { margin:           rem-calc( halve(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mt-    { margin-top:       rem-calc( halve(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mr-    { margin-right:     rem-calc( halve(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mb-    { margin-bottom:    rem-calc( halve(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--ml-    { margin-left:      rem-calc( halve(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mh-    { margin-right:     rem-calc( halve(-$spacing-margin) ) !important; margin-left:   rem-calc( halve(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mv-    { margin-top:       rem-calc( halve(-$spacing-margin) ) !important; margin-bottom: rem-calc( halve(-$spacing-margin) ) !important; }
 
     }
 
@@ -249,13 +249,13 @@ $spacing-breakpoint-queries:
        * Large negative margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}--m\+    { margin:           double(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mt\+   { margin-top:       double(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mr\+   { margin-right:     double(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mb\+   { margin-bottom:    double(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--ml\+   { margin-left:      double(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mh\+   { margin-right:     double(-$spacing-margin) !important; margin-left:      double(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mv\+   { margin-top:       double(-$spacing-margin) !important; margin-bottom:    double(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--m\+    { margin:           rem-calc( double(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mt\+   { margin-top:       rem-calc( double(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mr\+   { margin-right:     rem-calc( double(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mb\+   { margin-bottom:    rem-calc( double(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--ml\+   { margin-left:      rem-calc( double(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mh\+   { margin-right:     rem-calc( double(-$spacing-margin) ) !important; margin-left:      rem-calc( double(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mv\+   { margin-top:       rem-calc( double(-$spacing-margin) ) !important; margin-bottom:    rem-calc( double(-$spacing-margin) ) !important; }
 
     }
 
@@ -266,13 +266,13 @@ $spacing-breakpoint-queries:
        * Huge negative margins.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}--m\+\+  { margin:           quadruple(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mt\+\+ { margin-top:       quadruple(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mr\+\+ { margin-right:     quadruple(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mb\+\+ { margin-bottom:    quadruple(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--ml\+\+ { margin-left:      quadruple(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mh\+\+ { margin-right:     quadruple(-$spacing-margin) !important; margin-left:   quadruple(-$spacing-margin) !important; }
-      .#{$spacing-namespace}#{$breakpoint}--mv\+\+ { margin-top:       quadruple(-$spacing-margin) !important; margin-bottom: quadruple(-$spacing-margin) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--m\+\+  { margin:           rem-calc( quadruple(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mt\+\+ { margin-top:       rem-calc( quadruple(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mr\+\+ { margin-right:     rem-calc( quadruple(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mb\+\+ { margin-bottom:    rem-calc( quadruple(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--ml\+\+ { margin-left:      rem-calc( quadruple(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mh\+\+ { margin-right:     rem-calc( quadruple(-$spacing-margin) ) !important; margin-left:   rem-calc( quadruple(-$spacing-margin) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}--mv\+\+ { margin-top:       rem-calc( quadruple(-$spacing-margin) ) !important; margin-bottom: rem-calc( quadruple(-$spacing-margin) ) !important; }
 
     }
 
@@ -285,13 +285,13 @@ $spacing-breakpoint-queries:
        * Add paddings.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-p       { padding:          $spacing-padding !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pt      { padding-top:      $spacing-padding !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pr      { padding-right:    $spacing-padding !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pb      { padding-bottom:   $spacing-padding !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pl      { padding-left:     $spacing-padding !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ph      { padding-right:    $spacing-padding !important; padding-left:    $spacing-padding !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pv      { padding-top:      $spacing-padding !important; padding-bottom:  $spacing-padding !important; }
+      .#{$spacing-namespace}#{$breakpoint}-p       { padding:          rem-calc($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pt      { padding-top:      rem-calc($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pr      { padding-right:    rem-calc($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pb      { padding-bottom:   rem-calc($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pl      { padding-left:     rem-calc($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ph      { padding-right:    rem-calc($spacing-padding) !important; padding-left:    rem-calc($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pv      { padding-top:      rem-calc($spacing-padding) !important; padding-bottom:  rem-calc($spacing-padding) !important; }
 
     }
 
@@ -302,13 +302,13 @@ $spacing-breakpoint-queries:
        * Add tiny paddings.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-p--     { padding:           quarter($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pt--    { padding-top:       quarter($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pr--    { padding-right:     quarter($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pb--    { padding-bottom:    quarter($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pl--    { padding-left:      quarter($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ph--    { padding-right:     quarter($spacing-padding) !important; padding-left:      quarter($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pv--    { padding-top:       quarter($spacing-padding) !important; padding-bottom:    quarter($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-p--     { padding:           rem-calc( quarter($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pt--    { padding-top:       rem-calc( quarter($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pr--    { padding-right:     rem-calc( quarter($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pb--    { padding-bottom:    rem-calc( quarter($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pl--    { padding-left:      rem-calc( quarter($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ph--    { padding-right:     rem-calc( quarter($spacing-padding) ) !important; padding-left:      rem-calc( quarter($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pv--    { padding-top:       rem-calc( quarter($spacing-padding) ) !important; padding-bottom:    rem-calc( quarter($spacing-padding) ) !important; }
 
     }
 
@@ -319,13 +319,13 @@ $spacing-breakpoint-queries:
        * Add small paddings.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-p-      { padding:           halve($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pt-     { padding-top:       halve($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pr-     { padding-right:     halve($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pb-     { padding-bottom:    halve($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pl-     { padding-left:      halve($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ph-     { padding-right:     halve($spacing-padding) !important; padding-left:    halve($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pv-     { padding-top:       halve($spacing-padding) !important; padding-bottom:  halve($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-p-      { padding:           rem-calc( halve($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pt-     { padding-top:       rem-calc( halve($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pr-     { padding-right:     rem-calc( halve($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pb-     { padding-bottom:    rem-calc( halve($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pl-     { padding-left:      rem-calc( halve($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ph-     { padding-right:     rem-calc( halve($spacing-padding) ) !important; padding-left:    rem-calc( halve($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pv-     { padding-top:       rem-calc( halve($spacing-padding) ) !important; padding-bottom:  rem-calc( halve($spacing-padding) ) !important; }
 
     }
 
@@ -336,13 +336,13 @@ $spacing-breakpoint-queries:
        * Add large paddings.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-p\+     { padding:           double($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pt\+    { padding-top:       double($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pr\+    { padding-right:     double($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pb\+    { padding-bottom:    double($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pl\+    { padding-left:      double($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-ph\+    { padding-right:     double($spacing-padding) !important; padding-left:   double($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pv\+    { padding-top:       double($spacing-padding) !important; padding-bottom: double($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-p\+     { padding:           rem-calc( double($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pt\+    { padding-top:       rem-calc( double($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pr\+    { padding-right:     rem-calc( double($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pb\+    { padding-bottom:    rem-calc( double($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pl\+    { padding-left:      rem-calc( double($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ph\+    { padding-right:     rem-calc( double($spacing-padding) ) !important; padding-left:   rem-calc( double($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pv\+    { padding-top:       rem-calc( double($spacing-padding) ) !important; padding-bottom: rem-calc( double($spacing-padding) ) !important; }
 
     }
 
@@ -353,13 +353,13 @@ $spacing-breakpoint-queries:
        * Add huge paddings.
        */
 
-      .#{$spacing-namespace}#{$breakpoint}-p\+\+   { padding:           quadruple($spacing-padding) !important; }
-      .#{$spacing-namespace}#{$breakpoint}-pt\+\+  { padding-top:       quadruple($spacing-padding) !important; }
-      .#{$spacing-namespace}pr\+\+  { padding-right:     quadruple($spacing-padding) !important; }
-      .#{$spacing-namespace}pb\+\+  { padding-bottom:    quadruple($spacing-padding) !important; }
-      .#{$spacing-namespace}pl\+\+  { padding-left:      quadruple($spacing-padding) !important; }
-      .#{$spacing-namespace}ph\+\+  { padding-right:     quadruple($spacing-padding) !important; padding-left:    quadruple($spacing-padding) !important; }
-      .#{$spacing-namespace}pv\+\+  { padding-top:       quadruple($spacing-padding) !important; padding-bottom:  quadruple($spacing-padding) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-p\+\+   { padding:           rem-calc( quadruple($spacing-padding) ) !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pt\+\+  { padding-top:       rem-calc( quadruple($spacing-padding) ) !important; }
+      .#{$spacing-namespace}pr\+\+  { padding-right:     rem-calc( quadruple($spacing-padding) ) !important; }
+      .#{$spacing-namespace}pb\+\+  { padding-bottom:    rem-calc( quadruple($spacing-padding) ) !important; }
+      .#{$spacing-namespace}pl\+\+  { padding-left:      rem-calc( quadruple($spacing-padding) ) !important; }
+      .#{$spacing-namespace}ph\+\+  { padding-right:     rem-calc( quadruple($spacing-padding) ) !important; padding-left:    rem-calc( quadruple($spacing-padding) ) !important; }
+      .#{$spacing-namespace}pv\+\+  { padding-top:       rem-calc( quadruple($spacing-padding) ) !important; padding-bottom:  rem-calc( quadruple($spacing-padding) ) !important; }
 
     }
 

@@ -56,13 +56,13 @@ $enable-paddings--none:              false !default;
    * Add margins.
    */
 
-  .#{$spacing-namespace}m       { margin:           $spacing-margin !important; }
-  .#{$spacing-namespace}mt      { margin-top:       $spacing-margin !important; }
-  .#{$spacing-namespace}mr      { margin-right:     $spacing-margin !important; }
-  .#{$spacing-namespace}mb      { margin-bottom:    $spacing-margin !important; }
-  .#{$spacing-namespace}ml      { margin-left:      $spacing-margin !important; }
-  .#{$spacing-namespace}mh      { margin-right:     $spacing-margin !important; margin-left:      $spacing-margin !important; }
-  .#{$spacing-namespace}mv      { margin-top:       $spacing-margin !important; margin-bottom:    $spacing-margin !important; }
+  .#{$spacing-namespace}m       { margin:           rem-calc($spacing-margin) !important; }
+  .#{$spacing-namespace}mt      { margin-top:       rem-calc($spacing-margin) !important; }
+  .#{$spacing-namespace}mr      { margin-right:     rem-calc($spacing-margin) !important; }
+  .#{$spacing-namespace}mb      { margin-bottom:    rem-calc($spacing-margin) !important; }
+  .#{$spacing-namespace}ml      { margin-left:      rem-calc($spacing-margin) !important; }
+  .#{$spacing-namespace}mh      { margin-right:     rem-calc($spacing-margin) !important; margin-left:      rem-calc($spacing-margin) !important; }
+  .#{$spacing-namespace}mv      { margin-top:       rem-calc($spacing-margin) !important; margin-bottom:    rem-calc($spacing-margin) !important; }
 
 }
 
@@ -73,13 +73,13 @@ $enable-paddings--none:              false !default;
    * Add tiny margins.
    */
 
-  .#{$spacing-namespace}m--     { margin:           quarter($spacing-margin) !important; }
-  .#{$spacing-namespace}mt--    { margin-top:       quarter($spacing-margin) !important; }
-  .#{$spacing-namespace}mr--    { margin-right:     quarter($spacing-margin) !important; }
-  .#{$spacing-namespace}mb--    { margin-bottom:    quarter($spacing-margin) !important; }
-  .#{$spacing-namespace}ml--    { margin-left:      quarter($spacing-margin) !important; }
-  .#{$spacing-namespace}mh--    { margin-right:     quarter($spacing-margin) !important; margin-left:     quarter($spacing-margin) !important; }
-  .#{$spacing-namespace}mv--    { margin-top:       quarter($spacing-margin) !important; margin-bottom:   quarter($spacing-margin) !important; }
+  .#{$spacing-namespace}m--     { margin:           rem-calc( quarter($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mt--    { margin-top:       rem-calc( quarter($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mr--    { margin-right:     rem-calc( quarter($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mb--    { margin-bottom:    rem-calc( quarter($spacing-margin)  )!important; }
+  .#{$spacing-namespace}ml--    { margin-left:      rem-calc( quarter($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mh--    { margin-right:     rem-calc( quarter($spacing-margin)  )!important; margin-left:     rem-calc( quarter($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mv--    { margin-top:       rem-calc( quarter($spacing-margin)  )!important; margin-bottom:   rem-calc( quarter($spacing-margin)  )!important; }
 
 }
 
@@ -90,13 +90,13 @@ $enable-paddings--none:              false !default;
    * Add small margins.
    */
 
-  .#{$spacing-namespace}m-      { margin:           halve($spacing-margin) !important; }
-  .#{$spacing-namespace}mt-     { margin-top:       halve($spacing-margin) !important; }
-  .#{$spacing-namespace}mr-     { margin-right:     halve($spacing-margin) !important; }
-  .#{$spacing-namespace}mb-     { margin-bottom:    halve($spacing-margin) !important; }
-  .#{$spacing-namespace}ml-     { margin-left:      halve($spacing-margin) !important; }
-  .#{$spacing-namespace}mh-     { margin-right:     halve($spacing-margin) !important; margin-left:   halve($spacing-margin) !important; }
-  .#{$spacing-namespace}mv-     { margin-top:       halve($spacing-margin) !important; margin-bottom: halve($spacing-margin) !important; }
+  .#{$spacing-namespace}m-      { margin:           rem-calc( halve($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mt-     { margin-top:       rem-calc( halve($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mr-     { margin-right:     rem-calc( halve($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mb-     { margin-bottom:    rem-calc( halve($spacing-margin)  )!important; }
+  .#{$spacing-namespace}ml-     { margin-left:      rem-calc( halve($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mh-     { margin-right:     rem-calc( halve($spacing-margin)  )!important; margin-left:   rem-calc( halve($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mv-     { margin-top:       rem-calc( halve($spacing-margin)  )!important; margin-bottom: rem-calc( halve($spacing-margin)  )!important; }
 
 }
 
@@ -107,13 +107,13 @@ $enable-paddings--none:              false !default;
    * Add large margins.
    */
 
-  .#{$spacing-namespace}m\+     { margin:           double($spacing-margin) !important; }
-  .#{$spacing-namespace}mt\+    { margin-top:       double($spacing-margin) !important; }
-  .#{$spacing-namespace}mr\+    { margin-right:     double($spacing-margin) !important; }
-  .#{$spacing-namespace}mb\+    { margin-bottom:    double($spacing-margin) !important; }
-  .#{$spacing-namespace}ml\+    { margin-left:      double($spacing-margin) !important; }
-  .#{$spacing-namespace}mh\+    { margin-right:     double($spacing-margin) !important; margin-left:      double($spacing-margin) !important; }
-  .#{$spacing-namespace}mv\+    { margin-top:       double($spacing-margin) !important; margin-bottom:    double($spacing-margin) !important; }
+  .#{$spacing-namespace}m\+     { margin:           rem-calc( double($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mt\+    { margin-top:       rem-calc( double($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mr\+    { margin-right:     rem-calc( double($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mb\+    { margin-bottom:    rem-calc( double($spacing-margin)  )!important; }
+  .#{$spacing-namespace}ml\+    { margin-left:      rem-calc( double($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mh\+    { margin-right:     rem-calc( double($spacing-margin)  )!important; margin-left:      rem-calc( double($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mv\+    { margin-top:       rem-calc( double($spacing-margin)  )!important; margin-bottom:    rem-calc( double($spacing-margin)  )!important; }
 
 }
 
@@ -124,13 +124,13 @@ $enable-paddings--none:              false !default;
    * Add huge margins.
    */
 
-  .#{$spacing-namespace}m\+\+   { margin:           quadruple($spacing-margin) !important; }
-  .#{$spacing-namespace}mt\+\+  { margin-top:       quadruple($spacing-margin) !important; }
-  .#{$spacing-namespace}mr\+\+  { margin-right:     quadruple($spacing-margin) !important; }
-  .#{$spacing-namespace}mb\+\+  { margin-bottom:    quadruple($spacing-margin) !important; }
-  .#{$spacing-namespace}ml\+\+  { margin-left:      quadruple($spacing-margin) !important; }
-  .#{$spacing-namespace}mh\+\+  { margin-right:     quadruple($spacing-margin) !important; margin-left:   quadruple($spacing-margin) !important; }
-  .#{$spacing-namespace}mv\+\+  { margin-top:       quadruple($spacing-margin) !important; margin-bottom: quadruple($spacing-margin) !important; }
+  .#{$spacing-namespace}m\+\+   { margin:           rem-calc( quadruple($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mt\+\+  { margin-top:       rem-calc( quadruple($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mr\+\+  { margin-right:     rem-calc( quadruple($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mb\+\+  { margin-bottom:    rem-calc( quadruple($spacing-margin)  )!important; }
+  .#{$spacing-namespace}ml\+\+  { margin-left:      rem-calc( quadruple($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mh\+\+  { margin-right:     rem-calc( quadruple($spacing-margin)  )!important; margin-left:   rem-calc( quadruple($spacing-margin)  )!important; }
+  .#{$spacing-namespace}mv\+\+  { margin-top:       rem-calc( quadruple($spacing-margin)  )!important; margin-bottom: rem-calc( quadruple($spacing-margin)  )!important; }
 
 }
 
@@ -158,13 +158,13 @@ $enable-paddings--none:              false !default;
    * Negative margins.
    */
 
-  .#{$spacing-namespace}-m      { margin:           -$spacing-margin !important; }
-  .#{$spacing-namespace}-mt     { margin-top:       -$spacing-margin !important; }
-  .#{$spacing-namespace}-mr     { margin-right:     -$spacing-margin !important; }
-  .#{$spacing-namespace}-mb     { margin-bottom:    -$spacing-margin !important; }
-  .#{$spacing-namespace}-ml     { margin-left:      -$spacing-margin !important; }
-  .#{$spacing-namespace}-mh     { margin-right:     -$spacing-margin !important; margin-left:      -$spacing-margin !important; }
-  .#{$spacing-namespace}-mv     { margin-top:       -$spacing-margin !important; margin-bottom:    -$spacing-margin !important; }
+  .#{$spacing-namespace}-m      { margin:           rem-calc(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mt     { margin-top:       rem-calc(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mr     { margin-right:     rem-calc(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mb     { margin-bottom:    rem-calc(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-ml     { margin-left:      rem-calc(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mh     { margin-right:     rem-calc(-$spacing-margin) !important; margin-left:      rem-calc(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-mv     { margin-top:       rem-calc(-$spacing-margin) !important; margin-bottom:    rem-calc(-$spacing-margin) !important; }
 
 }
 
@@ -175,13 +175,13 @@ $enable-paddings--none:              false !default;
    * Tiny negative margins.
    */
 
-  .#{$spacing-namespace}-m--    { margin:           quarter(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mt--   { margin-top:       quarter(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mr--   { margin-right:     quarter(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mb--   { margin-bottom:    quarter(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-ml--   { margin-left:      quarter(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mh--   { margin-right:     quarter(-$spacing-margin) !important; margin-left:     quarter(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mv--   { margin-top:       quarter(-$spacing-margin) !important; margin-bottom:   quarter(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-m--    { margin:           rem-calc( quarter(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mt--   { margin-top:       rem-calc( quarter(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mr--   { margin-right:     rem-calc( quarter(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mb--   { margin-bottom:    rem-calc( quarter(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-ml--   { margin-left:      rem-calc( quarter(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mh--   { margin-right:     rem-calc( quarter(-$spacing-margin) ) !important; margin-left:     rem-calc( quarter(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mv--   { margin-top:       rem-calc( quarter(-$spacing-margin) ) !important; margin-bottom:   rem-calc( quarter(-$spacing-margin) ) !important; }
 
 }
 
@@ -192,13 +192,13 @@ $enable-paddings--none:              false !default;
    * Small negative margins.
    */
 
-  .#{$spacing-namespace}-m-     { margin:           halve(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mt-    { margin-top:       halve(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mr-    { margin-right:     halve(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mb-    { margin-bottom:    halve(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-ml-    { margin-left:      halve(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mh-    { margin-right:     halve(-$spacing-margin) !important; margin-left:   halve(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mv-    { margin-top:       halve(-$spacing-margin) !important; margin-bottom: halve(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-m-     { margin:           rem-calc( halve(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mt-    { margin-top:       rem-calc( halve(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mr-    { margin-right:     rem-calc( halve(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mb-    { margin-bottom:    rem-calc( halve(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-ml-    { margin-left:      rem-calc( halve(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mh-    { margin-right:     rem-calc( halve(-$spacing-margin) ) !important; margin-left:   rem-calc( halve(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mv-    { margin-top:       rem-calc( halve(-$spacing-margin) ) !important; margin-bottom: rem-calc( halve(-$spacing-margin) ) !important; }
 
 }
 
@@ -209,13 +209,13 @@ $enable-paddings--none:              false !default;
    * Large negative margins.
    */
 
-  .#{$spacing-namespace}-m\+    { margin:           double(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mt\+   { margin-top:       double(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mr\+   { margin-right:     double(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mb\+   { margin-bottom:    double(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-ml\+   { margin-left:      double(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mh\+   { margin-right:     double(-$spacing-margin) !important; margin-left:      double(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mv\+   { margin-top:       double(-$spacing-margin) !important; margin-bottom:    double(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-m\+    { margin:           rem-calc( double(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mt\+   { margin-top:       rem-calc( double(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mr\+   { margin-right:     rem-calc( double(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mb\+   { margin-bottom:    rem-calc( double(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-ml\+   { margin-left:      rem-calc( double(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mh\+   { margin-right:     rem-calc( double(-$spacing-margin) ) !important; margin-left:      rem-calc( double(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mv\+   { margin-top:       rem-calc( double(-$spacing-margin) ) !important; margin-bottom:    rem-calc( double(-$spacing-margin) ) !important; }
 
 }
 
@@ -226,13 +226,13 @@ $enable-paddings--none:              false !default;
    * Huge negative margins.
    */
 
-  .#{$spacing-namespace}-m\+\+  { margin:           quadruple(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mt\+\+ { margin-top:       quadruple(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mr\+\+ { margin-right:     quadruple(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mb\+\+ { margin-bottom:    quadruple(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-ml\+\+ { margin-left:      quadruple(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mh\+\+ { margin-right:     quadruple(-$spacing-margin) !important; margin-left:   quadruple(-$spacing-margin) !important; }
-  .#{$spacing-namespace}-mv\+\+ { margin-top:       quadruple(-$spacing-margin) !important; margin-bottom: quadruple(-$spacing-margin) !important; }
+  .#{$spacing-namespace}-m\+\+  { margin:           rem-calc( quadruple(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mt\+\+ { margin-top:       rem-calc( quadruple(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mr\+\+ { margin-right:     rem-calc( quadruple(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mb\+\+ { margin-bottom:    rem-calc( quadruple(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-ml\+\+ { margin-left:      rem-calc( quadruple(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mh\+\+ { margin-right:     rem-calc( quadruple(-$spacing-margin) ) !important; margin-left:   rem-calc( quadruple(-$spacing-margin) ) !important; }
+  .#{$spacing-namespace}-mv\+\+ { margin-top:       rem-calc( quadruple(-$spacing-margin) ) !important; margin-bottom: rem-calc( quadruple(-$spacing-margin) ) !important; }
 
 }
 
@@ -245,13 +245,13 @@ $enable-paddings--none:              false !default;
    * Add paddings.
    */
 
-  .#{$spacing-namespace}p       { padding:          $spacing-padding !important; }
-  .#{$spacing-namespace}pt      { padding-top:      $spacing-padding !important; }
-  .#{$spacing-namespace}pr      { padding-right:    $spacing-padding !important; }
-  .#{$spacing-namespace}pb      { padding-bottom:   $spacing-padding !important; }
-  .#{$spacing-namespace}pl      { padding-left:     $spacing-padding !important; }
-  .#{$spacing-namespace}ph      { padding-right:    $spacing-padding !important; padding-left:    $spacing-padding !important; }
-  .#{$spacing-namespace}pv      { padding-top:      $spacing-padding !important; padding-bottom:  $spacing-padding !important; }
+  .#{$spacing-namespace}p       { padding:          rem-calc($spacing-padding) !important; }
+  .#{$spacing-namespace}pt      { padding-top:      rem-calc($spacing-padding) !important; }
+  .#{$spacing-namespace}pr      { padding-right:    rem-calc($spacing-padding) !important; }
+  .#{$spacing-namespace}pb      { padding-bottom:   rem-calc($spacing-padding) !important; }
+  .#{$spacing-namespace}pl      { padding-left:     rem-calc($spacing-padding) !important; }
+  .#{$spacing-namespace}ph      { padding-right:    rem-calc($spacing-padding) !important; padding-left:    rem-calc($spacing-padding) !important; }
+  .#{$spacing-namespace}pv      { padding-top:      rem-calc($spacing-padding) !important; padding-bottom:  rem-calc($spacing-padding) !important; }
 
 }
 
@@ -262,13 +262,13 @@ $enable-paddings--none:              false !default;
    * Add tiny paddings.
    */
 
-  .#{$spacing-namespace}p--     { padding:           quarter($spacing-padding) !important; }
-  .#{$spacing-namespace}pt--    { padding-top:       quarter($spacing-padding) !important; }
-  .#{$spacing-namespace}pr--    { padding-right:     quarter($spacing-padding) !important; }
-  .#{$spacing-namespace}pb--    { padding-bottom:    quarter($spacing-padding) !important; }
-  .#{$spacing-namespace}pl--    { padding-left:      quarter($spacing-padding) !important; }
-  .#{$spacing-namespace}ph--    { padding-right:     quarter($spacing-padding) !important; padding-left:      quarter($spacing-padding) !important; }
-  .#{$spacing-namespace}pv--    { padding-top:       quarter($spacing-padding) !important; padding-bottom:    quarter($spacing-padding) !important; }
+  .#{$spacing-namespace}p--     { padding:           rem-calc( quarter($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pt--    { padding-top:       rem-calc( quarter($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pr--    { padding-right:     rem-calc( quarter($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pb--    { padding-bottom:    rem-calc( quarter($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pl--    { padding-left:      rem-calc( quarter($spacing-padding) ) !important; }
+  .#{$spacing-namespace}ph--    { padding-right:     rem-calc( quarter($spacing-padding) ) !important; padding-left:      rem-calc( quarter($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pv--    { padding-top:       rem-calc( quarter($spacing-padding) ) !important; padding-bottom:    rem-calc( quarter($spacing-padding) ) !important; }
 
 }
 
@@ -279,13 +279,13 @@ $enable-paddings--none:              false !default;
    * Add small paddings.
    */
 
-  .#{$spacing-namespace}p-      { padding:           halve($spacing-padding) !important; }
-  .#{$spacing-namespace}pt-     { padding-top:       halve($spacing-padding) !important; }
-  .#{$spacing-namespace}pr-     { padding-right:     halve($spacing-padding) !important; }
-  .#{$spacing-namespace}pb-     { padding-bottom:    halve($spacing-padding) !important; }
-  .#{$spacing-namespace}pl-     { padding-left:      halve($spacing-padding) !important; }
-  .#{$spacing-namespace}ph-     { padding-right:     halve($spacing-padding) !important; padding-left:    halve($spacing-padding) !important; }
-  .#{$spacing-namespace}pv-     { padding-top:       halve($spacing-padding) !important; padding-bottom:  halve($spacing-padding) !important; }
+  .#{$spacing-namespace}p-      { padding:           rem-calc( halve($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pt-     { padding-top:       rem-calc( halve($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pr-     { padding-right:     rem-calc( halve($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pb-     { padding-bottom:    rem-calc( halve($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pl-     { padding-left:      rem-calc( halve($spacing-padding) ) !important; }
+  .#{$spacing-namespace}ph-     { padding-right:     rem-calc( halve($spacing-padding) ) !important; padding-left:    rem-calc( halve($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pv-     { padding-top:       rem-calc( halve($spacing-padding) ) !important; padding-bottom:  rem-calc( halve($spacing-padding) ) !important; }
 
 }
 
@@ -296,13 +296,13 @@ $enable-paddings--none:              false !default;
    * Add large paddings.
    */
 
-  .#{$spacing-namespace}p\+     { padding:           double($spacing-padding) !important; }
-  .#{$spacing-namespace}pt\+    { padding-top:       double($spacing-padding) !important; }
-  .#{$spacing-namespace}pr\+    { padding-right:     double($spacing-padding) !important; }
-  .#{$spacing-namespace}pb\+    { padding-bottom:    double($spacing-padding) !important; }
-  .#{$spacing-namespace}pl\+    { padding-left:      double($spacing-padding) !important; }
-  .#{$spacing-namespace}ph\+    { padding-right:     double($spacing-padding) !important; padding-left:   double($spacing-padding) !important; }
-  .#{$spacing-namespace}pv\+    { padding-top:       double($spacing-padding) !important; padding-bottom: double($spacing-padding) !important; }
+  .#{$spacing-namespace}p\+     { padding:           rem-calc( double($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pt\+    { padding-top:       rem-calc( double($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pr\+    { padding-right:     rem-calc( double($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pb\+    { padding-bottom:    rem-calc( double($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pl\+    { padding-left:      rem-calc( double($spacing-padding) ) !important; }
+  .#{$spacing-namespace}ph\+    { padding-right:     rem-calc( double($spacing-padding) ) !important; padding-left:   rem-calc( double($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pv\+    { padding-top:       rem-calc( double($spacing-padding) ) !important; padding-bottom: rem-calc( double($spacing-padding) ) !important; }
 
 }
 
@@ -313,13 +313,13 @@ $enable-paddings--none:              false !default;
    * Add huge paddings.
    */
 
-  .#{$spacing-namespace}p\+\+   { padding:           quadruple($spacing-padding) !important; }
-  .#{$spacing-namespace}pt\+\+  { padding-top:       quadruple($spacing-padding) !important; }
-  .#{$spacing-namespace}pr\+\+  { padding-right:     quadruple($spacing-padding) !important; }
-  .#{$spacing-namespace}pb\+\+  { padding-bottom:    quadruple($spacing-padding) !important; }
-  .#{$spacing-namespace}pl\+\+  { padding-left:      quadruple($spacing-padding) !important; }
-  .#{$spacing-namespace}ph\+\+  { padding-right:     quadruple($spacing-padding) !important; padding-left:    quadruple($spacing-padding) !important; }
-  .#{$spacing-namespace}pv\+\+  { padding-top:       quadruple($spacing-padding) !important; padding-bottom:  quadruple($spacing-padding) !important; }
+  .#{$spacing-namespace}p\+\+   { padding:           rem-calc( quadruple($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pt\+\+  { padding-top:       rem-calc( quadruple($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pr\+\+  { padding-right:     rem-calc( quadruple($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pb\+\+  { padding-bottom:    rem-calc( quadruple($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pl\+\+  { padding-left:      rem-calc( quadruple($spacing-padding) ) !important; }
+  .#{$spacing-namespace}ph\+\+  { padding-right:     rem-calc( quadruple($spacing-padding) ) !important; padding-left:    rem-calc( quadruple($spacing-padding) ) !important; }
+  .#{$spacing-namespace}pv\+\+  { padding-top:       rem-calc( quadruple($spacing-padding) ) !important; padding-bottom:  rem-calc( quadruple($spacing-padding) ) !important; }
 
 }
 
