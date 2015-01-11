@@ -45,7 +45,8 @@ $heading-line-height-small:  1.3 !default;
     $heading: $number-of-headings - $i + $max-heading;
 
     h#{$heading},
-    .h#{$heading}{
+    .h#{$heading},
+    %h#{$heading}{
       $size: foo;
 
       @if $ratio == 1{
