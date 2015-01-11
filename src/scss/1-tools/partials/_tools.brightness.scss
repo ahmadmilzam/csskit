@@ -16,8 +16,8 @@ $brightness-divisor: $red-magic-number + $green-magic-number + $blue-magic-numbe
   @return 100% * $number / 255;
 }
 
-@function contrasting-color($color, $light, $dark) {
-  @if brightness($color) < 65% {
+@function contrasting-color($color, $light, $dark, $factor: 50%) {
+  @if brightness($color) < $factor {
     @return $light;
   } @else {
     @return $dark;
