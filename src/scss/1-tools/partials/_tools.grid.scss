@@ -48,8 +48,8 @@ $imported-default-settings: false !default;
   // use @include grid-row(nest); to include a nested row
   @if $behavior == nested {
     width: auto;
-    margin-left: -($columns-gutter/2);
-    margin-right: -($columns-gutter/2);
+    margin-left: rem-calc( -($columns-gutter/2) );
+    margin-right: rem-calc( -($columns-gutter/2) );
     margin-top: 0;
     margin-bottom: 0;
     max-width: none;
@@ -135,8 +135,8 @@ $imported-default-settings: false !default;
     // Gutter padding whenever a column isn't set to collapse
     // (use $flush:null to do nothing)
     @else if $flush == false {
-      padding-left: $columns-gutter / 2;
-      padding-right: $columns-gutter / 2;
+      padding-left: rem-calc( $columns-gutter / 2 );
+      padding-right: rem-calc( $columns-gutter / 2 );
     }
 
     // If a column number is given, calculate width

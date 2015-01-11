@@ -24,7 +24,7 @@ $form-input-margin-bottom:              halve($base-spacing-unit) !default;
 
 
 fieldset {
-  padding: $base-spacing-unit;
+  padding: rem-calc($base-spacing-unit);
 }
 
 input,
@@ -73,7 +73,7 @@ select {
 
 textarea {
   resize: vertical;
-  height: $base-spacing-unit * 4;
+  height: rem-calc($base-spacing-unit * 4);
 }
 
 input[type="checkbox"],
@@ -84,7 +84,7 @@ input[type="radio"] {
 }
 
 input[type="file"] {
-  margin-bottom: halve($base-spacing-unit);
-  padding-bottom: halve($base-spacing-unit);
+  margin-bottom: rem-calc( halve($base-spacing-unit) );
+  padding-bottom: rem-calc( halve($base-spacing-unit) );
   width: 100%;
 }

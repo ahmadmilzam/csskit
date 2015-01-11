@@ -64,7 +64,7 @@ $enable-btn--disabled:               false !default;
   border: none; /* [4] */
   margin:  0; /* [4] */
   cursor: pointer; /* [5] */
-  padding: $btn-padding - $btn-border-width  double($btn-padding) - $btn-border-width; /* [6] */
+  padding: rem-calc( ($btn-padding - $btn-border-width) (double($btn-padding) - $btn-border-width) ); /* [6] */
   background-color: $btn-background;
 
   @if($btn-border-width != 0) {
@@ -127,7 +127,7 @@ $enable-btn--disabled:               false !default;
 
   .#{$btn-namespace}btn--large,
   %#{$btn-namespace}btn--large {
-    padding: $btn-padding--large - $btn-border-width  double($btn-padding--large) - $btn-border-width; /* [7] */
+    padding: rem-calc( ($btn-padding--large - $btn-border-width)  (double($btn-padding--large) - $btn-border-width) ); /* [7] */
   }
 
 }
