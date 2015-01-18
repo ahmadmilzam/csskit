@@ -168,14 +168,15 @@ $enable-grid-uncentered:                false !default;
     @include grid-row;
 
     @if $enable-grid-flush {
-
-      &.layout--flush {
-        > .layout__unit{
-          @include grid-column($flush:true, $float:false);
-        }
-        .layout {
-          margin-left:0;
-          margin-right:0;
+      @at-root{
+        .layout--flush {
+          > .layout__unit{
+            @include grid-column($flush:true, $float:false);
+          }
+          .layout {
+            margin-left:0;
+            margin-right:0;
+          }
         }
       }
 
@@ -183,15 +184,12 @@ $enable-grid-uncentered:                false !default;
 
     .layout {
       @include grid-row($behavior:nested);
+    }
 
-      @if $enable-grid-flush {
-
-        &.layout--flush {
-          @include grid-row($behavior:nested-flush);
-        }
-
+    @if $enable-grid-flush {
+      .layout--flush {
+        @include grid-row($behavior:nested-flush);
       }
-
     }
   }
 

@@ -30,11 +30,11 @@ $list-inline-delimit-character:      ",\00A0" !default;
   margin: 0;
   padding: 0;
   list-style: none;
-  > li {
+}
+  .#{$list-inline-namespace}list-inline__item,
+  %#{$list-inline-namespace}list-inline__item {
     display: inline-block;
   }
-
-}
 
 
 @if ($enable-list-inline--delimited == true) {
@@ -49,7 +49,8 @@ $list-inline-delimit-character:      ",\00A0" !default;
   .#{$list-inline-namespace}list-inline--delimited,
   %#{$list-inline-namespace}list-inline--delimited {
 
-    > li + li {
+    > .#{$list-inline-namespace}list-inline__item,
+    > %#{$list-inline-namespace}list-inline__item {
 
       &:before {
         content: "#{$list-inline-delimit-character}";

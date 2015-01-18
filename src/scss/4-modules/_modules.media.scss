@@ -48,7 +48,7 @@ $enable-media--responsive:           false !default;
   .#{$media-namespace}media__img,
   %#{$media-namespace}media__img {
     float: left;
-    margin-right: $media-gutter;
+    margin-right: rem-calc($media-gutter);
 
     > img,
     .img {
@@ -72,30 +72,25 @@ $enable-media--responsive:           false !default;
 @if ($enable-media--tiny == true) {
 
   /**
-   * Tiny media objects.
+   * tiny media objects.
    */
-  .#{$media-namespace}media--tiny,
-  %#{$media-namespace}media--tiny {
+  .#{$media-namespace}media--tiny > .#{$media-namespace}media__img,
+  %#{$media-namespace}media--tiny > %#{$media-namespace}media__img {
+    margin-right: rem-calc($media-gutter--tiny);
+  }
 
-    > .#{$media-namespace}media__img,
-    > %#{$media-namespace}media__img {
-      margin-right: $media-gutter--tiny;
-    }
+  @if ($enable-media--rev == true) {
 
-    @if ($enable-media--rev == true) {
+    /**
+     * tiny reversed media objects.
+     */
+    .#{$media-namespace}media--tiny.#{$media-namespace}media--rev,
+    %#{$media-namespace}media--tiny%#{$media-namespace}media--rev {
 
-      /**
-       * Tiny reversed media objects.
-       */
-      &.#{$media-namespace}media--rev,
-      &%#{$media-namespace}media--rev {
-
-        > .#{$media-namespace}media__img,
-        > %#{$media-namespace}media__img {
-            margin-right: 0;
-            margin-left:  $media-gutter--tiny;
-        }
-
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  rem-calc($media-gutter--tiny);
       }
 
     }
@@ -108,30 +103,25 @@ $enable-media--responsive:           false !default;
 @if ($enable-media--small == true) {
 
   /**
-   * Small media objects.
+   * small media objects.
    */
-  .#{$media-namespace}media--small,
-  %#{$media-namespace}media--small {
+  .#{$media-namespace}media--small > .#{$media-namespace}media__img,
+  %#{$media-namespace}media--small > %#{$media-namespace}media__img {
+    margin-right: rem-calc($media-gutter--small);
+  }
 
-    > .#{$media-namespace}media__img,
-    > %#{$media-namespace}media__img {
-      margin-right: $media-gutter--small;
-    }
+  @if ($enable-media--rev == true) {
 
-    @if ($enable-media--rev == true) {
+    /**
+     * small reversed media objects.
+     */
+    .#{$media-namespace}media--small.#{$media-namespace}media--rev,
+    %#{$media-namespace}media--small%#{$media-namespace}media--rev {
 
-      /**
-       * Small reversed media objects.
-       */
-      &.#{$media-namespace}media--rev,
-      &%#{$media-namespace}media--rev {
-
-        > .#{$media-namespace}media__img,
-        > %#{$media-namespace}media__img {
-          margin-right: 0;
-          margin-left:  $media-gutter--small;
-        }
-
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  rem-calc($media-gutter--small);
       }
 
     }
@@ -146,28 +136,23 @@ $enable-media--responsive:           false !default;
   /**
    * Large media objects.
    */
-  .#{$media-namespace}media--large,
-  %#{$media-namespace}media--large {
+  .#{$media-namespace}media--large > .#{$media-namespace}media__img,
+  %#{$media-namespace}media--large > %#{$media-namespace}media__img {
+    margin-right: rem-calc($media-gutter--large);
+  }
 
-    > .#{$media-namespace}media__img,
-    > %#{$media-namespace}media__img {
-        margin-right: $media-gutter--large;
-    }
+  @if ($enable-media--rev == true) {
 
-    @if ($enable-media--rev == true) {
+    /**
+     * Large reversed media objects.
+     */
+    .#{$media-namespace}media--large.#{$media-namespace}media--rev,
+    %#{$media-namespace}media--large%#{$media-namespace}media--rev {
 
-      /**
-       * Large reversed media objects.
-       */
-      &.#{$media-namespace}media--rev,
-      &%#{$media-namespace}media--rev {
-
-        > .media__img,
-        > %media__img {
-            margin-right: 0;
-            margin-left:  $media-gutter--large;
-        }
-
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  rem-calc($media-gutter--large);
       }
 
     }
@@ -182,28 +167,23 @@ $enable-media--responsive:           false !default;
   /**
    * Huge media objects.
    */
-  .#{$media-namespace}media--huge,
-  %#{$media-namespace}media--huge {
+  .#{$media-namespace}media--huge > .#{$media-namespace}media__img,
+  %#{$media-namespace}media--huge > %#{$media-namespace}media__img {
+    margin-right: rem-calc($media-gutter--huge);
+  }
 
-    > .#{$media-namespace}media__img,
-    > %#{$media-namespace}media__img {
-      margin-right: $media-gutter--huge;
-    }
+  @if ($enable-media--rev == true) {
 
-    @if ($enable-media--rev == true) {
+    /**
+     * Huge reversed media objects.
+     */
+    .#{$media-namespace}media--huge.#{$media-namespace}media--rev,
+    %#{$media-namespace}media--huge%#{$media-namespace}media--rev {
 
-      /**
-       * Huge reversed media objects.
-       */
-      &.#{$media-namespace}media--rev,
-      &%#{$media-namespace}media--rev {
-
-        > .media__img,
-        > %media__img {
-            margin-right: 0;
-            margin-left:  $media-gutter--huge;
-        }
-
+      > .media__img,
+      > %media__img {
+        margin-right: 0;
+        margin-left:  rem-calc($media-gutter--huge);
       }
 
     }
@@ -218,17 +198,13 @@ $enable-media--responsive:           false !default;
   /**
    * Reversed image location (right instead of left). Extends `.media`.
    */
-  .#{$media-namespace}media--rev,
-  %#{$media-namespace}media--rev {
-
-    > .#{$media-namespace}media__img,
-    > %#{$media-namespace}media__img {
-      float: right;
-      margin-right: 0;
-      margin-left: $media-gutter;
-    }
-
+  .#{$media-namespace}media--rev > .#{$media-namespace}media__img,
+  %#{$media-namespace}media--rev > %#{$media-namespace}media__img {
+    float: right;
+    margin-right: 0;
+    margin-left: rem-calc($media-gutter);
   }
+
 
 }
 
@@ -238,15 +214,10 @@ $enable-media--responsive:           false !default;
   /**
    * Flush media objects have no space between the image- and text-content.
    */
-  .#{$media-namespace}media--flush,
-  %#{$media-namespace}media--flush {
-
-    > .#{$media-namespace}media__img,
-    > %#{$media-namespace}media__img {
-      margin-right: 0;
-      margin-left:  0;
-    }
-
+  .#{$media-namespace}media--flush > .#{$media-namespace}media__img,
+  %#{$media-namespace}media--flush > %#{$media-namespace}media__img {
+    margin-right: 0;
+    margin-left:  0;
   }
 
 }
@@ -268,112 +239,15 @@ $enable-media--responsive:           false !default;
    */
   @media screen and (max-width: $media-collapse-at) {
 
-    .#{$media-namespace}media--responsive,
-    %#{$media-namespace}media--responsive {
-
-      /**
-       * Rework the spacings on regular media objects.
-       */
-      > .#{$media-namespace}media__img,
-      > %#{$media-namespace}media__img {
-        float: none;
-        margin-right: 0;
-        margin-bottom: $media-gutter;
-        margin-left:  0;
-      }
-
-      @if ($enable-media--tiny == true) {
-
-        /**
-         * Tiny responsive media objects.
-         *
-         * Take a little more heavy-handed approach to reworking
-         * spacings on media objects that are also tiny media objects
-         * in their regular state.
-         */
-        &.#{$media-namespace}media--tiny,
-        &%#{$media-namespace}media--tiny {
-
-          > .#{$media-namespace}media__img,
-          > %#{$media-namespace}media__img {
-            margin-right: 0;
-            margin-left:  0;
-            margin-bottom: $media-gutter--tiny;
-          }
-
-        }
-
-      }
-
-      @if ($enable-media--small == true) {
-
-        /**
-         * Small responsive media objects.
-         *
-         * Take a little more heavy-handed approach to reworking
-         * spacings on media objects that are also small media objects
-         * in their regular state.
-         */
-        &.#{$media-namespace}media--small,
-        &%#{$media-namespace}media--small {
-
-          > .#{$media-namespace}media__img,
-          > %#{$media-namespace}media__img {
-            margin-right: 0;
-            margin-left:  0;
-            margin-bottom: $media-gutter--small;
-          }
-
-        }
-
-      }
-
-      @if ($enable-media--large == true) {
-
-        /**
-         * Large responsive media objects.
-         *
-         * Take a little more heavy-handed approach to reworking
-         * spacings on media objects that are also large media objects
-         * in their regular state.
-         */
-        &.#{$media-namespace}media--large,
-        &%#{$media-namespace}media--large {
-
-          > .#{$media-namespace}media__img,
-          > %#{$media-namespace}media__img {
-            margin-right: 0;
-            margin-left:  0;
-            margin-bottom: $media-gutter--large;
-          }
-
-        }
-
-      }
-
-      @if ($enable-media--huge == true) {
-
-        /**
-         * Huge responsive media objects.
-         *
-         * Take a little more heavy-handed approach to reworking
-         * spacings on media objects that are also huge media objects
-         * in their regular state.
-         */
-        &.#{$media-namespace}media--huge,
-        &%#{$media-namespace}media--huge {
-
-          > .#{$media-namespace}media__img,
-          > %#{$media-namespace}media__img {
-            margin-right: 0;
-            margin-left:  0;
-            margin-bottom: $media-gutter--huge;
-          }
-
-        }
-
-      }
-
+    /**
+     * Rework the spacings on regular media objects.
+     */
+    .#{$media-namespace}media--responsive > .#{$media-namespace}media__img,
+    %#{$media-namespace}media--responsive > %#{$media-namespace}media__img {
+      float: none;
+      margin-right: 0;
+      margin-bottom: $media-gutter;
+      margin-left:  0;
     }
 
   }

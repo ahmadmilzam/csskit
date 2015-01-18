@@ -40,14 +40,14 @@ $enable-list-block--huge:            false !default;
   padding: 0;
   list-style: none;
 
-  > li {
-    @extend %#{$list-block-namespace}list-block__item;
-  }
+  // > li {
+  //   @extend %#{$list-block-namespace}list-block__item;
+  // }
 }
 
   .#{$list-block-namespace}list-block__item,
   %#{$list-block-namespace}list-block__item {
-    padding: $list-block-padding;
+    padding: rem-calc($list-block-padding);
   }
 
 
@@ -61,7 +61,7 @@ $enable-list-block--huge:            false !default;
 
     > .#{$list-block-namespace}list-block__item,
     > %#{$list-block-namespace}list-block__item {
-      padding: $list-block-padding--tiny;
+      padding: rem-calc($list-block-padding--tiny);
     }
 
   }
@@ -78,7 +78,7 @@ $enable-list-block--huge:            false !default;
 
     > .#{$list-block-namespace}list-block__item,
     > %#{$list-block-namespace}list-block__item {
-      padding: $list-block-padding--small;
+      padding: rem-calc($list-block-padding--small);
     }
 
   }
@@ -95,7 +95,7 @@ $enable-list-block--huge:            false !default;
 
       > .#{$list-block-namespace}list-block__item,
       > %#{$list-block-namespace}list-block__item {
-        padding: $list-block-padding--large;
+        padding: rem-calc($list-block-padding--large);
       }
 
   }
@@ -112,7 +112,7 @@ $enable-list-block--huge:            false !default;
 
     > .#{$list-block-namespace}list-block__item,
     > %#{$list-block-namespace}list-block__item {
-      padding: $list-block-padding--huge;
+      padding: rem-calc($list-block-padding--huge);
     }
 
   }

@@ -57,15 +57,11 @@ $enable-remove-border-at-last-item:  false !default;
   @if $enable-remove-border-at-first-item{
     border-top-width: 0;
   }
-
-  > li {
-    @extend %#{$list-ui-namespace}list-ui__item;
-  }
 }
 
   .#{$list-ui-namespace}list-ui__item,
   %#{$list-ui-namespace}list-ui__item {
-    padding: $list-ui-padding;
+    padding: rem-calc($list-ui-padding);
     border-bottom-width: $list-ui-border-width;
 
     @if $enable-remove-border-at-last-item {
@@ -103,7 +99,7 @@ $enable-remove-border-at-last-item:  false !default;
 
     > .#{$list-ui-namespace}list-ui__item,
     > %#{$list-ui-namespace}list-ui__item {
-        padding: $list-ui-padding--tiny;
+        padding: rem-calc($list-ui-padding--tiny);
     }
 
   }
@@ -120,7 +116,7 @@ $enable-remove-border-at-last-item:  false !default;
 
     > .#{$list-ui-namespace}list-ui__item,
     > %#{$list-ui-namespace}list-ui__item {
-      padding: $list-ui-padding--small;
+      padding: rem-calc($list-ui-padding--small);
     }
 
   }
@@ -137,7 +133,7 @@ $enable-remove-border-at-last-item:  false !default;
 
     > .#{$list-ui-namespace}list-ui__item,
     > %#{$list-ui-namespace}list-ui__item {
-      padding: $list-ui-padding--large;
+      padding: rem-calc($list-ui-padding--large);
     }
 
   }
@@ -154,7 +150,7 @@ $enable-remove-border-at-last-item:  false !default;
 
     > .#{$list-ui-namespace}list-ui__item,
     > %#{$list-ui-namespace}list-ui__item {
-      padding: $list-ui-padding--huge;
+      padding: rem-calc($list-ui-padding--huge);
     }
 
   }

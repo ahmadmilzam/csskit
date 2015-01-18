@@ -40,11 +40,6 @@ $enable-box--huge:                   false !default;
   @extend %clearfix;
   display: block; /* [1] */
   padding: $box-padding;
-
-  > :last-child {
-    margin-bottom: 0;
-  }
-
 }
 
 
