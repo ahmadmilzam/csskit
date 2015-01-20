@@ -56,6 +56,10 @@ $list-inline-delimit-character:      ",\00A0" !default;
         content: "#{$list-inline-delimit-character}";
       }
 
+      &:first-child:before {
+        content: "";
+      }
+
     }
 
   }

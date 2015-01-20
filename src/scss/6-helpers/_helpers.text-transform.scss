@@ -2,11 +2,11 @@
    Text Transform Helper Classes
    ========================================================================== */
 
-.uppercase,
-%uppercase{ text-transform: uppercase; }
+.text-uppercase,
+%text-uppercase{ text-transform: uppercase; }
 
-.lowercase,
-%lowercase{ text-transform: lowercase; }
+.text-lowercase,
+%text-lowercase{ text-transform: lowercase; }
 
-.capitalize,
-%capitalize{ text-transform: capitalize; }
+.text-capitalize,
+%text-capitalize{ text-transform: capitalize; }

@@ -60,7 +60,7 @@ module.exports = function(grunt) {
         options: {
           loadPath: 'src/scss/',
           banner: '<%= tag.banner %>',
-          style: 'expanded'
+          style: 'nested'
         },
         files: {
           '<%= project.app %>/<%= project.assets %>/css/app.css' : '<%= project.css.main %>',
@@ -86,22 +86,30 @@ module.exports = function(grunt) {
           map: false
         },
         files: {
-          '<%= project.app %>/<%= project.assets %>/css/app.css' : ['<%= project.app %>/<%= project.assets %>/css/app.css'],
-          '<%= project.docs %>/<%= project.assets %>/css/docs.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.css']
+          '<%= project.app %>/<%= project.assets %>/css/app.prefixed.css' : ['<%= project.app %>/<%= project.assets %>/css/app.css'],
+          '<%= project.docs %>/<%= project.assets %>/css/docs.prefixed.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.css']
         }
       }
     },
 
     /**
      * Runs tasks minify the script after prefixed with autoprefixer
-     * https://github.com/nDmitry/grunt-autoprefixer
+     * https://github.com/gruntjs/grunt-contrib-cssmin
      */
     cssmin: {
-      combine: {
-        files: {
-          '<%= project.app %>/<%= project.assets %>/css/app.min.css' : ['<%= project.app %>/<%= project.assets %>/css/app.min.css'],
-          '<%= project.docs %>/<%= project.assets %>/css/docs.min.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.min.css'],
-        },
+      options:{
+        report: 'gzip'
+      },
+      target: {
+        files: [{
+          expand: true,
+          cwd: '<%= project.app %>/<%= project.assets %>/css',
+          src: ['*.prefixed.css', '!*.min.css'],
+          dest: '<%= project.app %>/<%= project.assets %>/css',
+          ext: '.min.css'
+        },{
+          '<%= project.docs %>/<%= project.assets %>/css/docs.min.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.prefixed.css']
+        }]
       },
     },
 
@@ -143,7 +151,7 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'sass:compile',
     'autoprefixer:dist',
-    'cssmin:combine'
+    'cssmin:target'
   ]);
 
 }
