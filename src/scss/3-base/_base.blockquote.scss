@@ -1,6 +1,16 @@
 /* ==========================================================================
    BLOCKQUOTE
    ========================================================================== */
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included a default settings file?"
+}
+
 // Default styling for Blockquote element
 $blockquote-footer-font-size: 12px !default;
 $blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%) !default;
