@@ -3,7 +3,7 @@ module.exports = function(grunt) {
   /**
    * Dynamically load npm tasks
    */
-  require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
+  require('load-grunt-tasks')(grunt);
 
   /**
    * CSSKit Grunt config
@@ -19,13 +19,14 @@ module.exports = function(grunt) {
      * Set project info
      */
     project: {
+      bower: 'libs',
       src: 'src',
       app: 'app',
       docs: 'docs',
       assets: 'assets',
       css: {
         main: [
-          '<%= project.src %>/scss/app.scss'
+          '<%= project.src %>/scss/sample.scss'
         ],
         docs: [
           '<%= project.docs %>/<%= project.src %>/scss/docs.scss'
@@ -114,6 +115,42 @@ module.exports = function(grunt) {
     },
 
     /**
+     * Concatenate files.
+     * https://github.com/gruntjs/grunt-contrib-concat
+     */
+    concat: {
+      options: {
+        banner: '<%= tag.banner %>'
+      },
+      target: {
+        src: [
+          // required library script
+          '<%= project.bower %>/classie/classie.js',
+          // my script
+          '<%= project.docs %>/<%= project.src %>/js/topbar.js',
+        ],
+        dest: '<%= project.docs %>/<%= project.assets %>/js/docs.js'
+      }
+    },
+
+    /**
+     * Minify files with UglifyJS.
+     * https://github.com/gruntjs/grunt-contrib-uglify
+     */
+    uglify: {
+      options: {
+        mangle: true,
+        compress: true,
+        report: 'gzip'
+      },
+      target: {
+        files: {
+          '<%= project.docs %>/<%= project.assets %>/js/docs.js':['<%= project.docs %>/<%= project.assets %>/js/docs.js']
+        }
+      }
+    },
+
+    /**
      * Runs tasks against changed watched files
      * https://github.com/gruntjs/grunt-contrib-watch
      * Watching development files and run concat/compile tasks
@@ -121,7 +158,7 @@ module.exports = function(grunt) {
     watch: {
       grunt: {
         files: ['Gruntfile.js'],
-        tasks: ['sass:compile']
+        tasks: ['sass:compile', 'concat:target']
       },
       sass: {
         files: [
@@ -129,6 +166,12 @@ module.exports = function(grunt) {
           '<%= project.docs %>/<%= project.src %>/scss/**/*.{scss, sass}'
         ],
         tasks: ['sass:compile']
+      },
+      js: {
+        files: [
+          '<%= project.docs %>/<%= project.src %>/js/**/*.js'
+        ],
+        tasks: ['concat:target']
       }
     }
   });
@@ -140,6 +183,7 @@ module.exports = function(grunt) {
    */
   grunt.registerTask('default', [
     'sass:compile',
+    'concat:target',
     'watch'
   ]);
 
@@ -151,7 +195,9 @@ module.exports = function(grunt) {
   grunt.registerTask('build', [
     'sass:compile',
     'autoprefixer:dist',
-    'cssmin:target'
+    'cssmin:target',
+    'concat:target',
+    'uglify:target'
   ]);
 
 }

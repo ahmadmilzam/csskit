@@ -14,7 +14,7 @@
 $imported-default-settings: false !default;
 
 @if ($imported-default-settings == false) {
-  @warn "Oops! Have you included default settings and module settings files?"
+  @warn "Oops! Have you included default settings and module settings files?";
 }
 
 
@@ -39,10 +39,6 @@ $enable-list-block--huge:            false !default;
   margin: 0;
   padding: 0;
   list-style: none;
-
-  // > li {
-  //   @extend %#{$list-block-namespace}list-block__item;
-  // }
 }
 
   .#{$list-block-namespace}list-block__item,

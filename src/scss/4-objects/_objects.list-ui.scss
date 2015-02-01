@@ -69,90 +69,70 @@ $enable-remove-border-at-last-item:  false !default;
         border-bottom-width: 0px;
       }
     }
-  }
 
 
-@if ($enable-list-ui--flush == true) {
+    @if ($enable-list-ui--flush == true) {
 
-  /**
-   * Tiny list-uis.
-   */
-  .#{$list-ui-namespace}list-ui--flush,
-  %#{$list-ui-namespace}list-ui--flush {
-
-    > .#{$list-ui-namespace}list-ui__item,
-    > %#{$list-ui-namespace}list-ui__item {
+      /**
+       * Tiny list-uis.
+       */
+      .#{$list-ui-namespace}list-ui--flush > &,
+      %#{$list-ui-namespace}list-ui--flush > &{
         padding: 0;
+      }
+
     }
 
-  }
+    @if ($enable-list-ui--tiny == true) {
 
-}
-
-@if ($enable-list-ui--tiny == true) {
-
-  /**
-   * Tiny list-uis.
-   */
-  .#{$list-ui-namespace}list-ui--tiny,
-  %#{$list-ui-namespace}list-ui--tiny {
-
-    > .#{$list-ui-namespace}list-ui__item,
-    > %#{$list-ui-namespace}list-ui__item {
+      /**
+       * Tiny list-uis.
+       */
+      .#{$list-ui-namespace}list-ui--tiny > &,
+      %#{$list-ui-namespace}list-ui--tiny > &{
         padding: rem-calc($list-ui-padding--tiny);
+      }
+
+    }
+
+    @if ($enable-list-ui--small == true) {
+
+      /**
+       * Small list-uis.
+       */
+      .#{$list-ui-namespace}list-ui--small > &,
+      %#{$list-ui-namespace}list-ui--small > & {
+        padding: rem-calc($list-ui-padding--small);
+      }
+
+    }
+
+
+    @if ($enable-list-ui--large == true) {
+
+      /**
+       * Large list-uis.
+       */
+      .#{$list-ui-namespace}list-ui--large > &,
+      %#{$list-ui-namespace}list-ui--large > & {
+        padding: rem-calc($list-ui-padding--large);
+      }
+
+    }
+
+    @if ($enable-list-ui--huge == true) {
+
+      /**
+       * Huge list-uis.
+       */
+      .#{$list-ui-namespace}list-ui--huge > &,
+      %#{$list-ui-namespace}list-ui--huge > & {
+        padding: rem-calc($list-ui-padding--huge);
+      }
+
     }
 
   }
 
-}
-
-@if ($enable-list-ui--small == true) {
-
-  /**
-   * Small list-uis.
-   */
-  .#{$list-ui-namespace}list-ui--small,
-  %#{$list-ui-namespace}list-ui--small {
-
-    > .#{$list-ui-namespace}list-ui__item,
-    > %#{$list-ui-namespace}list-ui__item {
-      padding: rem-calc($list-ui-padding--small);
-    }
-
-  }
-}
 
 
-@if ($enable-list-ui--large == true) {
-
-  /**
-   * Large list-uis.
-   */
-  .#{$list-ui-namespace}list-ui--large,
-  %#{$list-ui-namespace}list-ui--large {
-
-    > .#{$list-ui-namespace}list-ui__item,
-    > %#{$list-ui-namespace}list-ui__item {
-      padding: rem-calc($list-ui-padding--large);
-    }
-
-  }
-
-}
-
-@if ($enable-list-ui--huge == true) {
-
-  /**
-   * Huge list-uis.
-   */
-  .#{$list-ui-namespace}list-ui--huge,
-  %#{$list-ui-namespace}list-ui--huge {
-
-    > .#{$list-ui-namespace}list-ui__item,
-    > %#{$list-ui-namespace}list-ui__item {
-      padding: rem-calc($list-ui-padding--huge);
-    }
-
-  }
-
-}

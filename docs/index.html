@@ -26,10 +26,29 @@
 <body>
 
   <!-- topbar -->
-  <header class="[ box box--large ] topbar mb+">
-    <div class="layout">
-      <div class="layout__unit small-1">
-        <h1 class="h4 mb0">CSSKit kitchen sink v.0.0.1</h1>
+  <header class="topbar mb+ js-ui-topbar">
+    <a href="#" class="topbar__toggle icon-hamburger hide-for-medium-up js-ui-topbar-toggle">
+      <span class="icon-hamburger__bar"></span>
+    </a>
+    <div class="layout layout--flush">
+      <div class="layout__unit small-1 medium-1-3">
+        <h1 class="topbar__brand">CSSKit</h1>
+      </div>
+      <div class="layout__unit small-1 medium-2-3">
+        <ul class="topbar__nav">
+          <li class="topbar__nav__item">
+            <a href="#" class="topbar__nav__link is-active">Home</a>
+          </li>
+          <li class="topbar__nav__item">
+            <a href="objects.html" class="topbar__nav__link">Objects</a>
+          </li>
+          <li class="topbar__nav__item">
+            <a href="components.html" class="topbar__nav__link">Components</a>
+          </li>
+          <li class="topbar__nav__item">
+            <a href="helpers.html" class="topbar__nav__link">Helpers</a>
+          </li>
+        </ul>
       </div>
     </div>
   </header>
@@ -50,7 +69,7 @@
         can be <strong>scaled as much</strong> or <strong>as little as you need</strong>.
       </p>
       <p>
-        OOCSS is really about a way to weiting CSS that avoid duplicating code by separating styles into letered abstractions.
+        OOCSS is really about a way to writing CSS that avoid duplicating code by separating styles into letered abstractions.
       </p>
       <p>
         CSSKit provides a solid architectural foundation upon which you can build any
@@ -61,9 +80,7 @@
         CSSKit is a framework in its truest sense. It is not a UI Toolkit, with
         opinionated views on design; it is not one giant download, with hundreds of
         unnecessary lines of CSS; it is not a 1001-UI-components-plus-the-kitchen-sink,
-        with loads of bloated rules. It is a collection of tiny, composable,
-        configurable, interdependent modules that you can piece together how you want
-        to, when you want to. CSSKit's focus is less upon the actual code within it,
+        with loads of bloated rules. CSSKit's focus is less upon the actual code within it,
         but upon the principles of a solid, scalable CSS architecture.
       </p>
 
@@ -93,7 +110,7 @@
   <code>
     $enable-btn--full:    true;
     $enable-btn--large:   true;
-    @import "bower_components/modules/modules.buttons";
+    @import "4-objects/objects.buttons";
   </code>
 </pre>
 
@@ -268,7 +285,7 @@
   </div>
   <!-- base - form sample -->
 
-  <!-- module - button -->
+  <!-- object - button -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2 class="layout__heading mb">Module Button</h2>
@@ -306,9 +323,9 @@
 
     </div>
   </div>
-  <!-- module - button -->
+  <!-- object - button -->
 
-  <!-- module - block -->
+  <!-- object - block -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2 class="layout__heading mb">Module Block</h2>
@@ -319,7 +336,7 @@
       <h3>Block Default</h3>
       <div class="block">
         <div class="block__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="block__text">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -327,9 +344,9 @@
       </div>
     </div>
   </div>
-  <!-- module - block -->
+  <!-- object - block -->
 
-  <!-- module - box sample -->
+  <!-- object - box sample -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2>Module Box</h2>
@@ -341,9 +358,9 @@
 
     </div>
   </div>
-  <!-- module - box sample -->
+  <!-- object - box sample -->
 
-  <!-- module - media -->
+  <!-- object - media -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2 class="layout__heading mb">Module Media</h2>
@@ -355,7 +372,7 @@
       <h3>Media Default</h3>
       <div class="[ media ] mb">
         <div class="media__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="media__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -367,7 +384,7 @@
       <h3>Media Reverse</h3>
       <div class="[ media media--rev ] mb">
         <div class="media__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="media__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -379,7 +396,7 @@
       <h3>Media Responsive</h3>
       <div class="[ media media--responsive ] mb">
         <div class="media__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="media__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -387,9 +404,9 @@
       </div>
     </div>
   </div>
-  <!-- module - media -->
+  <!-- object - media -->
 
-  <!-- module - flag -->
+  <!-- object - flag -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2 class="layout__heading mb">Module Flag</h2>
@@ -403,7 +420,7 @@
       <h3>Flag Default</h3>
       <div class="[ flag ] mb">
         <div class="flag__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="flag__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -415,7 +432,7 @@
       <h3>Flag Reverse</h3>
       <div class="[ flag flag--rev ] mb">
         <div class="flag__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="flag__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -427,7 +444,7 @@
       <h3>Flag Top</h3>
       <div class="[ flag flag--top ] mb">
         <div class="flag__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="flag__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -439,7 +456,7 @@
       <h3>Flag Bottom</h3>
       <div class="[ flag flag--bottom flag--rev ] mb">
         <div class="flag__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="flag__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -451,7 +468,7 @@
       <h3>Flag Responsive</h3>
       <div class="[ flag flag--responsive ] mb">
         <div class="flag__img">
-          <img src="http://www.fillmurray.com/g/200/200" alt="fillmurray">
+          <img src="http://www.fillmurray.com/g/100/100" alt="fillmurray">
         </div>
         <div class="flag__body">
           <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus provident facilis quod, voluptates ullam animi voluptatem enim quam ad aliquid totam vel dignissimos architecto laudantium voluptatum iure, modi. Voluptates, dolorem!</p>
@@ -460,9 +477,9 @@
 
     </div>
   </div>
-  <!-- module - flag -->
+  <!-- object - flag -->
 
-  <!-- module - list(s) -->
+  <!-- object - list(s) -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2 class="layout__heading mb">Module List</h2>
@@ -542,9 +559,9 @@
       </ul>
     </div>
   </div>
-  <!-- module - list(s) -->
+  <!-- object - list(s) -->
 
-  <!-- module - pack -->
+  <!-- object - pack -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2 class="layout__heading mb">Module Pack</h2>
@@ -568,10 +585,10 @@
       </div>
     </div>
   </div>
-  <!-- module - pack -->
+  <!-- object - pack -->
 
 
-  <!-- module - table sample -->
+  <!-- object - table sample -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2>Module Table</h2>
@@ -783,9 +800,9 @@
       </table>
     </div>
   </div>
-  <!-- module - table sample -->
+  <!-- object - table sample -->
 
-  <!-- module - grid sample -->
+  <!-- object - grid sample -->
   <div class="layout mb+">
     <div class="layout__unit small-1">
       <h2>Module Grid</h2>
@@ -954,18 +971,31 @@
       <h3>Grid Ordering</h3>
       <div class="layout mb">
         <div class="layout__unit small-2-5 small-push-3-5 debug-layout">
-          <p>First in source code, Last in browser</p>
+          <small>First in source code, Last in browser</small> <br>
           <small><code>layout__unit small-1-5 small-push-4-5</code></small>
         </div>
         <div class="layout__unit small-3-5 small-pull-2-5 debug-layout">
-          <p>Last in source code, First in browser</p>
+          <small>Last in source code, First in browser</small> <br>
           <small><code>layout__unit small-4-5 small-pull-1-5</code></small>
         </div>
       </div>
 
     </div>
   </div>
-  <!-- module - grid sample -->
+  <!-- object - grid sample -->
 
+  <!-- documentation script -->
+  <script src="assets/js/docs.js"></script>
+
+  <!-- google analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-42593908-1', 'ahmadmilzam.com');
+    ga('send', 'pageview');
+  </script>
 </body>
 </html>

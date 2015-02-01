@@ -25,5 +25,8 @@
     "framework",
     "bem",
     "oocss"
-  ]
+  ],
+  "devDependencies": {
+    "classie": "~1.0.1"
+  }
 }

@@ -206,10 +206,10 @@
 
 
 /*
-   Modules
+   Objects
    ========================================================================== */
 /**
- * modules, abstractions, and design patterns
+ * objects, abstractions, and design patterns
  * (e.g. .media {}, .button{}, .list{}).
  *
  * [1]  Grids
@@ -264,7 +264,7 @@ $opposite-float:                        right;
 // $enable-grid-uncentered:                true;
 
 
-@import "4-modules/modules.grids";
+@import "4-objects/objects.grids";
 
 
 /* [2] */
@@ -285,7 +285,7 @@ $opposite-float:                        right;
 // $enable-block--right:                true;
 
 
-// @import "4-modules/modules.block";
+// @import "4-objects/objects.block";
 
 
 /* [3] */
@@ -304,7 +304,7 @@ $opposite-float:                        right;
 // $enable-box--huge:                   true;
 
 
-// @import "4-modules/modules.box";
+// @import "4-objects/objects.box";
 
 
 /* [4] */
@@ -327,7 +327,7 @@ $opposite-float:                        right;
 // $enable-btn--pill:                   true;
 // $enable-btn--disabled:               true;
 
-@import "4-modules/modules.buttons";
+@import "4-objects/objects.buttons";
 
 
 /* [5] */
@@ -350,7 +350,7 @@ $opposite-float:                        right;
 // $enable-flag--responsive:            true;
 // $flag-collapse-at:                   upper-bound($small-range);
 
-// @import "4-modules/modules.flag";
+// @import "4-objects/objects.flag";
 
 
 /* [6] */
@@ -367,12 +367,12 @@ $opposite-float:                        right;
 // $enable-list-block--large:           true;
 // $enable-list-block--huge:            true;
 
-// @import "4-modules/modules.list-block";
+// @import "4-objects/objects.list-block";
 
 
 /* [7] */
 // $list-dull-namespace:                $namespace;
-// @import "4-modules/modules.list-dull";
+// @import "4-objects/objects.list-dull";
 
 
 /* [8] */
@@ -381,7 +381,7 @@ $opposite-float:                        right;
 // $enable-list-inline--delimited:      true;
 // $list-inline-delimit-character:      ",\00A0";
 
-// @import "4-modules/modules.list-inline";
+// @import "4-objects/objects.list-inline";
 
 /* [9] */
 // $list-ui-namespace:                  $namespace;
@@ -404,7 +404,7 @@ $opposite-float:                        right;
 // $enable-remove-border-at-first-item: true;
 // $enable-remove-border-at-last-item:  true;
 
-// @import "4-modules/modules.list-ui";
+// @import "4-objects/objects.list-ui";
 
 
 /* [10] */
@@ -425,7 +425,7 @@ $opposite-float:                        right;
 // $enable-media--flush:                true;
 // $enable-media--responsive:           true;
 
-// @import "4-modules/modules.media";
+// @import "4-objects/objects.media";
 
 
 /* [11] */
@@ -446,7 +446,7 @@ $opposite-float:                        right;
 // $enable-pack--middle:                true;
 // $enable-pack--bottom:                true;
 
-// @import "4-modules/modules.pack";
+// @import "4-objects/objects.pack";
 
 
 /* [12] */
@@ -468,7 +468,7 @@ $opposite-float:                        right;
 // $enable-table--rows:                 true;
 // $enable-table--columns:              true;
 
-// @import "4-modules/modules.tables";
+// @import "4-objects/objects.tables";
 
 
 

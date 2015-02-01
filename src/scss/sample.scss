@@ -1,7 +1,9 @@
 /* ==========================================================================
    Framework Main File
    ========================================================================== */
-// YOU SHOULD PREDEFINE THE VARIABLES BEFORE IMPORT THE RELEVANT FILES
+/**
+ * YOU SHOULD PREDEFINE THE VARIABLES BEFORE IMPORT THE RELEVANT FILES
+ */
 
 /*
    SETTINGS
@@ -19,28 +21,12 @@
 // $base-font-weight:                     normal;
 
 // $base-text-color:                      #333;
-// $base-text-color-alt:                  #fff;
 // $base-background-color:                #fff;
 
-// $base-line-height:                     24px;
+// $base-line-height:                     28px;
 // $base-spacing-unit:                    $base-line-height;
-// $base-spacing-unit--small:             round($base-spacing-unit / 2);
-// $base-spacing-unit--large:             round($base-spacing-unit * 2);
 
-// $base-radius:                          4px;
-
-
-/**
- * We use these as default colors throughout
- * Ref: http://www.flatuicolorpicker.com/
- */
-
-// $color-primary:                         #3A539B; // CHAMBRAY
-// $color-secondary:                       #bdc3c7; // SILVER
-// $color-alert:                           #EF4836; // FLAMINGO
-// $color-success:                         #2ECC71; // SHAMROCK
-// $color-warning:                         #F7CA18; // RIPE LEMON
-// $color-info:                            #3498DB; // CURIOUS BLUE
+// $base-radius:                          3px !default;
 
 
 
@@ -56,13 +42,14 @@
 
 // $screen: "only screen";
 
-// $small-range:                           (0px, 720px);
-// $medium-range:                          (721px, 1024px);
-// $large-range:                           (1025px, 1440px);
-// $xlarge-range:                          (1441px, 1920px);
-// $xxlarge-range:                         (1921px, 99999999px);
+// $small-range:                           (0em, 45em); // 0px - 720px
+// $medium-range:                          (45.063em, 64em); // 721px - 1024px
+// $large-range:                           (64.063em, 90em); // 1025px - 1440px
+// $xlarge-range:                          (90.063em, 120em); //1441px - 1920px
+// $xxlarge-range:                         (120.063em, 99999999em); //1921px - 99999999px
 
 // $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+
 
 /**
  * Would you like classes to be prepended with a namespace? If so,
@@ -71,17 +58,14 @@
 
 // $namespace: null;
 
+
 // base line debuger
-// $enable-debug-typography:               true;
+// $enable-debug-typography:                true;
 
 // whitespace debuger
-// $enable-debug-whitespace:               true;
+// $enable-debug-whitespace:                true;
 
 @import "0-settings/settings.all";
-
-// my settings
-@import "settings.colors";
-@import "settings.z-index";
 
 
 
@@ -92,8 +76,7 @@
 // Site-wide mixins and functions.
 
 @import "1-tools/tools.all";
-@import "tools.triangle";
-@import "tools.z-index";
+
 
 
 
@@ -120,8 +103,6 @@
 
 /* [4] */
 @import "2-generic/generic.shared";
-
-
 
 
 /*
@@ -154,9 +135,6 @@
 // $heading-size-max-small:    30px;
 // $heading-line-height-small: 1.3;
 
-// $header-font-family:        $base-font-family;
-// $header-font-weight:        $base-font-weight;
-
 @import "3-base/base.headings";
 
 
@@ -167,7 +145,7 @@
 
 
 /* [4] */
-// $anchor-font-color: $color-info;
+// $anchor-font-color: $your-color;
 // $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
 // $anchor-text-decoration: none;
 // $anchor-text-decoration-hover: none;
@@ -186,56 +164,43 @@
 /* [7] */
 // $hr-border-width:  1px;
 // $hr-border-style:  solid;
-$hr-border-color:  $color-divider;
-// $hr-margin:        rem-calc($base-spacing-unit);
+// $hr-border-color:  #ccc;
+// $hr-margin:        $base-spacing-unit;
 
 @import "3-base/base.hr";
 
 
 /* [8] */
-// $blockquote-font-size: rem-calc(18);
-// $blockquote-footer-font-size: 80%;
+// $blockquote-footer-font-size: 12px;
 // $blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%);
-// $blockquote-padding: halve($base-spacing-unit) $base-spacing-unit;
-// $blockquote-border-width: rem-calc(5);
-// $blockquote-border-color: #eee;
 
 @import "3-base/base.blockquote";
 
 
 /* [9] */
 // $form-font-size:                        $base-font-size;
-// $form-content-bg:                       darken(#fff, 2%);
+// $form-border-style:                     solid;
 // $form-border-width:                     1px;
 // $form-border-color:                     #ddd;
 // $form-border-color-hover:               darken($form-border-color, 5%);
-// $form-label-pointer:                    pointer;
-// $form-label-font-weight:                bold;
-// $form-label-line-height:                1.5;
-// $form-label-font-color:                 scale-color($base-text-color, $lightness: 30%);
-// $form-label-small-transform:            capitalize;
-// $form-label-bottom-margin:              rem-calc(5);
+// $form-label-margin-bottom:              quarter($base-spacing-unit);
+// $form-input-padding:                    halve($base-spacing-unit);
+// $form-input-margin-bottom:              halve($base-spacing-unit);
 
 @import "3-base/base.forms";
 
 
 /* [10] */
-// $code-font-family: Consolas, "Liberation Mono", Courier, monospace !default;
-// $code-font-color: scale-color($color-alert, $lightness: 10%) !default;
-// $code-font-size: 80% !default;
+// $code-font-family: Consolas, "Liberation Mono", Courier, monospace;
+// $code-font-size: 14px;
 
-// $code-padding: rem-calc(quarter($base-spacing-unit)) !default;
-// $code-bg-color: darken($base-background-color, 2%) !default;
+// $code-border-color: #ccc;
+// $code-border-width: 1px;
+// $code-border-style: solid;
 
-// $code-border-color: #ccc !default;
-// $code-border-width: 1px !default;
-// $code-border-style: solid !default;
+// $code-tab-size: 4;
 
-// $code-tab-size: 4 !default;
-@import "3-base/base.codes";
-@import "base.codes";
-
-@import "base.selection";
+// @import "3-base/base.codes";
 
 
 
@@ -268,11 +233,11 @@ $default-float:                         left;
 $opposite-float:                        right;
 
 // grid extra large classes
-$enable-xl-grid-classes:                false;
-$enable-xxl-grid-classes:               false;
+// $enable-xl-grid-classes:                true;
+// $enable-xxl-grid-classes:               true;
 
 /*
-   Default grid classess.
+   Default grid classess
    ========================================================================== */
 // Uncomment these variables bellow
 // if you want to create your own grid classes
@@ -284,20 +249,19 @@ $enable-xxl-grid-classes:               false;
 // $enable-grid-fourth:                    false;
 // $enable-grid-fifth:                     false;
 
-
 /*
    Grid unit modifier
    ========================================================================== */
 // These modifier will be disabled automatically
 // as you disable the default grid classes
 
-$enable-grid-flush:                     true;
-$enable-grid-pull:                      true;
-$enable-grid-push:                      true;
-$enable-grid-offset:                    true;
-$enable-grid-reset:                     true;
-$enable-grid-centered:                  true;
-$enable-grid-uncentered:                true;
+// $enable-grid-flush:                     true;
+// $enable-grid-pull:                      true;
+// $enable-grid-push:                      true;
+// $enable-grid-offset:                    true;
+// $enable-grid-reset:                     true;
+// $enable-grid-centered:                  true;
+// $enable-grid-uncentered:                true;
 
 
 @import "4-objects/objects.grids";
@@ -312,16 +276,16 @@ $enable-grid-uncentered:                true;
 // $block-gutter--large:                double($block-gutter);
 // $block-gutter--huge:                 quadruple($block-gutter);
 
-$enable-block--flush:                true;
-$enable-block--tiny:                 true;
-$enable-block--small:                true;
-$enable-block--large:                true;
-$enable-block--huge:                 true;
-$enable-block--center:               true;
-$enable-block--right:                true;
+// $enable-block--flush:                true;
+// $enable-block--tiny:                 true;
+// $enable-block--small:                true;
+// $enable-block--large:                true;
+// $enable-block--huge:                 true;
+// $enable-block--center:               true;
+// $enable-block--right:                true;
 
 
-@import "4-objects/objects.block";
+// @import "4-objects/objects.block";
 
 
 /* [3] */
@@ -333,13 +297,14 @@ $enable-block--right:                true;
 // $box-padding--large:                 double($box-padding);
 // $box-padding--huge:                  quadruple($box-padding);
 
-$enable-box--flush:                  true;
-$enable-box--tiny:                   true;
-$enable-box--small:                  true;
-$enable-box--large:                  true;
-$enable-box--huge:                   true;
+// $enable-box--flush:                  true;
+// $enable-box--tiny:                   true;
+// $enable-box--small:                  true;
+// $enable-box--large:                  true;
+// $enable-box--huge:                   true;
 
-@import "4-objects/objects.box";
+
+// @import "4-objects/objects.box";
 
 
 /* [4] */
@@ -348,23 +313,21 @@ $enable-box--huge:                   true;
 // $btn-padding:                        halve($base-spacing-unit);
 // $btn-padding--small:                 halve($btn-padding);
 // $btn-padding--large:                 double($btn-padding);
-$btn-lightness-factor:               20%;
-$btn-background:                     $color-primary;
+// $btn-background:                     $your-color;
 // $btn-color:                          #fff;
 // $btn-border-width:                   1px;
 // $btn-border-style:                   solid;
-$btn-border-color:                   scale-color($btn-background, $lightness: -$btn-lightness-factor);
-$btn-radius:                         $base-radius;
+// $btn-border-color:                   $btn-background;
+// $btn-radius:                         $base-radius;
+// $btn-lightness-factor:               20%;
 
-$enable-btn--small:                  true;
-$enable-btn--large:                  true;
-$enable-btn--full:                   true;
-$enable-btn--pill:                   true;
-$enable-btn--disabled:               true;
-
+// $enable-btn--small:                  true;
+// $enable-btn--large:                  true;
+// $enable-btn--full:                   true;
+// $enable-btn--pill:                   true;
+// $enable-btn--disabled:               true;
 
 @import "4-objects/objects.buttons";
-@import "objects.buttons-group";
 
 
 /* [5] */
@@ -376,18 +339,18 @@ $enable-btn--disabled:               true;
 // $flag-gutter--large:                 double($flag-gutter);
 // $flag-gutter--huge:                  quadruple($flag-gutter);
 
-$enable-flag--tiny:                  true;
-$enable-flag--small:                 true;
-$enable-flag--large:                 true;
-$enable-flag--huge:                  true;
-$enable-flag--rev:                   true;
-$enable-flag--flush:                 true;
-$enable-flag--top:                   true;
-$enable-flag--bottom:                true;
-$enable-flag--responsive:            true;
+// $enable-flag--tiny:                  true;
+// $enable-flag--small:                 true;
+// $enable-flag--large:                 true;
+// $enable-flag--huge:                  true;
+// $enable-flag--rev:                   true;
+// $enable-flag--flush:                 true;
+// $enable-flag--top:                   true;
+// $enable-flag--bottom:                true;
+// $enable-flag--responsive:            true;
 // $flag-collapse-at:                   upper-bound($small-range);
 
-@import "4-objects/objects.flag";
+// @import "4-objects/objects.flag";
 
 
 /* [6] */
@@ -399,26 +362,26 @@ $enable-flag--responsive:            true;
 // $list-block-padding--large:          double($list-block-padding);
 // $list-block-padding--huge:           quadruple($list-block-padding);
 
-$enable-list-block--tiny:            true;
-$enable-list-block--small:           true;
-$enable-list-block--large:           true;
-$enable-list-block--huge:            true;
+// $enable-list-block--tiny:            true;
+// $enable-list-block--small:           true;
+// $enable-list-block--large:           true;
+// $enable-list-block--huge:            true;
 
-@import "4-objects/objects.list-block";
+// @import "4-objects/objects.list-block";
 
 
 /* [7] */
 // $list-dull-namespace:                $namespace;
-@import "4-objects/objects.list-dull";
+// @import "4-objects/objects.list-dull";
 
 
 /* [8] */
 // $list-inline-namespace:              $namespace;
 
-$enable-list-inline--delimited:      true;
+// $enable-list-inline--delimited:      true;
 // $list-inline-delimit-character:      ",\00A0";
 
-@import "4-objects/objects.list-inline";
+// @import "4-objects/objects.list-inline";
 
 /* [9] */
 // $list-ui-namespace:                  $namespace;
@@ -433,18 +396,15 @@ $enable-list-inline--delimited:      true;
 // $list-ui-border-style:               solid;
 // $list-ui-border-color:               #ccc;
 
-$enable-list-ui--flush:              true;
-$enable-list-ui--tiny:               true;
-$enable-list-ui--small:              true;
-$enable-list-ui--large:              true;
-$enable-list-ui--huge:               true;
-$enable-remove-border-at-first-item: true;
-$enable-remove-border-at-last-item:  true;
+// $enable-list-ui--flush:              true;
+// $enable-list-ui--tiny:               true;
+// $enable-list-ui--small:              true;
+// $enable-list-ui--large:              true;
+// $enable-list-ui--huge:               true;
+// $enable-remove-border-at-first-item: true;
+// $enable-remove-border-at-last-item:  true;
 
-@import "4-objects/objects.list-ui";
-// @import "objects.list-ui";
-
-
+// @import "4-objects/objects.list-ui";
 
 
 /* [10] */
@@ -457,15 +417,15 @@ $enable-remove-border-at-last-item:  true;
 // $media-gutter--huge:                 quadruple($media-gutter);
 // $media-collapse-at:                  720px;
 
-$enable-media--tiny:                 true;
-$enable-media--small:                true;
-$enable-media--large:                true;
-$enable-media--huge:                 true;
-$enable-media--rev:                  true;
-$enable-media--flush:                true;
-$enable-media--responsive:           true;
+// $enable-media--tiny:                 true;
+// $enable-media--small:                true;
+// $enable-media--large:                true;
+// $enable-media--huge:                 true;
+// $enable-media--rev:                  true;
+// $enable-media--flush:                true;
+// $enable-media--responsive:           true;
 
-@import "4-objects/objects.media";
+// @import "4-objects/objects.media";
 
 
 /* [11] */
@@ -477,16 +437,16 @@ $enable-media--responsive:           true;
 // $pack-gutter--large:                 double($pack-gutter);
 // $pack-gutter--huge:                  quadruple($pack-gutter);
 
-$enable-pack--auto:                  true;
-$enable-pack--tiny:                  true;
-$enable-pack--small:                 true;
-$enable-pack--large:                 true;
-$enable-pack--huge:                  true;
-$enable-pack--rev:                   true;
-$enable-pack--middle:                true;
-$enable-pack--bottom:                true;
+// $enable-pack--auto:                  true;
+// $enable-pack--tiny:                  true;
+// $enable-pack--small:                 true;
+// $enable-pack--large:                 true;
+// $enable-pack--huge:                  true;
+// $enable-pack--rev:                   true;
+// $enable-pack--middle:                true;
+// $enable-pack--bottom:                true;
 
-@import "4-objects/objects.pack";
+// @import "4-objects/objects.pack";
 
 
 /* [12] */
@@ -500,15 +460,15 @@ $enable-pack--bottom:                true;
 // $table-border-style:                 solid;
 // $table-border-color:                 #eee;
 
-$enable-table--fixed:                true;
-$enable-table--compact:              true;
-$enable-table--cosy:                 true;
-$enable-table--comfy:                true;
-$enable-table--cells:                true;
-$enable-table--rows:                 true;
-$enable-table--columns:              true;
+// $enable-table--fixed:                true;
+// $enable-table--compact:              true;
+// $enable-table--cosy:                 true;
+// $enable-table--comfy:                true;
+// $enable-table--cells:                true;
+// $enable-table--rows:                 true;
+// $enable-table--columns:              true;
 
-@import "4-objects/objects.tables";
+// @import "4-objects/objects.tables";
 
 
 
@@ -524,11 +484,6 @@ $enable-table--columns:              true;
 // @import "components.mycomponents1";
 // @import "components.mycomponents2";
 
-@import "components.pagination";
-@import "components.subnav";
-@import "components.tabs";
-@import "components.topbar";
-@import "components.icons.hamburger";
 
 
 
@@ -556,96 +511,91 @@ $enable-table--columns:              true;
 
 
 /* [2] */
-@import "6-helpers/helpers.float";
+// @import "6-helpers/helpers.float";
 
 
 /* [3] */
-@import "6-helpers/helpers.text-transform";
+// @import "6-helpers/helpers.text-transform";
 
 
 /* [4] */
-$enable-xlarge-alignment-clasess:    true;
+// $enable-xlarge-alignment-clasess:    true;
 
-@import "6-helpers/helpers.alignment";
-@import "6-helpers/helpers.alignment-responsive";
+// @import "6-helpers/helpers.alignment";
+// @import "6-helpers/helpers.alignment-responsive";
 
 
 /* [5] */
-$spacing-namespace:                  $namespace;
+// $spacing-namespace:                  $namespace;
 
-$spacing-margin:                     $base-spacing-unit;
-$spacing-padding:                    $base-spacing-unit;
+// $spacing-margin:                     $base-spacing-unit;
+// $spacing-padding:                    $base-spacing-unit;
 
-$enable-margins:                     true;
-$enable-margins--tiny:               true;
-$enable-margins--small:              true;
-$enable-margins--large:              true;
-$enable-margins--huge:               true;
+// $enable-margins:                     true;
+// $enable-margins--tiny:               true;
+// $enable-margins--small:              true;
+// $enable-margins--large:              true;
+// $enable-margins--huge:               true;
 
-$enable-margins--negative:           true;
-$enable-margins--negative-tiny:      true;
-$enable-margins--negative-small:     true;
-$enable-margins--negative-large:     true;
-$enable-margins--negative-huge:      true;
+// $enable-margins--negative:           true;
+// $enable-margins--negative-tiny:      true;
+// $enable-margins--negative-small:     true;
+// $enable-margins--negative-large:     true;
+// $enable-margins--negative-huge:      true;
 
-$enable-margins--none:               true;
+// $enable-margins--none:               true;
 
-$enable-paddings:                    true;
-$enable-paddings--tiny:              true;
-$enable-paddings--small:             true;
-$enable-paddings--large:             true;
-$enable-paddings--huge:              true;
+// $enable-paddings:                    true;
+// $enable-paddings--tiny:              true;
+// $enable-paddings--small:             true;
+// $enable-paddings--large:             true;
+// $enable-paddings--huge:              true;
 
-$enable-paddings--none:              true;
+// $enable-paddings--none:              true;
 
-@import "6-helpers/helpers.spacing";
-
-
-$enable-responsive-margins:                   true;
-$enable-responsive-margins--tiny:             true;
-$enable-responsive-margins--small:            true;
-$enable-responsive-margins--large:            true;
-$enable-responsive-margins--huge:             true;
-
-$enable-responsive-margins--negative:         true;
-$enable-responsive-margins--negative-tiny:    true;
-$enable-responsive-margins--negative-small:   true;
-$enable-responsive-margins--negative-large:   true;
-$enable-responsive-margins--negative-huge:    true;
-
-$enable-responsive-margins--none:             true;
-
-$enable-responsive-paddings:                  true;
-$enable-responsive-paddings--tiny:            true;
-$enable-responsive-paddings--small:           true;
-$enable-responsive-paddings--large:           true;
-$enable-responsive-paddings--huge:            true;
-
-$enable-responsive-paddings--none:            true;
+// @import "6-helpers/helpers.spacing";
 
 
-$enable-xlarge-responsive-spacing-clasess:    true;
-$enable-xxlarge-responsive-spacing-clasess:   true;
+// $enable-responsive-margins:                   true;
+// $enable-responsive-margins--tiny:             true;
+// $enable-responsive-margins--small:            true;
+// $enable-responsive-margins--large:            true;
+// $enable-responsive-margins--huge:             true;
 
-@import "6-helpers/helpers.spacing-responsive";
+// $enable-responsive-margins--negative:         true;
+// $enable-responsive-margins--negative-tiny:    true;
+// $enable-responsive-margins--negative-small:   true;
+// $enable-responsive-margins--negative-large:   true;
+// $enable-responsive-margins--negative-huge:    true;
+
+// $enable-responsive-margins--none:             true;
+
+// $enable-responsive-paddings:                  true;
+// $enable-responsive-paddings--tiny:            true;
+// $enable-responsive-paddings--small:           true;
+// $enable-responsive-paddings--large:           true;
+// $enable-responsive-paddings--huge:            true;
+
+// $enable-responsive-paddings--none:            true;
+
+
+// $enable-xlarge-responsive-spacing-clasess:    true;
+// $enable-xxlarge-responsive-spacing-clasess:   true;
+
+// @import "6-helpers/helpers.spacing-responsive";
 
 
 /* [6] */
-$enable-accessibility-classes:       true;
-$enable-table-classes:               true;
+// $enable-accessibility-classes:       true;
+// $enable-table-classes:               true;
 
-@import "6-helpers/helpers.visibility";
+// @import "6-helpers/helpers.visibility";
 
 
-$enable-xlarge-responsive-visibility-clasess:    true;
-$enable-xxlarge-responsive-visibility-clasess:   true;
-@import "6-helpers/helpers.visibility-responsive";
+// $enable-xlarge-responsive-visibility-clasess:    true;
+// $enable-xxlarge-responsive-visibility-clasess:   true;
+// @import "6-helpers/helpers.visibility-responsive";
 
 
 /* [7] */
-@import "6-helpers/helpers.print";
-
-// my helper
-@import "helpers.debug";
-@import "helpers.text";
-@import "helpers.bg-color";
+// @import "6-helpers/helpers.print";

@@ -1,0 +1,7 @@
+.sample-code{
+  background-color: $color-snow;
+  padding: rem-calc(halve($base-spacing-unit));
+  @media #{$medium-up}{
+    height: rem-calc(300);
+  }
+}
