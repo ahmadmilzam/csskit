@@ -57,11 +57,24 @@ module.exports = function(grunt) {
      * Compiles all Sass/SCSS files and appends project banner
      */
     sass: {
-      compile:{
+      options: {
+        loadPath: 'src/scss/',
+        banner: '<%= tag.banner %>',
+        style: 'nested'
+      },
+      dev: {
         options: {
-          loadPath: 'src/scss/',
           banner: '<%= tag.banner %>',
-          style: 'nested'
+        },
+        files: {
+          '<%= project.app %>/<%= project.assets %>/css/app.css' : '<%= project.css.main %>',
+          '<%= project.docs %>/<%= project.assets %>/css/docs.css' : '<%= project.css.docs %>',
+        }
+      },
+      dist: {
+        options: {
+          sourcemap: 'none',
+          banner: ' ',
         },
         files: {
           '<%= project.app %>/<%= project.assets %>/css/app.css' : '<%= project.css.main %>',
@@ -109,7 +122,7 @@ module.exports = function(grunt) {
           dest: '<%= project.app %>/<%= project.assets %>/css',
           ext: '.min.css'
         },{
-          '<%= project.docs %>/<%= project.assets %>/css/docs.min.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.prefixed.css']
+          '<%= project.docs %>/<%= project.assets %>/css/docs.css' : ['<%= project.docs %>/<%= project.assets %>/css/docs.prefixed.css']
         }]
       },
     },
@@ -182,7 +195,7 @@ module.exports = function(grunt) {
    * Run `grunt` on the command line
    */
   grunt.registerTask('default', [
-    'sass:compile',
+    'sass:dev',
     'concat:target',
     'watch'
   ]);
@@ -193,7 +206,7 @@ module.exports = function(grunt) {
    * Then compress all JS/CSS files
    */
   grunt.registerTask('build', [
-    'sass:compile',
+    'sass:dist',
     'autoprefixer:dist',
     'cssmin:target',
     'concat:target',
