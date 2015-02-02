@@ -3,10 +3,8 @@
   padding: rem-calc(halve($base-spacing-unit));
   @media #{$medium-up}{
     height: rem-calc(300);
-  }
-}
-.sample-code--auto{
-  @media #{$medium-up}{
-    height: auto;
+    &.sample-code--auto{
+      height: auto;
+    }
   }
 }
