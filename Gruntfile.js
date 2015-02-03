@@ -171,14 +171,14 @@ module.exports = function(grunt) {
     watch: {
       grunt: {
         files: ['Gruntfile.js'],
-        tasks: ['sass:compile', 'concat:target']
+        tasks: ['sass:dev', 'concat:target']
       },
       sass: {
         files: [
           '<%= project.src %>/scss/**/*.{scss, sass}',
           '<%= project.docs %>/<%= project.src %>/scss/**/*.{scss, sass}'
         ],
-        tasks: ['sass:compile']
+        tasks: ['sass:dev']
       },
       js: {
         files: [

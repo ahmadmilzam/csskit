@@ -138,8 +138,6 @@
  * [6] List
  * [7] Hr
  * [8] Blockquote
- * [9] Forms
- * [10] Codes
  */
 
 /* [1] */
@@ -203,23 +201,6 @@ $hr-border-color:  $color-divider;
 @import "3-base/base.blockquote";
 
 
-/* [9] */
-// $form-font-size:                        $base-font-size;
-// $form-content-bg:                       darken(#fff, 2%);
-// $form-border-width:                     1px;
-// $form-border-color:                     #ddd;
-// $form-border-color-hover:               darken($form-border-color, 5%);
-// $form-label-pointer:                    pointer;
-// $form-label-font-weight:                bold;
-// $form-label-line-height:                1.5;
-// $form-label-font-color:                 scale-color($base-text-color, $lightness: 30%);
-// $form-label-small-transform:            capitalize;
-// $form-label-bottom-margin:              rem-calc(5);
-
-@import "3-base/base.forms";
-
-
-/* [10] */
 // $code-font-family: Consolas, "Liberation Mono", Courier, monospace !default;
 // $code-font-color: scale-color($color-alert, $lightness: 10%) !default;
 // $code-font-size: 80% !default;
@@ -232,9 +213,7 @@ $hr-border-color:  $color-divider;
 // $code-border-style: solid !default;
 
 // $code-tab-size: 4 !default;
-@import "3-base/base.codes";
 @import "base.codes";
-
 @import "base.selection";
 
 

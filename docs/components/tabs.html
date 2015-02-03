@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0">
+  <title>CSSKit - Custom component: Tabs</title>
+  <link rel="stylesheet" href="../assets/css/docs.css">
+</head>
+<body>
+
+  <!-- topbar -->
+  <header class="topbar mb+ js-ui-topbar">
+    <a href="#" class="topbar__toggle icon-hamburger hide-for-medium-up js-ui-topbar-toggle">
+      <span class="icon-hamburger__bar"></span>
+    </a>
+    <div class="layout layout--flush">
+      <div class="layout__unit small-1 medium-1-3">
+        <h1 class="topbar__brand">CSSKit</h1>
+      </div>
+      <div class="layout__unit small-1 medium-2-3">
+        <ul class="topbar__nav">
+          <li class="topbar__nav__item">
+            <a href="../index.html" class="topbar__nav__link">Home</a>
+          </li>
+          <li class="topbar__nav__item">
+            <a href="../base" class="topbar__nav__link">Base</a>
+          </li>
+          <li class="topbar__nav__item">
+            <a href="../modules" class="topbar__nav__link">Modules</a>
+          </li>
+          <li class="topbar__nav__item">
+            <a href="#" class="topbar__nav__link is-active">Components</a>
+          </li>
+          <li class="topbar__nav__item">
+            <a href="../helpers" class="topbar__nav__link">Helpers</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <!-- topbar -->
+
+  <!-- components - tabs sample -->
+  <div class="layout">
+    <div class="layout__unit small-1 medium-1-3 medium-push-2-3 mb+">
+      <aside class="box box--small">
+        <h5>Available Components:</h5>
+        <ul class="subnav">
+          <li class="subnav__item"><a href="#" class="subnav__link is-active">Tabs</a></li>
+          <li class="subnav__item"><a href="paginations.html" class="subnav__link">Paginations</a></li>
+        </ul>
+      </aside>
+    </div>
+    <div class="layout__unit small-1 medium-2-3 medium-pull-1-3 mb+">
+
+      <h1>Tabs</h1>
+      <p class="lede">
+        Tabs are elements that help you organize and navigate multiple documents in a single container. They can be used for switching between items in the container.
+      </p>
+
+      <section class="mb+">
+        <h4>Variant 1: Default</h4>
+
+        <div class="tabs-container">
+          <ul class="tabs">
+            <li class="tabs__item"><a href="" class="tabs__link is-active">Tab 1</a></li>
+            <li class="tabs__item"><a href="" class="tabs__link">Tab 2</a></li>
+            <li class="tabs__item"><a href="" class="tabs__link">Tab 3</a></li>
+          </ul>
+        </div>
+
+        <div class="tabs-content">
+          <h4>Tab content</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+        </div>
+      </section>
+
+      <section class="mb+">
+        <h4>Variant 2: Equal width <small class="text-disabled">equal-width navigation tabs</small></h4>
+
+        <div class="tabs-container">
+          <ul class="tabs tabs--equal">
+            <li class="tabs__item"><a href="" class="tabs__link is-active">Tab 1</a></li>
+            <li class="tabs__item"><a href="" class="tabs__link">Tab 2</a></li>
+            <li class="tabs__item"><a href="" class="tabs__link">Tab 3</a></li>
+          </ul>
+        </div>
+
+        <div class="tabs-content">
+          <h4>Tab content</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- components - tabs sample -->
+
+  <!-- documentation script -->
+  <script src="assets/js/docs.js"></script>
+
+  <!-- google analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-42593908-1', 'ahmadmilzam.com');
+    ga('send', 'pageview');
+  </script>
+</body>
+</html>

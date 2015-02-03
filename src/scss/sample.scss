@@ -119,8 +119,6 @@
  * [6] List
  * [7] Hr
  * [8] Blockquote
- * [9] Forms
- * [10] Codes
  */
 
 /* [1] */
@@ -175,32 +173,6 @@
 // $blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%);
 
 @import "3-base/base.blockquote";
-
-
-/* [9] */
-// $form-font-size:                        $base-font-size;
-// $form-border-style:                     solid;
-// $form-border-width:                     1px;
-// $form-border-color:                     #ddd;
-// $form-border-color-hover:               darken($form-border-color, 5%);
-// $form-label-margin-bottom:              quarter($base-spacing-unit);
-// $form-input-padding:                    halve($base-spacing-unit);
-// $form-input-margin-bottom:              halve($base-spacing-unit);
-
-@import "3-base/base.forms";
-
-
-/* [10] */
-// $code-font-family: Consolas, "Liberation Mono", Courier, monospace;
-// $code-font-size: 14px;
-
-// $code-border-color: #ccc;
-// $code-border-width: 1px;
-// $code-border-style: solid;
-
-// $code-tab-size: 4;
-
-// @import "3-base/base.codes";
 
 
 
