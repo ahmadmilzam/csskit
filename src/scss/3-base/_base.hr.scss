@@ -11,14 +11,15 @@ $imported-default-settings: false !default;
   @warn "Oops! Have you included a default settings file?"
 }
 
+$hr-namespace:                      $namespace !default;
+$hr-border-width:                    1px !default;
+$hr-border-style:                    solid !default;
+$hr-border-color:                    #ccc !default;
+$hr-margin:                          $base-spacing-unit !default;
 
-$hr-border-width:  1px !default;
-$hr-border-style:  solid !default;
-$hr-border-color:  #ccc !default;
-$hr-margin:        $base-spacing-unit !default;
 
-
-hr{
+hr,
+%#{$hr-namespace}hr{
   border: $hr-border-style $hr-border-color;
   border-width: $hr-border-width 0 0;
   margin: rem-calc($hr-margin 0 ($hr-margin - $hr-border-width));
