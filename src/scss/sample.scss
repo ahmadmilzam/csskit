@@ -280,24 +280,25 @@ $opposite-float:                        right;
 
 
 /* [4] */
-// $btn-namespace:                      $namespace;
+//$btn-namespace:                      $namespace !default;
 
-// $btn-padding:                        halve($base-spacing-unit);
-// $btn-padding--small:                 halve($btn-padding);
-// $btn-padding--large:                 double($btn-padding);
-// $btn-background:                     $your-color;
-// $btn-color:                          #fff;
-// $btn-border-width:                   1px;
-// $btn-border-style:                   solid;
-// $btn-border-color:                   $btn-background;
-// $btn-radius:                         $base-radius;
-// $btn-lightness-factor:               20%;
+//$btn-padding:                        halve($base-spacing-unit) !default;
+//$btn-padding--small:                 halve($btn-padding) !default;
+//$btn-padding--large:                 double($btn-padding) !default;
+//$btn-lightness-factor:               20% !default;
+//$btn-background:                     #3A539B !default;
+//$btn-color:                          #fff !default;
+//$btn-border-width:                   1px !default;
+//$btn-border-style:                   solid !default;
+//$btn-border-color:                   $btn-background !default;
+//$btn-radius:                         0 !default;
+//$btn-large-font-size:                1.25 !default;
 
-// $enable-btn--small:                  true;
-// $enable-btn--large:                  true;
-// $enable-btn--full:                   true;
-// $enable-btn--pill:                   true;
-// $enable-btn--disabled:               true;
+//$enable-btn--small:                  false !default;
+//$enable-btn--large:                  false !default;
+//$enable-btn--full:                   false !default;
+//$enable-btn--pill:                   false !default;
+//$enable-btn--disabled:               false !default;
 
 @import "4-objects/objects.buttons";
 

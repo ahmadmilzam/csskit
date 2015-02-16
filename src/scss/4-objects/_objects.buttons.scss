@@ -35,6 +35,7 @@ $btn-border-width:                   1px !default;
 $btn-border-style:                   solid !default;
 $btn-border-color:                   $btn-background !default;
 $btn-radius:                         0 !default;
+$btn-large-font-size:                1.25 !default;
 
 $enable-btn--small:                  false !default;
 $enable-btn--large:                  false !default;
@@ -114,7 +115,7 @@ $enable-btn--disabled:               false !default;
 
   .#{$btn-namespace}btn--small,
   %#{$btn-namespace}btn--small {
-    padding: $btn-padding--small - $btn-border-width  double($btn-padding--small) - $btn-border-width; /* [7] */
+    padding: $btn-padding--small - $btn-border-width  double($btn-padding--small) - $btn-border-width; /* [6] */
   }
 
 }
@@ -127,7 +128,8 @@ $enable-btn--disabled:               false !default;
 
   .#{$btn-namespace}btn--large,
   %#{$btn-namespace}btn--large {
-    padding: rem-calc( ($btn-padding--large - $btn-border-width)  (double($btn-padding--large) - $btn-border-width) ); /* [7] */
+    font-size: rem-calc($base-font-size * $btn-large-font-size);
+    padding: rem-calc( ($btn-padding--large - $btn-border-width)  (double($btn-padding--large) - $btn-border-width) ); /* [6] */
   }
 
 }
