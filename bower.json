@@ -14,7 +14,9 @@
     "libs",
     "test",
     "tests",
-    "tmp"
+    "tmp",
+    "doc",
+    "docs"
   ],
   "homepage": "https://github.com/ahmadmilzam/csskit",
   "main": "scss/app.scss",
