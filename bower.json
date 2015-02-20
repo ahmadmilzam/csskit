@@ -14,9 +14,7 @@
     "libs",
     "test",
     "tests",
-    "ref",
-    "reference",
-    "Gruntfile.js"
+    "tmp"
   ],
   "homepage": "https://github.com/ahmadmilzam/csskit",
   "main": "scss/app.scss",
@@ -26,8 +24,5 @@
     "framework",
     "bem",
     "oocss"
-  ],
-  "devDependencies": {
-    "classie": "~1.0.1"
-  }
+  ]
 }
