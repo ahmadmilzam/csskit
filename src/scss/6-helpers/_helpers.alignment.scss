@@ -3,12 +3,7 @@
    ========================================================================== */
 
 // Partial to align Text Left, Right, Center or Justify
-%text-center { text-align: center; }
-%text-left { text-align: left; }
-%text-right { text-align: right; }
-%text-justify { text-align: justify; }
-
-.text-center { @extend %text-center; }
-.text-left { @extend %text-left; }
-.text-right { @extend %text-right; }
-.text-justify { @extend %text-justify; }
+.text-center { text-align: center !mportant; }
+.text-left { text-align: left !mportant; }
+.text-right { text-align: right !mportant; }
+.text-justify {text-align: justify !mportant; }
