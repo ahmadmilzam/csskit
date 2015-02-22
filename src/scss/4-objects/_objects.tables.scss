@@ -151,8 +151,6 @@ $enable-table--columns:              false !default;
 
   .#{$table-namespace}table--rows,
   %#{$table-namespace}table--rows {
-    border-top-width: $table-border-width;
-
     th,
     td {
       border-bottom-width: $table-border-width;
