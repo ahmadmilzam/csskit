@@ -26,8 +26,8 @@ $global-border-box: false !default;
 $btn-namespace:                      $namespace !default;
 
 $btn-padding:                        halve($base-spacing-unit) !default;
-$btn-padding--small:                 halve($btn-padding) !default;
-$btn-padding--large:                 double($btn-padding) !default;
+$btn-padding--small:                 quarter($base-spacing-unit) !default;
+$btn-padding--large:                 $base-spacing-unit !default;
 $btn-lightness-factor:               20% !default;
 $btn-background:                     #3A539B !default;
 $btn-color:                          #fff !default;
