@@ -16,7 +16,8 @@
     "tests",
     "tmp",
     "doc",
-    "docs"
+    "docs",
+    "Gruntfile.js"
   ],
   "homepage": "https://github.com/ahmadmilzam/csskit",
   "main": "scss/app.scss",

@@ -324,7 +324,7 @@ $enable-box--huge:                   true;
 /* [4] */
 // $btn-namespace:                      $namespace;
 
-// $btn-padding:                        halve($base-spacing-unit);
+$btn-padding:                        quarter($base-spacing-unit);
 // $btn-padding--small:                 halve($btn-padding);
 // $btn-padding--large:                 double($btn-padding);
 $btn-lightness-factor:               20%;
@@ -503,6 +503,7 @@ $enable-table--columns:              true;
 // @import "components.mycomponents1";
 // @import "components.mycomponents2";
 
+@import "components.forms";
 @import "components.pagination";
 @import "components.subnav";
 @import "components.tabs";
