@@ -18,7 +18,7 @@ $major-twelfth:    3;
 $double-octave:    4;
 
 $modular-scale-ratio: $golden !default;
-$modular-scale-base: $base-font-size !default;
+$modular-scale-base: 16px !default;
 
 @function modular-scale($increment, $value: $modular-scale-base, $ratio: $modular-scale-ratio) {
   $v1: nth($value, 1);

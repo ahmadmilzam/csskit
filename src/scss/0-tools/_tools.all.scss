@@ -5,11 +5,6 @@
 // Here we set a variable assuming that default settings are not set
 // globally. If they have been previously been defined, the following variable
 // will be overriden and will be set to `true`.
-$imported-default-settings: false !default;
-
-@if ($imported-default-settings == false) {
-  @warn "Oops! Have you included a default settings file?"
-}
 
 @import "partials/tools.rem";
 @import "partials/tools.math";
@@ -22,4 +17,3 @@ $imported-default-settings: false !default;
 @import "partials/tools.clearfix";
 @import "partials/tools.visual";
 @import "partials/tools.commoncss";
-@import "partials/tools.debug";

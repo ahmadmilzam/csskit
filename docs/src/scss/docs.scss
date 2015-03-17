@@ -3,6 +3,17 @@
    ========================================================================== */
 // YOU SHOULD PREDEFINE THE VARIABLES BEFORE IMPORT THE RELEVANT FILES
 
+
+/*
+   TOOLS
+   ========================================================================== */
+// Site-wide mixins and functions.
+
+@import "0-tools/tools.all";
+@import "tools.triangle";
+@import "tools.z-index";
+
+
 /*
    SETTINGS
    ========================================================================== */
@@ -77,23 +88,11 @@
 // whitespace debuger
 // $enable-debug-whitespace:               true;
 
-@import "0-settings/settings.all";
+@import "1-settings/settings.all";
 
 // my settings
 @import "settings.colors";
 @import "settings.z-index";
-
-
-
-
-/*
-   TOOLS
-   ========================================================================== */
-// Site-wide mixins and functions.
-
-@import "1-tools/tools.all";
-@import "tools.triangle";
-@import "tools.z-index";
 
 
 
@@ -291,7 +290,7 @@ $enable-grid-uncentered:                true;
 // $block-gutter--large:                double($block-gutter);
 // $block-gutter--huge:                 quadruple($block-gutter);
 
-$enable-block--flush:                true;
+$enable-block--bleed:                true;
 $enable-block--tiny:                 true;
 $enable-block--small:                true;
 $enable-block--large:                true;
@@ -312,7 +311,7 @@ $enable-block--right:                true;
 // $box-padding--large:                 double($box-padding);
 // $box-padding--huge:                  quadruple($box-padding);
 
-$enable-box--flush:                  true;
+$enable-box--bleed:                  true;
 $enable-box--tiny:                   true;
 $enable-box--small:                  true;
 $enable-box--large:                  true;
@@ -360,7 +359,7 @@ $enable-flag--small:                 true;
 $enable-flag--large:                 true;
 $enable-flag--huge:                  true;
 $enable-flag--rev:                   true;
-$enable-flag--flush:                 true;
+$enable-flag--bleed:                 true;
 $enable-flag--top:                   true;
 $enable-flag--bottom:                true;
 $enable-flag--responsive:            true;
@@ -412,7 +411,7 @@ $enable-list-inline--delimited:      true;
 // $list-ui-border-style:               solid;
 // $list-ui-border-color:               #ccc;
 
-$enable-list-ui--flush:              true;
+$enable-list-ui--bleed:              true;
 $enable-list-ui--tiny:               true;
 $enable-list-ui--small:              true;
 $enable-list-ui--large:              true;
@@ -441,7 +440,7 @@ $enable-media--small:                true;
 $enable-media--large:                true;
 $enable-media--huge:                 true;
 $enable-media--rev:                  true;
-$enable-media--flush:                true;
+$enable-media--bleed:                true;
 $enable-media--responsive:           true;
 
 @import "4-objects/objects.media";

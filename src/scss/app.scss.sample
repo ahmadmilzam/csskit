@@ -5,6 +5,15 @@
  * YOU SHOULD PREDEFINE THE VARIABLES BEFORE IMPORT THE RELEVANT FILES
  */
 
+
+/*
+   TOOLS
+   ========================================================================== */
+// Site-wide mixins and functions.
+
+@import "0-tools/tools.all";
+
+
 /*
    SETTINGS
    ========================================================================== */
@@ -20,8 +29,8 @@
 // $base-font-size:                       16px;
 // $base-font-weight:                     normal;
 
-// $base-text-color:                      #333;
-// $base-background-color:                #fff;
+// $base-text-color:                      #333333;
+// $base-background-color:                #ffffff;
 
 // $base-line-height:                     28px;
 // $base-spacing-unit:                    $base-line-height;
@@ -30,6 +39,9 @@
 
 
 
+/*
+   SETTINGS-BREAKPOINTS
+   ========================================================================== */
 /**
  * Hold our breakpoint range and conditions.
  *
@@ -38,17 +50,54 @@
  * @media #{conditions}{
  *   @content;
  * }
+ *
+ * Using Relative Units for Widths
+ *
+ * You may have noticed that we use em for
+ * our default CSS Media Query widths instead of px.
+ * This was a conscious decision since it
+ * allows the Media Queries to respond appropriately
+ * when people zoom the webpage.
+ * Check out this article by Brad Frost
+ * http://bradfrostweb.com/blog/post/7-habits-of-highly-effective-media-queries/#relative
+ * for some background information on using relative units
+ * within Media Queries.
  */
 
-// $screen: "only screen";
+$screen: "only screen";
 
-// $small-range:                           (0em, 45em); // 0px - 720px
-// $medium-range:                          (45.063em, 64em); // 721px - 1024px
-// $large-range:                           (64.063em, 90em); // 1025px - 1440px
-// $xlarge-range:                          (90.063em, 120em); //1441px - 1920px
-// $xxlarge-range:                         (120.063em, 99999999em); //1921px - 99999999px
+$small-range:   (0em, em-calc(768)) !default;
+$medium-range:  (em-calc(769), em-calc(1024)) !default;
+$large-range:   (em-calc(1025), em-calc(1440)) !default;
+$xlarge-range:  (em-calc(1441), em-calc(1920)) !default;
+$xxlarge-range: (em-calc(1921), 999999em) !default;
 
-// $retina: "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
+$retina:        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)" !default;
+
+/*
+   Media Query Conditions
+   ========================================================================== */
+
+$landscape:      "#{$screen} and (orientation: landscape)";
+$portrait:       "#{$screen} and (orientation: portrait)";
+$retina-device:  $retina;
+
+
+$small-up:       $screen;
+$small-only:     "#{$screen} and (max-width: #{upper-bound($small-range)})";
+
+$medium-up:      "#{$screen} and (min-width:#{lower-bound($medium-range)})";
+$medium-only:    "#{$screen} and (min-width:#{lower-bound($medium-range)}) and (max-width:#{upper-bound($medium-range)})";
+
+$large-up:       "#{$screen} and (min-width:#{lower-bound($large-range)})";
+$large-only:     "#{$screen} and (min-width:#{lower-bound($large-range)}) and (max-width:#{upper-bound($large-range)})";
+
+$xlarge-up:      "#{$screen} and (min-width:#{lower-bound($xlarge-range)})";
+$xlarge-only:    "#{$screen} and (min-width:#{lower-bound($xlarge-range)}) and (max-width:#{upper-bound($xlarge-range)})";
+
+$xxlarge-up:     "#{$screen} and (min-width:#{lower-bound($xxlarge-range)})";
+$xxlarge-only:   "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and (max-width:#{upper-bound($xxlarge-range)})";
+
 
 
 /**
@@ -58,7 +107,6 @@
 
 // $namespace: null;
 
-
 // base line debuger
 // $enable-debug-typography:                true;
 
@@ -66,16 +114,6 @@
 // $enable-debug-whitespace:                true;
 
 @import "0-settings/settings.all";
-
-
-
-
-/*
-   TOOLS
-   ========================================================================== */
-// Site-wide mixins and functions.
-
-@import "1-tools/tools.all";
 
 
 
@@ -126,26 +164,27 @@
 
 
 /* [2] */
-// $heading-size-min:          $base-font-size;
-// $heading-size-max:          36px;
+// $heading-size-min:          rem-calc($base-font-size);
+// $heading-size-max:          rem-calc(36);
 
 // max font size and line height for small device
-// $heading-size-max-small:    30px;
+
+// $heading-size-max-small:    rem-calc(30px);
 // $heading-line-height-small: 1.3;
 
 @import "3-base/base.headings";
 
 
 /* [3] */
-// $lede-size:   1.25;
+// $lede-size: 1.125;
 
 @import "3-base/base.paragraphs";
 
 
 /* [4] */
-// $anchor-font-color: $your-color;
-// $anchor-font-color-hover: scale-color($anchor-font-color, $lightness: -14%);
-// $anchor-text-decoration: none;
+// $anchor-font-color:            #3A539B;
+// $anchor-font-color-hover:      scale-color($anchor-font-color, $lightness: -14%);
+// $anchor-text-decoration:       none;
 // $anchor-text-decoration-hover: none;
 
 @import "3-base/base.links";
@@ -162,14 +201,14 @@
 /* [7] */
 // $hr-border-width:  1px;
 // $hr-border-style:  solid;
-// $hr-border-color:  #ccc;
-// $hr-margin:        $base-spacing-unit;
+// $hr-border-color:  #cccccc;
+// $hr-margin:        rem-calc($base-spacing-unit);
 
 @import "3-base/base.hr";
 
 
 /* [8] */
-// $blockquote-footer-font-size: 12px;
+// $blockquote-footer-font-size:  rem-calc(12px);
 // $blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%);
 
 @import "3-base/base.blockquote";
@@ -199,7 +238,7 @@
  */
 
 /* [1] */
-$columns-gutter:                        $base-spacing-unit;
+$columns-gutter:                        rem-calc($base-spacing-unit);
 $container-width:                       rem-calc(1000);
 $default-float:                         left;
 $opposite-float:                        right;
@@ -242,13 +281,13 @@ $opposite-float:                        right;
 /* [2] */
 // $block-namespace:                    $namespace;
 
-// $block-gutter:                       $base-spacing-unit;
+// $block-gutter:                       rem-calc($base-spacing-unit);
 // $block-gutter--tiny:                 quarter($block-gutter);
 // $block-gutter--small:                halve($block-gutter);
 // $block-gutter--large:                double($block-gutter);
 // $block-gutter--huge:                 quadruple($block-gutter);
 
-// $enable-block--flush:                true;
+// $enable-block--bleed:                true;
 // $enable-block--tiny:                 true;
 // $enable-block--small:                true;
 // $enable-block--large:                true;
@@ -263,13 +302,13 @@ $opposite-float:                        right;
 /* [3] */
 // $box-namespace:                      $namespace;
 
-// $box-padding:                        $base-spacing-unit;
+// $box-padding:                        rem-calc($base-spacing-unit);
 // $box-padding--tiny:                  quarter($box-padding);
 // $box-padding--small:                 halve($box-padding);
 // $box-padding--large:                 double($box-padding);
 // $box-padding--huge:                  quadruple($box-padding);
 
-// $enable-box--flush:                  true;
+// $enable-box--bleed:                  true;
 // $enable-box--tiny:                   true;
 // $enable-box--small:                  true;
 // $enable-box--large:                  true;
@@ -282,12 +321,12 @@ $opposite-float:                        right;
 /* [4] */
 //$btn-namespace:                      $namespace !default;
 
-//$btn-padding:                        halve($base-spacing-unit) !default;
+//$btn-padding:                        rem(halve($base-spacing-unit)) !default;
 //$btn-padding--small:                 halve($btn-padding) !default;
 //$btn-padding--large:                 double($btn-padding) !default;
 //$btn-lightness-factor:               20% !default;
 //$btn-background:                     #3A539B !default;
-//$btn-color:                          #fff !default;
+//$btn-color:                          #ffffff !default;
 //$btn-border-width:                   1px !default;
 //$btn-border-style:                   solid !default;
 //$btn-border-color:                   $btn-background !default;
@@ -306,7 +345,7 @@ $opposite-float:                        right;
 /* [5] */
 // $flag-namespace:                     $namespace;
 
-// $flag-gutter:                        $base-spacing-unit;
+// $flag-gutter:                        rem-calc($base-spacing-unit);
 // $flag-gutter--tiny:                  quarter($flag-gutter);
 // $flag-gutter--small:                 halve($flag-gutter);
 // $flag-gutter--large:                 double($flag-gutter);
@@ -317,7 +356,7 @@ $opposite-float:                        right;
 // $enable-flag--large:                 true;
 // $enable-flag--huge:                  true;
 // $enable-flag--rev:                   true;
-// $enable-flag--flush:                 true;
+// $enable-flag--bleed:                 true;
 // $enable-flag--top:                   true;
 // $enable-flag--bottom:                true;
 // $enable-flag--responsive:            true;
@@ -329,7 +368,7 @@ $opposite-float:                        right;
 /* [6] */
 // $list-block-namespace:               $namespace;
 
-// $list-block-padding:                 $base-spacing-unit;
+// $list-block-padding:                 rem-calc($base-spacing-unit);
 // $list-block-padding--tiny:           quarter($list-block-padding);
 // $list-block-padding--small:          halve($list-block-padding);
 // $list-block-padding--large:          double($list-block-padding);
@@ -359,7 +398,7 @@ $opposite-float:                        right;
 /* [9] */
 // $list-ui-namespace:                  $namespace;
 
-// $list-ui-padding:                    $base-spacing-unit;
+// $list-ui-padding:                    rem-calc($base-spacing-unit);
 // $list-ui-padding--tiny:              quarter($list-ui-padding);
 // $list-ui-padding--small:             halve($list-ui-padding);
 // $list-ui-padding--large:             double($list-ui-padding);
@@ -369,7 +408,7 @@ $opposite-float:                        right;
 // $list-ui-border-style:               solid;
 // $list-ui-border-color:               #ccc;
 
-// $enable-list-ui--flush:              true;
+// $enable-list-ui--bleed:              true;
 // $enable-list-ui--tiny:               true;
 // $enable-list-ui--small:              true;
 // $enable-list-ui--large:              true;
@@ -383,7 +422,7 @@ $opposite-float:                        right;
 /* [10] */
 // $media-namespace:                    $namespace;
 
-// $media-gutter:                       $base-spacing-unit;
+// $media-gutter:                       rem-calc($base-spacing-unit);
 // $media-gutter--tiny:                 quarter($media-gutter);
 // $media-gutter--small:                halve($media-gutter);
 // $media-gutter--large:                double($media-gutter);
@@ -395,7 +434,7 @@ $opposite-float:                        right;
 // $enable-media--large:                true;
 // $enable-media--huge:                 true;
 // $enable-media--rev:                  true;
-// $enable-media--flush:                true;
+// $enable-media--bleed:                true;
 // $enable-media--responsive:           true;
 
 // @import "4-objects/objects.media";
@@ -404,7 +443,7 @@ $opposite-float:                        right;
 /* [11] */
 // $pack-namespace:                     $namespace;
 
-// $pack-gutter:                        $base-spacing-unit;
+// $pack-gutter:                        rem-calc($base-spacing-unit);
 // $pack-gutter--tiny:                  quarter($pack-gutter);
 // $pack-gutter--small:                 halve($pack-gutter);
 // $pack-gutter--large:                 double($pack-gutter);
@@ -427,7 +466,7 @@ $opposite-float:                        right;
 
 // $table-padding--compact:             quarter($base-spacing-unit);
 // $table-padding--cosy:                halve($base-spacing-unit);
-// $table-padding--comfy:               $base-spacing-unit;
+// $table-padding--comfy:               rem-calc($base-spacing-unit);
 
 // $table-border-width:                 1px;
 // $table-border-style:                 solid;
@@ -501,8 +540,8 @@ $opposite-float:                        right;
 /* [5] */
 // $spacing-namespace:                  $namespace;
 
-// $spacing-margin:                     $base-spacing-unit;
-// $spacing-padding:                    $base-spacing-unit;
+// $spacing-margin:                     rem-calc($base-spacing-unit);
+// $spacing-padding:                    rem-calc($base-spacing-unit);
 
 // $enable-margins:                     true;
 // $enable-margins--tiny:               true;

@@ -24,7 +24,7 @@ $block-gutter--small:                halve($block-gutter) !default;
 $block-gutter--large:                double($block-gutter) !default;
 $block-gutter--huge:                 quadruple($block-gutter) !default;
 
-$enable-block--flush:                false !default;
+$enable-block--bleed:                false !default;
 $enable-block--tiny:                 false !default;
 $enable-block--small:                false !default;
 $enable-block--large:                false !default;
@@ -51,13 +51,13 @@ $enable-block--right:                false !default;
     vertical-align: middle; /* [1] */
     margin-bottom: $block-gutter;
 
-    @if ($enable-block--flush == true) {
+    @if ($enable-block--bleed == true) {
 
       /**
        * No space between the image and the text content.
        */
-      .#{$block-namespace}block--flush > &,
-      %#{$block-namespace}block--flush > & {
+      .#{$block-namespace}block--bleed > &,
+      %#{$block-namespace}block--bleed > & {
         margin-bottom: 0;
       }
 

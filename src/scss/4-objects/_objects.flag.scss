@@ -33,7 +33,7 @@ $enable-flag--small:                 false !default;
 $enable-flag--large:                 false !default;
 $enable-flag--huge:                  false !default;
 $enable-flag--rev:                   false !default;
-$enable-flag--flush:                 false !default;
+$enable-flag--bleed:                 false !default;
 $enable-flag--top:                   false !default;
 $enable-flag--bottom:                false !default;
 $enable-flag--responsive:            false !default;
@@ -209,14 +209,14 @@ $flag-collapse-at:                   720px !default;
 
 }
 
-@if ($enable-flag--flush == true) {
+@if ($enable-flag--bleed == true) {
 
   /**
-   * Flush flag objects have no space between the image- and text-content.
+   * Bleed flag objects have no space between the image- and text-content.
    */
 
-  .#{$flag-namespace}flag--flush,
-  %#{$flag-namespace}flag--flush {
+  .#{$flag-namespace}flag--bleed,
+  %#{$flag-namespace}flag--bleed {
 
     > .#{$flag-namespace}flag__img,
     > %#{$flag-namespace}flag__img {

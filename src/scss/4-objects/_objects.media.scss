@@ -34,7 +34,7 @@ $enable-media--small:                false !default;
 $enable-media--large:                false !default;
 $enable-media--huge:                 false !default;
 $enable-media--rev:                  false !default;
-$enable-media--flush:                false !default;
+$enable-media--bleed:                false !default;
 $enable-media--responsive:           false !default;
 
 
@@ -209,13 +209,13 @@ $enable-media--responsive:           false !default;
 }
 
 
-@if ($enable-media--flush == true) {
+@if ($enable-media--bleed == true) {
 
   /**
-   * Flush media objects have no space between the image- and text-content.
+   * Bleed media objects have no space between the image- and text-content.
    */
-  .#{$media-namespace}media--flush > .#{$media-namespace}media__img,
-  %#{$media-namespace}media--flush > %#{$media-namespace}media__img {
+  .#{$media-namespace}media--bleed > .#{$media-namespace}media__img,
+  %#{$media-namespace}media--bleed > %#{$media-namespace}media__img {
     margin-right: 0;
     margin-left:  0;
   }

@@ -62,7 +62,7 @@ $enable-grid-uncentered:                false !default;
 
   @for $i from 1 through $total-col - 1 {
     @if percentage(($i / $total-col)) != 50% or $total-col == 2 {
-      .#{$size}-#{$i}-#{$total-col} {
+      .#{$size}-#{$i}#{of}#{$total-col} {
         @include grid-column(
           $columns:$i,
           $total-columns: $total-col,
@@ -75,7 +75,7 @@ $enable-grid-uncentered:                false !default;
 
   @if $enable-grid-push == true{
     @for $i from 1 through $total-col - 1 {
-      .#{$size}-push-#{$i}-#{$total-col} {
+      .#{$size}-push-#{$i}#{of}#{$total-col} {
         @include grid-column(
           $total-columns: $total-col,
           $push:$i,
@@ -89,7 +89,7 @@ $enable-grid-uncentered:                false !default;
   @if $enable-grid-pull == true{
 
     @for $i from 1 through $total-col - 1 {
-      .#{$size}-pull-#{$i}-#{$total-col} {
+      .#{$size}-pull-#{$i}#{of}#{$total-col} {
         @include grid-column(
           $total-columns: $total-col,
           $pull:$i,
@@ -103,7 +103,7 @@ $enable-grid-uncentered:                false !default;
 
   @if $enable-grid-offset == true{
     @for $i from 1 through $total-col - 1 {
-      .#{$size}-offset-#{$i}-#{$total-col} {
+      .#{$size}-offset-#{$i}#{of}#{$total-col} {
         @include grid-column(
           $total-columns: $total-col,
           $offset:$i,
@@ -126,15 +126,15 @@ $enable-grid-uncentered:                false !default;
 
   @if $enable-grid-centered == true{
 
-    .layout__unit.#{$size}-centered {
+    .grid__item.#{$size}-centered {
       @include grid-column(
         $center:true,
         $flush:null,
         $float:false
       );
     }
-    // Fighting layout__unit + layout__unit:last-child
-    .layout__unit.#{$size}-centered:last-child{
+    // Fighting grid__item + grid__item:last-child
+    .grid__item.#{$size}-centered:last-child{
       float: none;
     }
 
@@ -143,18 +143,18 @@ $enable-grid-uncentered:                false !default;
 
   @if $enable-grid-uncentered{
 
-    .layout__unit.#{$size}-uncentered {
+    .grid__item.#{$size}-uncentered {
       margin-#{$default-float}: 0;
       margin-#{$opposite-float}: 0;
       float: $default-float;
     }
 
     // Fighting .column.<previous-size>-centered:last-child
-    .layout__unit.#{$size}-uncentered:last-child {
+    .grid__item.#{$size}-uncentered:last-child {
       float: $default-float;
     }
 
-    .layout__unit.#{$size}-uncentered.opposite {
+    .grid__item.#{$size}-uncentered.opposite {
       float: $opposite-float;
     }
 
@@ -164,16 +164,16 @@ $enable-grid-uncentered:                false !default;
 
 @if $enable-default-grid-classes {
 
-  .layout {
+  .grid {
     @include grid-row;
 
     @if $enable-grid-flush {
       @at-root{
-        .layout--flush {
-          > .layout__unit{
+        .grid--bleed {
+          > .grid__item{
             @include grid-column($flush:true, $float:false);
           }
-          .layout {
+          .grid {
             margin-left:0;
             margin-right:0;
           }
@@ -182,23 +182,23 @@ $enable-grid-uncentered:                false !default;
 
     }
 
-    .layout {
+    .grid {
       @include grid-row($behavior:nested);
     }
 
     @if $enable-grid-flush {
-      .layout--flush {
+      .grid--bleed {
         @include grid-row($behavior:nested-flush);
       }
     }
   }
 
-  .layout__unit{
+  .grid__item{
     @include grid-column($columns:false, $position:true);
   }
 
-  .layout__unit + .layout__unit:last-child { float: $opposite-float; }
-  .layout__unit + .layout__unit.end { float: $default-float; }
+  .grid__item + .grid__item:last-child { float: $opposite-float; }
+  .grid__item + .grid__item.end { float: $default-float; }
 
 
 

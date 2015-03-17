@@ -32,7 +32,7 @@ $list-ui-border-width:               1px !default;
 $list-ui-border-style:               solid !default;
 $list-ui-border-color:               #ccc !default;
 
-$enable-list-ui--flush:              false !default;
+$enable-list-ui--bleed:              false !default;
 $enable-list-ui--tiny:               false !default;
 $enable-list-ui--small:              false !default;
 $enable-list-ui--large:              false !default;
@@ -71,13 +71,13 @@ $enable-remove-border-at-last-item:  false !default;
     }
 
 
-    @if ($enable-list-ui--flush == true) {
+    @if ($enable-list-ui--bleed == true) {
 
       /**
        * Tiny list-uis.
        */
-      .#{$list-ui-namespace}list-ui--flush > &,
-      %#{$list-ui-namespace}list-ui--flush > &{
+      .#{$list-ui-namespace}list-ui--bleed > &,
+      %#{$list-ui-namespace}list-ui--bleed > &{
         padding: 0;
       }
 

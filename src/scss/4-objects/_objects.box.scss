@@ -24,7 +24,7 @@ $box-padding--small:                 halve($box-padding) !default;
 $box-padding--large:                 double($box-padding) !default;
 $box-padding--huge:                  quadruple($box-padding) !default;
 
-$enable-box--flush:                  false !default;
+$enable-box--bleed:                  false !default;
 $enable-box--tiny:                   false !default;
 $enable-box--small:                  false !default;
 $enable-box--large:                  false !default;
@@ -43,13 +43,13 @@ $enable-box--huge:                   false !default;
 }
 
 
-@if ($enable-box--flush == true) {
+@if ($enable-box--bleed == true) {
 
   /**
-   * Flush (i.e. no padding) box.
+   * Bleed (i.e. no padding) box.
    */
-   .#{$box-namespace}box--flush,
-   %#{$box-namespace}box--flush {
+   .#{$box-namespace}box--bleed,
+   %#{$box-namespace}box--bleed {
     padding: 0;
   }
 

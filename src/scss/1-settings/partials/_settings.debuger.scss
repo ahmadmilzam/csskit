@@ -1,4 +1,13 @@
-/* debug */
+/*
+   Debuger
+   ========================================================================== */
+// base line debuger
+$enable-debug-typography:                false !default;
+
+// whitespace debuger
+$enable-debug-whitespace:                false !default;
+
+
 @if $enable-debug-typography {
   html{
     background-color: #fff;
