@@ -238,8 +238,8 @@ $xxlarge-only:   "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and 
  */
 
 /* [1] */
-$columns-gutter:                        rem-calc($base-spacing-unit);
-$container-width:                       rem-calc(1000);
+$columns-gutter:                        $base-spacing-unit);
+$container-width:                       1000px;
 $default-float:                         left;
 $opposite-float:                        right;
 
