@@ -238,7 +238,7 @@ $xxlarge-only:   "#{$screen} and (min-width:#{lower-bound($xxlarge-range)}) and 
  */
 
 /* [1] */
-$columns-gutter:                        $base-spacing-unit);
+$columns-gutter:                        $base-spacing-unit;
 $container-width:                       1000px;
 $default-float:                         left;
 $opposite-float:                        right;
