@@ -370,13 +370,13 @@ $spacing-breakpoint-queries:
        * Remove paddings.
        */
 
-      .#{$spacing-namespace}p0      { padding:          0 !important; }
-      .#{$spacing-namespace}pt0     { padding-top:      0 !important; }
-      .#{$spacing-namespace}pr0     { padding-right:    0 !important; }
-      .#{$spacing-namespace}pb0     { padding-bottom:   0 !important; }
-      .#{$spacing-namespace}pl0     { padding-left:     0 !important; }
-      .#{$spacing-namespace}ph0     { padding-right:    0 !important; padding-left:     0 !important; }
-      .#{$spacing-namespace}pv0     { padding-top:      0 !important; padding-bottom:   0 !important; }
+      .#{$spacing-namespace}#{$breakpoint}-p0      { padding:          0 !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pt0     { padding-top:      0 !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pr0     { padding-right:    0 !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pb0     { padding-bottom:   0 !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pl0     { padding-left:     0 !important; }
+      .#{$spacing-namespace}#{$breakpoint}-ph0     { padding-right:    0 !important; padding-left:     0 !important; }
+      .#{$spacing-namespace}#{$breakpoint}-pv0     { padding-top:      0 !important; padding-bottom:   0 !important; }
 
     }
 
