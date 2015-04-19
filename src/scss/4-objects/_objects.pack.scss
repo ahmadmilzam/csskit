@@ -17,7 +17,7 @@ $imported-default-settings: false !default;
 $imported-module-settings: false !default;
 
 @if ($imported-default-settings == false) {
-  @warn "Oops! Have you included default settings and module settings files?"
+  @warn "Oops! Have you included default settings and module settings files?";
 }
 
 

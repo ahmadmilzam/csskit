@@ -8,7 +8,7 @@
 $imported-default-settings: false !default;
 
 @if ($imported-default-settings == false) {
-  @warn "Oops! Have you included a default settings file?"
+  @warn "Oops! Have you included a default settings file?";
 }
 
 $lede-size:   1.125 !default;
