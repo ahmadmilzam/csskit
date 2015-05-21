@@ -266,7 +266,7 @@ $opposite-float:                        right;
 // These modifier will be disabled automatically
 // as you disable the default grid classes
 
-// $enable-grid-flush:                     true;
+// $enable-grid-bleed:                     true;
 // $enable-grid-pull:                      true;
 // $enable-grid-push:                      true;
 // $enable-grid-offset:                    true;

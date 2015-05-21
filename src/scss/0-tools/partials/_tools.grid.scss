@@ -32,11 +32,11 @@
    ========================================================================== */
 
 /**
- * For creating container, nested, and flushed rows
+ * For creating container, nested, and bleeded rows
  * @param:
  *
  * $max-width, Given max-width value for the container. Default: $container-width.
- * $behavior - Any special behavior for this row? Default: false. Options: nest, flush, nest-flush, false.
+ * $behavior - Any special behavior for this row? Default: false. Options: nest, bleed, nest-bleed, false.
  */
 @mixin grid-row($max-width: $container-width, $behavior: false) {
 
@@ -48,15 +48,15 @@
     max-width: none;
   }
 
-  // use @include grid-row(flush); to flushed a container row margins
-  @else if $behavior == flush {
+  // use @include grid-row(bleed); to bleeded a container row margins
+  @else if $behavior == bleed {
     width: 100%;
     margin: 0;
     max-width: $container-width;
   }
 
-  // use @include grid-row(nested-flush); to collapse outer margins on a nested row
-  @else if $behavior == nested-flush {
+  // use @include grid-row(nested-bleed); to collapse outer margins on a nested row
+  @else if $behavior == nested-bleed {
     width: auto;
     margin: 0;
     max-width: none;

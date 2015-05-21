@@ -45,7 +45,7 @@ $enable-grid-fifth:                     true !default;
 /*
    Grid unit modifier
    ========================================================================== */
-$enable-grid-flush:                     false !default;
+$enable-grid-bleed:                     false !default;
 $enable-grid-pull:                      false !default;
 $enable-grid-push:                      false !default;
 $enable-grid-offset:                    false !default;
@@ -66,7 +66,7 @@ $enable-grid-uncentered:                false !default;
         @include grid-column(
           $columns:$i,
           $total-columns: $total-col,
-          $flush:null,
+          $bleed:null,
           $float:false
         );
       }
@@ -79,7 +79,7 @@ $enable-grid-uncentered:                false !default;
         @include grid-column(
           $total-columns: $total-col,
           $push:$i,
-          $flush:null,
+          $bleed:null,
           $float:false
         );
       }
@@ -93,7 +93,7 @@ $enable-grid-uncentered:                false !default;
         @include grid-column(
           $total-columns: $total-col,
           $pull:$i,
-          $flush:null,
+          $bleed:null,
           $float:false
         );
       }
@@ -107,7 +107,7 @@ $enable-grid-uncentered:                false !default;
         @include grid-column(
           $total-columns: $total-col,
           $offset:$i,
-          $flush:null,
+          $bleed:null,
           $float:false
         );
       }
@@ -129,7 +129,7 @@ $enable-grid-uncentered:                false !default;
     .grid__item.#{$size}-centered {
       @include grid-column(
         $center:true,
-        $flush:null,
+        $bleed:null,
         $float:false
       );
     }
@@ -167,11 +167,11 @@ $enable-grid-uncentered:                false !default;
   .grid {
     @include grid-row;
 
-    @if $enable-grid-flush {
+    @if $enable-grid-bleed {
       @at-root{
         .grid--bleed {
           > .grid__item{
-            @include grid-column($flush:true, $float:false);
+            @include grid-column($bleed:true, $float:false);
           }
           .grid {
             margin-left:0;
@@ -186,9 +186,9 @@ $enable-grid-uncentered:                false !default;
       @include grid-row($behavior:nested);
     }
 
-    @if $enable-grid-flush {
+    @if $enable-grid-bleed {
       .grid--bleed {
-        @include grid-row($behavior:nested-flush);
+        @include grid-row($behavior:nested-bleed);
       }
     }
   }
@@ -202,7 +202,7 @@ $enable-grid-uncentered:                false !default;
   // small grid rules collection
   @media #{$small-up} {
     .small-1 {
-      @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+      @include grid-column($columns:1,$total-columns: 1, $bleed:null,$float:false);
     }
     @if $enable-grid-half {
       @include generate-default-grid-classes($size:small, $total-col: 2);
@@ -221,7 +221,7 @@ $enable-grid-uncentered:                false !default;
   // medium grid rules collection
   @media #{$medium-up} {
     .medium-1 {
-      @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+      @include grid-column($columns:1,$total-columns: 1, $bleed:null,$float:false);
     }
     @if $enable-grid-half {
       @include generate-default-grid-classes($size:medium, $total-col: 2);
@@ -240,7 +240,7 @@ $enable-grid-uncentered:                false !default;
   // large grid rules collection
   @media #{$large-up} {
     .large-1 {
-      @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+      @include grid-column($columns:1,$total-columns: 1, $bleed:null,$float:false);
     }
     @if $enable-grid-half {
       @include generate-default-grid-classes($size:large, $total-col: 2);
@@ -260,7 +260,7 @@ $enable-grid-uncentered:                false !default;
   @if $enable-xl-grid-classes {
     @media #{$xlarge-up} {
       .xlarge-1 {
-        @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+        @include grid-column($columns:1,$total-columns: 1, $bleed:null,$float:false);
       }
       @if $enable-grid-half {
         @include generate-default-grid-classes($size:xlarge, $total-col: 2);
@@ -281,7 +281,7 @@ $enable-grid-uncentered:                false !default;
   @if $enable-xxl-grid-classes {
     @media #{$xxlarge-up} {
       .xxlarge-1 {
-        @include grid-column($columns:1,$total-columns: 1, $flush:null,$float:false);
+        @include grid-column($columns:1,$total-columns: 1, $bleed:null,$float:false);
       }
       @if $enable-grid-half {
         @include generate-default-grid-classes($size:xxlarge, $total-col: 2);
