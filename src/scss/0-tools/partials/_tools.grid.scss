@@ -95,7 +95,7 @@
  * $offset - # of columns to offset. Default: false.
  * $push - # of columns to push. Default: false.
  * $pull - # of columns to pull. Default: false.
- * $flush - Get rid of gutter padding on column? Default: false.
+ * $bleed - Get rid of gutter padding on column? Default: false.
  * $float - Should this float? Default: true. Options: true, false, left, right.
  * $position - relative position, push and pull require position set. Default: false.
  */
@@ -107,7 +107,7 @@
   $offset:false,
   $push:false,
   $pull:false,
-  $flush:false,
+  $bleed:false,
   $float:true,
   $position:false
 ){
@@ -119,15 +119,15 @@
       position: relative;
     }
 
-    // If flushed, get rid of gutter padding
-    @if $flush {
+    // If bleeded, get rid of gutter padding
+    @if $bleed {
       padding-left: 0;
       padding-right: 0;
     }
 
     // Gutter padding whenever a column isn't set to collapse
-    // (use $flush:null to do nothing)
-    @else if $flush == false {
+    // (use $bleed:null to do nothing)
+    @else if $bleed == false {
       padding-left: rem-calc( $columns-gutter / 2 );
       padding-right: rem-calc( $columns-gutter / 2 );
     }
