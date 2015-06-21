@@ -588,6 +588,12 @@ $opposite-float:                        right;
 // $enable-responsive-paddings--large:           true;
 // $enable-responsive-paddings--huge:            true;
 
+// $enable-responsive-paddings--negative:         true;
+// $enable-responsive-paddings--negative-tiny:    true;
+// $enable-responsive-paddings--negative-small:   true;
+// $enable-responsive-paddings--negative-large:   true;
+// $enable-responsive-paddings--negative-huge:    true;
+
 // $enable-responsive-paddings--none:            true;
 
 
