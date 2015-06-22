@@ -40,8 +40,8 @@
   $delay: 0s
 ){
   @if($property == transform){
-    -webkit-transition: -webkit-#{$property} $length $easing $delay;        -webkit-transition: -webkit-#{$property} $length $easing $delay;
-            transition: $property $length $easing $delay;                 transition: $property $length $easing $delay;
+    -webkit-transition: -webkit-#{$property} $length $easing $delay;
+            transition: $property $length $easing $delay;
   } @else{
     -webkit-transition: $property $length $easing $delay;
             transition: $property $length $easing $delay;
