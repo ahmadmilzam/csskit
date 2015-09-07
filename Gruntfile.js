@@ -26,7 +26,7 @@ module.exports = function(grunt) {
       assets: 'assets',
       css: {
         main: [
-          '<%= project.src %>/scss/sample.scss'
+          '<%= project.src %>/scss/app.scss'
         ],
         docs: [
           '<%= project.docs %>/<%= project.src %>/scss/docs.scss'
