@@ -97,7 +97,7 @@ $enable-btn--disabled:               false !default;
   }
   &:active{
     @if($btn-border-width != 0) {
-      border-color: scale-color($btn-border-color, $lightness: $btn-lightness-factor);
+      border-color: scale-color($btn-border-color, $lightness: -$btn-lightness-factor);
     }
     background-color: scale-color($btn-background, $lightness: -$btn-lightness-factor);
   }
