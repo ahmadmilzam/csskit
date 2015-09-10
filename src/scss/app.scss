@@ -35,7 +35,7 @@
 // $base-line-height:                     28px;
 // $base-spacing-unit:                    $base-line-height;
 
-// $base-radius:                          3px !default;
+// $base-radius:                          3px;
 
 
 
@@ -66,13 +66,13 @@
 
 $screen: "only screen";
 
-$small-range:   (0em, em-calc(768)) !default;
-$medium-range:  (em-calc(769), em-calc(1024)) !default;
-$large-range:   (em-calc(1025), em-calc(1440)) !default;
-$xlarge-range:  (em-calc(1441), em-calc(1920)) !default;
-$xxlarge-range: (em-calc(1921), 999999em) !default;
+$small-range:   (0em, em-calc(768));
+$medium-range:  (em-calc(769), em-calc(1024));
+$large-range:   (em-calc(1025), em-calc(1440));
+$xlarge-range:  (em-calc(1441), em-calc(1920));
+$xxlarge-range: (em-calc(1921), 999999em);
 
-$retina:        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)" !default;
+$retina:        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)";
 
 /*
    Media Query Conditions
@@ -323,25 +323,25 @@ $opposite-float:                        right;
 
 
 /* [4] */
-//$btn-namespace:                      $namespace !default;
+//$btn-namespace:                      $namespace;
 
-//$btn-padding:                        rem(halve($base-spacing-unit)) !default;
-//$btn-padding--small:                 halve($btn-padding) !default;
-//$btn-padding--large:                 double($btn-padding) !default;
-//$btn-lightness-factor:               20% !default;
-//$btn-background:                     #3A539B !default;
-//$btn-color:                          #ffffff !default;
-//$btn-border-width:                   1px !default;
-//$btn-border-style:                   solid !default;
-//$btn-border-color:                   $btn-background !default;
-//$btn-radius:                         0 !default;
-//$btn-large-font-size:                1.25 !default;
+//$btn-padding:                        rem(halve($base-spacing-unit));
+//$btn-padding--small:                 halve($btn-padding);
+//$btn-padding--large:                 double($btn-padding);
+//$btn-lightness-factor:               20%;
+//$btn-background:                     #3A539B;
+//$btn-color:                          #ffffff;
+//$btn-border-width:                   1px;
+//$btn-border-style:                   solid;
+//$btn-border-color:                   $btn-background;
+//$btn-radius:                         0;
+//$btn-large-font-size:                1.25;
 
-//$enable-btn--small:                  false !default;
-//$enable-btn--large:                  false !default;
-//$enable-btn--full:                   false !default;
-//$enable-btn--pill:                   false !default;
-//$enable-btn--disabled:               false !default;
+//$enable-btn--small:                  false;
+//$enable-btn--large:                  false;
+//$enable-btn--full:                   false;
+//$enable-btn--pill:                   false;
+//$enable-btn--disabled:               false;
 
 @import "4-objects/objects.buttons";
 
