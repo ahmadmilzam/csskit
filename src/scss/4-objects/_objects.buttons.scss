@@ -28,7 +28,7 @@ $btn-namespace:                      $namespace !default;
 $btn-padding:                        halve($base-spacing-unit) !default;
 $btn-padding--small:                 quarter($base-spacing-unit) !default;
 $btn-padding--large:                 $base-spacing-unit !default;
-$btn-lightness-factor:               20% !default;
+$btn-lightness-factor:               2 !default;
 $btn-background:                     #3A539B !default;
 $btn-color:                          #fff !default;
 $btn-border-width:                   1px !default;
@@ -91,15 +91,15 @@ $enable-btn--disabled:               false !default;
   &:hover,
   &:focus{
     @if($btn-border-width != 0) {
-      border-color: scale-color($btn-border-color, $lightness: $btn-lightness-factor);
+      border-color: color-level($btn-border-color, $btn-lightness-factor);
     }
-    background-color: scale-color($btn-background, $lightness: $btn-lightness-factor);
+    background-color: color-level($btn-background, $btn-lightness-factor);
   }
   &:active{
     @if($btn-border-width != 0) {
-      border-color: scale-color($btn-border-color, $lightness: -$btn-lightness-factor);
+      border-color: color-level($btn-border-color, -$btn-lightness-factor);
     }
-    background-color: scale-color($btn-background, $lightness: -$btn-lightness-factor);
+    background-color: color-level($btn-background, -$btn-lightness-factor);
   }
 
 }

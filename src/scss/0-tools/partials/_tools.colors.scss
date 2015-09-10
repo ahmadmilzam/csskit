@@ -1,0 +1,16 @@
+$opacity: (
+  'light': 0.8, // opacity used with lighter colors
+  'dark': 0.4  // opacity used with darker colors
+) !default;
+
+$color-interval: 10% !default;
+
+@function transparency($color, $key: 'light') {
+  $alpha : map-get($opacity, $key);
+  @return rgba($color, $alpha);
+}
+
+@function color-level($color, $level: 0) {
+  $color-base: if($level < 0, black, white);
+  @return mix($color-base, $color, abs($level) * $color-interval);
+}
