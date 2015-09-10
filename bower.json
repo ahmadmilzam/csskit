@@ -1,6 +1,6 @@
 {
-  "name": "CSSKit",
-  "version": "0.0.1",
+  "name": "csskit",
+  "version": "1.2",
   "authors": [
     "Ahmad Milzam <email@ahmadmilzam.com>"
   ],
@@ -20,9 +20,8 @@
     "Gruntfile.js"
   ],
   "homepage": "https://github.com/ahmadmilzam/csskit",
-  "main": "scss/app.scss",
+  "main": "src/scss/app.scss",
   "keywords": [
-    "css",
     "css",
     "framework",
     "bem",
