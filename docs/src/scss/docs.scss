@@ -200,18 +200,18 @@ $hr-border-color:  $color-divider;
 @import "3-base/base.blockquote";
 
 
-// $code-font-family: Consolas, "Liberation Mono", Courier, monospace !default;
-// $code-font-color: scale-color($color-alert, $lightness: 10%) !default;
-// $code-font-size: 80% !default;
+// $code-font-family: Consolas, "Liberation Mono", Courier, monospace;
+// $code-font-color: scale-color($color-alert, $lightness: 10%);
+// $code-font-size: 80%;
 
-// $code-padding: rem-calc(quarter($base-spacing-unit)) !default;
-// $code-bg-color: darken($base-background-color, 2%) !default;
+// $code-padding: rem-calc(quarter($base-spacing-unit));
+// $code-bg-color: darken($base-background-color, 2%);
 
-// $code-border-color: #ccc !default;
-// $code-border-width: 1px !default;
-// $code-border-style: solid !default;
+// $code-border-color: #ccc;
+// $code-border-width: 1px;
+// $code-border-style: solid;
 
-// $code-tab-size: 4 !default;
+// $code-tab-size: 4;
 @import "base.codes";
 @import "base.selection";
 
@@ -246,8 +246,8 @@ $default-float:                         left;
 $opposite-float:                        right;
 
 // grid extra large classes
-$enable-xl-grid-classes:                false;
-$enable-xxl-grid-classes:               false;
+$enable-xl-grid-classes:                true;
+$enable-xxl-grid-classes:               true;
 
 /*
    Default grid classess.
@@ -255,12 +255,12 @@ $enable-xxl-grid-classes:               false;
 // Uncomment these variables bellow
 // if you want to create your own grid classes
 
-// $enable-default-grid-classes:           false;
+// $enable-default-grid-classes:           true;
 
-// $enable-grid-half:                      false;
-// $enable-grid-third:                     false;
-// $enable-grid-fourth:                    false;
-// $enable-grid-fifth:                     false;
+// $enable-grid-half:                      true;
+// $enable-grid-third:                     true;
+// $enable-grid-fourth:                    true;
+// $enable-grid-fifth:                     true;
 
 
 /*
@@ -323,16 +323,18 @@ $enable-box--huge:                   true;
 /* [4] */
 // $btn-namespace:                      $namespace;
 
-$btn-padding:                        quarter($base-spacing-unit);
-// $btn-padding--small:                 halve($btn-padding);
-// $btn-padding--large:                 double($btn-padding);
-$btn-lightness-factor:               20%;
-$btn-background:                     $color-primary;
-// $btn-color:                          #fff;
+// $btn-padding:                        halve($base-spacing-unit);
+// $btn-padding--small:                 quarter($base-spacing-unit);
+// $btn-padding--large:                 $base-spacing-unit;
+
+// $btn-background:                     $base-background-color;
+// $btn-color:                          $base-text-color;
+// $btn-color--invert:                   #FFFFFF;
+
 // $btn-border-width:                   1px;
-// $btn-border-style:                   solid;
-$btn-border-color:                   scale-color($btn-background, $lightness: -$btn-lightness-factor);
-$btn-radius:                         $base-radius;
+// $btn-radius:                         0;
+// $btn-large-font-size-factor:         1.125;
+// $enable-btn-transition:              true;
 
 $enable-btn--small:                  true;
 $enable-btn--large:                  true;

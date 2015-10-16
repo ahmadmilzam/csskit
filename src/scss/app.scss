@@ -30,7 +30,7 @@
 // $base-font-weight:                     normal;
 
 // $base-text-color:                      #333333;
-// $base-background-color:                #ffffff;
+// $base-background-color:                #FFFFFF;
 
 // $base-line-height:                     28px;
 // $base-spacing-unit:                    $base-line-height;
@@ -257,12 +257,12 @@ $opposite-float:                        right;
 // Uncomment these variables bellow
 // if you want to create your own grid classes
 
-// $enable-default-grid-classes:           false;
+// $enable-default-grid-classes:           true;
 
-// $enable-grid-half:                      false;
-// $enable-grid-third:                     false;
-// $enable-grid-fourth:                    false;
-// $enable-grid-fifth:                     false;
+// $enable-grid-half:                      true;
+// $enable-grid-third:                     true;
+// $enable-grid-fourth:                    true;
+// $enable-grid-fifth:                     true;
 
 /*
    Grid unit modifier
@@ -325,23 +325,24 @@ $opposite-float:                        right;
 /* [4] */
 //$btn-namespace:                      $namespace;
 
-//$btn-padding:                        rem(halve($base-spacing-unit));
-//$btn-padding--small:                 halve($btn-padding);
-//$btn-padding--large:                 double($btn-padding);
-//$btn-lightness-factor:               2; // mutliply by 10%
-//$btn-background:                     #3A539B;
-//$btn-color:                          #ffffff;
-//$btn-border-width:                   1px;
-//$btn-border-style:                   solid;
-//$btn-border-color:                   $btn-background;
-//$btn-radius:                         0;
-//$btn-large-font-size:                1.25;
+// $btn-padding:                        halve($base-spacing-unit);
+// $btn-padding--small:                 quarter($base-spacing-unit);
+// $btn-padding--large:                 $base-spacing-unit;
 
-//$enable-btn--small:                  false;
-//$enable-btn--large:                  false;
-//$enable-btn--full:                   false;
-//$enable-btn--pill:                   false;
-//$enable-btn--disabled:               false;
+// $btn-background:                     $base-background-color;
+// $btn-color:                          $base-text-color;
+// $btn-color--invert:                   #FFFFFF;
+
+// $btn-border-width:                   1px;
+// $btn-radius:                         0;
+// $btn-large-font-size-factor:         1.125;
+// $enable-btn-transition:              true;
+
+// $enable-btn--small:                  true;
+// $enable-btn--large:                  true;
+// $enable-btn--full:                   true;
+// $enable-btn--pill:                   true;
+// $enable-btn--disabled:               true;
 
 @import "4-objects/objects.buttons";
 

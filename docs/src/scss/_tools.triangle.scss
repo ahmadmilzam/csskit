@@ -81,3 +81,48 @@
     border-color: $background-color $foreground-color $background-color $background-color;
   }
 }
+
+
+/**
+ * @mixin triangle($size, $color, $direction: 'up') {
+  width: 0;
+  height: 0;
+
+  @if $direction == 'up' {
+    border-right: $size solid transparent;
+    border-bottom: $size * 1.732 solid $color;
+    border-left: $size solid transparent;
+  } @else if $direction == 'down' {
+    border-top: $size * 1.732 solid $color;
+    border-right: $size solid transparent;
+    border-left: $size solid transparent;
+  } @else if $direction == 'left' {
+    border-top: $size solid transparent;
+    border-right: $size * 1.732 solid $color;
+    border-bottom: $size solid transparent;
+  } @else if $direction == 'right' {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size * 1.732 solid $color;
+  }
+}
+
+@mixin corner-triangle($size, $color, $corner: 'top-left') {
+  width: 0;
+  height: 0;
+
+  @if $corner == 'top-left' {
+    border-top: $size solid $color;
+    border-right: $size solid transparent;
+  } @else if $corner == 'top-right' {
+    border-top: $size solid $color;
+    border-left: $size solid transparent;
+  } @else if $corner == 'bottom-left' {
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  } @else if $corner == 'bottom-right' {
+    border-bottom: $size solid $color;
+    border-left: $size solid transparent;
+  }
+}
+ */

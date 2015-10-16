@@ -28,23 +28,21 @@ $btn-namespace:                      $namespace !default;
 $btn-padding:                        halve($base-spacing-unit) !default;
 $btn-padding--small:                 quarter($base-spacing-unit) !default;
 $btn-padding--large:                 $base-spacing-unit !default;
-$btn-lightness-factor:               2 !default;
-$btn-background:                     #3A539B !default;
-$btn-color:                          #fff !default;
+
+$btn-background:                     $base-background-color !default;
+$btn-color:                          $base-text-color !default;
+$btn-color--invert:                   #FFFFFF !default;
+
 $btn-border-width:                   1px !default;
-$btn-border-style:                   solid !default;
-$btn-border-color:                   $btn-background !default;
 $btn-radius:                         0 !default;
-$btn-large-font-size:                1.25 !default;
+$btn-large-font-size-factor:         1.125 !default;
+$enable-btn-transition:              true !default;
 
 $enable-btn--small:                  false !default;
 $enable-btn--large:                  false !default;
 $enable-btn--full:                   false !default;
 $enable-btn--pill:                   false !default;
 $enable-btn--disabled:               false !default;
-
-
-
 
 /**
  * 1. Allow us to style box model properties.
@@ -56,51 +54,79 @@ $enable-btn--disabled:               false !default;
  * 6. Subtract the border size from the padding value so that buttons do not
  *    grow larger as we add borders.
  */
-.#{$btn-namespace}btn,
-%#{$btn-namespace}btn {
+@mixin buttons-base{
   display: inline-block; /* [1] */
   vertical-align: middle; /* [2] */
   font: inherit; /* [3] */
+  position: relative; /* [4] */
   text-align: center; /* [4] */
   border: none; /* [4] */
   margin:  0; /* [4] */
+  line-height:  normal; /* [4] */
+  -webkit-appearance: none; /* [4] */
+  -webkit-user-select: none; /* [4] */
+  white-space: normal; /* [4] */
   cursor: pointer; /* [5] */
-  padding: rem-calc( ($btn-padding - $btn-border-width) (double($btn-padding) - $btn-border-width) ); /* [6] */
-  background-color: $btn-background;
+}
+
+@mixin buttons-style(
+  $background: $btn-background,
+  $transition: $enable-btn-transition){
+
+  background-color: $background;
 
   @if($btn-border-width != 0) {
     border-width: $btn-border-width;
-    border-style: $btn-border-style;
-    border-color: $btn-border-color;
+    border-style: solid;
+    border-color: color-level($background, -2);
   }
 
   @if($btn-radius != 0) {
     border-radius: $btn-radius;
   }
 
-  @include transition(background-color);
+  @if ($transition == true) {
+    transition: color 0.3s ease-out,
+                background-color 0.3s ease-out;
+  }
 
   &,
   &:hover,
   &:active,
   &:focus {
     text-decoration: none; /* [4] */
-    color: $btn-color;
+    @if($background == $btn-background ){
+      color: $btn-color;
+    } @else {
+      color: foreground-color($background, $btn-color, $btn-color--invert, $threshold: 65%)
+    }
   }
 
   &:hover,
   &:focus{
-    @if($btn-border-width != 0) {
-      border-color: color-level($btn-border-color, $btn-lightness-factor);
-    }
-    background-color: color-level($btn-background, $btn-lightness-factor);
+    background-color: color-level($background, -2);
   }
+
   &:active{
     @if($btn-border-width != 0) {
-      border-color: color-level($btn-border-color, -$btn-lightness-factor);
+      border-color: color-level($background, -3);
     }
-    background-color: color-level($btn-background, -$btn-lightness-factor);
+    background-color: color-level($background, -3);
   }
+
+}
+
+@mixin buttons-size($padding: $btn-padding){
+  padding: rem-calc( ($padding - $btn-border-width) (double($padding) - $btn-border-width) ); /* [6] */
+}
+
+
+.#{$btn-namespace}btn,
+%#{$btn-namespace}btn {
+
+  @include buttons-base;
+  @include buttons-style;
+  @include buttons-size;
 
 }
 
@@ -121,7 +147,7 @@ $enable-btn--disabled:               false !default;
 
   .#{$btn-namespace}btn--small,
   %#{$btn-namespace}btn--small {
-    padding: $btn-padding--small - $btn-border-width  double($btn-padding--small) - $btn-border-width; /* [6] */
+    @include buttons-size($btn-padding--small);
   }
 
 }
@@ -134,8 +160,8 @@ $enable-btn--disabled:               false !default;
 
   .#{$btn-namespace}btn--large,
   %#{$btn-namespace}btn--large {
-    font-size: rem-calc($base-font-size * $btn-large-font-size);
-    padding: rem-calc( ($btn-padding--large - $btn-border-width)  (double($btn-padding--large) - $btn-border-width) ); /* [6] */
+    font-size: rem-calc($base-font-size * $btn-large-font-size-factor);
+    @include buttons-size($btn-padding--large);
   }
 
 }

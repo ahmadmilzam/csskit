@@ -62,3 +62,7 @@
     @include triangle (rem-calc(10), $btn-color, down);
   }
 }
+
+.btn--alert{
+  @include buttons-style($background: #F1A9A0);
+}

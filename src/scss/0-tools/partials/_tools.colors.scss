@@ -14,3 +14,7 @@ $color-interval: 10% !default;
   $color-base: if($level < 0, black, white);
   @return mix($color-base, $color, abs($level) * $color-interval);
 }
+
+@function foreground-color($bgcolor, $color-dark, $color-light, $threshold: 65%) {
+  @return if( lightness($bgcolor) >= $threshold, $color-dark, $color-light );
+}
