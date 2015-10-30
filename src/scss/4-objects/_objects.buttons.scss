@@ -76,6 +76,8 @@ $enable-btn--disabled:               false !default;
     border-width: $btn-border-width;
     border-style: solid;
     border-color: color-level($background, -2);
+  } @else {
+    border: none;
   }
 
   @if($btn-radius != 0) {
