@@ -19,6 +19,8 @@ $imported-default-settings: false !default;
  */
 
 // Predefine the variables below in order to alter and enable specific features.
+$spacing-namespace:                  $namespace !default;
+
 $enable-responsive-margins:                   false !default;
 $enable-responsive-margins--tiny:             false !default;
 $enable-responsive-margins--small:            false !default;
