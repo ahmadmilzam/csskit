@@ -39,7 +39,7 @@ $enable-box--huge:                   false !default;
 %#{$box-namespace}box {
   @extend %clearfix;
   display: block; /* [1] */
-  padding: $box-padding;
+  padding: rem-calc($box-padding);
 }
 
 
@@ -62,7 +62,7 @@ $enable-box--huge:                   false !default;
      */
     .#{$box-namespace}box--tiny,
     %#{$box-namespace}box--tiny {
-      padding: $box-padding--tiny;
+      padding: rem-calc($box-padding--tiny);
     }
 
   }
@@ -74,7 +74,7 @@ $enable-box--huge:                   false !default;
      */
     .#{$box-namespace}box--small,
     %#{$box-namespace}box--small {
-      padding: $box-padding--small;
+      padding: rem-calc($box-padding--small);
     }
 
   }
@@ -87,7 +87,7 @@ $enable-box--huge:                   false !default;
 
     .#{$box-namespace}box--large,
     %#{$box-namespace}box--large {
-      padding: $box-padding--large;
+      padding: rem-calc($box-padding--large);
     }
 
   }
@@ -100,7 +100,7 @@ $enable-box--huge:                   false !default;
 
     .#{$box-namespace}box--huge,
     %#{$box-namespace}box--huge {
-      padding: $box-padding--huge;
+      padding: rem-calc($box-padding--huge);
     }
 
   }

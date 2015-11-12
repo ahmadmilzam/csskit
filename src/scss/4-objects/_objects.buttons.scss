@@ -25,9 +25,13 @@ $global-border-box: false !default;
 
 $btn-namespace:                      $namespace !default;
 
-$btn-padding:                        halve($base-spacing-unit) !default;
-$btn-padding--small:                 quarter($base-spacing-unit) !default;
-$btn-padding--large:                 $base-spacing-unit !default;
+$btn-padding:                        halve($base-spacing-unit);
+$btn-padding--small:                 halve($btn-padding);
+$btn-padding--large:                 double($btn-padding);
+
+$btn-font-size:                      $base-font-size;
+$btn-font-size--small:               $btn-font-size * 0.8;
+$btn-font-size--large:               $btn-font-size * 1.25;
 
 $btn-background:                     $base-background-color !default;
 $btn-color:                          $base-text-color !default;
@@ -35,7 +39,6 @@ $btn-color--invert:                   #FFFFFF !default;
 
 $btn-border-width:                   1px !default;
 $btn-radius:                         0 !default;
-$btn-large-font-size-factor:         1.125 !default;
 $enable-btn-transition:              true !default;
 
 $enable-btn--small:                  false !default;
@@ -47,23 +50,21 @@ $enable-btn--disabled:               false !default;
 /**
  * 1. Allow us to style box model properties.
  * 2. Line different sized buttons up a little nicer.
- * 3. Make buttons inherit font styles (often necessary when styling `input`s as
- *    buttons).
- * 4. Reset/normalize some styles.
- * 5. Force all button-styled elements to appear clickable.
- * 6. Subtract the border size from the padding value so that buttons do not
+ * 3. Reset/normalize some styles.
+ * 4. Force all button-styled elements to appear clickable.
+ * 5. Subtract the border size from the padding value so that buttons do not
  *    grow larger as we add borders.
  */
 @mixin buttons-base{
   display: inline-block; /* [1] */
   vertical-align: middle; /* [2] */
-  font: inherit; /* [3] */
-  position: relative; /* [4] */
-  text-align: center; /* [4] */
-  margin:  0; /* [4] */
-  line-height:  normal; /* [4] */
-  white-space: normal; /* [4] */
-  cursor: pointer; /* [5] */
+  font-weight: normal; /* [3] */
+  position: relative; /* [3] */
+  text-align: center; /* [3] */
+  margin:  0; /* [3] */
+  line-height:  normal; /* [3] */
+  white-space: normal; /* [3] */
+  cursor: pointer; /* [4] */
 }
 
 @mixin buttons-style(
@@ -115,8 +116,9 @@ $enable-btn--disabled:               false !default;
 
 }
 
-@mixin buttons-size($padding: $btn-padding){
-  padding: rem-calc( ($padding - $btn-border-width) (double($padding) - $btn-border-width) ); /* [6] */
+@mixin buttons-size($padding: $btn-padding, $font-size: $btn-font-size){
+  padding: rem-calc($padding - $btn-border-width) rem-calc(double($padding) - $btn-border-width); /* [6] */
+  font-size: font-size($font-size);
 }
 
 
@@ -146,7 +148,7 @@ $enable-btn--disabled:               false !default;
 
   .#{$btn-namespace}btn--small,
   %#{$btn-namespace}btn--small {
-    @include buttons-size($btn-padding--small);
+    @include buttons-size($btn-padding--small, $btn-font-size--small);
   }
 
 }
@@ -159,8 +161,7 @@ $enable-btn--disabled:               false !default;
 
   .#{$btn-namespace}btn--large,
   %#{$btn-namespace}btn--large {
-    font-size: rem-calc($base-font-size * $btn-large-font-size-factor);
-    @include buttons-size($btn-padding--large);
+    @include buttons-size($btn-padding--large, $btn-font-size--large);
   }
 
 }

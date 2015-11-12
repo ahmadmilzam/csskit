@@ -20,9 +20,10 @@ $imported-module-settings: false !default;
 
 $table-namespace:                    $namespace !default;
 
-$table-padding--compact:             quarter($base-spacing-unit) !default;
-$table-padding--cosy:                halve($base-spacing-unit) !default;
-$table-padding--comfy:               $base-spacing-unit !default;
+$table-padding:                      $base-spacing-unit;
+$table-padding--compact:             quarter($table-padding);
+$table-padding--cosy:                halve($table-padding);
+$table-padding--comfy:               $table-padding;
 
 $table-border-width:                 1px !default;
 $table-border-style:                 solid !default;
@@ -71,7 +72,7 @@ $enable-table--columns:              false !default;
 
     th,
     td {
-      padding: $table-padding--compact;
+      padding: rem-calc($table-padding--compact);
     }
 
   }
@@ -89,7 +90,7 @@ $enable-table--columns:              false !default;
 
     th,
     td {
-      padding: $table-padding--cosy;
+      padding: rem-calc($table-padding--cosy);
     }
 
   }
@@ -107,7 +108,7 @@ $enable-table--columns:              false !default;
 
     th,
     td {
-      padding: $table-padding--comfy;
+      padding: rem-calc($table-padding--comfy);
     }
 
   }

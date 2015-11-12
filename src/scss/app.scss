@@ -168,12 +168,12 @@ $xxlarge-down:  "#{$screen} and (max-width:#{upper-bound($xxlarge-range)})";
 
 
 /* [2] */
-// $heading-size-min:          rem-calc($base-font-size);
-// $heading-size-max:          rem-calc(36);
+// $heading-size-min:          $base-font-size;
+// $heading-size-max:          36px;
 
 // max font size and line height for small device
 
-// $heading-size-max-small:    rem-calc(30px);
+// $heading-size-max-small:    30px;
 // $heading-line-height-small: 1.3;
 
 @import "3-base/base.headings";
@@ -206,17 +206,16 @@ $xxlarge-down:  "#{$screen} and (max-width:#{upper-bound($xxlarge-range)})";
 // $hr-border-width:  1px;
 // $hr-border-style:  solid;
 // $hr-border-color:  #cccccc;
-// $hr-margin:        rem-calc($base-spacing-unit);
+// $hr-margin:        $base-spacing-unit;
 
 @import "3-base/base.hr";
 
 
 /* [8] */
-// $blockquote-footer-font-size:  rem-calc(12px);
+// $blockquote-footer-font-size:  12px;
 // $blockquote-footer-font-color: scale-color($base-text-color, $lightness: 30%);
 
 @import "3-base/base.blockquote";
-
 
 
 
@@ -285,7 +284,7 @@ $opposite-float:                        right;
 /* [2] */
 // $block-namespace:                    $namespace;
 
-// $block-gutter:                       rem-calc($base-spacing-unit);
+// $block-gutter:                       $base-spacing-unit;
 // $block-gutter--tiny:                 quarter($block-gutter);
 // $block-gutter--small:                halve($block-gutter);
 // $block-gutter--large:                double($block-gutter);
@@ -306,7 +305,7 @@ $opposite-float:                        right;
 /* [3] */
 // $box-namespace:                      $namespace;
 
-// $box-padding:                        rem-calc($base-spacing-unit);
+// $box-padding:                        $base-spacing-unit;
 // $box-padding--tiny:                  quarter($box-padding);
 // $box-padding--small:                 halve($box-padding);
 // $box-padding--large:                 double($box-padding);
@@ -326,16 +325,19 @@ $opposite-float:                        right;
 //$btn-namespace:                      $namespace;
 
 // $btn-padding:                        halve($base-spacing-unit);
-// $btn-padding--small:                 quarter($base-spacing-unit);
-// $btn-padding--large:                 $base-spacing-unit;
+// $btn-padding--small:                 halve($btn-padding);
+// $btn-padding--large:                 double($btn-padding);
+
+// $btn-font-size:                      $base-font-size;
+// $btn-font-size--small:               $btn-font-size * 0.8;
+// $btn-font-size--large:               $btn-font-size * 1.25;
 
 // $btn-background:                     $base-background-color;
 // $btn-color:                          $base-text-color;
-// $btn-color--invert:                   #FFFFFF;
+// $btn-color--invert:                  #FFFFFF;
 
 // $btn-border-width:                   1px;
 // $btn-radius:                         0;
-// $btn-large-font-size-factor:         1.125;
 // $enable-btn-transition:              true;
 
 // $enable-btn--small:                  true;
@@ -350,7 +352,7 @@ $opposite-float:                        right;
 /* [5] */
 // $flag-namespace:                     $namespace;
 
-// $flag-gutter:                        rem-calc($base-spacing-unit);
+// $flag-gutter:                        $base-spacing-unit;
 // $flag-gutter--tiny:                  quarter($flag-gutter);
 // $flag-gutter--small:                 halve($flag-gutter);
 // $flag-gutter--large:                 double($flag-gutter);
@@ -373,7 +375,7 @@ $opposite-float:                        right;
 /* [6] */
 // $list-block-namespace:               $namespace;
 
-// $list-block-padding:                 rem-calc($base-spacing-unit);
+// $list-block-padding:                 $base-spacing-unit;
 // $list-block-padding--tiny:           quarter($list-block-padding);
 // $list-block-padding--small:          halve($list-block-padding);
 // $list-block-padding--large:          double($list-block-padding);
@@ -403,7 +405,7 @@ $opposite-float:                        right;
 /* [9] */
 // $list-ui-namespace:                  $namespace;
 
-// $list-ui-padding:                    rem-calc($base-spacing-unit);
+// $list-ui-padding:                    $base-spacing-unit;
 // $list-ui-padding--tiny:              quarter($list-ui-padding);
 // $list-ui-padding--small:             halve($list-ui-padding);
 // $list-ui-padding--large:             double($list-ui-padding);
@@ -427,7 +429,7 @@ $opposite-float:                        right;
 /* [10] */
 // $media-namespace:                    $namespace;
 
-// $media-gutter:                       rem-calc($base-spacing-unit);
+// $media-gutter:                       $base-spacing-unit;
 // $media-gutter--tiny:                 quarter($media-gutter);
 // $media-gutter--small:                halve($media-gutter);
 // $media-gutter--large:                double($media-gutter);
@@ -448,7 +450,7 @@ $opposite-float:                        right;
 /* [11] */
 // $pack-namespace:                     $namespace;
 
-// $pack-gutter:                        rem-calc($base-spacing-unit);
+// $pack-gutter:                        $base-spacing-unit;
 // $pack-gutter--tiny:                  quarter($pack-gutter);
 // $pack-gutter--small:                 halve($pack-gutter);
 // $pack-gutter--large:                 double($pack-gutter);
@@ -469,9 +471,10 @@ $opposite-float:                        right;
 /* [12] */
 // $table-namespace:                    $namespace;
 
-// $table-padding--compact:             quarter($base-spacing-unit);
-// $table-padding--cosy:                halve($base-spacing-unit);
-// $table-padding--comfy:               rem-calc($base-spacing-unit);
+// $table-padding:                      $base-spacing-unit;
+// $table-padding--compact:             quarter($table-padding);
+// $table-padding--cosy:                halve($table-padding);
+// $table-padding--comfy:               $table-padding;
 
 // $table-border-width:                 1px;
 // $table-border-style:                 solid;
@@ -545,8 +548,8 @@ $opposite-float:                        right;
 /* [5] */
 // $spacing-namespace:                  $namespace;
 
-// $spacing-margin:                     rem-calc($base-spacing-unit);
-// $spacing-padding:                    rem-calc($base-spacing-unit);
+// $spacing-margin:                     $base-spacing-unit;
+// $spacing-padding:                    $base-spacing-unit;
 
 // $enable-margins:                     true;
 // $enable-margins--tiny:               true;
