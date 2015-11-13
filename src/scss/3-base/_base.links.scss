@@ -12,9 +12,10 @@ $imported-default-settings: false !default;
 }
 
 
-$anchor-font-color: #3498DB !default;
-$anchor-font-color-hover: scale-color($anchor-font-color, $lightness: 20%) !default;
-$anchor-text-decoration: none !default;
+$anchor-font-color:            #3498DB !default;
+$anchor-color-factor:          2 !default;
+$anchor-font-color-hover:      color-level($anchor-font-color, $anchor-color-factor) !default;
+$anchor-text-decoration:       none !default;
 $anchor-text-decoration-hover: none !default;
 
 

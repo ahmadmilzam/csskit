@@ -186,10 +186,11 @@ $xxlarge-down:  "#{$screen} and (max-width:#{upper-bound($xxlarge-range)})";
 
 
 /* [4] */
-// $anchor-font-color:            #3A539B;
-// $anchor-font-color-hover:      scale-color($anchor-font-color, $lightness: -14%);
-// $anchor-text-decoration:       none;
-// $anchor-text-decoration-hover: none;
+// $anchor-font-color:            #3498DB !default;
+// $anchor-color-factor:          2 !default;
+// $anchor-font-color-hover:      color-level($anchor-font-color, $anchor-color-factor) !default;
+// $anchor-text-decoration:       none !default;
+// $anchor-text-decoration-hover: none !default;
 
 @import "3-base/base.links";
 
