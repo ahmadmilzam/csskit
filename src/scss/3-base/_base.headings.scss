@@ -11,6 +11,8 @@ $imported-default-settings: false !default;
   @warn "Oops! Have you included a default settings file?";
 }
 
+$heading-font-weight:        700 !default;
+
 $heading-size-min:           16px !default;
 $heading-size-max:           36px !default;
 
@@ -82,6 +84,7 @@ $heading-line-height-small:  1.3 !default;
 
 
 h1,h2,h3,h4,h5,h6{
+  font-weight: $heading-font-weight;
   text-rendering: optimizeLegibility;
   word-wrap: break-word;
 }
