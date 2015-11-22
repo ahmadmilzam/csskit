@@ -170,8 +170,7 @@ $enable-grid-uncentered:                false !default;
     @if $enable-grid-bleed {
       @at-root{
         .grid--bleed {
-          padding-left: rem-calc( $columns-gutter/2 );
-          padding-right: rem-calc( $columns-gutter/2 );
+          @include grid-row($behavior: bleed);
           > .grid__item{
             @include grid-column($bleed:true, $float:false);
           }
@@ -186,12 +185,6 @@ $enable-grid-uncentered:                false !default;
 
     .grid {
       @include grid-row($behavior:nested);
-    }
-
-    @if $enable-grid-bleed {
-      .grid--bleed {
-        @include grid-row($behavior:nested-bleed);
-      }
     }
   }
 

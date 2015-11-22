@@ -50,16 +50,8 @@
 
   // use @include grid-row(bleed); to bleeded a container row margins
   @else if $behavior == bleed {
-    width: 100%;
-    margin: 0;
-    max-width: $container-width;
-  }
-
-  // use @include grid-row(nested-bleed); to collapse outer margins on a nested row
-  @else if $behavior == nested-bleed {
-    width: auto;
-    margin: 0;
-    max-width: none;
+    padding-left: rem-calc( $columns-gutter / 2 );
+    padding-right: rem-calc( $columns-gutter / 2 );
   }
 
   // use @include grid-row; to use a container row
