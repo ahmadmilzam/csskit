@@ -58,24 +58,17 @@ module.exports = function(grunt) {
      */
     sass: {
       options: {
-        loadPath: 'src/scss/',
-        banner: '<%= tag.banner %>',
-        style: 'nested'
+        includePaths: ['src/scss'],
+        outputStyle: 'nested',
+        sourceMap: true
       },
       dev: {
-        options: {
-          banner: '<%= tag.banner %>',
-        },
         files: {
           '<%= project.app %>/<%= project.assets %>/css/app.css' : '<%= project.css.main %>',
           '<%= project.docs %>/<%= project.assets %>/css/docs.css' : '<%= project.css.docs %>',
         }
       },
       dist: {
-        options: {
-          sourcemap: 'none',
-          banner: ' ',
-        },
         files: {
           '<%= project.app %>/<%= project.assets %>/css/app.css' : '<%= project.css.main %>',
           '<%= project.docs %>/<%= project.assets %>/css/docs.css' : '<%= project.css.docs %>',
@@ -153,7 +146,16 @@ module.exports = function(grunt) {
     uglify: {
       options: {
         mangle: true,
-        compress: true,
+        compress: {
+          sequences: true,
+          dead_code: true,
+          conditionals: true,
+          booleans: true,
+          unused: true,
+          if_return: true,
+          join_vars: true,
+          drop_console: true
+        },
         report: 'gzip'
       },
       target: {

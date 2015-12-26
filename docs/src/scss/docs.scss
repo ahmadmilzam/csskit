@@ -132,20 +132,12 @@ $xxlarge-down:  "#{$screen} and (max-width:#{upper-bound($xxlarge-range)})";
 /**
  *  Low-specificity, far-reaching rulesets (e.g. CSS resets)
  *
- * [1] Normalize
- * [2] Reset
- * [3] Box Sizing
- * [4] Shared
+ * [1] Reset
+ * [2] Shared
  */
-
-/* [1] */
-@import "2-generic/generic.normalize";
 
 /* [2] */
 @import "2-generic/generic.reset";
-
-/* [3] */
-@import "2-generic/generic.box-sizing";
 
 /* [4] */
 @import "2-generic/generic.shared";

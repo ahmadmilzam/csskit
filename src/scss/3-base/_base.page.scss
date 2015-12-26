@@ -24,7 +24,7 @@ $imported-default-settings: false !default;
  * 4. Fonts on OSX will look more consistent with other systems that do not
  *    render text using sub-pixel anti-aliasing.
  */
-html {
+:root {
   font-family: $base-font-family;
   font-weight: $base-font-weight;
   font-size: ($base-font-size / 16px) * 1em; /* [1] */
