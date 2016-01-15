@@ -25,13 +25,13 @@ $global-border-box: false !default;
 
 $btn-namespace:                      $namespace !default;
 
-$btn-padding:                        halve($base-spacing-unit);
-$btn-padding--small:                 halve($btn-padding);
-$btn-padding--large:                 double($btn-padding);
+$btn-padding:                        halve($base-spacing-unit) !default;
+$btn-padding--small:                 halve($btn-padding) !default;
+$btn-padding--large:                 double($btn-padding) !default;
 
-$btn-font-size:                      $base-font-size;
-$btn-font-size--small:               $btn-font-size * 0.8;
-$btn-font-size--large:               $btn-font-size * 1.25;
+$btn-font-size:                      $base-font-size !default;
+$btn-font-size--small:               $btn-font-size * 0.8 !default;
+$btn-font-size--large:               $btn-font-size * 1.25 !default;
 
 $btn-background:                     $base-background-color !default;
 $btn-color:                          $base-text-color !default;
