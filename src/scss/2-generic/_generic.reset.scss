@@ -218,11 +218,6 @@ nav ul {
 
 /* specify the standard appearance of selects */
 
-select {
-  -moz-appearance: none;    /* Firefox 40+ */
-  -webkit-appearance: none /* Chrome 45+ */
-}
-
 select::-ms-expand {
   display: none;/* Edge 12+, Internet Explorer 11- */
 }

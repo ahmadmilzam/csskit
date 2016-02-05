@@ -68,6 +68,7 @@ $enable-btn--disabled:               false !default;
 
 @mixin buttons-style(
   $background: $btn-background,
+  $color: false,
   $transition: $enable-btn-transition){
 
   background-color: $background;
@@ -75,7 +76,7 @@ $enable-btn--disabled:               false !default;
   @if($btn-border-width != 0) {
     border-width: $btn-border-width;
     border-style: solid;
-    border-color: color-level($background, -2);
+    border-color: $background;
   } @else {
     border: none;
   }
@@ -85,8 +86,7 @@ $enable-btn--disabled:               false !default;
   }
 
   @if ($transition == true) {
-    transition: color 0.3s ease-out,
-                background-color 0.3s ease-out;
+    transition: all 0.3s ease-out;
   }
 
   &,
@@ -96,13 +96,18 @@ $enable-btn--disabled:               false !default;
     text-decoration: none; /* [4] */
     @if($background == $btn-background ){
       color: $btn-color;
-    } @else {
+    } @else if($color != false){
+      color: $color;
+    } @else{
       color: foreground-color($background, $btn-color, $btn-color--invert, $threshold: 65%)
     }
   }
 
   &:hover,
   &:focus{
+    @if($btn-border-width != 0) {
+      border-color: color-level($background, -2);
+    }
     background-color: color-level($background, -2);
   }
 
