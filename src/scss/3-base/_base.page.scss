@@ -33,8 +33,12 @@ html {
   color: $base-text-color;
   overflow-y: scroll; /* [2] */
   min-height: 100%; /* [3] */
+  box-sizing: border-box;
 
   -moz-osx-font-smoothing: grayscale; /* [4] */
   -webkit-font-smoothing: antialiased; /* [4] */
 }
 
+*, *:before, *:after {
+  box-sizing: inherit;
+}
