@@ -16,7 +16,7 @@ html {
   &,
   &:before,
   &:after {
-    @include box-sizing;
+    box-sizing: inherit;
   }
 }
 /**
