@@ -6,12 +6,19 @@
  * 4. Make them float left
  * 5. Give appropriate border radius to first and last child
  */
+
+@if( lightness($btn-background) >= $base-color-treshold ){
+   $btn-color: $btn-color-dark-background;
+} @else {
+   $btn-color: $btn-color-light-background;
+}
+
+
 .btn-group-horizontal{
 
   @extend %clearfix; /* [1] */
 
   .btn{
-    // border-color: darken($btn-background, $btn-lightness-factor); /* [2] */
     border-left-width: 0; /* [2] */
     border-radius: 0; /* [3] */
     float: left; /* [4] */

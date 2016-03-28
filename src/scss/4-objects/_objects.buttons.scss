@@ -33,9 +33,10 @@ $btn-font-size:                      $base-font-size !default;
 $btn-font-size--small:               $btn-font-size * 0.8 !default;
 $btn-font-size--large:               $btn-font-size * 1.25 !default;
 
-$btn-background:                     $base-background-color !default;
-$btn-color:                          $base-text-color !default;
-$btn-color--invert:                   #FFFFFF !default;
+
+$btn-background:                     #2C97DE !default;
+$btn-color-dark-background:          $base-background-color !default;
+$btn-color-light-background:         $base-text-color !default;
 
 $btn-border-width:                   1px !default;
 $btn-radius:                         0 !default;
@@ -94,12 +95,10 @@ $enable-btn--disabled:               false !default;
   &:active,
   &:focus {
     text-decoration: none; /* [4] */
-    @if($background == $btn-background ){
-      color: $btn-color;
-    } @else if($color != false){
+    @if($color != false){
       color: $color;
     } @else{
-      color: foreground-color($background, $btn-color, $btn-color--invert, $threshold: 65%)
+      color: foreground-color($background, $btn-color-light-background, $btn-color-dark-background, $threshold: $base-color-treshold);
     }
   }
 

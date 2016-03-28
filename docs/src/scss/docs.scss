@@ -40,6 +40,8 @@
 
 // $base-radius:                          4px;
 
+// $base-color-treshold:                  65%;
+
 
 /**
  * We use these as default colors throughout
@@ -347,9 +349,9 @@ $enable-box--huge:                   true;
 // $btn-font-size--small:               $btn-font-size * 0.8;
 // $btn-font-size--large:               $btn-font-size * 1.25;
 
-// $btn-background:                     $base-background-color;
-// $btn-color:                          $base-text-color;
-// $btn-color--invert:                  #FFFFFF;
+$btn-background:                     #2C97DE;
+$btn-color-dark-background:          $base-background-color;
+$btn-color-light-background:         $base-text-color;
 
 // $btn-border-width:                   1px;
 // $btn-radius:                         0;
@@ -360,7 +362,6 @@ $enable-btn--large:                  true;
 $enable-btn--full:                   true;
 $enable-btn--pill:                   true;
 $enable-btn--disabled:               true;
-
 
 @import "4-objects/objects.buttons";
 @import "objects.buttons-group";
@@ -597,6 +598,12 @@ $enable-paddings--small:             true;
 $enable-paddings--large:             true;
 $enable-paddings--huge:              true;
 
+$enable-paddings--negative:           true;
+$enable-paddings--negative-tiny:      true;
+$enable-paddings--negative-small:     true;
+$enable-paddings--negative-large:     true;
+$enable-paddings--negative-huge:      true;
+
 $enable-paddings--none:              true;
 
 @import "6-helpers/helpers.spacing";
@@ -621,6 +628,12 @@ $enable-responsive-paddings--tiny:            true;
 $enable-responsive-paddings--small:           true;
 $enable-responsive-paddings--large:           true;
 $enable-responsive-paddings--huge:            true;
+
+$enable-responsive-paddings--negative:         true;
+$enable-responsive-paddings--negative-tiny:    true;
+$enable-responsive-paddings--negative-small:   true;
+$enable-responsive-paddings--negative-large:   true;
+$enable-responsive-paddings--negative-huge:    true;
 
 $enable-responsive-paddings--none:            true;
 

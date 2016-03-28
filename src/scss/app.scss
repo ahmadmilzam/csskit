@@ -37,6 +37,8 @@
 
 // $base-radius:                          3px;
 
+// $base-color-treshold:                  65%;
+
 
 
 /*
@@ -331,9 +333,9 @@ $opposite-float:                        right;
 // $btn-font-size--small:               $btn-font-size * 0.8;
 // $btn-font-size--large:               $btn-font-size * 1.25;
 
-// $btn-background:                     $base-background-color;
-// $btn-color:                          $base-text-color;
-// $btn-color--invert:                  #FFFFFF;
+// $btn-background:                     #2C97DE;
+// $btn-color-dark-background:          $base-background-color;
+// $btn-color-light-background:         $base-text-color;
 
 // $btn-border-width:                   1px;
 // $btn-radius:                         0;
