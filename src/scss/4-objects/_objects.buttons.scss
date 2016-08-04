@@ -120,7 +120,7 @@ $enable-btn--disabled:               false !default;
 }
 
 @mixin buttons-size($padding: $btn-padding, $font-size: $btn-font-size){
-  padding: rem-calc($padding - $btn-border-width) rem-calc(double($padding) - $btn-border-width); /* [6] */
+  padding: rem-calc($padding - $btn-border-width) rem-calc(double($padding) - $btn-border-width); /* [5] */
   @include font-size($font-size);
 }
 
