@@ -1,0 +1,67 @@
+// ==========================================================================
+// SITE NAV - MOBILE VARIANT
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings files?";
+}
+
+$site-nav-height: 40px;
+$logo-height: 15px;
+$logo-width: 25px;
+
+.site-nav {
+  position: relative;
+  z-index: z("autosuggest") - 1;
+  display: block;
+
+  background-color: color("brand");
+  color: color("foreground", "invert");
+
+  &__container {
+    width: 100%;
+    max-width: $base-container-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding: halve($base-spacing-unit);
+  }
+
+  &__home {
+    display: inline-block;
+    color: color("foreground", "invert");
+
+    &:hover {
+      color: color("foreground", "invert");
+    }
+  }
+
+  &__icon-back {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: rem-calc(halve($base-spacing-unit));
+    font-size: rem-calc(20);
+  }
+
+  &__logo {
+    display: inline-block;
+    vertical-align: middle;
+    width: rem-calc($logo-width);
+    background-image: url("/images/logo/logo-2@2x.png");
+    background-position: 0 47%;
+    background-repeat: no-repeat;
+    background-size: $logo-width $logo-height;
+    text-indent: -9999px;
+  }
+
+  &__title {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: rem-calc(18);
+    font-weight: bold;
+  }
+}

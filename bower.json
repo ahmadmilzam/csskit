@@ -8,6 +8,7 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "removed_files",
     "node_modules",
     "bower_components",
     "lib",
@@ -17,7 +18,8 @@
     "tmp",
     "doc",
     "docs",
-    "Gruntfile.js"
+    "Gruntfile.js",
+    "package.json"
   ],
   "homepage": "https://github.com/ahmadmilzam/csskit",
   "main": "src/scss/app.scss",

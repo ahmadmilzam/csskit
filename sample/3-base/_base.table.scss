@@ -1,0 +1,12 @@
+// ==========================================================================
+// TABLE
+// ==========================================================================
+
+
+// 1. Ensure tables fill up as much space as possible.
+// 2. Remove most spacing between table cells.
+table {
+  width: 100%; // [1]
+  border-collapse: collapse; // [2]
+  border-spacing: 0; // [2]
+}

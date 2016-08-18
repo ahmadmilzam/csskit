@@ -1,0 +1,20 @@
+// ==========================================================================
+// HR
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included a default settings file?";
+}
+
+hr {
+  height: 0;
+  margin-top: rem-calc($base-spacing-unit);
+  margin-bottom: rem-calc($base-spacing-unit);
+  border-top: 1px solid color("foreground", "secondary");
+  border-bottom: 0;
+}

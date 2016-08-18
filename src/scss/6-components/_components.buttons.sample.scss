@@ -1,0 +1,231 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+//
+// A simple button components.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings and module settings files?";
+}
+
+
+$btn-namespace:                      $namespace !default;
+
+$btn-padding:                        halve($base-spacing-unit) !default;
+$btn-padding--small:                 halve($btn-padding) !default;
+$btn-padding--large:                 double($btn-padding) !default;
+
+$btn-font-size:                      $base-font-size !default;
+$btn-font-size--small:               $btn-font-size * 0.8 !default;
+$btn-font-size--large:               $btn-font-size * 1.25 !default;
+
+
+$btn-background:                     #2C97DE !default;
+$btn-color-dark-background:          $base-background-color !default;
+$btn-color-light-background:         $base-text-color !default;
+
+$btn-border-width:                   1px !default;
+$btn-radius:                         0 !default;
+$enable-btn-transition:              true !default;
+
+$enable-btn--small:                  false !default;
+$enable-btn--large:                  false !default;
+$enable-btn--full:                   false !default;
+$enable-btn--pill:                   false !default;
+$enable-btn--disabled:               false !default;
+
+//
+// 1. Allow us to style box model properties.
+// 2. Line different sized buttons up a little nicer.
+// 3. Make buttons inherit font styles
+//    (often necessary when styling `input`s as buttons).
+// 4. Reset/normalize some styles.
+// 5. Force all button-styled elements to appear clickable.
+// 6. Fixes odd inner spacing in IE7.
+// 7. Subtract the border size from the padding value so that buttons do not
+//    grow larger as we add borders.
+//
+@mixin buttons-base {
+  display: inline-block; // 1
+  vertical-align: middle; // 2
+  font: inherit; // 3
+  text-align: center; // 4
+  margin: 0; // 4
+  white-space: normal; // 4
+  cursor: pointer; // 5
+  overflow: visible; // 6
+
+  @if($btn-border-width != 0) {
+    border-width: $btn-border-width;
+    border-style: solid;
+  } @else {
+    border: none;
+  }
+
+  @if($btn-radius != 0) {
+    border-radius: $btn-radius;
+  }
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none; // 4
+  }
+
+  @if ($transition == true) {
+    transition: all .3s ease-out;
+  }
+}
+
+@mixin buttons-style(
+  $background: $btn-background,
+  $color: false) {
+
+  background-color: $background;
+
+  @if($btn-border-width != 0) {
+    border-color: $background;
+  }
+
+  @if($btn-radius != 0) {
+    border-radius: $btn-radius;
+  }
+
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    @if($color != false){
+      color: $color;
+    } @else{
+      color: pick-visible-color(
+        $background,
+        $btn-color-light-background,
+        $btn-color-dark-background,
+        $factor: 50%
+      )
+    }
+  }
+
+  &:hover,
+  &:focus{
+    @if($btn-border-width != 0) {
+      border-color: color-level($background, -2);
+    }
+    background-color: color-level($background, -2);
+  }
+
+  &:active{
+    @if($btn-border-width != 0) {
+      border-color: color-level($background, -3);
+    }
+    background-color: color-level($background, -3);
+  }
+
+}
+
+@mixin buttons-size($padding: $btn-padding, $font-size: $btn-font-size){
+  padding: rem-calc($padding - $btn-border-width) rem-calc(double($padding) - $btn-border-width); // 7
+  @include font-size($font-size);
+}
+
+.#{$btn-namespace}btn {
+
+  @include buttons-base;
+  @include buttons-style;
+  @include buttons-size;
+
+}
+
+//
+// Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
+//
+.#{$btn-namespace}btn::-moz-focus-inner {
+  border:  0;
+  padding: 0;
+}
+
+//
+// Size Variants
+// ==========================================================================
+
+@if ($enable-btn--small == true) {
+
+  //
+  // Small buttons.
+  //
+
+  .#{$btn-namespace}btn--small {
+    @include buttons-size($btn-padding--small, $btn-font-size--small);
+  }
+
+}
+
+@if ($enable-btn--large == true) {
+
+  //
+  // Large buttons.
+  //
+
+  .#{$btn-namespace}btn--large {
+    @include buttons-size($btn-padding--large, $btn-font-size--large);
+  }
+
+}
+
+@if ($enable-btn--full == true) {
+
+  //
+  // Full-width buttons.
+  //
+
+  .#{$btn-namespace}btn--full {
+    width: 100%;
+  }
+
+}
+
+//
+// Style Variants
+// ==========================================================================
+
+@if ($enable-btn--pill == true) {
+
+  //
+  // Round-ended buttons.
+  //
+  // 1. Overly-large value to ensure the radius rounds the whole end of the
+  //    button.
+  //
+
+  .#{$btn-namespace}btn--pill {
+      border-radius: 100px; //1
+  }
+
+}
+
+@if ($enable-btn--disabled == true){
+  //
+  // Disabled buttons.
+  // 1. make it little bit transparent
+  // 2. show not allowed cursor when hover
+  //
+
+  button[disabled],
+  .#{$btn-namespace}btn--disabled {
+      opacity: .4;
+      &:hover,
+      &:focus,
+      &:active{
+        cursor: not-allowed;
+      }
+  }
+}

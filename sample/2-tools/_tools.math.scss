@@ -1,0 +1,71 @@
+// ==========================================================================
+// Math Helpers.
+// ==========================================================================
+
+// Half and double numbers, returning rounded integers. E.g.:
+// .foo{
+//   padding: halve(30px)
+// }
+
+@function quarter($number) {
+  @return ceil($number / 4);
+}
+
+@function halve($number) {
+  @return ceil($number / 2);
+}
+
+@function double($number) {
+  @return ceil($number * 2);
+}
+
+@function quadruple($number) {
+  @return ceil($number * 4);
+}
+
+@function percent-calc($percentage, $number) {
+  @return round($number * (parse-int($percentage) / 100));
+}
+
+// Calculates the value of a number raised to the power of an exponent.
+@function pow($x, $y) {
+  $ret: 1;
+
+  @if $y > 0 {
+    @for $i from 1 through $y {
+        $ret: $ret * $x;
+    }
+  }
+
+  @else {
+    @for $i from $y to 0 {
+        $ret: $ret / $x;
+    }
+  }
+
+  @return $ret;
+}
+
+// square root math function
+$loops: 0;
+@function approximate-sq($num, $approx) {
+  $root: (($num / $approx) + $approx) / 2;
+  @return $root;
+}
+
+@function sqrt($num) {
+  $root:0;
+  $test-root: 0;
+  $upper-bounds: round($num / 2) + 1; //never need over half the main number. Add one just to be sure!
+  $loops: $upper-bounds;
+  @for $test from 2 through $upper-bounds {
+    $sq: $test * $test;
+    @if $sq <= $num {
+      $test-root: $test;
+    }
+  }
+
+  $root: (approximate-sq($num, $test-root));
+
+  @return $root;
+}

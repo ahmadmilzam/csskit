@@ -1,0 +1,31 @@
+// ==========================================================================
+// BREAKPOINTS SETTINGS
+// ==========================================================================
+
+//
+// Hold our breakpoint aliases and conditions in a list.
+// These can be invoked later on via the `media-query()` mixin found in
+// 2-tools/_tools.responsive.
+//
+
+$screen:        "only screen";
+
+$breakpoints: (
+  "small-up"    "#{$screen}",
+  "small"       "#{$screen} and (max-width: 720px)",
+  "medium-up"   "#{$screen} and (min-width: 721px)",
+  "medium"      "#{$screen} and (min-width: 721px) and (max-width: 1024px)",
+  "large-up"    "#{$screen} and (min-width: 1025px)",
+  "large"       "#{$screen} and (min-width: 1025px) and (max-width: 1440px)",
+  "xlarge-up"   "#{$screen} and (min-width: 1441px)",
+  "large"       "#{$screen} and (min-width: 1441px) and (max-width: 1920px)",
+  "xxlarge-up"  "#{$screen} and (min-width: 1921px)",
+  "portrait"    "#{$screen} and (orientation: portrait)",
+  "landscape"   "#{$screen} and (orientation: landscape)",
+  "xxlarge-up"  "#{$screen} and (min-width: 1921px)",
+  "retina"      "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+) !default;
+
+// If we have included this file, set a variable to tell the rest of the
+// framework that we have some responsive settings.
+$imported-responsive-settings: true;

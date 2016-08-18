@@ -1,0 +1,162 @@
+// ==========================================================================
+// AUTOSUGGEST FORM
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings files?";
+}
+
+$input-height-medium: 50px;
+$input-height-small: 40px;
+$button-width: 50px;
+
+.autosuggest {
+  position: relative;
+  z-index: z("autosuggest");
+
+  display: block;
+  width: 100%;
+  max-width: rem-calc(600);
+
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(medium-up) {
+    box-shadow: 0 8px 16px -4px rgba(0, 0, 0, .5);
+  }
+
+  &.is-active {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+
+    box-shadow: none;
+  }
+
+  &__form {
+    position: relative;
+    z-index: z("autosuggest");
+  }
+
+  &__input {
+    height: rem-calc($input-height-small);
+    padding-top: rem-calc(halve($base-spacing-unit));
+    padding-left: rem-calc(halve($base-spacing-unit));
+    padding-bottom: rem-calc(halve($base-spacing-unit));
+    padding-right: rem-calc($button-width + $form-border-width);
+    margin-bottom: 0;
+    border: 0;
+
+    border-top-left-radius: $base-radius;
+    border-top-right-radius: $base-radius;
+    border-bottom-left-radius: $base-radius;
+    border-bottom-right-radius: $base-radius;
+
+    @include mq(medium-up) {
+      height: rem-calc($input-height-medium);
+    }
+
+    .is-active & {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+  }
+
+  &__submit {
+    position: absolute;
+    right: $form-border-width;
+    top: 0;
+    z-index: 1;
+
+    height: rem-calc($input-height-small);
+    width: rem-calc($button-width);
+    border: 0;
+
+    background: none;
+
+    @include mq(medium-up) {
+      height: rem-calc($input-height-medium);
+    }
+
+    &:active {
+      outline: none;
+    }
+  }
+
+  &__icon {
+    font-size: rem-calc(18);
+  }
+
+  &__result {
+    display: none;
+
+    .is-active > & {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      z-index: z("autosuggest");
+
+      display: block;
+      width: 100%;
+
+      @include mq(medium-up) {
+        box-shadow: 0 8px 16px -6px rgba(0, 0, 0, .5);
+      }
+
+      border-top: 1px solid color("foreground", "secondary");
+      border-bottom-right-radius: $base-radius;
+      border-bottom-left-radius: $base-radius;
+      background-clip: padding-box;
+      overflow: hidden;
+    }
+  }
+
+  // &__item {
+  //   border-top: 1px solid color("foreground", "secondary");
+
+  //   &:last-child {
+  //     border-bottom: 1px solid color("foreground", "secondary");
+  //   }
+  // }
+
+  &__link {
+    display: block;
+    padding: rem-calc(10);
+    background-color: color("background");
+
+    color: color("foreground");
+
+    &:hover,
+    &:focus,
+    &:active,
+    .is-selected > & {
+      color: color("brand", "light");
+      background-color: $color-overlay--pink;
+    }
+
+    .autosuggest__item--other > & {
+      color: color("brand");
+      background-color: color("background", "dark");
+      text-align: center;
+    }
+
+    .autosuggest__item--other > &:hover,
+    .autosuggest__item--other > &:focus {
+      background-color: color("background", "dark");
+    }
+  }
+
+
+  &__error {
+    display: block;
+    padding: rem-calc(halve($base-spacing-unit));
+    color: color("foreground", "muted");
+    background-color: color("background", "dark");
+    font-style: italic;
+  }
+
+}

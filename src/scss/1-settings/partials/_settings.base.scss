@@ -1,12 +1,11 @@
-/*
-   High-level base settings.
-   ========================================================================== */
-/**
- * These variables are framework variables, sourced from variables defined
- * above. Feel free to use these variables throughout your project, but do not
- * modify or reassign them.
- */
-
+// ==========================================================================
+// High-level base settings
+// ==========================================================================
+//
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+//
 $base-font-family:                     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $base-font-size:                       16px !default;
 $base-font-weight:                     normal !default;
@@ -19,4 +18,9 @@ $base-spacing-unit:                    $base-line-height !default;
 
 $base-radius:                          3px !default;
 
-$base-color-treshold:                  65% !default;
+
+//
+// If we have included this file, set a variable to tell the rest of the
+// framework that we have some base settings.
+//
+$imported-default-settings: true;

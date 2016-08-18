@@ -1,0 +1,39 @@
+// ==========================================================================
+// HEADING
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included a default settings file?";
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: bold;
+}
+
+h1 {
+  @include font-size($base-h1-font-size, 1.2);
+  line-height: rem-calc(30px);
+}
+
+h2 {
+  @include font-size($base-h2-font-size, false);
+  line-height: rem-calc(24px);
+}
+
+h3 {
+  @include font-size($base-h3-font-size, false);
+  line-height: rem-calc(24px);
+}
+
+h4 {
+  @include font-size($base-h4-font-size, false);
+  line-height: rem-calc(22px);
+}

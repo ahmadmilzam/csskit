@@ -1,0 +1,41 @@
+// ==========================================================================
+// SITE NAV
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings files?";
+}
+$site-nav-height: 50px;
+
+.site-nav {
+  display: block;
+  height: $site-nav-height;
+
+  background-color: color("brand", "dark");
+
+  &__container {
+    width: 100%;
+    max-width: $base-container-width;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: halve($base-spacing-unit);
+    padding-right: halve($base-spacing-unit);
+  }
+
+  &__logo {
+    display: block;
+    width: 160px;
+    height: $site-nav-height;
+    line-height: $site-nav-height;
+    background-image: url("/images/logo/single_260x41_10_white_20062016.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 160px;
+    text-indent: -9999px;
+  }
+}

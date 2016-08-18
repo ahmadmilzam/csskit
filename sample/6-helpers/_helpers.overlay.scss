@@ -1,0 +1,28 @@
+// ==========================================================================
+// OVERLAY
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-default-settings: false !default;
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included a default settings file?";
+}
+
+.overlay {
+  display: none;
+
+  .js-autosuggest-active & {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    z-index: z("autosuggest") - 2;
+
+    background-color: rgba(#000, .4);
+  }
+}

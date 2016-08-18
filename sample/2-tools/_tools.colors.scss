@@ -1,0 +1,73 @@
+// ==========================================================================
+// Color mixins.
+// ==========================================================================
+//
+// Handy tools for mapping your brand color guide
+//
+// Usage:
+// .foo {
+//   color: color("foreground");
+// }
+// .bar {
+//   background-color: color("background");
+// }
+//
+
+
+@if ($imported-default-settings == false) {
+  @warn "Oops! Have you included default settings and module settings files?";
+}
+
+$color-key: "base" !default;
+
+$colors: (
+  "brand": (
+    "base"  :   $color-brand,
+    "light" :   $color-brand--light,
+    "dark"  :   $color-brand--dark
+  ),
+  "foreground": (
+    "base"     : $color-foreground,
+    "heading"  : $color-foreground--heading,
+    "muted"    : $color-foreground--muted,
+    "secondary": $color-foreground--secondary,
+    "invert"   : $color-background
+  ),
+  "background": (
+    "base"     : $color-background,
+    "dark"     : $color-background--dark,
+    "light"    : $color-mercury
+  ),
+  "action": (
+    "base"     : $color-action--success,
+    "error"    : $color-action--error,
+    "warning"  : $color-action--warning
+  )
+) !default;
+
+@function color(
+  $name: "primary",
+  $variant: $color-key
+) {
+  $color: null;
+
+  // Get the color spectrum
+  $color-spectrum: map-get($colors, $name);
+
+  // Get the color variant
+  @if $color-spectrum{
+    $color: map-get($color-spectrum, $variant);
+    @return $color;
+  }
+  @else{
+    @warn "Unknown `#{$variant}` in $colors.";
+    @return null;
+  }
+
+}
+
+$color-interval: 10% !default;
+@function color-level($color, $level: 0) {
+  $color-base: if($level < 0, #000, #fff);
+  @return mix($color-base, $color, abs($level) * $color-interval);
+}
