@@ -1,0 +1,69 @@
+// ==========================================================================
+// Spacing
+// ==========================================================================
+
+//
+// Utility classes to put specific spacing values onto elements. The below loop
+// will generate us a suite of classes like:
+//
+//   .padding {}
+//   .margin {}
+//
+//   .margin-top {}
+//   .padding-top {}
+//   .margin-top--[tiny|small|large|huge] {}
+//   .padding-top--[tiny|small|large|huge] {}
+//
+//   .padding-right-none {}
+//
+
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$spacing-directions: (
+  null,
+  "-top",
+  "-right",
+  "-bottom",
+  "-left",
+);
+
+$spacing-properties: (
+  "padding",
+  "margin"
+);
+
+$spacing-sizes: (
+  null: $global-spacing-unit,
+  "--tiny": $global-spacing-unit-tiny,
+  "--small": $global-spacing-unit-small,
+  "--large": $global-spacing-unit-large,
+  "--huge": $global-spacing-unit-huge,
+  "--none": 0
+) !default;
+
+
+@each $property in $spacing-properties {
+
+  @each $direction in $spacing-directions {
+
+    @each $size, $value in $spacing-sizes {
+
+      .#{$property}#{$direction}#{$size} {
+        #{$property}#{$direction}: $value !important;
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,219 @@
+/* ==========================================================================
+   Responsive Visibility Classes
+   ========================================================================== */
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings file?";
+}
+
+$enable-xlarge-responsive-visibility-clasess:    false !default;
+$enable-xxlarge-responsive-visibility-clasess:   false !default;
+
+$enable-accessibility-classes:                   false !default;
+$enable-table-classes:                           false !default;
+
+$visibility-breakpoint-sizes:
+    small,
+    medium,
+    large;
+
+$visibility-breakpoint-queries:
+  unquote($small-up),
+  unquote($medium-up),
+  unquote($large-up);
+
+@if $enable-xlarge-responsive-visibility-clasess == true {
+  $visibility-breakpoint-sizes:
+    small,
+    medium,
+    large,
+    xlarge;
+
+  $visibility-breakpoint-queries:
+    unquote($small-up),
+    unquote($medium-up),
+    unquote($large-up),
+    unquote($xlarge-up);
+}
+
+@if $enable-xxlarge-responsive-visibility-clasess == true {
+  $visibility-breakpoint-sizes:
+    small,
+    medium,
+    large,
+    xlarge,
+    xxlarge;
+
+  $visibility-breakpoint-queries:
+    unquote($small-up),
+    unquote($medium-up),
+    unquote($large-up),
+    unquote($xlarge-up),
+    unquote($xxlarge-up);
+}
+
+@each $breakpoint in $visibility-breakpoint-sizes {
+  $inherit-list: ();
+  $none-list: ();
+
+  $visible-list: ();
+  $hidden-list: ();
+
+  $table-list: ();
+  $table-header-group-list: ();
+  $table-row-group-list: ();
+  $table-row-list: ();
+  $table-cell-list: ();
+
+  @each $comparison-breakpoint in $visibility-breakpoint-sizes {
+
+    // Smaller than current breakpoint
+    @if index($visibility-breakpoint-sizes, $comparison-breakpoint) < index($visibility-breakpoint-sizes, $breakpoint) {
+
+      $inherit-list: append($inherit-list, unquote(
+        '.hide-for-#{$comparison-breakpoint}-only, .show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $none-list: append($none-list, unquote(
+        '.show-for-#{$comparison-breakpoint}-only, .hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $visible-list: append($visible-list, unquote(
+        '.hidden-for-#{$comparison-breakpoint}-only, .visible-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $hidden-list: append($hidden-list, unquote(
+        '.visible-for-#{$comparison-breakpoint}-only, .hidden-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-list: append($table-list, unquote(
+        'table.hide-for-#{$comparison-breakpoint}-only, table.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-header-group-list: append($table-header-group-list, unquote(
+        'thead.hide-for-#{$comparison-breakpoint}-only, thead.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-row-group-list: append($table-row-group-list, unquote(
+        'tbody.hide-for-#{$comparison-breakpoint}-only, tbody.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-row-list: append($table-row-list, unquote(
+        'tr.hide-for-#{$comparison-breakpoint}-only, tr.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-cell-list: append($table-cell-list, unquote(
+        'th.hide-for-#{$comparison-breakpoint}-only, td.hide-for-#{$comparison-breakpoint}-only, th.show-for-#{$comparison-breakpoint}-up, td.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+
+    }
+    // Larger than current breakpoint
+    @else if index($visibility-breakpoint-sizes, $comparison-breakpoint) > index($visibility-breakpoint-sizes, $breakpoint) {
+
+      $inherit-list: append($inherit-list, unquote(
+        '.hide-for-#{$comparison-breakpoint}-only, .hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $none-list: append($none-list, unquote(
+        '.show-for-#{$comparison-breakpoint}-only, .show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $visible-list: append($visible-list, unquote(
+        '.hidden-for-#{$comparison-breakpoint}-only, .hidden-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $hidden-list: append($hidden-list, unquote(
+        '.visible-for-#{$comparison-breakpoint}-only, .visible-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-list: append($table-list, unquote(
+        'table.hide-for-#{$comparison-breakpoint}-only, table.hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-header-group-list: append($table-header-group-list, unquote(
+        'thead.hide-for-#{$comparison-breakpoint}-only, thead.hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-row-group-list: append($table-row-group-list, unquote(
+        'tbody.hide-for-#{$comparison-breakpoint}-only, tbody.hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-row-list: append($table-row-list, unquote(
+        'tr.hide-for-#{$comparison-breakpoint}-only, tr.hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+      $table-cell-list: append($table-cell-list, unquote(
+        'th.hide-for-#{$comparison-breakpoint}-only, td.hide-for-#{$comparison-breakpoint}-only, th.hide-for-#{$comparison-breakpoint}-up, td.hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+    }
+    // Current breakpoint
+    @else {
+
+      $inherit-list: append($inherit-list, unquote(
+        '.show-for-#{$comparison-breakpoint}-only, .show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $none-list: append($none-list, unquote(
+        '.hide-for-#{$comparison-breakpoint}-only, .hide-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $visible-list: append($visible-list, unquote(
+        '.visible-for-#{$comparison-breakpoint}-only, .visible-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $hidden-list: append($hidden-list, unquote(
+        '.hidden-for-#{$comparison-breakpoint}-only, .hidden-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $table-list: append($table-list, unquote(
+        'table.show-for-#{$comparison-breakpoint}-only, table.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $table-header-group-list: append($table-header-group-list, unquote(
+        'thead.show-for-#{$comparison-breakpoint}-only, thead.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $table-row-group-list: append($table-row-group-list, unquote(
+        'tbody.show-for-#{$comparison-breakpoint}-only, tbody.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $table-row-list: append($table-row-list, unquote(
+        'tr.show-for-#{$comparison-breakpoint}-only, tr.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+      $table-cell-list: append($table-cell-list, unquote(
+        'th.show-for-#{$comparison-breakpoint}-only, td.show-for-#{$comparison-breakpoint}-only, th.show-for-#{$comparison-breakpoint}-up, td.show-for-#{$comparison-breakpoint}-up'
+      ), comma);
+
+    }
+
+  }
+
+  /* #{$breakpoint} displays */
+
+  @media #{nth($visibility-breakpoint-queries, index($visibility-breakpoint-sizes, $breakpoint))} {
+    #{$inherit-list} {
+      display: inherit !important;
+    }
+    #{$none-list} {
+      display: none !important;
+    }
+    @if $enable-accessibility-classes != false {
+
+      #{$visible-list} {
+        @include element-invisible-off;
+      }
+      #{$hidden-list} {
+        @include element-invisible;
+      }
+    }
+    @if $enable-table-classes != false {
+      #{$table-list} {
+        display: table !important;
+      }
+      #{$table-header-group-list} {
+        display: table-header-group !important;
+      }
+      #{$table-row-group-list} {
+        display: table-row-group !important;
+      }
+      #{$table-row-list} {
+        display: table-row !important;
+      }
+      #{$table-cell-list} {
+        display: table-cell !important;
+      }
+    }
+  }
+}

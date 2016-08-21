@@ -1,0 +1,49 @@
+// ==========================================================================
+// High-level base settings
+// ==========================================================================
+//
+// These variables are framework variables, sourced from variables defined
+// above. Feel free to use these variables throughout your project, but do not
+// modify or reassign them.
+//
+$global-font-family:                "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$global-font-size:                  16px !default;
+$global-font-weight:                normal !default;
+
+$global-line-height:                24px !default;
+$global-text-color:                 #333 !default;
+$global-background-color:           #fff !default;
+
+$global-radius:                     3px !default;
+
+$global-spacing-unit:               $global-line-height !default;
+
+$global-spacing-unit-factor-tiny:   0.25 !default;
+$global-spacing-unit-factor-small:  0.5  !default;
+$global-spacing-unit-factor-large:  2    !default;
+$global-spacing-unit-factor-huge:   4    !default;
+
+//
+// Private/framework only reassignment. Do not alter anything below.
+// ==========================================================================
+$global-spacing-unit--tiny:  $global-spacing-unit * $global-spacing-unit-factor-tiny;
+$global-spacing-unit--small: $global-spacing-unit * $global-spacing-unit-factor-small;
+$global-spacing-unit--large: $global-spacing-unit * $global-spacing-unit-factor-large;
+$global-spacing-unit--huge:  $global-spacing-unit * $global-spacing-unit-factor-huge;
+
+
+//
+// Namespace.
+// ========================================================================== */
+//
+// Would you like classes to be prepended with a namespace? If so,
+// define it here.
+//
+$global-namespace: null !default;
+
+
+//
+// If we have included this file, set a variable to tell the rest of the
+// framework that we have some base settings.
+//
+$imported-global-settings: true;

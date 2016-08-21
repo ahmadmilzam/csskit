@@ -1,43 +1,30 @@
 {
-  "name": "csskit-framework",
-  "title": "CSSKit SASS Based, BEM, OOCSS Framework",
-  "url": "https://github.com/ahmadmilzam/csskit",
-  "version": "0.0.1",
-  "description": "SASS Based, BEM, OOCSS Framework",
-  "main": "Gruntfile.js",
-  "directories": {
-    "doc": "doc"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "grunt": "^0.4.5",
-    "grunt-autoprefixer": "^2.0.0",
-    "grunt-contrib-concat": "^0.5.0",
-    "grunt-contrib-cssmin": "^0.10.0",
-    "grunt-contrib-sass": "^0.8.1",
-    "grunt-contrib-uglify": "^0.7.0",
-    "grunt-contrib-watch": "^0.6.1",
-    "grunt-sass": "^1.1.0",
-    "load-grunt-tasks": "^3.4.0"
-  },
+  "name": "gulpstarter",
+  "version": "1.0.0",
+  "description": "======\r Gulp Starter For Dummy\r ======",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ahmadmilzam/csskit.git"
-  },
-  "keywords": [
-    "css",
-    "css",
-    "framework",
-    "bem",
-    "oocss"
-  ],
-  "author": "Ahmad Milzam <email@ahmadmilzam.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/ahmadmilzam/csskit/issues"
-  },
-  "homepage": "https://github.com/ahmadmilzam/csskit"
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.11.2",
+    "del": "^2.2.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-cache": "^0.4.4",
+    "gulp-concat": "^2.6.0",
+    "gulp-cssnano": "^2.1.2",
+    "gulp-if": "^2.0.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-load-plugins": "^1.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.3",
+    "run-sequence": "^1.1.5",
+    "yargs": "^4.3.2"
+  }
 }

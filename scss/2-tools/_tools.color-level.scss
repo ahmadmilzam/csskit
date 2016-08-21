@@ -1,0 +1,12 @@
+// ==========================================================================
+// Color Level
+// ==========================================================================
+//
+// Handy function to increase and decrease color level
+//
+$color-interval: 10% !default;
+
+@function color-level($color, $level: 0) {
+  $color-base: if($level < 0, #000, #fff);
+  @return mix($color-base, $color, abs($level) * $color-interval);
+}

@@ -4,3 +4,4 @@
 - create new flexible base form styling for the framework
 - removed non mandatory tools/mixin from the framework
 - remove extend selector: progress at objects.flag.scss
+- use scss linting

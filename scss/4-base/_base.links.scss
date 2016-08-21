@@ -1,0 +1,38 @@
+// ==========================================================================
+// Links
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings file?";
+}
+
+
+$anchor-font-color:            #3498DB !default;
+$anchor-color-factor:          2 !default;
+$anchor-font-color-hover:      color-level($anchor-font-color, $anchor-color-factor) !default;
+$anchor-text-decoration:       none !default;
+$anchor-text-decoration-hover: none !default;
+
+
+a {
+  color: $anchor-font-color;
+  text-decoration: $anchor-text-decoration;
+  line-height: inherit;
+
+  transition: color .3s ease-out;
+
+  &:hover,
+  &:focus {
+    color: $anchor-font-color-hover;
+    @if $anchor-text-decoration-hover != $anchor-text-decoration {
+      text-decoration: $anchor-text-decoration-hover;
+    }
+  }
+
+  img { border: 0; }
+}

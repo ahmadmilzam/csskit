@@ -1,0 +1,56 @@
+// ==========================================================================
+// Wrappers
+// ==========================================================================
+//
+// Page-level constraining and wrapping elements.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$wrapper-width: 1000px !default;
+
+@if (type-of($wrapper-width) != number) {
+  @error "`#{$wrapper-width}` needs to be a number."
+}
+
+.wrapper {
+  @include clearfix();
+  padding-right: rem-calc($global-spacing-unit);
+  padding-left: rem-calc($global-spacing-unit);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: $wrapper-width;
+}
+
+
+// Size variants.
+// ==========================================================================
+
+.wrapper--tiny {
+  padding-right: rem-calc($global-spacing-unit--tiny);
+  padding-left: rem-calc($global-spacing-unit--tiny);
+}
+
+.wrapper--small {
+  padding-right: rem-calc($global-spacing-unit--small);
+  padding-left: rem-calc($global-spacing-unit--small);
+}
+
+.wrapper--large {
+  padding-right: rem-calc($global-spacing-unit--large);
+  padding-left: rem-calc($global-spacing-unit--large);
+}
+
+.wrapper--huge {
+  padding-right: rem-calc($global-spacing-unit--huge);
+  padding-left: rem-calc($global-spacing-unit--huge);
+}

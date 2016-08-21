@@ -1,0 +1,48 @@
+// ==========================================================================
+// Debuger
+// ==========================================================================
+//
+// base line debuger
+$enable-debug-typography:                false !default;
+
+// whitespace debuger
+$enable-debug-whitespace:                false !default;
+
+@if $enable-debug-typography {
+  html {
+    background-color: #fff;
+    background-image: linear-gradient(transparent 50%, rgba(0, 0, 0, .1) 50%);
+    background-size: ($global-line-height * 2) ($global-line-height * 2);
+  }
+}
+
+
+@if $enable-debug-whitespace{
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ul,
+  ol,
+  dl,
+  blockquote,
+  p,
+  address,
+  table,
+  fieldset,
+  figure,
+  pre {
+    outline: 1px solid #0ff;
+  }
+  div {
+    outline: 1px solid #f0f;
+  }
+  :first-child {
+    outline: 1px solid #ff0;
+  }
+  :last-child {
+    outline: 1px solid #080;
+  }
+}

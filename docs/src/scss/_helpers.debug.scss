@@ -1,9 +1,0 @@
-.debug-layout{
-   background-color: #eee;
-   &:nth-child(even){
-      background-color: #ddd;
-   }
-   code{
-    font-size: rem-calc(11);
-   }
-}

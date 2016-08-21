@@ -1,0 +1,62 @@
+// ==========================================================================
+// List Inline
+// ==========================================================================
+//
+// The list-inline object simply displays a list of items in one line.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+$imported-module-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$list-inline-namespace:              $global-namespace !default;
+
+$enable-list-inline--delimited:      false !default;
+$list-inline-delimit-character:      ",\00A0" !default;
+
+
+.#{$list-inline-namespace}list-inline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.#{$list-inline-namespace}list-inline__item {
+  display: inline-block;
+}
+
+
+@if ($enable-list-inline--delimited == true) {
+
+  //
+  // Comma delimited list to semantically mark up lists of tags, etc.
+  //
+  // N.B. This component requires that you remove the whitespace between LIs.
+  //      The simplest (and valid) way to achieve this is by omitting the
+  //      closing `</li>` tag.
+  //
+  .#{$list-inline-namespace}list-inline--delimited {
+
+    > .#{$list-inline-namespace}list-inline__item {
+
+      &::before {
+        content: "#{$list-inline-delimit-character}";
+      }
+
+      &:first-child::before {
+        content: "";
+      }
+
+    }
+
+  }
+
+}

@@ -1,0 +1,101 @@
+// ==========================================================================
+// Box
+// ==========================================================================
+//
+// The box object simply boxes off content.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$box-namespace:                      $global-namespace !default;
+
+$enable-box--bleed:                  false !default;
+$enable-box--tiny:                   false !default;
+$enable-box--small:                  false !default;
+$enable-box--large:                  false !default;
+$enable-box--huge:                   false !default;
+
+
+
+//
+// 1. So we can apply the `.box` class to naturally-inline elements.
+//
+.#{$box-namespace}box {
+  @include clearfix;
+  display: block; // 1
+  padding: rem-calc($global-spacing-unit);
+}
+
+//
+// Size variants [bleed|tiny|small|large|huge]
+// ==========================================================================
+//
+@if ($enable-box--bleed == true) {
+
+  //
+  // Bleed (i.e. no padding) box.
+  //
+  .#{$box-namespace}box--bleed {
+    padding: 0;
+  }
+
+}
+
+@if ($enable-box--tiny == true) {
+
+  //
+  // Tiny box.
+  //
+  .#{$box-namespace}box--tiny {
+    padding: rem-calc($global-spacing-unit--tiny);
+  }
+
+}
+
+@if ($enable-box--small == true) {
+
+  //
+  // Small box.
+  //
+  .#{$box-namespace}box--small {
+    padding: rem-calc($global-spacing-unit--small);
+  }
+
+}
+
+@if ($enable-box--large == true) {
+
+  //
+  // Large box.
+  //
+
+  .#{$box-namespace}box--large {
+    padding: rem-calc($global-spacing-unit--large);
+  }
+
+}
+
+@if ($enable-box--huge == true) {
+
+  //
+  // Huge box.
+  //
+
+  .#{$box-namespace}box--huge {
+    padding: rem-calc($global-spacing-unit--huge);
+  }
+
+}
+
+
+
+

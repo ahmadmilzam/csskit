@@ -1,0 +1,28 @@
+// ==========================================================================
+// Math Helpers
+// ==========================================================================
+//
+// Half and double numbers, returning rounded integers. E.g.:
+// .foo{
+//  padding: halve(30px)
+// }
+//
+@function quarter($number) {
+  @return ceil($number / 4);
+}
+
+@function halve($number) {
+  @return ceil($number / 2);
+}
+
+@function double($number) {
+  @return ceil($number * 2);
+}
+
+@function quadruple($number) {
+  @return ceil($number * 4);
+}
+
+@function percent-calc($percentage, $number) {
+  @return round($number * (parse-int($percentage) / 100));
+}
