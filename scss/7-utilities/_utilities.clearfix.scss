@@ -2,11 +2,24 @@
 // Clearfix
 // ==========================================================================
 
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
 //
 // Micro clearfix, as per: css-101.org/articles/clearfix/latest-new-clearfix-so-far.php
 // Extend the clearfix class with Sass to avoid the `.clearfix` class appearing
 // over and over in your markup.
 //
-.clearfix {
+
+
+
+.#{$global-namespace}clearfix {
   @include clearfix;
 }

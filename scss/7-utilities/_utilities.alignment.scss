@@ -2,8 +2,20 @@
 // Text Alignment
 // ==========================================================================
 
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
 // Partial to align Text Left, Right, Center or Justify
-.text-center { text-align: center !important; }
-.text-left { text-align: left !important; }
-.text-right { text-align: right !important; }
-.text-justify {text-align: justify !important; }
+
+
+.#{$global-namespace}text-center { text-align: center !important; }
+.#{$global-namespace}text-left { text-align: left !important; }
+.#{$global-namespace}text-right { text-align: right !important; }
+.#{$global-namespace}text-justify {text-align: justify !important; }

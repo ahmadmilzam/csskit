@@ -14,8 +14,6 @@ $imported-global-settings: false !default;
 
 
 // Variable(s)
-$table-namespace:                    $global-namespace !default;
-
 $table-border-width:                 1px !default;
 $table-border-style:                 solid !default;
 $table-border-color:                 #ddd !default;
@@ -30,7 +28,7 @@ $enable-table--rows:                 false !default;
 $enable-table--columns:              false !default;
 $enable-table--zebra:                false !default;
 
-.#{$table-namespace}table {
+.#{$global-namespace}table {
   width: 100%;
   max-width: 100%;
   thead > tr > th {
@@ -58,7 +56,7 @@ $enable-table--zebra:                false !default;
   //
   // Force tables into having equal-width columns.
   //
-  .#{$table-namespace}table--equal {
+  .#{$global-namespace}table--equal {
     table-layout: fixed;
   }
 
@@ -70,7 +68,7 @@ $enable-table--zebra:                false !default;
   //
   // Tables with very tightly packed cells.
   //
-  .#{$table-namespace}table--tiny {
+  .#{$global-namespace}table--tiny {
 
     th,
     td {
@@ -87,7 +85,7 @@ $enable-table--zebra:                false !default;
   //
   // Lightly packed cells.
   //
-  .#{$table-namespace}table--small {
+  .#{$global-namespace}table--small {
 
     th,
     td {
@@ -104,7 +102,7 @@ $enable-table--zebra:                false !default;
   //
   // Tables with very widely padded cells.
   //
-  .#{$table-namespace}table--large {
+  .#{$global-namespace}table--large {
 
     th,
     td {
@@ -121,7 +119,7 @@ $enable-table--zebra:                false !default;
   //
   // Add borders around a `table`.
   //
-  .#{$table-namespace}table--cells {
+  .#{$global-namespace}table--cells {
 
     th,
     td {
@@ -138,7 +136,7 @@ $enable-table--zebra:                false !default;
   //
   // Add borders only to `table`’s rows.
   //
-  .#{$table-namespace}table--rows {
+  .#{$global-namespace}table--rows {
 
     &,
     th,
@@ -148,7 +146,7 @@ $enable-table--zebra:                false !default;
 
   }
 
-  .#{$table-namespace}table--rows {
+  .#{$global-namespace}table--rows {
     th,
     td {
       border-bottom-width: $table-border-width;
@@ -163,7 +161,7 @@ $enable-table--zebra:                false !default;
   //
   // Add borders only to `table`’s columns.
   //
-  .#{$table-namespace}table--columns {
+  .#{$global-namespace}table--columns {
 
     &,
     th,
@@ -172,7 +170,7 @@ $enable-table--zebra:                false !default;
     }
   }
 
-  .#{$table-namespace}table--columns {
+  .#{$global-namespace}table--columns {
     border-left-width: $table-border-width;
 
     th,
@@ -189,7 +187,7 @@ $enable-table--zebra:                false !default;
   //
   // Add borders only to `table`’s columns.
   //
-  .#{$table-namespace}table--zebra {
+  .#{$global-namespace}table--zebra {
     tbody tr:nth-of-type(odd) {
       background-color: $table-zebra-bg;
     }

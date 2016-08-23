@@ -17,19 +17,17 @@ $imported-module-settings: false !default;
 
 
 // Variable(s)
-$list-inline-namespace:              $global-namespace !default;
-
 $enable-list-inline--delimited:      false !default;
 $list-inline-delimit-character:      ",\00A0" !default;
 
 
-.#{$list-inline-namespace}list-inline {
+.#{$global-namespace}list-inline {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.#{$list-inline-namespace}list-inline__item {
+.#{$global-namespace}list-inline__item {
   display: inline-block;
 }
 
@@ -43,9 +41,9 @@ $list-inline-delimit-character:      ",\00A0" !default;
   //      The simplest (and valid) way to achieve this is by omitting the
   //      closing `</li>` tag.
   //
-  .#{$list-inline-namespace}list-inline--delimited {
+  .#{$global-namespace}list-inline--delimited {
 
-    > .#{$list-inline-namespace}list-inline__item {
+    > .#{$global-namespace}list-inline__item {
 
       &::before {
         content: "#{$list-inline-delimit-character}";

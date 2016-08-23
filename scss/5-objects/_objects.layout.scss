@@ -74,7 +74,7 @@ $use-markup-fix: false !default;
 // 3. Use the negative margin trick for multi-row grids:
 //    http://csswizardry.com/2011/08/building-better-grid-systems/
 //
-.layout {
+.#{$global-namespace}layout {
   display: block; // 1
   margin: 0; // 2
   padding: 0; // 2
@@ -98,7 +98,7 @@ $use-markup-fix: false !default;
 // 5. Gutters provided by left padding:
 //    http://csswizardry.com/2011/08/building-better-grid-systems/
 //
-.layout__item {
+.#{$global-namespace}layout__item {
   box-sizing: border-box; // 1
   display: inline-block; // 2
   vertical-align: top; // 3
@@ -114,50 +114,50 @@ $use-markup-fix: false !default;
 
 // Gutter size modifiers.
 // ==========================================================================
-.layout--tiny {
+.#{$global-namespace}layout--tiny {
   margin-left: rem-calc(-$global-spacing-unit--tiny);
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     padding-left: rem-calc($global-spacing-unit--tiny);
   }
 
 }
 
 
-.layout--small {
+.#{$global-namespace}layout--small {
   margin-left: rem-calc(-$global-spacing-unit--small);
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     padding-left: rem-calc($global-spacing-unit--small);
   }
 
 }
 
 
-.layout--large {
+.#{$global-namespace}layout--large {
   margin-left: rem-calc(-$global-spacing-unit--large);
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     padding-left: rem-calc($global-spacing-unit--large);
   }
 
 }
 
 
-.layout--huge {
+.#{$global-namespace}layout--huge {
   margin-left: rem-calc(-$global-spacing-unit--huge);
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     padding-left: rem-calc($global-spacing-unit--huge);
   }
 
 }
 
 
-.layout--bleed {
+.#{$global-namespace}layout--bleed {
   margin-left: 0;
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     padding-left: 0;
   }
 
@@ -169,9 +169,9 @@ $use-markup-fix: false !default;
 //
 // Align all grid items to the middles of each other.
 //
-.layout--middle {
+.#{$global-namespace}layout--middle {
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     vertical-align: middle;
   }
 
@@ -181,9 +181,9 @@ $use-markup-fix: false !default;
 //
 // Align all grid items to the bottoms of each other.
 //
-.layout--bottom {
+.#{$global-namespace}layout--bottom {
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     vertical-align: bottom;
   }
 
@@ -195,10 +195,10 @@ $use-markup-fix: false !default;
 //
 // Fill up the layout system from the centre.
 //
-.layout--center {
+.#{$global-namespace}layout--center {
   text-align: center;
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     text-align: left;
   }
 
@@ -208,10 +208,10 @@ $use-markup-fix: false !default;
 //
 // Fill up the layout system from the right-hand side.
 //
-.layout--right {
+.#{$global-namespace}layout--right {
   text-align: right;
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     text-align: left;
   }
 
@@ -221,10 +221,10 @@ $use-markup-fix: false !default;
 //
 // Reverse the rendered order of the grid system.
 //
-.layout--reverse {
+.#{$global-namespace}layout--reverse {
   direction: rtl;
 
-  > .layout__item {
+  > .#{$global-namespace}layout__item {
     direction: ltr;
     text-align: left;
   }

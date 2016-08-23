@@ -32,9 +32,3 @@
 @function pick-visible-color($bgcolor, $dark-color: #222, $light-color: #fff, $threshold: 50%) {
   @return if(lightness($bgcolor) >= $threshold, $dark-color, $light-color);
 }
-
-
-
-// @function foreground-color($bgcolor, $color-dark: #333333, $color-light: #FFFFFF, $threshold: 65%) {
-//   @return if( lightness($bgcolor) >= $threshold, $color-dark, $color-light );
-// }

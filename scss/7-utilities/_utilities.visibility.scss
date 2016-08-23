@@ -2,6 +2,16 @@
 // Simple Visibility Classes
 // ==========================================================================
 
-.hide{ display: none; }
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
 
-.show{ display: inherit; }
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+.#{$global-namespace}hide { display: none; }
+
+.#{$global-namespace}show { display: inherit; }

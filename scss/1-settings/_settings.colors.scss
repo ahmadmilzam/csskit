@@ -1,0 +1,49 @@
+// ==========================================================================
+// COLORS NAME
+// ==========================================================================
+
+// The color names in this list were found via this web:
+// http://chir.ag/projects/name-that-color
+
+$color-crimson:                 #d71149;
+$color-shiraz:                  #c20c41;
+$color-deep-blush:              #e77192;
+
+$color-white:                   #fff;
+$color-albaster:                #f8f8f8;
+$color-wild-sand:               #f4f4f4;
+$color-mercury:                 #e2e2e2;
+
+$color-mine-shaft:              #333;
+$color-dove-gray:               #666;
+$color-dusty-gray:              #999;
+
+$color-mantis:                  #87cc62;
+$color-wild-watermelon:         #ff566a;
+$color-golden-tainoi:           #ffcc56;
+
+$color-chablis:                 #fff3f4;
+
+// BRAND RELATED COLORS
+$color-brand:                   $color-crimson;
+$color-brand--dark:             $color-shiraz;
+$color-brand--light:            $color-deep-blush;
+
+// BACKGROUND RELATED COLORS
+$color-background:              $color-white;
+$color-background--light:       $color-mercury;
+$color-background--dark:        $color-wild-sand;
+
+// TEXT RELATED COLORS
+$color-foreground:              $color-dove-gray;
+$color-foreground--heading:     $color-mine-shaft;
+$color-foreground--muted:       $color-dusty-gray;
+$color-foreground--secondary:   $color-mercury;
+
+// ACTION RELATED COLORS
+$color-action--success:         $color-mantis;
+$color-action--error:           $color-wild-watermelon;
+$color-action--warning:         $color-golden-tainoi;
+
+// MISC
+$color-overlay--pink:           $color-chablis;

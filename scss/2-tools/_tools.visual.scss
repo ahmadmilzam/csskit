@@ -9,10 +9,11 @@
 //
 @mixin element-invisible {
   position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+  height: 1px !important;
+  width: 1px !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
 }
 
 
@@ -21,6 +22,7 @@
   position: static !important;
   height: auto;
   width: auto;
+  padding: auto;
   overflow: visible;
   clip: auto;
 }

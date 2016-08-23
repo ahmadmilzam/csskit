@@ -2,6 +2,16 @@
 // Spacing
 // ==========================================================================
 
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
 //
 // Utility classes to put specific spacing values onto elements. The below loop
 // will generate us a suite of classes like:
@@ -18,16 +28,6 @@
 //
 
 
-// Here we set a variable assuming that default and module settings
-// are not set globally. If they have been previously been defined,
-// the following variable will be overriden and will be set to `true`.
-$imported-global-settings: false !default;
-
-@if ($imported-global-settings == false) {
-  @warn "Oops! Have you included a global settings files?";
-}
-
-
 // Variable(s)
 $spacing-directions: (
   null,
@@ -35,19 +35,19 @@ $spacing-directions: (
   "-right",
   "-bottom",
   "-left",
-);
+) !default;
 
 $spacing-properties: (
   "padding",
   "margin"
-);
+) !default;
 
 $spacing-sizes: (
   null: $global-spacing-unit,
-  "--tiny": $global-spacing-unit-tiny,
-  "--small": $global-spacing-unit-small,
-  "--large": $global-spacing-unit-large,
-  "--huge": $global-spacing-unit-huge,
+  "--tiny": $global-spacing-unit--tiny,
+  "--small": $global-spacing-unit--small,
+  "--large": $global-spacing-unit--large,
+  "--huge": $global-spacing-unit--huge,
   "--none": 0
 ) !default;
 
@@ -58,8 +58,8 @@ $spacing-sizes: (
 
     @each $size, $value in $spacing-sizes {
 
-      .#{$property}#{$direction}#{$size} {
-        #{$property}#{$direction}: $value !important;
+      .#{$global-namespace}#{$property}#{$direction}#{$size} {
+        #{$property}#{$direction}: rem-calc($value) !important;
       }
 
     }

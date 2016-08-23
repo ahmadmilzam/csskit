@@ -1,0 +1,25 @@
+// ==========================================================================
+// Z INDEX
+// ==========================================================================
+$z-layers: (
+  "modal":              1000,
+  "default":               1,
+  "below":                -1,
+  "bottomless-pit":     -9000
+) !default;
+
+@function z($layer) {
+  @if not map-has-key($z-layers, $layer) {
+    @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+  }
+
+  @return map-deep-get($z-layers, $layer);
+}
+
+@function map-deep-get($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}

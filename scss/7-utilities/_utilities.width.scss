@@ -2,6 +2,15 @@
 // Width
 // ==========================================================================
 
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
 //
 // inuitcss generates a series of utility classes that give a fluid width to
 // whichever element they’re applied, e.g.:
@@ -68,7 +77,7 @@ $offsets: false !default;
 //
 @mixin column($number, $bp-name: null) {
   // Build a class in the format `.3/4[@<breakpoint>]`.
-  .width-#{$number}\/#{$total-columns}#{$bp-name} {
+  .#{$global-namespace}width-#{$number}of#{$total-columns}#{$bp-name} {
     width: ($number / $total-columns) * 100% !important;
   }
 
@@ -79,14 +88,14 @@ $offsets: false !default;
     //
 
     // Build a class in the format `.push-1/2[@<breakpoint>]`.
-    .push-#{$number}\/#{$total-columns}#{$bp-name} {
+    .#{$global-namespace}push-#{$number}of#{$total-columns}#{$bp-name} {
       position: relative;
       right: auto; // 1
       left: ($number / $total-columns) * 100% !important;
     }
 
     // Build a class in the format `.pull-5/6[@<breakpoint>]`.
-    .pull-#{$number}\/#{$total-columns}#{$bp-name} {
+    .#{$global-namespace}pull-#{$number}of#{$total-columns}#{$bp-name} {
       position: relative;
       right: ($number / $total-columns) * 100% !important;
       left: auto; // 1
@@ -138,7 +147,7 @@ $offsets: false !default;
   @each $bp-name in $breakpoints-query {
 
     @include breakpoint($bp-name) {
-      @include generate-widths($total-columns, \@#{$bp-name});
+      @include generate-widths($total-columns, on#{$bp-name});
     }
 
   }

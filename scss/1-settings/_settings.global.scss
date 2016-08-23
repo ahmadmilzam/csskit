@@ -6,22 +6,22 @@
 // above. Feel free to use these variables throughout your project, but do not
 // modify or reassign them.
 //
-$global-font-family:                "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$global-font-size:                  16px !default;
-$global-font-weight:                normal !default;
+$global-font-family:                  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$global-font-size:                    16px !default;
+$global-font-weight:                  normal !default;
 
-$global-line-height:                24px !default;
-$global-text-color:                 #333 !default;
-$global-background-color:           #fff !default;
+$global-line-height:                  24px !default;
+$global-text-color:                   #333 !default;
+$global-background-color:             #fff !default;
 
-$global-radius:                     3px !default;
+$global-radius:                       3px !default;
 
-$global-spacing-unit:               $global-line-height !default;
+$global-spacing-unit:                 $global-line-height !default;
 
-$global-spacing-unit-factor-tiny:   0.25 !default;
-$global-spacing-unit-factor-small:  0.5  !default;
-$global-spacing-unit-factor-large:  2    !default;
-$global-spacing-unit-factor-huge:   4    !default;
+$global-spacing-unit-factor-tiny:   .25 !default;
+$global-spacing-unit-factor-small:   .5 !default;
+$global-spacing-unit-factor-large:    2 !default;
+$global-spacing-unit-factor-huge:     4 !default;
 
 //
 // Private/framework only reassignment. Do not alter anything below.

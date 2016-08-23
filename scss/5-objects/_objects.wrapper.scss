@@ -22,7 +22,7 @@ $wrapper-width: 1000px !default;
   @error "`#{$wrapper-width}` needs to be a number."
 }
 
-.wrapper {
+.#{$global-namespace}wrapper {
   @include clearfix();
   padding-right: rem-calc($global-spacing-unit);
   padding-left: rem-calc($global-spacing-unit);
@@ -35,22 +35,22 @@ $wrapper-width: 1000px !default;
 // Size variants.
 // ==========================================================================
 
-.wrapper--tiny {
+.#{$global-namespace}wrapper--tiny {
   padding-right: rem-calc($global-spacing-unit--tiny);
   padding-left: rem-calc($global-spacing-unit--tiny);
 }
 
-.wrapper--small {
+.#{$global-namespace}wrapper--small {
   padding-right: rem-calc($global-spacing-unit--small);
   padding-left: rem-calc($global-spacing-unit--small);
 }
 
-.wrapper--large {
+.#{$global-namespace}wrapper--large {
   padding-right: rem-calc($global-spacing-unit--large);
   padding-left: rem-calc($global-spacing-unit--large);
 }
 
-.wrapper--huge {
+.#{$global-namespace}wrapper--huge {
   padding-right: rem-calc($global-spacing-unit--huge);
   padding-left: rem-calc($global-spacing-unit--huge);
 }

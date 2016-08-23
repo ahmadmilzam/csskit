@@ -13,8 +13,7 @@ $imported-global-settings: false !default;
 
 
 $anchor-font-color:            #3498DB !default;
-$anchor-color-factor:          2 !default;
-$anchor-font-color-hover:      color-level($anchor-font-color, $anchor-color-factor) !default;
+$anchor-font-color-hover:      color-level($anchor-font-color, -2) !default;
 $anchor-text-decoration:       none !default;
 $anchor-text-decoration-hover: none !default;
 

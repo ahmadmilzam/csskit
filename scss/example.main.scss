@@ -55,9 +55,9 @@
 // ==========================================================================
 //
 // Would you like classes to be prepended with a namespace? If so,
-// define it here. eg: my-, your-
+// define it here. eg: `my-`, `your-`
 //
-$global-namespace: null;
+$global-namespace: null; // default is `null'
 
 @import "1-settings/settings.global";
 
@@ -74,15 +74,15 @@ $global-namespace: null;
 // $screen:         "only screen";
 //
 // $breakpoints: (
-//   "small-up"     "#{$screen}",
+//   "small"        "#{$screen}",
 //   "small-only"   "#{$screen} and (max-width: 45em)",
-//   "medium-up"    "#{$screen} and (min-width: 45.063em)",
+//   "medium"       "#{$screen} and (min-width: 45.063em)",
 //   "medium-only"  "#{$screen} and (min-width: 45.063em) and (max-width: 64em)",
-//   "large-up"     "#{$screen} and (min-width: 64.063em)",
+//   "large"        "#{$screen} and (min-width: 64.063em)",
 //   "large-only"   "#{$screen} and (min-width: 64.063em) and (max-width: 90em)",
-//   "xlarge-up"    "#{$screen} and (min-width: 90.063em)",
+//   "xlarge"       "#{$screen} and (min-width: 90.063em)",
 //   "xlarge-only"  "#{$screen} and (min-width: 90.063em) and (max-width: 120em)",
-//   "xxlarge-up"   "#{$screen} and (min-width: 120.063em)",
+//   "xxlarge"      "#{$screen} and (min-width: 120.063em)",
 //   "portrait"     "#{$screen} and (orientation: portrait)",
 //   "landscape"    "#{$screen} and (orientation: landscape)",
 //   "retina"       "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
@@ -116,18 +116,8 @@ $global-namespace: null;
 @import "2-tools/tools.brightness";
 @import "2-tools/tools.clearfix";
 @import "2-tools/tools.color-level";
-
-// @import "partials/tools.rem";
-// @import "partials/tools.responsive";
-// @import "partials/tools.visual";
-// @import "partials/tools.timming-functions";
-// @import "partials/tools.color-level";
-// @import "partials/tools.transparency";
-
-// @import "partials/tools.modular-scale";
-// @import "partials/tools.grid";
-// @import "partials/tools.brightness";
-// @import "partials/tools.commoncss";
+@import "2-tools/tools.commoncss";
+@import "2-tools/tools.timming-functions";
 
 
 //
@@ -155,12 +145,10 @@ $global-namespace: null;
 //
 // [1] Page
 // [2] Headings
-// [3] Paragraphs
-// [4] Links
-// [5] Images
-// [6] List
-// [7] Hr
-// [8] Blockquote
+// [3] Links
+// [4] Images
+// [5] Hr
+// [6] Blockquote
 //
 
 // 1
@@ -192,29 +180,18 @@ $global-namespace: null;
 
 
 // 3
-// $lede-size: 1.125;
-
-@import "4-base/base.paragraphs";
-
-
-// 4
-// $anchor-font-color:            #3498DB !default;
-// $anchor-color-factor:          2 !default;
-// $anchor-font-color-hover:      color-level($anchor-font-color, $anchor-color-factor) !default;
-// $anchor-text-decoration:       none !default;
-// $anchor-text-decoration-hover: none !default;
+// $anchor-font-color:            #3498DB;
+// $anchor-font-color-hover:      color-level($anchor-font-color, -2);
+// $anchor-text-decoration:       none;
+// $anchor-text-decoration-hover: none;
 
 @import "4-base/base.links";
 
-// 5
+// 4
 @import "4-base/base.images";
 
-// 6
-// @import "4-base/base.lists";
 
-
-// 7
-// $hr-namespace:     $global-namespace !default;
+// 5
 // $hr-border-width:  1px;
 // $hr-border-style:  solid;
 // $hr-border-color:  #cccccc;
@@ -223,11 +200,11 @@ $global-namespace: null;
 @import "4-base/base.hr";
 
 
-// 8
+// 6
 // $blockquote-footer-font-size:  12px;
 // $blockquote-footer-font-color: scale-color($global-text-color, $lightness: 30%);
 
-@import "4-base/base.blockquote";
+// @import "4-base/base.blockquote";
 
 
 //
@@ -249,20 +226,16 @@ $global-namespace: null;
 
 
 // 1
-// $box-namespace:                      $global-namespace;
+// $enable-box--bleed:                  true;
+// $enable-box--tiny:                   true;
+// $enable-box--small:                  true;
+// $enable-box--large:                  true;
+// $enable-box--huge:                   true;
 
-$enable-box--bleed:                  true;
-$enable-box--tiny:                   true;
-$enable-box--small:                  true;
-$enable-box--large:                  true;
-$enable-box--huge:                   true;
-
-@import "5-objects/objects.box";
+// @import "5-objects/objects.box";
 
 
 // 2
-// $flag-namespace:                     $global-namespace;
-
 $enable-flag--tiny:                  true;
 $enable-flag--small:                 true;
 $enable-flag--large:                 true;
@@ -281,19 +254,17 @@ $enable-flag--responsive:            true;
 // By default we use the `font-size: 0;` trick to remove whitespace between.
 // Set this to true in order to use a markup-based strategy like commenting out
 // whitespace or minifying HTML.
-$use-markup-fix: false !default;
+
+// $use-markup-fix: true;
 
 @import "5-objects/objects.layout";
 
 
 // 4
-// $list-dull-namespace:                $global-namespace;
 // @import "5-objects/objects.list-dull";
 
 
 // 5
-// $list-inline-namespace:              $global-namespace;
-
 $enable-list-inline--delimited:      true;
 // $list-inline-delimit-character:      ",\00A0";
 
@@ -301,7 +272,6 @@ $enable-list-inline--delimited:      true;
 
 
 // 6
-// $media-namespace:                    $global-namespace;
 // $media-collapse-at:                  720px;
 
 // $enable-media--tiny:                 true;
@@ -316,8 +286,6 @@ $enable-list-inline--delimited:      true;
 
 
 // 7
-// $pack-namespace:                     $global-namespace;
-
 // $enable-pack--auto:                  true;
 // $enable-pack--tiny:                  true;
 // $enable-pack--small:                 true;
@@ -331,7 +299,7 @@ $enable-list-inline--delimited:      true;
 
 
 // 8
-$wrapper-width: 1000px !default;
+$wrapper-width: 1000px;
 @import "5-objects/objects.wrapper";
 
 
@@ -351,20 +319,19 @@ $wrapper-width: 1000px !default;
 // @import "components.mycomponents1";
 
 // 1
-// $btn-border-width:                   1px !default;
-$btn-radius:                         4px;
-$enable-btn--small:                  true;
-$enable-btn--large:                  true;
-$enable-btn--full:                   true;
-$enable-btn--pill:                   true;
-$enable-btn--disabled:               true;
+// $btn-border-width:                   1px;
+// $btn-radius:                         $global-radius;
+
+// $enable-btn--small:                  true;
+// $enable-btn--large:                  true;
+// $enable-btn--full:                   true;
+// $enable-btn--pill:                   true;
+// $enable-btn--disabled:               true;
 
 @import "6-components/components.buttons";
 
 
 // 1
-// $table-namespace:                    $global-namespace;
-
 // $table-border-width:                 1px;
 // $table-border-style:                 solid;
 // $table-border-color:                 #eee;
@@ -393,119 +360,61 @@ $enable-table--zebra:                true;
 // [1] Clearfix
 // [2] Float
 // [3] Text transform
-// [4] Alignment
-// [5] Spacing
-// [6] Visibility
-// [7] Print
+// [4] Typography
+// [5] Alignment
+// [6] Spacing
+// [7] Visibility
+// [8] Print
+// [9] Width
 //
 
 // 1
-// @import "7-utilities/utilities.clearfix";
+@import "7-utilities/utilities.clearfix";
 
 
 // 2
-// @import "7-utilities/utilities.float";
+@import "7-utilities/utilities.float";
 
 
 // 3
-// @import "7-utilities/utilities.text-transform";
+@import "7-utilities/utilities.text-transform";
 
 
 // 4
+@import "7-utilities/utilities.typography";
+
+// 5
 // $enable-xlarge-alignment-clasess:    true;
 
 // @import "7-utilities/utilities.alignment";
-// @import "7-utilities/utilities.alignment-responsive";
 
 
-// 5
-// $spacing-namespace:                  $global-namespace;
+// 6
+// $spacing-directions: (
+//   null,
+//   "-top",
+//   "-right",
+//   "-bottom",
+//   "-left",
+// );
 
-// $spacing-margin:                     $global-spacing-unit;
-// $spacing-padding:                    $global-spacing-unit;
+// $spacing-properties: (
+//   "padding",
+//   "margin"
+// );
 
-// $enable-margins:                     true;
-// $enable-margins--tiny:               true;
-// $enable-margins--small:              true;
-// $enable-margins--large:              true;
-// $enable-margins--huge:               true;
-
-// $enable-margins--negative:           true;
-// $enable-margins--negative-tiny:      true;
-// $enable-margins--negative-small:     true;
-// $enable-margins--negative-large:     true;
-// $enable-margins--negative-huge:      true;
-
-// $enable-margins--none:               true;
-
-// $enable-paddings:                    true;
-// $enable-paddings--tiny:              true;
-// $enable-paddings--small:             true;
-// $enable-paddings--large:             true;
-// $enable-paddings--huge:              true;
-
-// $enable-paddings--negative:           true;
-// $enable-paddings--negative-tiny:      true;
-// $enable-paddings--negative-small:     true;
-// $enable-paddings--negative-large:     true;
-// $enable-paddings--negative-huge:      true;
-
-// $enable-paddings--none:              true;
-
-// @import "7-utilities/utilities.spacing";
+@import "7-utilities/utilities.spacing";
 
 
-// $enable-responsive-margins:                   true;
-// $enable-responsive-margins--tiny:             true;
-// $enable-responsive-margins--small:            true;
-// $enable-responsive-margins--large:            true;
-// $enable-responsive-margins--huge:             true;
-
-// $enable-responsive-margins--negative:         true;
-// $enable-responsive-margins--negative-tiny:    true;
-// $enable-responsive-margins--negative-small:   true;
-// $enable-responsive-margins--negative-large:   true;
-// $enable-responsive-margins--negative-huge:    true;
-
-// $enable-responsive-margins--none:             true;
-
-// $enable-responsive-paddings:                  true;
-// $enable-responsive-paddings--tiny:            true;
-// $enable-responsive-paddings--small:           true;
-// $enable-responsive-paddings--large:           true;
-// $enable-responsive-paddings--huge:            true;
-
-// $enable-responsive-paddings--negative:         true;
-// $enable-responsive-paddings--negative-tiny:    true;
-// $enable-responsive-paddings--negative-small:   true;
-// $enable-responsive-paddings--negative-large:   true;
-// $enable-responsive-paddings--negative-huge:    true;
-
-// $enable-responsive-paddings--none:            true;
-
-
-// $enable-xlarge-responsive-spacing-clasess:    true;
-// $enable-xxlarge-responsive-spacing-clasess:   true;
-
-// @import "7-utilities/utilities.spacing-responsive";
-
-
-// 6]
-// $enable-accessibility-classes:       true;
-// $enable-table-classes:               true;
-
+// 7
 // @import "7-utilities/utilities.visibility";
 
 
-// $enable-xlarge-responsive-visibility-clasess:    true;
-// $enable-xxlarge-responsive-visibility-clasess:   true;
-// @import "7-utilities/utilities.visibility-responsive";
-
-
-// 7]
+// 8
 // @import "7-utilities/utilities.print";
 
 
+// 9
 // $total-columns: 12;
 $enable-width-responsive: true;
 $offsets: true;

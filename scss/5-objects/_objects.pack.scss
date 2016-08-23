@@ -17,8 +17,6 @@ $imported-global-settings: false !default;
 
 
 // Variable(s)
-$pack-namespace:                     $global-namespace !default;
-
 $enable-pack--auto:                  false !default;
 $enable-pack--tiny:                  false !default;
 $enable-pack--small:                 false !default;
@@ -34,7 +32,7 @@ $enable-pack--bottom:                false !default;
 // 1. Fill all available space.
 // 2. Cause children to be automatically equally sized.
 //
-.#{$pack-namespace}pack {
+.#{$global-namespace}pack {
   width: 100%; // 1
   display: table;
   table-layout: fixed; // 2
@@ -43,7 +41,7 @@ $enable-pack--bottom:                false !default;
 //
 // Cause children to adopt table-like structure.
 //
-.#{$pack-namespace}pack__item {
+.#{$global-namespace}pack__item {
   display: table-cell;
 
   @if ($enable-pack--middle == true) {
@@ -51,7 +49,7 @@ $enable-pack--bottom:                false !default;
     //
     // All items are aligned to the middles of each other.
     //
-    .#{$pack-namespace}pack--middle > & {
+    .#{$global-namespace}pack--middle > & {
       vertical-align: middle;
     }
 
@@ -62,7 +60,7 @@ $enable-pack--bottom:                false !default;
     //
     // All items are aligned to the bottoms of each other.
     //
-    .#{$pack-namespace}pack--bottom > & {
+    .#{$global-namespace}pack--bottom > & {
       vertical-align: bottom;
     }
 
@@ -76,7 +74,7 @@ $enable-pack--bottom:                false !default;
   //
   // Cause children to pack up into available space, but not equally sized.
   //
-  .#{$pack-namespace}pack--auto {
+  .#{$global-namespace}pack--auto {
     table-layout: auto;
   }
 
@@ -87,7 +85,7 @@ $enable-pack--bottom:                false !default;
   //
   // Tiny gutters between items.
   //
-  .#{$pack-namespace}pack--tiny {
+  .#{$global-namespace}pack--tiny {
     border-spacing: $global-spacing-unit--tiny;
   }
 
@@ -98,7 +96,7 @@ $enable-pack--bottom:                false !default;
   //
   // Small gutters between items.
   //
-  .#{$pack-namespace}pack--small {
+  .#{$global-namespace}pack--small {
     border-spacing: $global-spacing-unit--small;
   }
 
@@ -109,7 +107,7 @@ $enable-pack--bottom:                false !default;
   //
   // Large gutters between items.
   //
-  .#{$pack-namespace}pack--large {
+  .#{$global-namespace}pack--large {
     border-spacing: $global-spacing-unit--large;
   }
 
@@ -120,7 +118,7 @@ $enable-pack--bottom:                false !default;
   //
   // Huge gutters between items.
   //
-  .#{$pack-namespace}pack--huge {
+  .#{$global-namespace}pack--huge {
     border-spacing: $global-spacing-unit--huge;
   }
 
@@ -132,10 +130,10 @@ $enable-pack--bottom:                false !default;
   //
   // Reversed order packs.
   //
-  .#{$pack-namespace}pack--rev {
+  .#{$global-namespace}pack--rev {
     direction: rtl;
 
-    > .#{$pack-namespace}pack__item {
+    > .#{$global-namespace}pack__item {
       direction: ltr;
     }
 

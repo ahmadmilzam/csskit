@@ -1,9 +1,19 @@
-/* ==========================================================================
-   Text Transform Helper Classes
-   ========================================================================== */
+// ==========================================================================
+// Text Transform
+// ==========================================================================
 
-.text-uppercase{ text-transform: uppercase; }
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
 
-.text-lowercase{ text-transform: lowercase; }
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
 
-.text-capitalize{ text-transform: capitalize; }
+
+.#{$global-namespace}text-uppercase { text-transform: uppercase; }
+
+.#{$global-namespace}text-lowercase { text-transform: lowercase; }
+
+.#{$global-namespace}text-capitalize { text-transform: capitalize; }
