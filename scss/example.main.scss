@@ -222,6 +222,7 @@ $global-namespace: null; // default is `null'
 // [6]  Media
 // [7]  Pack
 // [8]  Wrapper
+// [9]  Ratio
 //
 
 
@@ -301,6 +302,16 @@ $enable-list-inline--delimited:      true;
 // 8
 $wrapper-width: 1000px;
 @import "5-objects/objects.wrapper";
+
+
+// 9
+// $ratios: (
+//   2:1,
+//   4:3,
+//   16:9,
+// );
+
+@import "5-objects/objects.ratio";
 
 
 
