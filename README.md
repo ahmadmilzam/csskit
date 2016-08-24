@@ -27,7 +27,7 @@ It is important that you as the developer piece things together in the correct o
 * **Base:** Unclassed HTML elements (e.g. `a {}`, `blockquote {}`, `address {}`).
 * **Objects:** Objects, abstractions, and design patterns (e.g. `.media {}`).
 * **Components:** Discrete, complete chunks of UI (e.g. `.carousel {}`). This is
-  the one layer that inuitcss doesn’t get involved with.
+  the one layer that the framework doesn't get involved with.
 * **Utilities:** High-specificity, very explicit selectors. Overrides and helper
   classes (e.g. `.hidden {}`).
 
