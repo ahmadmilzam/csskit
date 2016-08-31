@@ -143,16 +143,15 @@ $global-namespace: null; // default is `null'
 //
 // Uncllassed HTML elements (eg. a{}, p{}, blockquote{} )
 //
-// [1] Page
+// [1] HTML
 // [2] Headings
 // [3] Links
 // [4] Images
 // [5] Hr
-// [6] Blockquote
 //
 
 // 1
-@import "4-base/base.page";
+@import "4-elements/elements.html";
 
 // 2
 // $heading-font-weight:  700;
@@ -176,7 +175,7 @@ $global-namespace: null; // default is `null'
 //   ),
 // );
 
-@import "4-base/base.headings";
+@import "4-elements/elements.headings";
 
 
 // 3
@@ -185,10 +184,10 @@ $global-namespace: null; // default is `null'
 // $anchor-text-decoration:       none;
 // $anchor-text-decoration-hover: none;
 
-@import "4-base/base.links";
+@import "4-elements/elements.links";
 
 // 4
-@import "4-base/base.images";
+@import "4-elements/elements.images";
 
 
 // 5
@@ -197,14 +196,7 @@ $global-namespace: null; // default is `null'
 // $hr-border-color:  #cccccc;
 // $hr-margin:        $global-spacing-unit;
 
-@import "4-base/base.hr";
-
-
-// 6
-// $blockquote-footer-font-size:  12px;
-// $blockquote-footer-font-color: scale-color($global-text-color, $lightness: 30%);
-
-// @import "4-base/base.blockquote";
+@import "4-elements/elements.hr";
 
 
 //
@@ -246,7 +238,8 @@ $enable-flag--bleed:                 true;
 $enable-flag--top:                   true;
 $enable-flag--bottom:                true;
 $enable-flag--responsive:            true;
-// $flag-collapse-at:                   720px;
+
+$flag-collapse-at:                   720px;
 
 @import "5-objects/objects.flag";
 
@@ -273,17 +266,17 @@ $enable-list-inline--delimited:      true;
 
 
 // 6
+$enable-media--tiny:                 true;
+$enable-media--small:                true;
+$enable-media--large:                true;
+$enable-media--huge:                 true;
+$enable-media--rev:                  true;
+$enable-media--bleed:                true;
+$enable-media--responsive:           true;
+
 // $media-collapse-at:                  720px;
 
-// $enable-media--tiny:                 true;
-// $enable-media--small:                true;
-// $enable-media--large:                true;
-// $enable-media--huge:                 true;
-// $enable-media--rev:                  true;
-// $enable-media--bleed:                true;
-// $enable-media--responsive:           true;
-
-// @import "5-objects/objects.media";
+@import "5-objects/objects.media";
 
 
 // 7

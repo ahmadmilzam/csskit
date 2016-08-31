@@ -40,42 +40,61 @@ $flag-collapse-at:                   720px !default;
   width: 100%; // 2
 }
 
+
 //
 // Items within a flag object. There should only ever be one of each.
 //
 // 1. Default to aligning content to their middles.
+//
+.#{$global-namespace}flag__img,
+.#{$global-namespace}flag__body {
+  display: table-cell;
+  vertical-align: middle; /* [1] */
+}
+
+
+//
+// Flag images have a space between them and the body of the object.
+//
+// 1. Force `.flag__img` to take up as little space as possible:
+//    https://pixelsvsbytes.com/2012/02/this-css-layout-grid-is-no-holy-grail/
 // 2. Flag images have a space between them and the body of the object.
 //
 .#{$global-namespace}flag__img {
-  display: table-cell;
-  vertical-align: middle; // 1
+  width: 1px; // 1
   padding-right: rem-calc($global-spacing-unit); // 2
 
   > img {
-    display: block;
     max-width: none;
   }
+}
 
+
+//
+// Size variants [tiny|small|large|huge]
+// ==========================================================================
+//
+
+// Bleed flags.
+@if ($enable-flag--bleed == true) {
   //
-  // Size variants [tiny|small|large|huge]
-  // ==========================================================================
+  // Bleed flag objects have no space between the image- and text-content.
   //
-
-  // Bleed flags.
-  @if ($enable-flag--bleed == true) {
-    //
-    // Bleed flag objects have no space between the image- and text-content.
-    //
-
-    .#{$global-namespace}flag--bleed > & {
+  .#{$global-namespace}flag--bleed {
+    > .#{$global-namespace}flag__img {
       padding-right: 0;
       padding-left: 0;
     }
   }
+}
 
-  // Tiny flags.
-  @if ($enable-flag--tiny == true) {
-    .#{$global-namespace}flag--tiny > & {
+
+// Tiny flags.
+@if ($enable-flag--tiny == true) {
+
+  .#{$global-namespace}flag--tiny {
+
+    > .#{$global-namespace}flag__img {
       padding-right: rem-calc($global-spacing-unit--tiny);
     }
 
@@ -83,35 +102,55 @@ $flag-collapse-at:                   720px !default;
     // Tiny reversed flags.
     //
     @if ($enable-flag--rev == true) {
-      .#{$global-namespace}flag--tiny.#{$global-namespace}flag--rev > & {
-        padding-right: 0;
-        padding-left: rem-calc($global-spacing-unit--tiny);
+
+      &.#{$global-namespace}flag--rev {
+        > .#{$global-namespace}flag__img {
+          padding-right: 0;
+          padding-left: rem-calc($global-spacing-unit--tiny);
+        }
       }
 
     }
+
   }
 
-  // Small flags.
-  @if ($enable-flag--small == true) {
-    .#{$global-namespace}flag--small > & {
-      padding-right: rem-calc($global-spacing-unit--tiny);
+}
+
+
+// Small flags.
+@if ($enable-flag--small == true) {
+
+  .#{$global-namespace}flag--small {
+
+    > .#{$global-namespace}flag__img {
+      padding-right: rem-calc($global-spacing-unit--small);
     }
 
     //
     // Small reversed flags.
     //
     @if ($enable-flag--rev == true) {
-      .#{$global-namespace}flag--small.#{$global-namespace}flag--rev > & {
-        padding-right: 0;
-        padding-left: rem-calc($global-spacing-unit--small);
+
+      &.#{$global-namespace}flag--rev {
+        > .#{$global-namespace}flag__img {
+          padding-right: 0;
+          padding-left: rem-calc($global-spacing-unit--small);
+        }
       }
 
     }
+
   }
 
-  // Large flags.
-  @if ($enable-flag--large == true) {
-    .#{$global-namespace}flag--large > & {
+}
+
+
+// Large flags.
+@if ($enable-flag--large == true) {
+
+  .#{$global-namespace}flag--large {
+
+    > .#{$global-namespace}flag__img {
       padding-right: rem-calc($global-spacing-unit--large);
     }
 
@@ -119,17 +158,26 @@ $flag-collapse-at:                   720px !default;
     // Large reversed flags.
     //
     @if ($enable-flag--rev == true) {
-      .#{$global-namespace}flag--large.#{$global-namespace}flag--rev > & {
-        padding-right: 0;
-        padding-left: rem-calc($global-spacing-unit--large);
+
+      &.#{$global-namespace}flag--rev {
+        > .#{$global-namespace}flag__img {
+          padding-right: 0;
+          padding-left: rem-calc($global-spacing-unit--large);
+        }
       }
 
     }
+
   }
 
-  // Huge flags.
-  @if ($enable-flag--huge == true) {
-    .#{$global-namespace}flag--huge > & {
+}
+
+
+// Huge flags.
+@if ($enable-flag--huge == true) {
+
+  .#{$global-namespace}flag--huge {
+    > .#{$global-namespace}flag__img {
       padding-right: rem-calc($global-spacing-unit--huge);
     }
 
@@ -137,19 +185,21 @@ $flag-collapse-at:                   720px !default;
     // Huge reversed flags.
     //
     @if ($enable-flag--rev == true) {
-      .#{$global-namespace}flag--huge.#{$global-namespace}flag--rev > & {
-        padding-right: 0;
-        padding-left: rem-calc($global-spacing-unit--huge);
+
+      &.#{$global-namespace}flag--rev {
+        > .#{$global-namespace}flag__img {
+          padding-right: 0;
+          padding-left: rem-calc($global-spacing-unit--huge);
+        }
       }
 
     }
+
   }
 
 }
 
-//
-//
-//
+
 
 
 //
