@@ -1,9 +1,12 @@
 // ==========================================================================
 // Buttons
 // ==========================================================================
+
 //
-// A simple button components.
+// This is an example simple buttons component.
+// Extend the framework by building your own components that make up your UI.
 //
+
 
 // Here we set a variable assuming that default and module settings
 // are not set globally. If they have been previously been defined,
@@ -15,211 +18,163 @@ $imported-global-settings: false !default;
 }
 
 
-$btn-font-size:                      $global-font-size !default;
-$btn-font-size--small:               $btn-font-size * 0.8 !default;
-$btn-font-size--large:               $btn-font-size * 1.25 !default;
-
-$btn-background:                     #2C97DE !default;
-$btn-color-dark-background:          $global-background-color !default;
-$btn-color-light-background:         $global-text-color !default;
-
-$btn-border-width:                   0 !default;
-$btn-radius:                         $global-radius !default;
-
-$enable-btn--small:                  false !default;
-$enable-btn--large:                  false !default;
-$enable-btn--full:                   false !default;
-$enable-btn--pill:                   false !default;
-$enable-btn--disabled:               false !default;
-
-
 //
 // 1. Allow us to style box model properties.
 // 2. Line different sized buttons up a little nicer.
-// 3. Make buttons inherit font styles
-//    (often necessary when styling `input`s as buttons).
+// 3. Make buttons inherit font styles (often necessary when styling `input`s as
+//    buttons).
 // 4. Reset/normalize some styles.
 // 5. Force all button-styled elements to appear clickable.
 // 6. Fixes odd inner spacing in IE7.
-// 7. Subtract the border size from the padding value so that buttons do not
-//    grow larger as we add borders.
 //
-@mixin buttons-base {
+
+.#{$global-namespace}btn {
   display: inline-block; // 1
   vertical-align: middle; // 2
   font: inherit; // 3
+  line-height: normal; // 4
   text-align: center; // 4
-  margin: 0; // 4
-  white-space: normal; // 4
+  margin:  0; // 4
   cursor: pointer; // 5
   overflow: visible; // 6
+  padding: rem-calc($global-spacing-unit--small $global-spacing-unit);
+  border-radius: $global-radius;
+  transition: all .3s ease-out;
+}
 
-  @if($btn-border-width != 0) {
-    border-width: $btn-border-width;
-    border-style: solid;
-  }
-  @else {
-    border: 0;
-  }
 
-  @if($btn-radius != 0) {
-    border-radius: $btn-radius;
-  }
+
+
+//
+// Color variants
+// ==========================================================================
+
+.#{$global-namespace}btn--primary {
+  background-color: #4a8ec2;
 
   &,
   &:hover,
   &:active,
   &:focus {
     text-decoration: none; // 4
+    color: #fff;
   }
 
-  transition: all .3s ease;
+  &:hover,
+  &:focus {
+    background-color: #3774a2;
+  }
 }
 
-@mixin buttons-style(
-  $background: $btn-background,
-  $color: false) {
 
-  background-color: $background;
-
-  @if($btn-border-width != 0) {
-    border-color: $background;
-  }
-
-  @if($btn-radius != 0) {
-    border-radius: $btn-radius;
-  }
-
+.#{$global-namespace}btn--secondary {
+  background-color: #2f4054;
 
   &,
   &:hover,
   &:active,
   &:focus {
-    @if($color != false){
-      color: $color;
-    }
-    @else{
-      color: pick-visible-color(
-        $background,
-        $btn-color-light-background,
-        $btn-color-dark-background,
-        $threshold: 65%
-      );
-    }
+    text-decoration: none;
+    color: #fff;
   }
 
   &:hover,
   &:focus {
-    @if($btn-border-width != 0) {
-      border-color: color-level($background, -2);
-    }
-    background-color: color-level($background, -2);
+    background-color: #1d2733;
   }
 
+}
+
+
+
+
+//
+// Size variants
+// ==========================================================================
+
+.#{$global-namespace}btn--small {
+  padding: rem-calc($global-spacing-unit--tiny $global-spacing-unit--small);
+}
+
+.#{$global-namespace}btn--large {
+  padding: rem-calc($global-spacing-unit $global-spacing-unit--large);
+}
+
+
+
+
+//
+// Style variants [Pill | Full | Ghost | Disabled]
+// ==========================================================================
+
+// Pill
+.#{$global-namespace}btn--pill {
+  border-radius: 100px;
+}
+
+
+// FUll
+.#{$global-namespace}btn--full {
+  width: 100%;
+}
+
+
+// Ghost
+// This buttons have see-through backgrounds and are bordered.
+
+$btn-ghost-border-width: 2px;
+
+.#{$global-namespace}btn--ghost {
+  border: $btn-ghost-border-width solid currentColor;
+  padding: ($global-spacing-unit--small - $btn-ghost-border-width) ($global-spacing-unit - $btn-ghost-border-width);
+
+  &,
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+  }
+
+  &.#{$global-namespace}btn--small {
+    padding: rem-calc(($global-spacing-unit--tiny - $btn-ghost-border-width) ($global-spacing-unit--small - $btn-ghost-border-width));
+  }
+
+  &.#{$global-namespace}btn--large {
+    padding: rem-calc(($global-spacing-unit - $btn-ghost-border-width) ($global-spacing-unit--large - $btn-ghost-border-width));
+  }
+
+  &.#{$global-namespace}btn--primary {
+    color: #4a8ec2;
+
+    &:hover,
+    &:focus {
+      color: #3774a2;
+    }
+
+  }
+
+  &.#{$global-namespace}btn--secondary {
+    color: #2f4054;
+
+    &:hover,
+    &:focus {
+      color: #1d2733;
+    }
+
+  }
+
+}
+
+// Disabled buttons.
+// 1. make it little bit transparent
+// 2. show not allowed cursor when hover
+
+button[disabled],
+.#{$global-namespace}btn--disabled {
+  opacity: .5;
+  &:hover,
+  &:focus,
   &:active {
-    @if($btn-border-width != 0) {
-      border-color: color-level($background, -3);
-    }
-    background-color: color-level($background, -3);
-  }
-
-}
-
-@mixin buttons-size(
-  $padding: $global-spacing-unit,
-  $font-size: $btn-font-size) {
-  padding: rem-calc(halve($padding) - $btn-border-width) rem-calc($padding - $btn-border-width); // 7
-  @include font-size($font-size, 1);
-}
-
-.#{$global-namespace}btn {
-
-  @include buttons-base;
-  @include buttons-style;
-  @include buttons-size;
-
-}
-
-//
-// Fix a Firefox bug whereby `input type="submit"` gains 2px extra padding.
-//
-.#{$global-namespace}btn::-moz-focus-inner {
-  border: 0;
-  padding: 0;
-}
-
-//
-// Size Variants
-// ==========================================================================
-
-@if ($enable-btn--small == true) {
-
-  //
-  // Small buttons.
-  //
-
-  .#{$global-namespace}btn--small {
-    @include buttons-size($global-spacing-unit--small, $btn-font-size--small);
-  }
-
-}
-
-@if ($enable-btn--large == true) {
-
-  //
-  // Large buttons.
-  //
-
-  .#{$global-namespace}btn--large {
-    @include buttons-size($global-spacing-unit--large, $btn-font-size--large);
-  }
-
-}
-
-@if ($enable-btn--full == true) {
-
-  //
-  // Full-width buttons.
-  //
-  .#{$global-namespace}btn--full {
-    width: 100%;
-  }
-
-}
-
-//
-// Style Variants
-// ==========================================================================
-
-@if ($enable-btn--pill == true) {
-
-  //
-  // Round-ended buttons.
-  //
-  // 1. Overly-large value to ensure the radius rounds the whole end of the
-  //    button.
-  //
-
-  .#{$global-namespace}btn--pill {
-      border-radius: 100px; //1
-  }
-
-}
-
-@if ($enable-btn--disabled == true){
-  //
-  // Disabled buttons.
-  // 1. make it little bit transparent
-  // 2. show not allowed cursor when hover
-  //
-
-  button[disabled],
-  .#{$global-namespace}btn--disabled {
-      opacity: .5;
-      &:hover,
-      &:focus,
-      &:active {
-        cursor: not-allowed;
-      }
+    cursor: not-allowed;
   }
 }

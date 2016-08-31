@@ -24,7 +24,7 @@ It is important that you as the developer piece things together in the correct o
 * **Settings:** Global variables, site-wide settings, config switches, etc.
 * **Tools:** Site-wide mixins and functions.
 * **Generic:** Low-specificity, far-reaching rulesets (e.g. resets).
-* **Base:** Unclassed HTML elements (e.g. `a {}`, `blockquote {}`, `address {}`).
+* **Elements:** Unclassed HTML elements (e.g. `a {}`, `blockquote {}`, `address {}`).
 * **Objects:** Objects, abstractions, and design patterns (e.g. `.media {}`).
 * **Components:** Discrete, complete chunks of UI (e.g. `.carousel {}`). This is
   the one layer that the framework doesn't get involved with.
