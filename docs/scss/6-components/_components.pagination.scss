@@ -1,0 +1,111 @@
+// ==========================================================================
+// Pagination
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+
+// Variable(s)
+$pagination-border-color:       $ash--light !default;
+$pagination-border-width:       1px !default;
+
+$pagination-item-height:        30px !default;
+
+$pagination-link-color:         $ash--dark !default;
+$pagination-link-color--active: $primary !default;
+
+$pagination-link-bg:            transparent !default;
+$pagination-link-bg--active:    $sand--dark !default;
+
+$pagination-btn-color:          $black !default;
+$pagination-btn-bg:             $sand--light !default;
+$pagination-btn-bg--active:     $sand--dark !default;
+
+//
+// Private variable only, do not alter anything below!
+// ==========================================================================
+
+$pagination-padding: $pagination-item-height - $global-line-height - double($pagination-border-width);
+
+.c-pagination {
+  @include clearfix;
+
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-align: center;
+}
+
+.c-pagination__item {
+  display: inline-block;
+
+  .c-pagination > &:first-of-type {
+    float: left;
+  }
+
+  .c-pagination > &:last-of-type {
+    float: right;
+  }
+}
+
+.c-pagination__btn,
+.c-pagination__link {
+  display: block;
+  padding: rem-calc(halve($pagination-padding));
+  border-radius: $global-border-radius;
+  height: rem-calc($pagination-item-height);
+}
+
+.c-pagination__btn {
+  padding: rem-calc(halve($pagination-padding) $pagination-padding);
+  background-color: $pagination-btn-bg;
+  border: $pagination-border-width solid $pagination-border-color;
+
+  &,
+  &:hover,
+  &:focus {
+    color: $pagination-btn-color;
+  }
+
+  &:hover,
+  &:focus {
+    text-decoration: none;
+    background-color: $pagination-btn-bg--active;
+  }
+
+  &.is-disabled {
+    color: $ash;
+    pointer-events: none;
+  }
+}
+
+.c-pagination__link {
+  width: rem-calc($pagination-item-height);
+
+  font-weight: bold;
+  background-color: $pagination-link-bg;
+  color: $pagination-link-color;
+
+  border-width: $pagination-border-width;
+  border-style: solid;
+  border-color: transparent;
+
+  text-align: center;
+
+  &:hover,
+  &:focus,
+  &.is-current {
+    border-color: $pagination-border-color;
+    color: $pagination-link-color--active;
+    background-color: $pagination-link-bg--active;
+
+    text-decoration: none;
+  }
+}

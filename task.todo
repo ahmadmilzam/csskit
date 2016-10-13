@@ -1,0 +1,7 @@
+- make the rules more flexible, maintainable and scalable
+- rewrite all css comment inline or block to sass comment: progress at objects.flag.scss
+- create new verbose grid system for the framework
+- create new flexible base form styling for the framework
+- removed non mandatory tools/mixin from the framework
+- remove extend selector: progress at objects.flag.scss
+- use scss linting

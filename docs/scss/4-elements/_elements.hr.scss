@@ -1,0 +1,32 @@
+// ==========================================================================
+// HR
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings file?";
+}
+
+$hr-border-width:                    1px !default;
+$hr-border-style:                    solid !default;
+$hr-border-color:                    #ccc !default;
+$hr-margin:                          $global-spacing-unit !default;
+
+
+//
+// 1. Add the correct box sizing in Firefox.
+// 2. Show the overflow in Edge and IE.
+//
+hr {
+  box-sizing: content-box; // 1
+  border: 0;
+  border-top: $hr-border-width $hr-border-style $hr-border-color;
+  margin: rem-calc($hr-margin) 0;
+  clear: both;
+  height: 0; // 1
+  overflow: visible; // 2
+}

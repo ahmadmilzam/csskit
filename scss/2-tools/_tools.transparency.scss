@@ -1,0 +1,17 @@
+// ==========================================================================
+// Transparency
+// ==========================================================================
+//
+// Handy function to determine a transparency
+//
+$opacity: (
+  'light': .8, // opacity used with lighter colors
+  'dark': .4  // opacity used with darker colors
+) !default;
+
+@function transparency($color, $key: "light") {
+  $alpha: map-get($opacity, $key);
+  @return rgba($color, $alpha);
+}
+
+

@@ -1,0 +1,136 @@
+// ==========================================================================
+// TABLES
+// ==========================================================================
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+
+$table-border-width:                 1px !default;
+$table-border-color:                 #ddd !default;
+$table-row-bg:                       #fafafa !default;
+
+$table-head-color:                   #999 !default;
+$table-caption-color:                #999 !default;
+
+$enable-table--equal:                false !default;
+$enable-table--cells:                false !default;
+$enable-table--rows:                 false !default;
+$enable-table--columns:              false !default;
+
+.c-table {
+  width: 100%;
+  max-width: 100%;
+  thead > tr > th {
+    text-align: left;
+    vertical-align: bottom;
+    border-bottom: 0;
+    font-weight: normal;
+    color: $table-head-color;
+  }
+
+  th,
+  td {
+    padding: rem-calc($global-spacing-unit--tiny);
+  }
+
+  tbody tr:nth-of-type(odd) {
+    background-color: $table-row-bg;
+  }
+
+  &__caption {
+    padding-top: rem-calc($global-spacing-unit--small);
+    padding-bottom: rem-calc($global-spacing-unit--small);
+    color: $table-caption-color;
+    text-align: left;
+  }
+}
+
+
+@if ($enable-table--equal == true) {
+
+  //
+  // Force tables into having equal-width columns.
+  //
+  .c-table--equal {
+    table-layout: fixed;
+  }
+
+}
+
+
+@if ($enable-table--cells == true) {
+
+  //
+  // Add borders around a `table`.
+  //
+  .c-table--cells {
+
+    th,
+    td {
+      border: $table-border-width solid $table-border-color;
+    }
+
+  }
+
+}
+
+
+@if ($enable-table--rows == true) {
+
+  //
+  // Add borders only to `table`’s rows.
+  //
+  .c-table--rows {
+
+    &,
+    th,
+    td {
+      border: 0 solid $table-border-color;
+    }
+
+  }
+
+  .c-table--rows {
+    th,
+    td {
+      border-bottom-width: $table-border-width;
+    }
+  }
+
+}
+
+
+@if ($enable-table--columns == true) {
+
+  //
+  // Add borders only to `table`’s columns.
+  //
+  .c-table--columns {
+
+    &,
+    th,
+    td {
+      border: 0 solid $table-border-color;
+    }
+  }
+
+  .c-table--columns {
+    border-left-width: $table-border-width;
+
+    th,
+    td {
+      border-right-width: $table-border-width;
+    }
+  }
+
+}

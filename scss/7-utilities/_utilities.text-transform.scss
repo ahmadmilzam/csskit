@@ -1,0 +1,19 @@
+// ==========================================================================
+// Text Transform
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+.u-text-uppercase { text-transform: uppercase; }
+
+.u-text-lowercase { text-transform: lowercase; }
+
+.u-text-capitalize { text-transform: capitalize; }

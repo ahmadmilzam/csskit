@@ -1,0 +1,36 @@
+// ==========================================================================
+// Responsive Settings
+// ==========================================================================
+
+//
+// Hold our breakpoint aliases and conditions in a list.
+// The breakpoint value set to `em` with 16px as base pixel size
+// These can be invoked later on via the `media-query()` mixin found in
+// 2-tools/_tools.responsive.
+//
+
+$screen:         "only screen";
+
+// 45em == 720px
+// 64em == 1024px
+// 90em == 1440px
+// 120em = 1920px
+
+$breakpoints: (
+  "small"        "#{$screen}",
+  "small-only"   "#{$screen} and (max-width: 45em)",
+  "medium"       "#{$screen} and (min-width: 45.063em)",
+  "medium-only"  "#{$screen} and (min-width: 45.063em) and (max-width: 64em)",
+  "large"        "#{$screen} and (min-width: 64.063em)",
+  "large-only"   "#{$screen} and (min-width: 64.063em) and (max-width: 90em)",
+  "xlarge"       "#{$screen} and (min-width: 90.063em)",
+  "xlarge-only"  "#{$screen} and (min-width: 90.063em) and (max-width: 120em)",
+  "xxlarge"      "#{$screen} and (min-width: 120.063em)",
+  "portrait"     "#{$screen} and (orientation: portrait)",
+  "landscape"    "#{$screen} and (orientation: landscape)",
+  "retina"       "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
+) !default;
+
+// If we have included this file, set a variable to tell the rest of the
+// framework that we have some responsive settings.
+$imported-responsive-settings: true;

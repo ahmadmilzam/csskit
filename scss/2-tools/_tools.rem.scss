@@ -1,0 +1,115 @@
+// ==========================================================================
+// REM and EM Calculator
+// ==========================================================================
+//
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included global settings files?";
+}
+
+// Strip Unit
+// ==========================================================================
+// It strips the unit of measure and returns it
+@function parse-int($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+
+// CONVERT TO REM
+// ==========================================================================
+@function convert-to-rem($value, $global-value: $global-font-size) {
+  $value: parse-int($value) / parse-int($global-value) * 1rem;
+  // scss-lint:disable ZeroUnit
+  @if ($value == 0rem) { $value: 0; } // Turn 0rem into 0
+  @return $value;
+}
+
+
+// CONVERT TO EM
+// ==========================================================================
+@function convert-to-em($value, $global-value: $global-font-size) {
+  $value: parse-int($value) / parse-int($global-value) * 1em;
+  // scss-lint:disable ZeroUnit
+  @if ($value == 0em) { $value: 0; } // Turn 0em into 0
+  @return $value;
+}
+
+
+// Rem and Em calc
+// ==========================================================================
+//
+// New Syntax, allows to optionally calculate on a different base value
+// to counter compounding effect of rem's.
+//
+// Call with 1, 2, 3 or 4 parameters, 'px' is not required but supported:
+// rem-calc(10 20 30px 40);
+// Space delimited, if you want to delimit using comma's, wrap it in another pair of brackets
+//
+//  rem-calc((10, 20, 30, 40px));
+//  em-calc((10, 20, 30, 40px));
+//
+// Optionally call with a different base (eg: 8px) to calculate rem.
+//
+//  rem-calc(16px 32px 48px, 8px);
+//  em-calc(16px 32px 48px, 8px);
+//
+// If you require to comma separate your list
+//
+//  rem-calc((16px, 32px, 48), 8px);
+//  em-calc((16px, 32px, 48), 8px);
+//
+@function rem-calc($values, $global-value: $global-font-size) {
+  $max: length($values);
+
+  @if $max == 1 {
+    @if ($support-old-ie == true) {
+      @return parse-int(nth($values, 1)) + px;
+    }
+    @else {
+      @return convert-to-rem(nth($values, 1), $global-value);
+    }
+  }
+
+  $rem-values: ();
+
+  @for $i from 1 through $max {
+    @if ($support-old-ie == true) {
+      $rem-values: append($rem-values, parse-int(nth($values, $i)) + px);
+    }
+    @else {
+      $rem-values: append($rem-values, convert-to-rem(nth($values, $i), $global-value));
+    }
+  }
+
+  @return $rem-values;
+}
+
+@function em-calc($values, $global-value: $global-font-size) {
+  $max: length($values);
+
+  @if $max == 1 {
+    @if ($support-old-ie == true) {
+      @return parse-int(nth($values, 1)) + px;
+    }
+    @else {
+      @return convert-to-em(nth($values, 1), $global-value);
+    }
+  }
+
+  $em-values: ();
+
+  @for $i from 1 through $max {
+    @if ($support-old-ie == true) {
+      $em-values: append($em-values, parse-int(nth($values, $i)) + px);
+    }
+    @else {
+      $em-values: append($em-values, convert-to-em(nth($values, $i), $global-value));
+    }
+  }
+
+  @return $em-values;
+}

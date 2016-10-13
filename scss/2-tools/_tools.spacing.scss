@@ -1,0 +1,45 @@
+// ==========================================================================
+// Spacing
+// ==========================================================================
+//
+// Handy function to scalling whitespace
+//
+// usage:
+// .class {
+//   margin-bottom: spacing("tiny");
+// }
+//
+// .other-class {
+//   padding-top: spacing("small");
+// }
+//
+
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+$imported-rem-tools: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+$spacing-factors: (
+  "tiny": .25,
+  "small": .5,
+  "base": 1,
+  "large": 1.5,
+  "huge": 2
+) !default;
+
+@function spacing($level: "base") {
+  @if not map-has-key($spacing-factors, $level) {
+    @warn "No level found for `#{$level}` in $spacing-factors map.";
+  }
+
+  $factor: map-get($spacing-factors, $level);
+
+  @return rem-calc($global-spacing-unit * $factor);
+}

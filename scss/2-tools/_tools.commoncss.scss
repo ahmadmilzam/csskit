@@ -1,0 +1,119 @@
+// ==========================================================================
+// A collections of common css3 mixin
+// ==========================================================================
+
+
+// Font-face
+// ==========================================================================
+@mixin font-face($font-name, $font-path) {
+  @font-face{
+    font-family: $font-name;
+    src: url("#{$font-path}.eot?") format("eot"),
+         // url("#{$font-path}.woff2") format("woff2"),
+         url("#{$font-path}.woff") format("woff"),
+         url("#{$font-path}.ttf") format("truetype"),
+         url("#{$font-path}.svg##{$font-name}") format("svg");
+  }
+}
+
+
+// Double borders
+// ==========================================================================
+@mixin double-borders(
+  $color-one: #3c3c3c,
+  $color-two: #999,
+  $radius: 0
+) {
+  border: 1px solid $color-one;
+  box-shadow: 0 0 0 1px $color-two;
+
+  @include border-radius($radius);
+}
+
+
+// Transform
+// ==========================================================================
+@mixin transform($params) {
+  transform: $params;
+}
+
+
+// Transition
+// ==========================================================================
+@mixin transition(
+  $property: all,
+  $length: .3s,
+  $easing: ease-out,
+  $delay: 0s
+) {
+  @if($property == transform){
+    transition: $property $length $easing $delay;
+  }
+  @else{
+    transition: $property $length $easing $delay;
+  }
+}
+
+
+// Triangle
+// ==========================================================================
+@mixin triangle($triangle-size, $triangle-color, $triangle-direction) {
+  border: inset $triangle-size;
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  @if ($triangle-direction == top) {
+    border-top-color: $triangle-color;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-top-style: solid;
+  }
+  @if ($triangle-direction == bottom) {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: $triangle-color;
+    border-left-color: transparent;
+    border-bottom-style: solid;
+  }
+  @if ($triangle-direction == left) {
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: $triangle-color;
+    border-left-style: solid;
+  }
+  @if ($triangle-direction == right) {
+    border-top-color: transparent;
+    border-right-color: $triangle-color;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-right-style: solid;
+  }
+}
+
+
+// Vertical Middle
+// ==========================================================================
+@mixin vertical-middle {
+  top: 50%;
+  @include transform(translate(0, -50%));
+}
+
+
+// Horizontal Middle
+// ==========================================================================
+@mixin horizontal-middle {
+  left: 50%;
+  @include transform(translate(-50%, 0));
+}
+
+
+// VH middle
+// ========================================================================== */
+@mixin vh-middle {
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}

@@ -1,0 +1,155 @@
+// ==========================================================================
+// Width
+// ==========================================================================
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+//
+// it generates a series of utility classes that give a fluid width to
+// whichever element they’re applied, e.g.:
+//
+//   <img src="" alt="" class="u-6of12" />
+//
+// These classes are most commonly used in conjunction with our layout system,
+// e.g.:
+//
+//   <div class="layout__item u-6of12">
+//
+// By default, it will also generate responsive variants of each of these
+// classes by using your Sass MQ configuration, e.g.:
+//
+//   <div class="layout__item  u-12of12 u-6of12-medium u-3of12-large">
+//
+// Optionally, it can generate offset classes which can push and pull
+// elements left and right by a specified amount, e.g.:
+//
+//   <div class="layout__item  u-2of12  u-pull-1of12">
+//
+// This is useful for making very granular changes to the rendered order of
+// items in a layout.
+//
+// N.B. This option is turned off by default.
+
+//
+// Breakpoints query
+//
+$breakpoints-query: "medium", "large", "xlarge" !default;
+
+//
+// It will generate grid system(s) for each of our
+// defined breakpoints-query, if you set this variable to true
+//
+$enable-width-responsive: false !default;
+
+//
+// Which fractions would you like in your grid system(s)? By default, inuitcss
+// provides you fractions of one whole, halves, thirds, quarters and fifths,
+// e.g.:
+//
+//   .u-1of12
+//   .u-2of12
+//   .u-3of12
+//   .u-4of12
+//
+$total-columns: 12 !default;
+
+// Optionally, inuitcss can generate classes to offset items by a certain width.
+// Would you like to generate these types of class as well? E.g.:
+//
+//   .u-push-1of12
+//   .u-pull-2of12
+//   .u-pull-3of12
+//   .u-push-4of12
+
+$offsets: false !default;
+
+
+// A mixin to spit out our width classes. Pass in the column we want the widths
+// to have, and an optional suffix for responsive widths.
+// E.g. to create half width for a small breakpoint:
+//
+@mixin column($number, $bp-name: null) {
+  // Build a class in the format `.3of4[-<breakpoint>]`.
+  .u-#{$number}of#{$total-columns}#{$bp-name} {
+    width: ($number / $total-columns) * 100% !important;
+  }
+
+  @if ($offsets == true) {
+
+    //
+    // 1. Defensively reset any leftover or conflicting `left`/`right` values.
+    //
+
+    // Build a class in the format `.push-6of12[-<breakpoint>]`.
+    .u-push-#{$number}of#{$total-columns}#{$bp-name} {
+      position: relative;
+      right: auto; // 1
+      left: ($number / $total-columns) * 100% !important;
+    }
+
+    // Build a class in the format `.pull-5of12[-<breakpoint>]`.
+    .u-pull-#{$number}of#{$total-columns}#{$bp-name} {
+      position: relative;
+      right: ($number / $total-columns) * 100% !important;
+      left: auto; // 1
+    }
+
+  }
+}
+
+
+// A mixin to spit out our width classes. Pass in the total columns we want the widths
+// to have, and an optional suffix for responsive widths. E.g. to create thirds
+// and quarters for a small breakpoint:
+//
+// @include generate-widths(12, -small);
+//
+@mixin generate-widths($columns, $bp-name: null) {
+
+  // Loop through the number of columns.
+  @for $i from 1 through $columns {
+
+    @include column($i, $bp-name)
+
+  }
+
+}
+
+
+//
+// A series of width helper classes that you can use to size things like grid
+// systems. Classes take a fraction-like format (e.g. `.u-2of12`). Use these in
+// your markup:
+//
+// <div class="u-1of12">
+//
+// The following will generate widths helper classes based on the total columns
+// defined in the `$columns` variable.
+//
+@include generate-widths($total-columns);
+
+
+//
+// It will generate grid system(s) for each of our
+// defined breakpoints, and give them a Responsive Suffix, e.g.:
+//
+// <div class="u-3of12-[small|medium|large]">
+//
+@if ($enable-width-responsive == true) {
+
+  @each $bp-name in $breakpoints-query {
+
+    @include breakpoint($bp-name) {
+      @include generate-widths($total-columns, -#{$bp-name});
+    }
+
+  }
+
+}

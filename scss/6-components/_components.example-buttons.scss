@@ -1,0 +1,429 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+//
+// This is an example simple buttons component.
+// Extend the framework by building your own components that make up your UI.
+//
+
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$btn-border-width:              1px !default;
+$btn-ghost-border-width:        2px !default;
+$btn-disabled-opacity:          .6 !default;
+$btn-font-weight:               400 !default;
+
+$btn-height:                    36px !default;
+$btn-height--small:             30px !default;
+$btn-height--large:             42px !default;
+
+$btn-font-size:                 $global-font-size !default;
+$btn-font-size--small:          $global-font-size - 2px !default;
+$btn-font-size--small:          $global-font-size + 2px !default;
+
+$enable-btn--small:             false !default;
+$enable-btn--large:             false !default;
+
+$enable-btn--pill:              false !default;
+$enable-btn--block:             false !default;
+
+$enable-btn--ghost:             false !default;
+
+$enable-btn-group:              false !default;
+$enable-btn-group--equal:       false !default;
+
+$btn-default-bg-color:          #fafafa !default;
+$btn-default-bg-color--hover:   #f5f5f5 !default;
+$btn-default-bg-color--active:  #ddd !default;
+$btn-default-border-color:      #ddd !default;
+$btn-default-text-color:        #333 !default;
+
+$btn-primary-bg-color:          #3498db !default;
+$btn-primary-bg-color--hover:   #1b6fa8 !default;
+$btn-primary-bg-color--active:  #206899 !default;
+$btn-primary-border-color:      #206899 !default;
+$btn-primary-text-color:        #fff !default;
+$enable-btn--primary:           false !default;
+
+$btn-success-bg-color:          #87cc62 !default;
+$btn-success-bg-color--hover:   #74b94e !default;
+$btn-success-bg-color--active:  #5eab34 !default;
+$btn-success-border-color:      #5eab34 !default;
+$btn-success-text-color:        #fff !default;
+$enable-btn--success:           false !default;
+
+$btn-warning-bg-color:          #ffc53e !default;
+$btn-warning-bg-color--hover:   #e6b138 !default;
+$btn-warning-bg-color--active:  #d9a735 !default;
+$btn-warning-border-color:      #d9a735 !default;
+$btn-warning-text-color:        #333 !default;
+$enable-btn--warning:           false !default;
+
+//
+// Private variable only, do not alter anything below!
+// ==========================================================================
+// Button height formula to find padding top and bottom
+// btn-height = base-line-height + (padding: top + bottom) + (border top + bottom)
+//
+// 36 = 20 + ? + 2
+// 36 - 20 - 2 = ?
+//
+$btn-default-padding: $btn-height - $global-line-height - double($btn-border-width);
+$btn-small-padding: $btn-height--small - $global-line-height - double($btn-border-width);
+$btn-large-padding: $btn-height--large - $global-line-height - double($btn-border-width);
+
+$btn-ghost-default-padding: $btn-height - $global-line-height - double($btn-ghost-border-width);
+$btn-ghost-small-padding: $btn-height--small - $global-line-height - double($btn-ghost-border-width);
+$btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn-ghost-border-width);
+
+
+//
+// 1. Allow us to style box model properties.
+// 2. Line different sized buttons up a little nicer.
+// 3. Make buttons inherit font styles (often necessary when styling `input`s as
+//    buttons).
+// 4. Reset/normalize some styles.
+// 5. Force all button-styled elements to appear clickable.
+// 6. Fixes odd inner spacing in IE7.
+// 7. Subtract the border size from the padding value so that buttons do not
+//    grow larger as we add borders.
+//
+.c-btn {
+  display: inline-block; // 1
+  vertical-align: middle; // 2
+  height: rem-calc($btn-height);
+  margin: 0; // 4
+  padding: rem-calc(halve($btn-default-padding) ($global-spacing-unit - $btn-border-width)); // 7
+
+  font: inherit; // 3
+  font-weight: bold;
+  text-align: center; // 4
+  line-height: rem-calc($global-line-height);
+
+  cursor: pointer; // 5
+
+  overflow: visible; // 6
+
+  border-radius: $global-border-radius;
+  transition: all .3s ease-out;
+
+  border-style: solid;
+  border-width: $btn-border-width;
+
+  border-color: $btn-default-border-color;
+  background-color: $btn-default-bg-color;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none; // 4
+    color: $btn-default-text-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $btn-default-bg-color--hover;
+  }
+
+  &:active {
+    background-color: $btn-default-bg-color--active;
+  }
+
+}
+
+.c-btn__icon,
+.c-btn__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+// Disabled buttons.
+// 1. make it little bit transparent
+// 2. show not allowed cursor when hover
+
+// scss-lint:disable QualifyingElement
+button[disabled],
+.c-btn--disabled {
+  opacity: $btn-disabled-opacity; // 1
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: not-allowed; // 2
+  }
+}
+
+
+//
+// Size variants
+// ==========================================================================
+@if ($enable-btn--small == true){
+  .c-btn--small {
+    @include font-size(12px, none);
+    height: rem-calc($btn-height--small);
+    padding: rem-calc(halve($btn-small-padding) ($global-spacing-unit--small - $btn-border-width)); // 7
+  }
+}
+
+
+@if ($enable-btn--large == true){
+  .c-btn--large {
+    @include font-size(16px, none);
+    height: rem-calc($btn-height--large);
+    padding: rem-calc(halve($btn-large-padding) ($global-spacing-unit--large - $btn-border-width)); // 7
+  }
+}
+
+
+
+
+//
+// Color variants
+// ==========================================================================
+@if ($enable-btn--primary == true){
+  .c-btn--primary {
+    border-color: $btn-primary-border-color;
+    background-color: $btn-primary-bg-color;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none; // 4
+      color: $btn-primary-text-color;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $btn-primary-bg-color--hover;
+    }
+
+    &:active {
+      background-color: $btn-primary-bg-color--active;
+    }
+  }
+}
+
+
+@if ($enable-btn--success == true){
+  .c-btn--success {
+    border-color: $btn-success-border-color;
+    background-color: $btn-success-bg-color;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none; // 4
+      color: $btn-success-text-color;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $btn-success-bg-color--hover;
+    }
+
+    &:active {
+      background-color: $btn-success-bg-color--active;
+    }
+  }
+}
+
+
+@if ($enable-btn--warning == true){
+  .c-btn--warning {
+    border-color: $btn-warning-border-color;
+    background-color: $btn-warning-bg-color;
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      text-decoration: none; // 4
+      color: $btn-warning-text-color;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $btn-warning-bg-color--hover;
+    }
+
+    &:active {
+      background-color: $btn-warning-bg-color--active;
+    }
+  }
+}
+
+
+
+
+//
+// Style variants [Pill | Block | Ghost | Groups]
+// ==========================================================================
+
+// Pill
+@if ($enable-btn--pill == true){
+  .c-btn--pill {
+    border-radius: 100px;
+  }
+}
+
+
+// Block
+@if ($enable-btn--block == true){
+  .c-btn--block {
+    width: 100%;
+  }
+}
+
+
+// Ghost
+// This buttons have see-through backgrounds and are bordered.
+@if ($enable-btn--ghost == true){
+  .c-btn--ghost {
+    height: $btn-height;
+    padding: rem-calc(halve($btn-ghost-default-padding) ($global-spacing-unit - $btn-ghost-border-width)); // 7
+
+    background: none;
+
+    border-style: solid;
+    border-width: $btn-ghost-border-width;
+    border-color: $btn-default-bg-color;
+
+    color: $btn-default-bg-color;
+
+    &:hover,
+    &:focus {
+      color: $btn-default-text-color;
+      background-color: $btn-default-bg-color--hover;
+    }
+
+    &:active {
+      background-color: $btn-default-bg-color--active;
+    }
+
+    @if ($enable-btn--small == true){
+      &.c-btn--small {
+        height: $btn-height--small;
+        padding: rem-calc(halve($btn-ghost-small-padding) ($global-spacing-unit - $btn-ghost-border-width)); // 7
+      }
+    }
+    @if ($enable-btn--large == true){
+      &.c-btn--large {
+        height: $btn-height--large;
+        padding: rem-calc(halve($btn-ghost-large-padding) ($global-spacing-unit - $btn-ghost-border-width)); // 7
+      }
+    }
+
+
+    &.c-btn--primary {
+      border-color: $btn-primary-bg-color--active;
+
+      color: $btn-primary-bg-color;
+
+      &:hover,
+      &:focus {
+        color: $btn-primary-text-color;
+        background-color: $btn-primary-bg-color--hover;
+      }
+
+      &:active {
+        background-color: $btn-primary-bg-color--active;
+      }
+    }
+
+    &.c-btn--success {
+      border-color: $btn-success-bg-color--active;
+
+      color: $btn-success-bg-color;
+
+      &:hover,
+      &:focus {
+        color: $btn-success-text-color;
+        background-color: $btn-success-bg-color--hover;
+      }
+
+      &:active {
+        background-color: $btn-success-bg-color--active;
+      }
+    }
+
+    &.c-btn--warning {
+      border-color: $btn-warning-bg-color--active;
+
+      color: $btn-warning-bg-color;
+
+      &:hover,
+      &:focus {
+        color: $btn-warning-text-color;
+        background-color: $btn-warning-bg-color--hover;
+      }
+
+      &:active {
+        background-color: $btn-warning-bg-color--active;
+      }
+    }
+
+  }
+}
+
+@if ($enable-btn-group == true){
+
+  //
+  // 1. Match .c-btn alignment
+  // 2. Prevent double borders when buttons are next to each other
+  //
+  .c-btn-group {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle; // 1
+  }
+
+  .c-btn-group > .c-btn {
+    position: relative;
+    float: left;
+    border-radius: 0;
+  }
+
+  .c-btn-group .c-btn+.c-btn {
+    margin-left: -#{$btn-border-width}; // 2
+  }
+
+  .c-btn-group > .c-btn:first-child {
+    border-top-left-radius: $global-border-radius;
+    border-bottom-left-radius: $global-border-radius;
+  }
+
+  .c-btn-group > .c-btn:last-child {
+    border-top-right-radius: $global-border-radius;
+    border-bottom-right-radius: $global-border-radius;
+  }
+
+  @if ($enable-btn-group--equal == true) {
+    .c-btn-group--equal {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+      border-collapse: separate;
+
+      > .c-btn {
+        float: none;
+        display: table-cell;
+      }
+    }
+  }
+}

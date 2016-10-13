@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSSkit CSS Framework</title>
+    <!-- Your styles -->
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="stylesheet" href="../lib/prismjs.css">
+  </head>
+  <body class="language-markup">
+    <!-- Add your site or app content here -->
+    <div class="o-wrapper o-wrapper--small u-padding-top--large u-padding-bottom--large" id="top">
+
+      <div class="o-layout">
+        <aside class="o-layout__item u-margin-bottom u-3of12-medium">
+
+          <!-- sidebar -->
+          <ul class="c-sidebar">
+            <li class="c-sidebar__item">
+              <a href="../index.html" class="c-sidebar__link">&larr; Index</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="wrapper.html" class="c-sidebar__link">Wrapper</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="layout.html" class="c-sidebar__link">Layout</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="media.html" class="c-sidebar__link">Media</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="flag.html" class="c-sidebar__link">Flag</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="list.html" class="c-sidebar__link">List</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="box.html" class="c-sidebar__link">Box</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="ratio.html" class="c-sidebar__link">Ratio</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="split.html" class="c-sidebar__link">Split</a>
+            </li>
+          </ul>
+          <!-- sidebar -->
+
+        </aside>
+        <main class="o-layout__item u-9of12-medium">
+
+          <h1>Ratio object</h1>
+          <p class="u-lede">
+            Create ratio-bound content blocks, to keep media (e.g. images, videos, iframe) in
+            their correct aspect ratios. <a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video">http://alistapart.com/article/creating-intrinsic-ratios-for-video</a>
+          </p>
+
+          <section>
+            <h2>Default 1:1</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-ratio"&gt;
+  &lt;iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-ratio">
+              <iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </section>
+
+          <hr>
+
+          <h2>Size Variations</h2>
+
+          <section>
+            <h3>Ratio 2:1</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-ratio o-ratio--2:1"&gt;
+  &lt;iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-ratio o-ratio--2:1">
+              <iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Ratio 4:3</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-ratio o-ratio--4:3"&gt;
+  &lt;iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-ratio o-ratio--4:3">
+              <iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Ratio 16:9</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-ratio o-ratio--16:9"&gt;
+  &lt;iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-ratio o-ratio--16:9">
+              <iframe class="o-ratio__content" width="420" height="315" src="https://www.youtube.com/embed/aiBt44rrslw" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </section>
+
+          <div class="o-box u-dummy u-text-center u-margin-top">
+            <a href="#top">Back to top &uarr;</a>
+          </div>
+
+        </main>
+      </div>
+
+    </div>
+
+    <script src="../lib/prismjs.js"></script>
+  </body>
+</html>

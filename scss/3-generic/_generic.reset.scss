@@ -1,0 +1,73 @@
+// ==========================================================================
+// Reset
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings file?";
+}
+
+
+//
+// A very simple reset.
+//
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+blockquote,
+p,
+pre,
+dl,
+dd,
+ol,
+ul,
+figure,
+hr,
+fieldset,
+legend {
+  margin: 0;
+  padding: 0;
+}
+
+//
+// Add the correct font weight in Chrome, Edge, and Safari.
+//
+b,
+strong {
+  font-weight: bold;
+}
+
+//
+// Add the correct font size in all browsers.
+//
+small {
+  font-size: rem-calc(12);
+}
+
+//
+// Remove default table spacing.
+//
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+//
+// Remove extra vertical spacing when nesting lists.
+//
+li > {
+
+  ol,
+  ul {
+    margin-bottom: 0;
+  }
+
+}

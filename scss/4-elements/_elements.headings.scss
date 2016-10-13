@@ -1,0 +1,61 @@
+// ==========================================================================
+// Headings
+// ==========================================================================
+//
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings file?";
+}
+
+// Variable(s)
+$heading-font-weight: bold !default;
+$heading-line-height: 1.2 !default;
+
+/// Sizes of headings at various screen sizes.
+/// Each key is a breakpoint, and each value is a map of heading sizes.
+/// @type Map
+
+$heading-sizes: (
+  "small": (
+    "h1": 24,
+    "h2": 20,
+    "h3": 19,
+    "h4": 18,
+    "h5": 17,
+    "h6": 16,
+  ),
+  "large": (
+    "h1": 36,
+    "h2": 28,
+    "h3": 24,
+    "h4": 20,
+    "h5": 18,
+    "h6": 16,
+  ),
+) !default;
+
+// Set font weight
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: $heading-font-weight;
+  line-height: $heading-line-height;
+}
+
+// Heading sizes
+@each $size, $headers in $heading-sizes {
+  @include breakpoint($size) {
+    @each $header, $font-size in $headers {
+      #{$header} {
+        @include font-size($font-size, none);
+      }
+    }
+  }
+}

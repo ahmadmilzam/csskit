@@ -1,0 +1,195 @@
+// ==========================================================================
+// Media
+// ==========================================================================
+//
+// Place any image- and text-like content side-by-side, as per:
+// stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$media-collapse-at:                  720px !default;
+
+$enable-media--bleed:                false !default;
+$enable-media--tiny:                 false !default;
+$enable-media--small:                false !default;
+$enable-media--large:                false !default;
+$enable-media--huge:                 false !default;
+
+$enable-media--rev:                  false !default;
+
+
+.o-media {
+  @include clearfix;
+  display: block;
+}
+
+.o-media__head {
+  float: left;
+  margin-right: rem-calc($global-spacing-unit);
+}
+
+.o-media__img {
+  display: block;
+}
+
+.o-media__body {
+  overflow: hidden;
+  display: block;
+
+  &,
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+}
+
+
+@if ($enable-media--tiny == true) {
+
+  //
+  // tiny media objects.
+  //
+  .o-media--tiny > .o-media__head {
+    margin-right: rem-calc($global-spacing-unit--tiny);
+  }
+
+  @if ($enable-media--rev == true) {
+
+    //
+    // tiny reversed media objects.
+    //
+    .o-media--tiny.o-media--rev {
+
+      > .o-media__head {
+        margin-right: 0;
+        margin-left: rem-calc($global-spacing-unit--tiny);
+      }
+
+    }
+
+  }
+
+}
+
+
+@if ($enable-media--small == true) {
+
+  //
+  // small media objects.
+  //
+  .o-media--small > .o-media__head {
+    margin-right: rem-calc($global-spacing-unit--small);
+  }
+
+  @if ($enable-media--rev == true) {
+
+    //
+    // small reversed media objects.
+    //
+    .o-media--small.o-media--rev {
+
+      > .o-media__head {
+        margin-right: 0;
+        margin-left: rem-calc($global-spacing-unit--small);
+      }
+
+    }
+
+  }
+
+}
+
+
+@if ($enable-media--large == true) {
+
+  //
+  // Large media objects.
+  //
+  .o-media--large > .o-media__head {
+    margin-right: rem-calc($global-spacing-unit--large);
+  }
+
+  @if ($enable-media--rev == true) {
+
+    //
+    // Large reversed media objects.
+    //
+    .o-media--large.o-media--rev {
+
+      > .o-media__head {
+        margin-right: 0;
+        margin-left: rem-calc($global-spacing-unit--large);
+      }
+
+    }
+
+  }
+
+}
+
+
+@if ($enable-media--huge == true) {
+
+  //
+  // Huge media objects.
+  //
+  .o-media--huge > .o-media__head {
+    margin-right: rem-calc($global-spacing-unit--huge);
+  }
+
+  @if ($enable-media--rev == true) {
+
+    //
+    // Huge reversed media objects.
+    //
+    .o-media--huge.o-media--rev {
+
+      > .o-media__head {
+        margin-right: 0;
+        margin-left: rem-calc($global-spacing-unit--huge);
+      }
+
+    }
+
+  }
+
+}
+
+
+@if ($enable-media--rev == true) {
+
+  //
+  // Reversed image location (right instead of left). Extends `.media`.
+  //
+  .o-media--rev > .o-media__head {
+    float: right;
+    margin-right: 0;
+    margin-left: rem-calc($global-spacing-unit);
+  }
+
+
+}
+
+
+@if ($enable-media--bleed == true) {
+
+  //
+  // Bleed media objects have no space between the image- and text-content.
+  //
+  .o-media--bleed > .o-media__head {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+}
+

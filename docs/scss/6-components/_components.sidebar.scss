@@ -1,0 +1,35 @@
+// ==========================================================================
+// Sidebar
+// ==========================================================================
+
+//
+// This is an example simple sidebar component.
+//
+
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+.c-sidebar {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    display: block;
+    padding-top: rem-calc($global-spacing-unit--small);
+    padding-bottom: rem-calc($global-spacing-unit--small);
+  }
+}

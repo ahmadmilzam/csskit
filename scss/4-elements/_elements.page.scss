@@ -1,0 +1,43 @@
+// ==========================================================================
+// Page
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings file?";
+}
+
+//
+// High, page-level styling.
+//
+// 1. Set the default `font-family`, `font-size` and `line-height`
+//    for the entire project, sourced from our default variables.
+//    The `font-size` is calculated to exist in ems,
+//    the `line-height` is calculated to exist unitlessly.
+// 2. Force scrollbars to always be visible to prevent awkward 'jumps' when
+//    navigating between pages that do/do not have enough content to produce
+//    scrollbars naturally.
+// 3. Ensure the page always fills at least the entire height of the viewport.
+// 4. Fonts on OSX will look more consistent with other systems that do not
+//    render text using sub-pixel anti-aliasing.
+// 5. Prevent adjustments of font size after orientation changes in IE and iOS.
+//
+html {
+  font-family: $global-font-family;
+  font-weight: $global-font-weight;
+  font-size: ($global-font-size / 16px) * 1em; // 1
+  line-height: decimal-round(($global-line-height / $global-font-size), 1); // 1
+  background-color: $global-background-color;
+  color: $global-text-color;
+  overflow-y: scroll; // 2
+  min-height: 100%; // 3
+
+  -moz-osx-font-smoothing: grayscale; // 4
+  -webkit-font-smoothing: antialiased; // 4
+  -ms-text-size-adjust: 100%; // 5
+  -webkit-text-size-adjust: 100%; // 5
+}

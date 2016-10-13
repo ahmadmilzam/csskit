@@ -1,0 +1,70 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+// Here we set a variable assuming that default settings are not set
+// globally. If they have been previously been defined, the following variable
+// will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings file?";
+}
+
+
+//
+// Paragraphs
+// ==========================================================================
+$lede-size:   16px !default;
+
+//
+// The `.u-lede` class is used to make the introductory text (usually a paragraph)
+// of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
+//
+// Predefine the variables below in order to alter and enable specific features.
+//
+.u-lede {
+  @include font-size($lede-size);
+}
+
+//
+// Headings
+// ==========================================================================
+
+//
+// Redefine all of our basic heading styles against utility classes so as to
+// allow for double stranded heading hierarchy, e.g. we semantically need an H2,
+// but we want it to be sized like an H1:
+//
+//   <h2 class="h1"></h2>
+//
+
+// Set font weight
+@if variable-exists(heading-font-weight) and variable-exists(heading-line-height){
+
+  .u-h1,
+  .u-h2,
+  .u-h3,
+  .u-h4,
+  .u-h5,
+  .u-h6 {
+    font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
+  }
+
+}
+
+// Heading sizes
+@if (variable-exists(heading-sizes)) {
+
+  @each $size, $headers in $heading-sizes {
+    @include breakpoint($size) {
+      @each $header, $font-size in $headers {
+        .u-#{$header} {
+          @include font-size($font-size, none);
+        }
+      }
+    }
+  }
+
+}
