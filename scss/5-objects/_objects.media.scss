@@ -19,32 +19,30 @@ $imported-global-settings: false !default;
 // Variable(s)
 $media-collapse-at:                  720px !default;
 
+$enable-media--bleed:                false !default;
 $enable-media--tiny:                 false !default;
 $enable-media--small:                false !default;
 $enable-media--large:                false !default;
 $enable-media--huge:                 false !default;
+
 $enable-media--rev:                  false !default;
-$enable-media--bleed:                false !default;
-$enable-media--responsive:           false !default;
 
 
-
-.#{$global-namespace}media {
+.o-media {
   @include clearfix;
   display: block;
 }
 
-.#{$global-namespace}media__img {
+.o-media__head {
   float: left;
   margin-right: rem-calc($global-spacing-unit);
-
-  > img,
-  .img {
-    display: block;
-  }
 }
 
-.#{$global-namespace}media__body {
+.o-media__img {
+  display: block;
+}
+
+.o-media__body {
   overflow: hidden;
   display: block;
 
@@ -61,7 +59,7 @@ $enable-media--responsive:           false !default;
   //
   // tiny media objects.
   //
-  .#{$global-namespace}media--tiny > .#{$global-namespace}media__img {
+  .o-media--tiny > .o-media__head {
     margin-right: rem-calc($global-spacing-unit--tiny);
   }
 
@@ -70,9 +68,9 @@ $enable-media--responsive:           false !default;
     //
     // tiny reversed media objects.
     //
-    .#{$global-namespace}media--tiny.#{$global-namespace}media--rev {
+    .o-media--tiny.o-media--rev {
 
-      > .#{$global-namespace}media__img {
+      > .o-media__head {
         margin-right: 0;
         margin-left: rem-calc($global-spacing-unit--tiny);
       }
@@ -89,7 +87,7 @@ $enable-media--responsive:           false !default;
   //
   // small media objects.
   //
-  .#{$global-namespace}media--small > .#{$global-namespace}media__img {
+  .o-media--small > .o-media__head {
     margin-right: rem-calc($global-spacing-unit--small);
   }
 
@@ -98,9 +96,9 @@ $enable-media--responsive:           false !default;
     //
     // small reversed media objects.
     //
-    .#{$global-namespace}media--small.#{$global-namespace}media--rev {
+    .o-media--small.o-media--rev {
 
-      > .#{$global-namespace}media__img {
+      > .o-media__head {
         margin-right: 0;
         margin-left: rem-calc($global-spacing-unit--small);
       }
@@ -117,7 +115,7 @@ $enable-media--responsive:           false !default;
   //
   // Large media objects.
   //
-  .#{$global-namespace}media--large > .#{$global-namespace}media__img {
+  .o-media--large > .o-media__head {
     margin-right: rem-calc($global-spacing-unit--large);
   }
 
@@ -126,9 +124,9 @@ $enable-media--responsive:           false !default;
     //
     // Large reversed media objects.
     //
-    .#{$global-namespace}media--large.#{$global-namespace}media--rev {
+    .o-media--large.o-media--rev {
 
-      > .#{$global-namespace}media__img {
+      > .o-media__head {
         margin-right: 0;
         margin-left: rem-calc($global-spacing-unit--large);
       }
@@ -145,7 +143,7 @@ $enable-media--responsive:           false !default;
   //
   // Huge media objects.
   //
-  .#{$global-namespace}media--huge > .#{$global-namespace}media__img {
+  .o-media--huge > .o-media__head {
     margin-right: rem-calc($global-spacing-unit--huge);
   }
 
@@ -154,9 +152,9 @@ $enable-media--responsive:           false !default;
     //
     // Huge reversed media objects.
     //
-    .#{$global-namespace}media--huge.#{$global-namespace}media--rev {
+    .o-media--huge.o-media--rev {
 
-      > .#{$global-namespace}media__img {
+      > .o-media__head {
         margin-right: 0;
         margin-left: rem-calc($global-spacing-unit--huge);
       }
@@ -173,7 +171,7 @@ $enable-media--responsive:           false !default;
   //
   // Reversed image location (right instead of left). Extends `.media`.
   //
-  .#{$global-namespace}media--rev > .#{$global-namespace}media__img {
+  .o-media--rev > .o-media__head {
     float: right;
     margin-right: 0;
     margin-left: rem-calc($global-spacing-unit);
@@ -188,40 +186,10 @@ $enable-media--responsive:           false !default;
   //
   // Bleed media objects have no space between the image- and text-content.
   //
-  .#{$global-namespace}media--bleed > .#{$global-namespace}media__img {
+  .o-media--bleed > .o-media__head {
     margin-right: 0;
     margin-left: 0;
   }
 
 }
 
-
-@if ($enable-media--responsive == true) {
-
-  //
-  // Responsive media objects.
-  //
-  // There is a very pragmatic, simple implementation of a responsive media
-  // object, which simply places the text-content beneath the image-content.
-  //
-  // We use a `max-width` media query because:
-  //
-  // a) it is the least verbose method in terms of amount of code required.
-  // b) the media object’s default state is image-next-to-text, so its stacked
-  //    state is the exception, rather than the rule.
-  //
-  @media screen and (max-width: $media-collapse-at) {
-
-    //
-    // Rework the spacings on regular media objects.
-    //
-    .#{$global-namespace}media--responsive > .#{$global-namespace}media__img {
-      float: none;
-      margin-right: 0;
-      margin-bottom: $global-spacing-unit;
-      margin-left: 0;
-    }
-
-  }
-
-}

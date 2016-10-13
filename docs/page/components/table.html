@@ -1,0 +1,448 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSSkit CSS Framework</title>
+    <!-- Your styles -->
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="stylesheet" href="../lib/prismjs.css">
+  </head>
+  <body class="language-markup">
+    <!-- Add your site or app content here -->
+    <div class="o-wrapper o-wrapper--small u-padding-top--large u-padding-bottom--large" id="top">
+
+      <div class="o-layout">
+        <aside class="o-layout__item u-margin-bottom u-3of12-medium">
+
+          <!-- sidebar -->
+          <ul class="c-sidebar">
+            <li class="c-sidebar__item">
+              <a href="../index.html" class="c-sidebar__link">&larr; Index</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="btn.html" class="c-sidebar__link">Buttons</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="table.html" class="c-sidebar__link">Tables</a>
+            </li>
+            <!-- <li class="c-sidebar__item">
+              <a href="forms.html" class="c-sidebar__link">Forms</a>
+            </li> -->
+          </ul>
+          <!-- sidebar -->
+
+        </aside>
+        <main class="o-layout__item u-9of12-medium">
+          <h1>Table Component</h1>
+
+          <section>
+            <h2>Default Table</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;table class="c-table"&gt;
+  &lt;caption class="c-table__caption"&gt;Optional table caption.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No.&lt;/th&gt;
+      &lt;th&gt;Item Name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+<!-- highlight -->
+            <table class="c-table">
+              <caption class="c-table__caption">Optional table caption.</caption>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Item Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Equal Table</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;table class="c-table c-table--equal"&gt;
+  &lt;caption class="c-table__caption"&gt;Optional table caption.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No.&lt;/th&gt;
+      &lt;th&gt;Item Name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <table class="c-table c-table--equal">
+              <caption class="c-table__caption">Optional table caption.</caption>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Item Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Table Cells</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;table class="c-table c-table--cells"&gt;
+  &lt;caption class="c-table__caption"&gt;Optional table caption.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No.&lt;/th&gt;
+      &lt;th&gt;Item Name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <table class="c-table c-table--cells">
+              <caption class="c-table__caption">Optional table caption.</caption>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Item Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Table Rows</h3>
+
+            <!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;table class="c-table c-table--rows"&gt;
+  &lt;caption class="c-table__caption"&gt;Optional table caption.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No.&lt;/th&gt;
+      &lt;th&gt;Item Name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <table class="c-table c-table--rows">
+              <caption class="c-table__caption">Optional table caption.</caption>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Item Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Table Collumns</h3>
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;table class="c-table c-table--columns"&gt;
+  &lt;caption class="c-table__caption"&gt;Optional table caption.&lt;/caption&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No.&lt;/th&gt;
+      &lt;th&gt;Item Name&lt;/th&gt;
+      &lt;th&gt;Description&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Lorem Ipsum&lt;/td&gt;
+      &lt;td&gt;
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+      &lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <table class="c-table c-table--columns">
+              <caption class="c-table__caption">Optional table caption.</caption>
+              <thead>
+                <tr>
+                  <th>No.</th>
+                  <th>Item Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>Lorem Ipsum</td>
+                  <td>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </section>
+
+          <div class="o-box u-dummy u-text-center u-margin-top">
+            <a href="#top">Back to top &uarr;</a>
+          </div>
+
+        </main>
+      </div>
+
+    </div>
+
+    <script src="../lib/prismjs.js"></script>
+  </body>
+</html>

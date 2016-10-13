@@ -1,6 +1,6 @@
 {
   "name": "csskit",
-  "version": "1.5.2",
+  "version": "2.0.0",
   "authors": [
     "Ahmad Milzam <email@ahmadmilzam.com>"
   ],
@@ -8,21 +8,17 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    "*.todo",
     "removed_files",
     "node_modules",
     "bower_components",
-    "lib",
-    "libs",
     "test",
     "tests",
-    "tmp",
-    "doc",
     "docs",
-    "Gruntfile.js",
-    "package.json"
+    "tmp"
   ],
   "homepage": "https://github.com/ahmadmilzam/csskit",
-  "main": "src/scss/app.scss",
+  "main": "scss/example.main.scss",
   "keywords": [
     "css",
     "framework",

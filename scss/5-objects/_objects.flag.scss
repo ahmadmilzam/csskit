@@ -18,16 +18,15 @@ $imported-global-settings: false !default;
 
 
 // Variable(s)
+$enable-flag--bleed:                 false !default;
 $enable-flag--tiny:                  false !default;
 $enable-flag--small:                 false !default;
 $enable-flag--large:                 false !default;
 $enable-flag--huge:                  false !default;
+
 $enable-flag--rev:                   false !default;
-$enable-flag--bleed:                 false !default;
 $enable-flag--top:                   false !default;
 $enable-flag--bottom:                false !default;
-$enable-flag--responsive:            false !default;
-$flag-collapse-at:                   720px !default;
 
 
 //
@@ -35,7 +34,7 @@ $flag-collapse-at:                   720px !default;
 // 2. Force the object to be the full width of its parent. Combined with [1],
 //    this makes the object behave in a quasi-`display: block;` manner.
 //
-.#{$global-namespace}flag {
+.o-flag {
   display: table; // 1
   width: 100%; // 2
 }
@@ -46,27 +45,46 @@ $flag-collapse-at:                   720px !default;
 //
 // 1. Default to aligning content to their middles.
 //
-.#{$global-namespace}flag__img,
-.#{$global-namespace}flag__body {
+.o-flag__head,
+.o-flag__body {
   display: table-cell;
-  vertical-align: middle; /* [1] */
+  vertical-align: middle; // 1
 }
 
 
 //
 // Flag images have a space between them and the body of the object.
 //
-// 1. Force `.flag__img` to take up as little space as possible:
+// 1. Force `.flag__head` to take up as little space as possible:
 //    https://pixelsvsbytes.com/2012/02/this-css-layout-grid-is-no-holy-grail/
 // 2. Flag images have a space between them and the body of the object.
+// 3. Fixes problem with images disappearing.
 //
-.#{$global-namespace}flag__img {
+.o-flag__head {
   width: 1px; // 1
   padding-right: rem-calc($global-spacing-unit); // 2
 
-  > img {
-    max-width: none;
+}
+
+.o-flag__img {
+  max-width: none; // 3
+}
+
+
+//
+// The container for the main content of the flag object.
+//
+// 1. Forces the `.flag__body` to take up all remaining space.
+//
+
+.o-flag__body {
+  width: auto; // 1
+
+  &,
+  > :last-child {
+    margin-bottom: 0;
   }
+
 }
 
 
@@ -75,26 +93,12 @@ $flag-collapse-at:                   720px !default;
 // ==========================================================================
 //
 
-// Bleed flags.
-@if ($enable-flag--bleed == true) {
-  //
-  // Bleed flag objects have no space between the image- and text-content.
-  //
-  .#{$global-namespace}flag--bleed {
-    > .#{$global-namespace}flag__img {
-      padding-right: 0;
-      padding-left: 0;
-    }
-  }
-}
-
-
 // Tiny flags.
 @if ($enable-flag--tiny == true) {
 
-  .#{$global-namespace}flag--tiny {
+  .o-flag--tiny {
 
-    > .#{$global-namespace}flag__img {
+    > .o-flag__head {
       padding-right: rem-calc($global-spacing-unit--tiny);
     }
 
@@ -103,8 +107,8 @@ $flag-collapse-at:                   720px !default;
     //
     @if ($enable-flag--rev == true) {
 
-      &.#{$global-namespace}flag--rev {
-        > .#{$global-namespace}flag__img {
+      &.o-flag--rev {
+        > .o-flag__head {
           padding-right: 0;
           padding-left: rem-calc($global-spacing-unit--tiny);
         }
@@ -120,9 +124,9 @@ $flag-collapse-at:                   720px !default;
 // Small flags.
 @if ($enable-flag--small == true) {
 
-  .#{$global-namespace}flag--small {
+  .o-flag--small {
 
-    > .#{$global-namespace}flag__img {
+    > .o-flag__head {
       padding-right: rem-calc($global-spacing-unit--small);
     }
 
@@ -131,8 +135,8 @@ $flag-collapse-at:                   720px !default;
     //
     @if ($enable-flag--rev == true) {
 
-      &.#{$global-namespace}flag--rev {
-        > .#{$global-namespace}flag__img {
+      &.o-flag--rev {
+        > .o-flag__head {
           padding-right: 0;
           padding-left: rem-calc($global-spacing-unit--small);
         }
@@ -148,9 +152,9 @@ $flag-collapse-at:                   720px !default;
 // Large flags.
 @if ($enable-flag--large == true) {
 
-  .#{$global-namespace}flag--large {
+  .o-flag--large {
 
-    > .#{$global-namespace}flag__img {
+    > .o-flag__head {
       padding-right: rem-calc($global-spacing-unit--large);
     }
 
@@ -159,8 +163,8 @@ $flag-collapse-at:                   720px !default;
     //
     @if ($enable-flag--rev == true) {
 
-      &.#{$global-namespace}flag--rev {
-        > .#{$global-namespace}flag__img {
+      &.o-flag--rev {
+        > .o-flag__head {
           padding-right: 0;
           padding-left: rem-calc($global-spacing-unit--large);
         }
@@ -176,8 +180,8 @@ $flag-collapse-at:                   720px !default;
 // Huge flags.
 @if ($enable-flag--huge == true) {
 
-  .#{$global-namespace}flag--huge {
-    > .#{$global-namespace}flag__img {
+  .o-flag--huge {
+    > .o-flag__head {
       padding-right: rem-calc($global-spacing-unit--huge);
     }
 
@@ -186,8 +190,8 @@ $flag-collapse-at:                   720px !default;
     //
     @if ($enable-flag--rev == true) {
 
-      &.#{$global-namespace}flag--rev {
-        > .#{$global-namespace}flag__img {
+      &.o-flag--rev {
+        > .o-flag__head {
           padding-right: 0;
           padding-left: rem-calc($global-spacing-unit--huge);
         }
@@ -200,15 +204,17 @@ $flag-collapse-at:                   720px !default;
 }
 
 
-
-
-//
-// The container for the main content of the flag object.
-//
-// 1. Forces the `.flag__body` to take up all remaining space.
-//
-.#{$global-namespace}flag__body {
-  width: 100%; // 1
+// Bleed flags.
+@if ($enable-flag--bleed == true) {
+  //
+  // Bleed flag objects have no space between the image- and text-content.
+  //
+  .o-flag--bleed {
+    > .o-flag__head {
+      padding-right: 0;
+      padding-left: 0;
+    }
+  }
 }
 
 
@@ -222,8 +228,8 @@ $flag-collapse-at:                   720px !default;
   // Vertically top aligned flag objects.
   //
 
-  .#{$global-namespace}flag--top > .#{$global-namespace}flag__img,
-  .#{$global-namespace}flag--top > .#{$global-namespace}flag__body {
+  .o-flag--top > .o-flag__head,
+  .o-flag--top > .o-flag__body {
     vertical-align: top;
   }
 
@@ -235,8 +241,8 @@ $flag-collapse-at:                   720px !default;
   // Vertically bottom aligned flag objects.
   //
 
-  .#{$global-namespace}flag--bottom > .#{$global-namespace}flag__img,
-  .#{$global-namespace}flag--bottom > .#{$global-namespace}flag__body {
+  .o-flag--bottom > .o-flag__head,
+  .o-flag--bottom > .o-flag__body {
     vertical-align: bottom;
   }
 
@@ -258,70 +264,17 @@ $flag-collapse-at:                   720px !default;
   // 3. Reassign margins to the correct sides.
   //
 
-  .#{$global-namespace}flag--rev {
+  .o-flag--rev {
     direction: rtl; // 1
 
-    > .#{$global-namespace}flag__img,
-    > .#{$global-namespace}flag__body {
+    > .o-flag__head,
+    > .o-flag__body {
       direction: ltr; // 2
     }
 
-    > .#{$global-namespace}flag__img {
+    > .o-flag__head {
       padding-right: 0; // 3
       padding-left: $global-spacing-unit; // 3
-    }
-
-  }
-
-}
-
-
-//
-// Responsive flag
-// ==========================================================================
-//
-@if ($enable-flag--responsive == true) {
-
-  //
-  // Responsive flag objects.
-  //
-  // There is a very pragmatic, simple implementation of a responsive flag
-  // object, which simply places the text-content beneath the image-content.
-  //
-  // We use a `max-width` media query because:
-  //
-  // a) it is the least verbose method in terms of amount of code required.
-  // b) the flag object's default state is image-next-to-text, so its stacked
-  //    state is the exception, rather than the rule.
-  //
-  @media screen and (max-width: $flag-collapse-at) {
-
-    @if ($enable-flag--rev == true) {
-      .#{$global-namespace}flag--responsive {
-        //
-        // Disable reversal of content because there is no concept of
-        // 'reversed' in a stacked layout.
-        //
-        direction: ltr;
-      }
-    }
-
-    .#{$global-namespace}flag--responsive,
-    .#{$global-namespace}flag--responsive> .#{$global-namespace}flag__img,
-    .#{$global-namespace}flag--responsive> .#{$global-namespace}flag__body {
-      display: block;
-    }
-
-    //
-    // Rework the spacings on regular flag objects.
-    //
-    .#{$global-namespace}flag--responsive > .#{$global-namespace}flag__img {
-      padding-right: 0;
-      padding-left: 0;
-      margin-bottom: $global-spacing-unit;
-      > img {
-        max-width: 100%;
-      }
     }
 
   }

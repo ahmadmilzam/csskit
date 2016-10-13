@@ -15,16 +15,16 @@ $imported-global-settings: false !default;
 //
 // Paragraphs
 // ==========================================================================
-$lede-size:   1.125 !default;
+$lede-size:   16px !default;
 
 //
-// The `.lede` class is used to make the introductory text (usually a paragraph)
+// The `.u-lede` class is used to make the introductory text (usually a paragraph)
 // of a document slightly larger: en.wikipedia.org/wiki/Lede_(news)
 //
 // Predefine the variables below in order to alter and enable specific features.
 //
-.#{$global-namespace}lede {
-  @include font-size(($global-font-size * $lede-size));
+.u-lede {
+  @include font-size($lede-size);
 }
 
 //
@@ -40,15 +40,16 @@ $lede-size:   1.125 !default;
 //
 
 // Set font weight
-@if variable-exists(heading-font-weight) {
+@if variable-exists(heading-font-weight) and variable-exists(heading-line-height){
 
-  .#{$global-namespace}h1,
-  .#{$global-namespace}h2,
-  .#{$global-namespace}h3,
-  .#{$global-namespace}h4,
-  .#{$global-namespace}h5,
-  .#{$global-namespace}h6 {
+  .u-h1,
+  .u-h2,
+  .u-h3,
+  .u-h4,
+  .u-h5,
+  .u-h6 {
     font-weight: $heading-font-weight;
+    line-height: $heading-line-height;
   }
 
 }
@@ -59,8 +60,8 @@ $lede-size:   1.125 !default;
   @each $size, $headers in $heading-sizes {
     @include breakpoint($size) {
       @each $header, $font-size in $headers {
-        .#{$global-namespace}#{$header} {
-          @include font-size($font-size);
+        .u-#{$header} {
+          @include font-size($font-size, none);
         }
       }
     }

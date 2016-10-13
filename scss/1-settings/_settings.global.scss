@@ -1,45 +1,38 @@
 // ==========================================================================
-// High-level base settings
+// High-level global settings
 // ==========================================================================
 //
 // These variables are framework variables, sourced from variables defined
 // above. Feel free to use these variables throughout your project, but do not
 // modify or reassign them.
 //
-$global-font-family:                  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$global-font-size:                    16px !default;
-$global-font-weight:                  normal !default;
+$global-font-family:                    "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$global-font-size:                      16px !default;
+$global-font-weight:                    normal !default;
 
-$global-line-height:                  24px !default;
-$global-text-color:                   #333 !default;
-$global-background-color:             #fff !default;
+$global-line-height:                    24px !default;
+$global-text-color:                     #333 !default;
+$global-background-color:               #fff !default;
 
-$global-radius:                       3px !default;
+$global-border-radius:                  3px !default;
 
-$global-spacing-unit:                 $global-line-height !default;
+$global-spacing-unit:                   24px !default;
 
-$global-spacing-unit-factor-tiny:   .25 !default;
-$global-spacing-unit-factor-small:   .5 !default;
-$global-spacing-unit-factor-large:    2 !default;
-$global-spacing-unit-factor-huge:     4 !default;
+$global-spacing-unit-factor-tiny:     .25 !default;
+$global-spacing-unit-factor-small:     .5 !default;
+$global-spacing-unit-factor-large:    1.5 !default;
+$global-spacing-unit-factor-huge:       2 !default;
+
+$support-old-ie:                        false !default;
+
 
 //
 // Private/framework only reassignment. Do not alter anything below.
 // ==========================================================================
-$global-spacing-unit--tiny:  $global-spacing-unit * $global-spacing-unit-factor-tiny;
-$global-spacing-unit--small: $global-spacing-unit * $global-spacing-unit-factor-small;
-$global-spacing-unit--large: $global-spacing-unit * $global-spacing-unit-factor-large;
-$global-spacing-unit--huge:  $global-spacing-unit * $global-spacing-unit-factor-huge;
-
-
-//
-// Namespace.
-// ========================================================================== */
-//
-// Would you like classes to be prepended with a namespace? If so,
-// define it here.
-//
-$global-namespace: null !default;
+$global-spacing-unit--tiny:   round($global-spacing-unit * $global-spacing-unit-factor-tiny);
+$global-spacing-unit--small:  round($global-spacing-unit * $global-spacing-unit-factor-small);
+$global-spacing-unit--large:  round($global-spacing-unit * $global-spacing-unit-factor-large);
+$global-spacing-unit--huge:   round($global-spacing-unit * $global-spacing-unit-factor-huge);
 
 
 //

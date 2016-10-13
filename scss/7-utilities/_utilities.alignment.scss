@@ -15,7 +15,7 @@ $imported-global-settings: false !default;
 // Partial to align Text Left, Right, Center or Justify
 
 
-.#{$global-namespace}text-center { text-align: center !important; }
-.#{$global-namespace}text-left { text-align: left !important; }
-.#{$global-namespace}text-right { text-align: right !important; }
-.#{$global-namespace}text-justify {text-align: justify !important; }
+.u-text-center { text-align: center !important; }
+.u-text-left { text-align: left !important; }
+.u-text-right { text-align: right !important; }
+.u-text-justify {text-align: justify !important; }

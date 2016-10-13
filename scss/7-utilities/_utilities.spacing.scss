@@ -16,15 +16,15 @@ $imported-global-settings: false !default;
 // Utility classes to put specific spacing values onto elements. The below loop
 // will generate us a suite of classes like:
 //
-//   .padding {}
-//   .margin {}
+//   .u-padding {}
+//   .u-margin {}
 //
-//   .margin-top {}
-//   .padding-top {}
-//   .margin-top--[tiny|small|large|huge] {}
-//   .padding-top--[tiny|small|large|huge] {}
+//   .u-margin-top {}
+//   .u-padding-top {}
+//   .u-margin-top--[tiny|small|large|huge] {}
+//   .u-padding-top--[tiny|small|large|huge] {}
 //
-//   .padding-right-none {}
+//   .u-padding-right--none {}
 //
 
 
@@ -58,7 +58,7 @@ $spacing-sizes: (
 
     @each $size, $value in $spacing-sizes {
 
-      .#{$global-namespace}#{$property}#{$direction}#{$size} {
+      .u-#{$property}#{$direction}#{$size} {
         #{$property}#{$direction}: rem-calc($value) !important;
       }
 

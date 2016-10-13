@@ -1,9 +1,11 @@
 // ==========================================================================
-// List Dull
+// Sidebar
 // ==========================================================================
+
 //
-// The list-dull object simply removes any indents and bullet points from lists.
+// This is an example simple sidebar component.
 //
+
 
 // Here we set a variable assuming that default and module settings
 // are not set globally. If they have been previously been defined,
@@ -15,8 +17,19 @@ $imported-global-settings: false !default;
 }
 
 
-.#{$global-namespace}list-dull {
+.c-sidebar {
+  display: block;
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style-type: none;
+
+  &__item {
+    display: block;
+  }
+
+  &__link {
+    display: block;
+    padding-top: rem-calc($global-spacing-unit--small);
+    padding-bottom: rem-calc($global-spacing-unit--small);
+  }
 }

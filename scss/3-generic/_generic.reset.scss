@@ -13,26 +13,7 @@ $imported-global-settings: false !default;
 
 
 //
-// Set the global `box-sizing` state to `border-box`.
-//
-// paulirish.com/2012/box-sizing-border-box-ftw
-// css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
-//
-html {
-  box-sizing: border-box;
-}
-
-* {
-  box-sizing: inherit;
-
-  &::before,
-  &::after {
-    box-sizing: inherit;
-  }
-}
-
-//
-// A very simple reset that sits on top of Normalize.css.
+// A very simple reset.
 //
 body,
 h1,
@@ -57,27 +38,26 @@ legend {
 }
 
 //
-// Where `margin-bottom` is concerned,this value will be the same as the
-// base line-height. This allows us to keep a consistent vertical rhythm.
-// As per: csswizardry.com/2012/06/single-direction-margin-declarations
+// Add the correct font weight in Chrome, Edge, and Safari.
 //
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul,
-ol,
-dl,
-blockquote,
-p,
-address,
-table,
-fieldset,
-figure,
-pre {
-  margin-bottom: rem-calc($global-spacing-unit);
+b,
+strong {
+  font-weight: bold;
+}
+
+//
+// Add the correct font size in all browsers.
+//
+small {
+  font-size: rem-calc(12);
+}
+
+//
+// Remove default table spacing.
+//
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
 //
@@ -90,43 +70,4 @@ li > {
     margin-bottom: 0;
   }
 
-}
-
-//
-// Where `margin-left` is concerned we want to try and indent certain elements
-// by a consistent amount. Define that amount once,here.
-//
-ul,
-ol,
-dd {
-  margin-left: rem-calc($global-spacing-unit);
-}
-
-
-//
-// Remove default table spacing.
-//
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-
-//
-// Remove the gap between audio, canvas,
-// videos and the bottom of their containers:
-// https://github.com/h5bp/html5-boilerplate/issues/440
-//
-audio,
-canvas,
-video {
-  vertical-align: middle;
-}
-
-
-//
-// Add the correct font weight in Chrome, Edge, and Safari.
-//
-b,
-strong {
-  font-weight: bold;
 }

@@ -23,11 +23,10 @@ $enable-box--large:                  false !default;
 $enable-box--huge:                   false !default;
 
 
-
 //
 // 1. So we can apply the `.box` class to naturally-inline elements.
 //
-.#{$global-namespace}box {
+.o-box {
   @include clearfix;
   display: block; // 1
   padding: rem-calc($global-spacing-unit);
@@ -42,7 +41,7 @@ $enable-box--huge:                   false !default;
   //
   // Bleed (i.e. no padding) box.
   //
-  .#{$global-namespace}box--bleed {
+  .o-box--bleed {
     padding: 0;
   }
 
@@ -53,7 +52,7 @@ $enable-box--huge:                   false !default;
   //
   // Tiny box.
   //
-  .#{$global-namespace}box--tiny {
+  .o-box--tiny {
     padding: rem-calc($global-spacing-unit--tiny);
   }
 
@@ -64,7 +63,7 @@ $enable-box--huge:                   false !default;
   //
   // Small box.
   //
-  .#{$global-namespace}box--small {
+  .o-box--small {
     padding: rem-calc($global-spacing-unit--small);
   }
 
@@ -76,7 +75,7 @@ $enable-box--huge:                   false !default;
   // Large box.
   //
 
-  .#{$global-namespace}box--large {
+  .o-box--large {
     padding: rem-calc($global-spacing-unit--large);
   }
 
@@ -88,7 +87,7 @@ $enable-box--huge:                   false !default;
   // Huge box.
   //
 
-  .#{$global-namespace}box--huge {
+  .o-box--huge {
     padding: rem-calc($global-spacing-unit--huge);
   }
 

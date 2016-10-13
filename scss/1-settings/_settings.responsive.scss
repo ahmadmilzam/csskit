@@ -11,6 +11,11 @@
 
 $screen:         "only screen";
 
+// 45em == 720px
+// 64em == 1024px
+// 90em == 1440px
+// 120em = 1920px
+
 $breakpoints: (
   "small"        "#{$screen}",
   "small-only"   "#{$screen} and (max-width: 45em)",

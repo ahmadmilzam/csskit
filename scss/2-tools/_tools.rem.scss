@@ -65,23 +65,51 @@ $imported-global-settings: false !default;
 @function rem-calc($values, $global-value: $global-font-size) {
   $max: length($values);
 
-  @if $max == 1 { @return convert-to-rem(nth($values, 1), $global-value); }
+  @if $max == 1 {
+    @if ($support-old-ie == true) {
+      @return parse-int(nth($values, 1)) + px;
+    }
+    @else {
+      @return convert-to-rem(nth($values, 1), $global-value);
+    }
+  }
 
   $rem-values: ();
+
   @for $i from 1 through $max {
-    $rem-values: append($rem-values, convert-to-rem(nth($values, $i), $global-value));
+    @if ($support-old-ie == true) {
+      $rem-values: append($rem-values, parse-int(nth($values, $i)) + px);
+    }
+    @else {
+      $rem-values: append($rem-values, convert-to-rem(nth($values, $i), $global-value));
+    }
   }
+
   @return $rem-values;
 }
 
 @function em-calc($values, $global-value: $global-font-size) {
   $max: length($values);
 
-  @if $max == 1 { @return convert-to-em(nth($values, 1), $global-value); }
+  @if $max == 1 {
+    @if ($support-old-ie == true) {
+      @return parse-int(nth($values, 1)) + px;
+    }
+    @else {
+      @return convert-to-em(nth($values, 1), $global-value);
+    }
+  }
 
   $em-values: ();
+
   @for $i from 1 through $max {
-    $em-values: append($em-values, convert-to-em(nth($values, $i), $global-value));
+    @if ($support-old-ie == true) {
+      $em-values: append($em-values, parse-int(nth($values, $i)) + px);
+    }
+    @else {
+      $em-values: append($em-values, convert-to-em(nth($values, $i), $global-value));
+    }
   }
+
   @return $em-values;
 }

@@ -18,8 +18,6 @@ $imported-global-settings: false !default;
 // over and over in your markup.
 //
 
-
-
-.#{$global-namespace}clearfix {
+.u-clearfix {
   @include clearfix;
 }

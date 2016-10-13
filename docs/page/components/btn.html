@@ -1,0 +1,304 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSSkit CSS Framework</title>
+    <!-- Your styles -->
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="stylesheet" href="../lib/prismjs.css">
+  </head>
+  <body class="language-markup">
+    <!-- Add your site or app content here -->
+    <div class="o-wrapper o-wrapper--small u-padding-top--large u-padding-bottom--large" id="top">
+
+      <div class="o-layout">
+        <aside class="o-layout__item u-margin-bottom u-3of12-medium">
+
+          <!-- sidebar -->
+          <ul class="c-sidebar">
+            <li class="c-sidebar__item">
+              <a href="../index.html" class="c-sidebar__link">&larr; Index</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="btn.html" class="c-sidebar__link">Buttons</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="table.html" class="c-sidebar__link">Tables</a>
+            </li>
+<!--             <li class="c-sidebar__item">
+              <a href="forms.html" class="c-sidebar__link">Forms</a>
+            </li> -->
+          </ul>
+          <!-- sidebar -->
+
+        </aside>
+        <main class="o-layout__item u-9of12-medium">
+          <h1>Buttons Component</h1>
+          <p class="u-lede">
+            Simple buttons components.
+          </p>
+          <!-- content -->
+          <h2>Default</h2>
+          <div class="o-layout">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;a href="#" class="c-btn"&gt;Button Anchor&lt;/a&gt;
+
+&lt;button class="c-btn" disabled="disabled"&gt;Button Element&lt;/button&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <a href="#" class="c-btn">Button Anchor</a>
+              <button class="c-btn">Button Element</button>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Size Variations</h2>
+
+          <div class="o-layout">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;a href="#" class="c-btn c-btn--small"&gt;Button Small&lt;/a&gt;
+
+&lt;a href="#" class="c-btn"&gt;Button&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--large"&gt;Button Large&lt;/a&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <a href="#" class="c-btn c-btn--small">Button Small</a>
+              <a href="#" class="c-btn">Button Default</a>
+              <a href="#" class="c-btn c-btn--large">Button Large</a>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>With Icon</h2>
+          <div class="o-layout">
+            <div class="o-layout__item u-margin-bottom">
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;a href="#" class="c-btn c-btn--small"&gt;
+  &lt;i class="c-btn__icon c-icon"&gt;&odot;&lt;/i&gt;
+  &lt;span class="c-btn__text"&gt;With icon&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;a href="#" class="c-btn"&gt;
+  &lt;i class="c-btn__icon c-icon"&gt;&odot;&lt;/i&gt;
+  &lt;span class="c-btn__text"&gt;With icon&lt;/span&gt;
+&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--large"&gt;
+  &lt;i class="c-btn__icon c-icon"&gt;&odot;&lt;/i&gt;
+  &lt;span class="c-btn__text"&gt;With icon&lt;/span&gt;
+&lt;/a&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+              <a href="#" class="c-btn c-btn--small">
+                <i class="c-btn__icon c-icon">&odot;</i>
+                <span class="c-btn__text">With icon</span>
+              </a>
+              <a href="#" class="c-btn">
+                <i class="c-btn__icon c-icon">&odot;</i>
+                <span class="c-btn__text">With icon</span>
+              </a>
+              <a href="#" class="c-btn c-btn--large">
+                <i class="c-btn__icon c-icon">&odot;</i>
+                <span class="c-btn__text">With icon</span>
+              </a>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Shape Variations</h2>
+          <div class="o-layout">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;a href="#" class="c-btn c-btn--pill"&gt;Button Pill&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--block"&gt;Button Block&lt;/a&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <a href="#" class="c-btn c-btn--primary c-btn--pill u-margin-bottom">Button Pill</a>
+              <a href="#" class="c-btn c-btn--primary c-btn--block">Button Block</a>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Color Variations</h2>
+          <div class="o-layout u-margin-bottom">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;a href="#" class="c-btn c-btn--primary"&gt;Button Primary&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--success"&gt;Button Success&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--warning"&gt;Button Warning&lt;/a&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <a href="#" class="c-btn c-btn--primary">Button Primary</a>
+              <a href="#" class="c-btn c-btn--success">Button Success</a>
+              <a href="#" class="c-btn c-btn--warning">Button Warning</a>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Button Disabled</h2>
+          <div class="o-layout u-margin-bottom">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;button class="c-btn" disabled="disabled"&gt;
+  Button Element
+&lt;/button&gt;
+
+&lt;a href="#" class="c-btn c-btn--primary c-btn--disabled"&gt;Button Anchor&lt;/a&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <button class="c-btn" disabled="disabled">
+                Button Element
+              </button>
+              <a href="#" class="c-btn c-btn--primary c-btn--disabled">Button Anchor</a>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Button Ghost</h2>
+          <div class="o-layout u-margin-bottom">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;a href="#" class="c-btn c-btn--ghost"&gt;Button&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--ghost c-btn--primary"&gt;Button Primary&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--ghost c-btn--success"&gt;Button Success&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--ghost c-btn--warning"&gt;Button Warning&lt;/a&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <div class="u-bg-dark u-padding">
+                <a href="#" class="c-btn c-btn--ghost">Button Primary</a>
+                <a href="#" class="c-btn c-btn--ghost c-btn--primary">Button Primary</a>
+                <a href="#" class="c-btn c-btn--ghost c-btn--success">Button Success</a>
+                <a href="#" class="c-btn c-btn--ghost c-btn--warning">Button Warning</a>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Button Ghost Size Variants</h2>
+          <div class="o-layout u-margin-bottom">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;a href="#" class="c-btn c-btn--ghost c-btn--small"&gt;Button Small&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--ghost c-btn--primary"&gt;Button Default&lt;/a&gt;
+
+&lt;a href="#" class="c-btn c-btn--ghost c-btn--large c-btn--success"&gt;Button Large&lt;/a&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <div class="u-bg-dark u-padding">
+                <a href="#" class="c-btn c-btn--ghost c-btn--small">Button Small</a>
+                <a href="#" class="c-btn c-btn--ghost c-btn--primary">Button Default</a>
+                <a href="#" class="c-btn c-btn--ghost c-btn--large c-btn--success">Button Large</a>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Button Groups</h2>
+          <div class="o-layout u-margin-bottom">
+            <div class="o-layout__item">
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="c-btn-group"&gt;
+  &lt;a href="#" class="c-btn"&gt;Button Small&lt;/a&gt;
+  &lt;a href="#" class="c-btn"&gt;Button Default&lt;/a&gt;
+  &lt;a href="#" class="c-btn"&gt;Button Large&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <div class="c-btn-group">
+                <a href="#" class="c-btn">Button Small</a>
+                <a href="#" class="c-btn">Button Default</a>
+                <a href="#" class="c-btn">Button Large</a>
+              </div>
+            </div>
+          </div>
+
+          <hr>
+
+          <h2>Button Groups Equal</h2>
+          <div class="o-layout u-margin-bottom">
+            <div class="o-layout__item">
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="c-btn-group c-btn-group--equal"&gt;
+  &lt;a href="#" class="c-btn"&gt;Button&lt;/a&gt;
+  &lt;a href="#" class="c-btn"&gt;Button&lt;/a&gt;
+  &lt;a href="#" class="c-btn"&gt;Button&lt;/a&gt;
+  &lt;a href="#" class="c-btn"&gt;Button&lt;/a&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+              <div class="c-btn-group c-btn-group--equal">
+                <a href="#" class="c-btn">Button</a>
+                <a href="#" class="c-btn">Button</a>
+                <a href="#" class="c-btn">Button</a>
+                <a href="#" class="c-btn">Button</a>
+              </div>
+            </div>
+          </div>
+          <!-- content -->
+
+          <div class="o-box u-dummy u-text-center">
+            <a href="#top">Back to top &uarr;</a>
+          </div>
+
+        </main>
+      </div>
+
+    </div>
+
+    <script src="../lib/prismjs.js"></script>
+  </body>
+</html>

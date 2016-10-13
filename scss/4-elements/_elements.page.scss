@@ -30,12 +30,11 @@ html {
   font-family: $global-font-family;
   font-weight: $global-font-weight;
   font-size: ($global-font-size / 16px) * 1em; // 1
-  line-height: $global-line-height / $global-font-size; // 1
+  line-height: decimal-round(($global-line-height / $global-font-size), 1); // 1
   background-color: $global-background-color;
   color: $global-text-color;
   overflow-y: scroll; // 2
   min-height: 100%; // 3
-  box-sizing: border-box;
 
   -moz-osx-font-smoothing: grayscale; // 4
   -webkit-font-smoothing: antialiased; // 4

@@ -18,11 +18,17 @@ $imported-global-settings: false !default;
 // Variable(s)
 $wrapper-width: 1000px !default;
 
+$enable-wrapper--full:                 false !default;
+$enable-wrapper--tiny:                 false !default;
+$enable-wrapper--small:                false !default;
+$enable-wrapper--large:                false !default;
+$enable-wrapper--huge:                 false !default;
+
 @if (type-of($wrapper-width) != number) {
   @error "`#{$wrapper-width}` needs to be a number."
 }
 
-.#{$global-namespace}wrapper {
+.o-wrapper {
   @include clearfix();
   padding-right: rem-calc($global-spacing-unit);
   padding-left: rem-calc($global-spacing-unit);
@@ -31,26 +37,43 @@ $wrapper-width: 1000px !default;
   max-width: $wrapper-width;
 }
 
+@if ($enable-wrapper--full == true) {
+  .o-wrapper--full {
+    max-width: none;
+  }
+}
+
 
 // Size variants.
 // ==========================================================================
 
-.#{$global-namespace}wrapper--tiny {
-  padding-right: rem-calc($global-spacing-unit--tiny);
-  padding-left: rem-calc($global-spacing-unit--tiny);
+@if ($enable-wrapper--tiny == true) {
+  .o-wrapper--tiny {
+    padding-right: rem-calc($global-spacing-unit--tiny);
+    padding-left: rem-calc($global-spacing-unit--tiny);
+  }
 }
 
-.#{$global-namespace}wrapper--small {
-  padding-right: rem-calc($global-spacing-unit--small);
-  padding-left: rem-calc($global-spacing-unit--small);
+
+@if ($enable-wrapper--small == true) {
+  .o-wrapper--small {
+    padding-right: rem-calc($global-spacing-unit--small);
+    padding-left: rem-calc($global-spacing-unit--small);
+  }
 }
 
-.#{$global-namespace}wrapper--large {
-  padding-right: rem-calc($global-spacing-unit--large);
-  padding-left: rem-calc($global-spacing-unit--large);
+
+@if ($enable-wrapper--large == true) {
+  .o-wrapper--large {
+    padding-right: rem-calc($global-spacing-unit--large);
+    padding-left: rem-calc($global-spacing-unit--large);
+  }
 }
 
-.#{$global-namespace}wrapper--huge {
-  padding-right: rem-calc($global-spacing-unit--huge);
-  padding-left: rem-calc($global-spacing-unit--huge);
+
+@if ($enable-wrapper--huge == true) {
+  .o-wrapper--huge {
+    padding-right: rem-calc($global-spacing-unit--huge);
+    padding-left: rem-calc($global-spacing-unit--huge);
+  }
 }

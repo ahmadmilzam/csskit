@@ -1,0 +1,340 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSSkit CSS Framework</title>
+    <!-- Your styles -->
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="stylesheet" href="../lib/prismjs.css">
+  </head>
+  <body class="language-markup">
+    <!-- Add your site or app content here -->
+    <div class="o-wrapper o-wrapper--small u-padding-top--large u-padding-bottom--large" id="top">
+
+      <div class="o-layout">
+        <aside class="o-layout__item u-margin-bottom u-3of12-medium">
+
+          <!-- sidebar -->
+          <ul class="c-sidebar">
+            <li class="c-sidebar__item">
+              <a href="../index.html" class="c-sidebar__link">&larr; Index</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="wrapper.html" class="c-sidebar__link">Wrapper</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="layout.html" class="c-sidebar__link">Layout</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="media.html" class="c-sidebar__link">Media</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="flag.html" class="c-sidebar__link">Flag</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="list.html" class="c-sidebar__link">List</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="box.html" class="c-sidebar__link">Box</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="ratio.html" class="c-sidebar__link">Ratio</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="split.html" class="c-sidebar__link">Split</a>
+            </li>
+          </ul>
+          <!-- sidebar -->
+
+        </aside>
+        <main class="o-layout__item u-9of12-medium">
+
+          <h1>Flag, media-like object</h1>
+          <p class="u-lede">
+            The flag object is a design pattern similar to the media object, however it
+            utilises <code>display: table[-cell];</code> to give us control over the vertical
+            alignments of the text and image. <a href="csswizardry.com/2013/05/the-flag-object">csswizardry.com/2013/05/the-flag-object</a>
+          </p>
+
+          <section>
+            <h2>Default</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-flag">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Flag Reverse</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--rev"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-flag o-flag--rev">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <h2>Style Variations</h2>
+
+          <section>
+            <h3>Flag Top</h3>
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--top"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+            <div class="o-flag o-flag--top">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/75/75" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Flag Bottom</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--top"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-flag o-flag--bottom">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/75/75" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <h2>Size Variations</h2>
+
+          <section>
+            <h3>Flag Bleed</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--bleed"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+            <div class="o-flag o-flag--bleed">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/75/75" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Flag Tiny</h3>
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--tiny"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+            <div class="o-flag o-flag--tiny">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/75/75" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Flag Small</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--small"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+            <div class="o-flag o-flag--small">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/75/75" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Flag Large</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--large"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-flag o-flag--large">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/75/75" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h3>Flag Huge</h3>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-flag o-flag--huge"&gt;
+  &lt;div class="o-flag__head"&gt;
+    &lt;img class="o-flag__img" src="http://www.fillmurray.com/100/100" alt="alt"&gt;
+  &lt;/div&gt;
+  &lt;div class="o-flag__body"&gt;
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-flag o-flag--huge">
+              <div class="o-flag__head">
+                <img class="o-flag__img" src="http://www.fillmurray.com/75/75" alt="alt">
+              </div>
+              <div class="o-flag__body">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde dolor dolores assumenda mollitia necessitatibus quia debitis ab totam.
+              </div>
+            </div>
+          </section>
+
+
+          <div class="o-box u-dummy u-text-center u-margin-top">
+            <a href="#top">Back to top &uarr;</a>
+          </div>
+
+        </main>
+      </div>
+
+    </div>
+
+    <script src="../lib/prismjs.js"></script>
+  </body>
+</html>

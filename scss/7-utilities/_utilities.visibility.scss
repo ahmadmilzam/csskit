@@ -12,6 +12,6 @@ $imported-global-settings: false !default;
 }
 
 
-.#{$global-namespace}hide { display: none; }
+.u-hide { display: none; }
 
-.#{$global-namespace}show { display: inherit; }
+.u-show { display: inherit; }

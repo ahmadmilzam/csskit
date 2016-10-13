@@ -3,6 +3,20 @@
 // ==========================================================================
 
 
+// Font-face
+// ==========================================================================
+@mixin font-face($font-name, $font-path) {
+  @font-face{
+    font-family: $font-name;
+    src: url("#{$font-path}.eot?") format("eot"),
+         // url("#{$font-path}.woff2") format("woff2"),
+         url("#{$font-path}.woff") format("woff"),
+         url("#{$font-path}.ttf") format("truetype"),
+         url("#{$font-path}.svg##{$font-name}") format("svg");
+  }
+}
+
+
 // Double borders
 // ==========================================================================
 @mixin double-borders(

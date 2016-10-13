@@ -9,10 +9,10 @@
 // contains the basic structural elements, but classes should be complemented
 // with width Utilities, for example:
 //
-//   <div class="layout">
-//     <div class="layout__item  u-1/2">
+//   <div class="o-layout">
+//     <div class="o-layout__item  u-6of12">
 //     </div>
-//     <div class="layout__item  u-1/2">
+//     <div class="o-layout__item  u-6of12">
 //     </div>
 //   </div>
 //
@@ -20,12 +20,12 @@
 // fluidly fill half of the width of the parent. We can have more complex
 // systems:
 //
-//   <div class="layout">
-//     <div class="layout__item  u-1/1  u-1/3@medium">
+//   <div class="o-layout">
+//     <div class="o-layout__item  u-1of12  u-1of12-medium">
 //     </div>
-//     <div class="layout__item  u-1/2  u-1/3@medium">
+//     <div class="o-layout__item  u-1of12  u-1of12-medium">
 //     </div>
-//     <div class="layout__item  u-1/2  u-1/3@medium">
+//     <div class="o-layout__item  u-1of12  u-1of12-medium">
 //     </div>
 //   </div>
 //
@@ -37,12 +37,12 @@
 // We can also manipulate entire layout systems by adding a series of Modifiers
 // to the `.layout` Block. For example:
 //
-//   <div class="layout  layout--reverse">
+//   <div class="o-layout  o-layout--reverse">
 //
 // This will reverse the displayed order of the system so that it runs in the
 // opposite order to our source, effectively flipping the system over.
 //
-//   <div class="layout  layout--[right|center]">
+//   <div class="o-layout  o-layout--[right|center]">
 //
 // This will cause the system to fill up from either the centre or the right
 // hand side. Default behaviour is to fill up the layout system from the left.
@@ -65,6 +65,19 @@ $imported-global-settings: false !default;
 // whitespace or minifying HTML.
 $use-markup-fix: false !default;
 
+$enable-layout--bleed:       false !default;
+$enable-layout--tiny:        false !default;
+$enable-layout--small:       false !default;
+$enable-layout--large:       false !default;
+$enable-layout--huge:        false !default;
+
+$enable-layout--middle:      false !default;
+$enable-layout--bottom:      false !default;
+
+$enable-layout--center:      false !default;
+$enable-layout--right:       false !default;
+$enable-layout--reverse:     false !default;
+
 
 // Default/mandatory classes.
 // ==========================================================================
@@ -74,7 +87,7 @@ $use-markup-fix: false !default;
 // 3. Use the negative margin trick for multi-row grids:
 //    http://csswizardry.com/2011/08/building-better-grid-systems/
 //
-.#{$global-namespace}layout {
+.o-layout {
   display: block; // 1
   margin: 0; // 2
   padding: 0; // 2
@@ -95,10 +108,9 @@ $use-markup-fix: false !default;
 // 3. Default item alignment is with the tops of each other, like most
 //    traditional grid/layout systems.
 // 4. By default, all layout items are full-width (mobile first).
-// 5. Gutters provided by left padding:
-//    http://csswizardry.com/2011/08/building-better-grid-systems/
+// 5. Gutters provided by left padding.
 //
-.#{$global-namespace}layout__item {
+.o-layout__item {
   box-sizing: border-box; // 1
   display: inline-block; // 2
   vertical-align: top; // 3
@@ -106,7 +118,7 @@ $use-markup-fix: false !default;
   padding-left: rem-calc($global-spacing-unit); // 5
 
   @if ($use-markup-fix == false) {
-    font-size: rem-calc($global-font-size);
+    @include font-size($global-font-size, none);
   }
 
 }
@@ -114,53 +126,63 @@ $use-markup-fix: false !default;
 
 // Gutter size modifiers.
 // ==========================================================================
-.#{$global-namespace}layout--tiny {
-  margin-left: rem-calc(-$global-spacing-unit--tiny);
+@if ($enable-layout--tiny) {
+  .o-layout--tiny {
+    margin-left: rem-calc(-$global-spacing-unit--tiny);
 
-  > .#{$global-namespace}layout__item {
-    padding-left: rem-calc($global-spacing-unit--tiny);
+    > .o-layout__item {
+      padding-left: rem-calc($global-spacing-unit--tiny);
+    }
+
   }
-
 }
 
 
-.#{$global-namespace}layout--small {
-  margin-left: rem-calc(-$global-spacing-unit--small);
+@if ($enable-layout--small) {
+  .o-layout--small {
+    margin-left: rem-calc(-$global-spacing-unit--small);
 
-  > .#{$global-namespace}layout__item {
-    padding-left: rem-calc($global-spacing-unit--small);
+    > .o-layout__item {
+      padding-left: rem-calc($global-spacing-unit--small);
+    }
+
   }
-
 }
 
 
-.#{$global-namespace}layout--large {
-  margin-left: rem-calc(-$global-spacing-unit--large);
+@if ($enable-layout--large) {
+  .o-layout--large {
+    margin-left: rem-calc(-$global-spacing-unit--large);
 
-  > .#{$global-namespace}layout__item {
-    padding-left: rem-calc($global-spacing-unit--large);
+    > .o-layout__item {
+      padding-left: rem-calc($global-spacing-unit--large);
+    }
+
   }
-
 }
 
 
-.#{$global-namespace}layout--huge {
-  margin-left: rem-calc(-$global-spacing-unit--huge);
+@if ($enable-layout--huge) {
+  .o-layout--huge {
+    margin-left: rem-calc(-$global-spacing-unit--huge);
 
-  > .#{$global-namespace}layout__item {
-    padding-left: rem-calc($global-spacing-unit--huge);
+    > .o-layout__item {
+      padding-left: rem-calc($global-spacing-unit--huge);
+    }
+
   }
-
 }
 
 
-.#{$global-namespace}layout--bleed {
-  margin-left: 0;
+@if ($enable-layout--bleed) {
+  .o-layout--bleed {
+    margin-left: 0;
 
-  > .#{$global-namespace}layout__item {
-    padding-left: 0;
+    > .o-layout__item {
+      padding-left: 0;
+    }
+
   }
-
 }
 
 
@@ -169,24 +191,29 @@ $use-markup-fix: false !default;
 //
 // Align all grid items to the middles of each other.
 //
-.#{$global-namespace}layout--middle {
+@if ($enable-layout--middle) {
 
-  > .#{$global-namespace}layout__item {
-    vertical-align: middle;
+  .o-layout--middle {
+
+    > .o-layout__item {
+      vertical-align: middle;
+    }
+
   }
-
 }
 
 
 //
 // Align all grid items to the bottoms of each other.
 //
-.#{$global-namespace}layout--bottom {
+@if ($enable-layout--bottom) {
+  .o-layout--bottom {
 
-  > .#{$global-namespace}layout__item {
-    vertical-align: bottom;
+    > .o-layout__item {
+      vertical-align: bottom;
+    }
+
   }
-
 }
 
 
@@ -195,38 +222,44 @@ $use-markup-fix: false !default;
 //
 // Fill up the layout system from the centre.
 //
-.#{$global-namespace}layout--center {
-  text-align: center;
+@if ($enable-layout--center) {
+  .o-layout--center {
+    text-align: center;
 
-  > .#{$global-namespace}layout__item {
-    text-align: left;
+    > .o-layout__item {
+      text-align: left;
+    }
+
   }
-
 }
 
 
 //
 // Fill up the layout system from the right-hand side.
 //
-.#{$global-namespace}layout--right {
-  text-align: right;
+@if ($enable-layout--right) {
+  .o-layout--right {
+    text-align: right;
 
-  > .#{$global-namespace}layout__item {
-    text-align: left;
+    > .o-layout__item {
+      text-align: left;
+    }
+
   }
-
 }
 
 
 //
 // Reverse the rendered order of the grid system.
 //
-.#{$global-namespace}layout--reverse {
-  direction: rtl;
+@if ($enable-layout--reverse) {
+  .o-layout--reverse {
+    direction: rtl;
 
-  > .#{$global-namespace}layout__item {
-    direction: ltr;
-    text-align: left;
+    > .o-layout__item {
+      direction: ltr;
+      text-align: left;
+    }
+
   }
-
 }

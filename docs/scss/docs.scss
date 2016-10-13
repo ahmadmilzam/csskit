@@ -13,6 +13,16 @@
 //
 
 
+
+
+//
+// Settings - Colors
+// ==========================================================================
+@import "1-settings/settings.colors";
+
+
+
+
 //
 // Settings - global
 // ==========================================================================
@@ -25,10 +35,10 @@
 //
 
 // $global-font-family:                    "Helvetica Neue", Helvetica, Arial, sans-serif;
-// $global-font-size:                      14px;
+// $global-font-size:                      16px;
 // $global-font-weight:                    normal;
 
-// $global-line-height:                    20px;
+// $global-line-height:                    24px;
 // $global-text-color:                     #333;
 // $global-background-color:               #fff;
 
@@ -43,7 +53,8 @@
 
 // $support-old-ie:                        true;
 
-@import "1-settings/settings.global";
+@import "../../scss/1-settings/settings.global";
+
 
 
 
@@ -74,7 +85,7 @@
 //   "retina"       "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)"
 // );
 
-@import "1-settings/settings.responsive";
+@import "../../scss/1-settings/settings.responsive";
 
 
 
@@ -89,8 +100,7 @@
 // whitespace debuger
 // $enable-debug-whitespace:                true;
 
-@import "1-settings/settings.debugger";
-
+@import "../../scss/1-settings/settings.debugger";
 
 
 
@@ -99,17 +109,16 @@
 // ==========================================================================
 // Site-wide mixins and functions.
 
-@import "2-tools/tools.font-size";
-@import "2-tools/tools.responsive";
-@import "2-tools/tools.rem";
-@import "2-tools/tools.math";
-@import "2-tools/tools.decimal";
-@import "2-tools/tools.brightness";
-@import "2-tools/tools.clearfix";
-@import "2-tools/tools.color-level";
-@import "2-tools/tools.commoncss";
-@import "2-tools/tools.timming-functions";
-@import "2-tools/tools.z-index";
+@import "../../scss/2-tools/tools.font-size";
+@import "../../scss/2-tools/tools.responsive";
+@import "../../scss/2-tools/tools.rem";
+@import "../../scss/2-tools/tools.math";
+@import "../../scss/2-tools/tools.decimal";
+@import "../../scss/2-tools/tools.brightness";
+@import "../../scss/2-tools/tools.clearfix";
+@import "../../scss/2-tools/tools.color-level";
+@import "../../scss/2-tools/tools.commoncss";
+@import "../../scss/2-tools/tools.timming-functions";
 
 
 
@@ -126,15 +135,13 @@
 //
 
 // 1
-@import "3-generic/generic.reset";
+@import "../../scss/3-generic/generic.reset";
 
 // 2
-@import "3-generic/generic.box-sizing";
+@import "../../scss/3-generic/generic.box-sizing";
 
 // 3
-@import "3-generic/generic.shared";
-
-
+@import "../../scss/3-generic/generic.shared";
 
 
 //
@@ -150,7 +157,7 @@
 //
 
 // 1
-@import "4-elements/elements.page";
+@import "../../scss/4-elements/elements.page";
 
 // 2
 // $heading-font-weight: 700;
@@ -175,19 +182,22 @@
 //   ),
 // );
 
-@import "4-elements/elements.headings";
+@import "../../scss/4-elements/elements.headings";
 
 // 3
 // $anchor-font-weight:           normal;
 // $anchor-font-color:            #3498db;
 // $anchor-font-color-hover:      #1b6fa8;
 // $anchor-text-decoration:       none;
-// $anchor-text-decoration-hover: none;
+$anchor-text-decoration-hover: underline;
 
-@import "4-elements/elements.links";
+@import "../../scss/4-elements/elements.links";
 
 // 4
-@import "4-elements/elements.images";
+@import "../../scss/4-elements/elements.images";
+
+// additional elements
+@import "4-elements/elements.hr";
 
 
 
@@ -206,83 +216,80 @@
 // [5]  List
 // [6]  Box
 // [7]  Ratio
-// [8]  Split
 //
 
 // 1
 // $wrapper-width:                        1000px;
 
-// $enable-wrapper--full:                 true;
+$enable-wrapper--full:                 true;
 
-// $enable-wrapper--tiny:                 true;
-// $enable-wrapper--small:                true;
-// $enable-wrapper--large:                true;
-// $enable-wrapper--huge:                 true;
+$enable-wrapper--tiny:                 true;
+$enable-wrapper--small:                true;
+$enable-wrapper--large:                true;
+$enable-wrapper--huge:                 true;
 
-@import "5-objects/objects.wrapper";
+@import "../../scss/5-objects/objects.wrapper";
 
 // 2
 // By default we use the `font-size: 0;` trick to remove whitespace between.
 // Set this to true in order to use a markup-based strategy like commenting out
 // whitespace or minifying HTML.
 
-// $use-markup-fix:             true;
+// $use-markup-fix:            true;
 
-// $enable-layout--bleed:       true;
-// $enable-layout--tiny:        true;
-// $enable-layout--small:       true;
-// $enable-layout--large:       true;
-// $enable-layout--huge:        true;
+$enable-layout--bleed:       true;
+$enable-layout--tiny:        true;
+$enable-layout--small:       true;
+$enable-layout--large:       true;
+$enable-layout--huge:        true;
 
-// $enable-layout--middle:      true;
-// $enable-layout--bottom:      true;
+$enable-layout--middle:      true;
+$enable-layout--bottom:      true;
 
-// $enable-layout--center:      true;
-// $enable-layout--right:       true;
-// $enable-layout--reverse:     true;
+$enable-layout--center:      true;
+$enable-layout--right:       true;
+$enable-layout--reverse:     true;
 
-@import "5-objects/objects.layout";
+@import "../../scss/5-objects/objects.layout";
 
 // 3
-// $enable-media--bleed:                true;
-// $enable-media--tiny:                 true;
-// $enable-media--small:                true;
-// $enable-media--large:                true;
-// $enable-media--huge:                 true;
+$enable-media--bleed:                true;
+$enable-media--tiny:                 true;
+$enable-media--small:                true;
+$enable-media--large:                true;
+$enable-media--huge:                 true;
+$enable-media--rev:                  true;
 
-// $enable-media--rev:                  true;
-
-// @import "5-objects/objects.media";
+@import "../../scss/5-objects/objects.media";
 
 // 4
-// $enable-flag--bleed:                 true;
-// $enable-flag--tiny:                  true;
-// $enable-flag--small:                 true;
-// $enable-flag--large:                 true;
-// $enable-flag--huge:                  true;
+$enable-flag--bleed:                 true;
+$enable-flag--tiny:                  true;
+$enable-flag--small:                 true;
+$enable-flag--large:                 true;
+$enable-flag--huge:                  true;
 
-// $enable-flag--rev:                   true;
-// $enable-flag--top:                   true;
-// $enable-flag--bottom:                true;
+$enable-flag--rev:                   true;
+$enable-flag--top:                   true;
+$enable-flag--bottom:                true;
 
-// @import "5-objects/objects.flag";
+@import "../../scss/5-objects/objects.flag";
 
 // 5
-// $enable-list-inline--delimited:      true;
+$enable-list-inline--delimited:      true;
 // $use-markup-list-fixed:              true;
 // $list-inline-delimit-character:      ",\00A0";
 
-// @import "5-objects/objects.list";
-
+@import "../../scss/5-objects/objects.list";
 
 // 6
-// $enable-box--bleed:                  true;
-// $enable-box--tiny:                   true;
-// $enable-box--small:                  true;
-// $enable-box--large:                  true;
-// $enable-box--huge:                   true;
+$enable-box--bleed:                  true;
+$enable-box--tiny:                   true;
+$enable-box--small:                  true;
+$enable-box--large:                  true;
+$enable-box--huge:                   true;
 
-// @import "5-objects/objects.box";
+@import "../../scss/5-objects/objects.box";
 
 // 7
 // $ratios: (
@@ -291,13 +298,15 @@
 //   16:9,
 // );
 
-// @import "5-objects/objects.ratio";
+@import "../../scss/5-objects/objects.ratio";
 
 // 8
-// $enable-split--large: true;
-// $enable-split--huge: true;
+$enable-split--tiny:  true;
+$enable-split--small: true;
+$enable-split--large: true;
+$enable-split--huge:  true;
 
-// @import "5-objects/objects.split";
+@import "../../scss/5-objects/objects.split";
 
 
 
@@ -313,7 +322,7 @@
 // [1]  Button
 // [2]  Table
 //
-// @import "components.mycomponents1";
+// @import "../../scss/components.mycomponents1";
 
 // 1
 // $btn-border-width:              1px;
@@ -330,39 +339,39 @@
 // $btn-height--small:             30px;
 // $btn-height--large:             42px;
 
-// $enable-btn--small:             true;
-// $enable-btn--large:             true;
+$enable-btn--small:             true;
+$enable-btn--large:             true;
 
-// $enable-btn--pill:              true;
-// $enable-btn--block:             true;
+$enable-btn--pill:              true;
+$enable-btn--block:             true;
 
-// $enable-btn--ghost:             true;
+$enable-btn--ghost:             true;
 
-// $enable-btn-group:              true;
-// $enable-btn-group--equal:       true;
+$enable-btn-group:              true;
+$enable-btn-group--equal:       true;
 
 // $btn-primary-bg-color:          #3498db;
 // $btn-primary-bg-color--hover:   #1b6fa8;
 // $btn-primary-bg-color--active:  #206899;
 // $btn-primary-border-color:      #206899;
 // $btn-primary-text-color:        #fff;
-// $enable-btn--primary:           true;
+$enable-btn--primary:           true;
 
 // $btn-success-bg-color:          #87cc62;
 // $btn-success-bg-color--hover:   #74b94e;
 // $btn-success-bg-color--active:  #5eab34;
 // $btn-success-border-color:      #5eab34;
 // $btn-success-text-color:        #fff;
-// $enable-btn--success:           true;
+$enable-btn--success:           true;
 
 // $btn-warning-bg-color:          #ffc53e;
 // $btn-warning-bg-color--hover:   #e6b138;
 // $btn-warning-bg-color--active:  #d9a735;
 // $btn-warning-border-color:      #d9a735;
 // $btn-warning-text-color:        #333;
-// $enable-btn--warning:           true;
+$enable-btn--warning:           true;
 
-@import "6-components/components.example-buttons";
+@import "../../scss/6-components/components.example-buttons";
 
 // 2
 // $table-border-width:                 1px;
@@ -372,12 +381,18 @@
 // $table-head-color:                   #999;
 // $table-caption-color:                #999;
 
-// $enable-table--equal:                true;
-// $enable-table--cells:                true;
-// $enable-table--rows:                 true;
-// $enable-table--columns:              true;
+$enable-table--equal:                true;
+$enable-table--cells:                true;
+$enable-table--rows:                 true;
+$enable-table--columns:              true;
 
-@import "6-components/components.example-tables";
+@import "../../scss/6-components/components.example-tables";
+
+@import "6-components/components.sidebar";
+
+@import "6-components/components.icons";
+
+@import "6-components/components.pagination";
 
 
 
@@ -402,35 +417,35 @@
 //
 
 // 1
-@import "7-utilities/utilities.clearfix";
+@import "../../scss/7-utilities/utilities.clearfix";
 
 // 2
 // $total-columns: 12;
-// $enable-width-responsive: true;
-// $offsets: true;
+$enable-width-responsive: true;
+$offsets: true;
 
-@import "7-utilities/utilities.width";
+@import "../../scss/7-utilities/utilities.width";
 
 // 3
-@import "7-utilities/utilities.float";
+@import "../../scss/7-utilities/utilities.float";
 
 // 4
-@import "7-utilities/utilities.text-transform";
+@import "../../scss/7-utilities/utilities.text-transform";
 
 // 5
-@import "7-utilities/utilities.headings";
+@import "../../scss/7-utilities/utilities.headings";
 
 // 6
-@import "7-utilities/utilities.paragraphs";
+@import "../../scss/7-utilities/utilities.paragraphs";
 
 // 7
-@import "7-utilities/utilities.alignment";
+@import "../../scss/7-utilities/utilities.alignment";
 
 // 8
-@import "7-utilities/utilities.spacing";
+@import "../../scss/7-utilities/utilities.spacing";
 
 // 9
-@import "7-utilities/utilities.visibility";
+@import "../../scss/7-utilities/utilities.visibility";
 
 // 10
-// @import "7-utilities/utilities.print";
+// @import "../../scss/7-utilities/utilities.print";

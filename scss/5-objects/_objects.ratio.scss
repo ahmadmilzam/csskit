@@ -11,7 +11,7 @@
 // 1. Default cropping is a 1:1 ratio (i.e. a perfect square).
 //
 
-.#{$global-namespace}ratio {
+.o-ratio {
   position: relative;
   display: block;
   overflow: hidden;
@@ -26,10 +26,10 @@
 }
 
 
-.#{$global-namespace}ratio__content,
-.#{$global-namespace}ratio > iframe,
-.#{$global-namespace}ratio > embed,
-.#{$global-namespace}ratio > object {
+.o-ratio__content,
+.o-ratio > iframe,
+.o-ratio > embed,
+.o-ratio > object {
   position: absolute;
   top: 0;
   bottom: 0;
@@ -68,7 +68,7 @@ $ratios: (
     @error "`#{$height}` needs to be a number."
   }
 
-  .#{$global-namespace}ratio--#{$width}\:#{$height}:before {
+  .o-ratio--#{$width}\:#{$height}:before {
     padding-bottom: ($height / $width) * 100%;
   }
 

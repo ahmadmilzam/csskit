@@ -1,0 +1,67 @@
+// ==========================================================================
+// List
+// ==========================================================================
+//
+// The list object simply removes any indents and bullet points from lists.
+//
+
+// Here we set a variable assuming that default and module settings
+// are not set globally. If they have been previously been defined,
+// the following variable will be overriden and will be set to `true`.
+$imported-global-settings: false !default;
+
+@if ($imported-global-settings == false) {
+  @warn "Oops! Have you included a global settings files?";
+}
+
+
+// Variable(s)
+$enable-list-inline--delimited:      false !default;
+$use-markup-list-fixed:              false !default;
+$list-inline-delimit-character:      ",\00A0" !default;
+
+.o-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.o-list__item {
+  display: block;
+}
+
+//
+// List Inline
+// ==========================================================================
+// The list-inline object simply displays a list of items in one line.
+
+.o-list--inline > .o-list__item {
+  display: inline-block;
+}
+
+//
+// List Inline Delimited
+// ==========================================================================
+// Comma delimited list to semantically mark up lists of tags, etc.
+
+@if ($use-markup-fix == false) {
+  .o-list--inline-delimited {
+    font-size: 0;
+  }
+}
+
+.o-list--inline-delimited > .o-list__item {
+  display: inline-block;
+
+  @if ($use-markup-fix == false) {
+    @include font-size($global-font-size, none);
+  }
+
+  &::before {
+    content: "#{$list-inline-delimit-character}";
+  }
+
+  &:first-child::before {
+    content: "";
+  }
+}

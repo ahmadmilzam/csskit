@@ -11,7 +11,6 @@ $imported-global-settings: false !default;
   @warn "Oops! Have you included a global settings file?";
 }
 
-$hr-namespace:                       $global-namespace !default;
 $hr-border-width:                    1px !default;
 $hr-border-style:                    solid !default;
 $hr-border-color:                    #ccc !default;
@@ -22,8 +21,7 @@ $hr-margin:                          $global-spacing-unit !default;
 // 1. Add the correct box sizing in Firefox.
 // 2. Show the overflow in Edge and IE.
 //
-hr,
-.#{$hr-namespace}hr {
+hr {
   box-sizing: content-box; // 1
   border: 0;
   border-top: $hr-border-width $hr-border-style $hr-border-color;

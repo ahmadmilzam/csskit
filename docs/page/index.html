@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSSkit CSS Framework</title>
+    <!-- Your styles -->
+    <link rel="stylesheet" href="docs.css">
+  </head>
+  <body>
+    <!-- Add your site or app content here -->
+    <div class="o-wrapper o-wrapper--small u-padding-top--large u-padding-bottom--large">
+
+      <div class="o-layout">
+        <aside class="o-layout__item u-margin-bottom u-3of12-medium">
+
+          <!-- sidebar -->
+          <ul class="c-sidebar">
+            <li class="c-sidebar__item">
+              <a href="objects/wrapper.html" class="c-sidebar__link">Objects</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="components/btn.html" class="c-sidebar__link">Components</a>
+            </li>
+          </ul>
+          <!-- sidebar -->
+
+        </aside>
+        <main class="o-layout__item u-9of12-medium">
+          <h1 class="u-page-title">
+            CSSkit
+          </h1>
+          <p class="u-lede">
+            SASS Based, BEM, OOCSS Framework
+          </p>
+
+          <h2>Getting started</h2>
+          <p>
+            This is the interim documentation for the framework. Until we get some proper
+            stuff in place, I hope this will see to 90% of questions and issues.
+          </p>
+
+          <h3>What is it?</h3>
+          <p>
+            CSSkit is a powerful, Sass-based, BEM, OOCSS framework designed with scalability
+            and performance in mind. It has a tiny footprint every variants is disabled by default (comes in at ~2KB, gzipped), and
+            can be scaled as much or as little as you need.
+          </p>
+
+          <h3>Import order</h3>
+          <p>
+            It is important that you as the developer piece things together in the correct order. That order is:
+          </p>
+
+          <ol>
+            <li><strong>Settings:</strong> Global variables, site-wide settings, config switches, etc.</li>
+            <li><strong>Tools:</strong> Site-wide mixins and functions.</li>
+            <li><strong>Generic:</strong> Low-specificity, far-reaching rulesets (e.g. resets).</li>
+            <li><strong>Elements:</strong> Unclassed HTML elements (e.g. `a {}`, `blockquote {}`, `address {}`).</li>
+            <li><strong>Objects:</strong> Objects, abstractions, and design patterns (e.g. `.media {}`).</li>
+            <li><strong>Components:</strong> Discrete, complete chunks of UI (e.g. `.carousel {}`). This is the one layer that the framework doesn't get involved with.</li>
+            <li><strong>Utilities:</strong> High-specificity, very explicit selectors. Overrides and helper classes (e.g. `.hidden {}`) the only place where `!important` is allowed.</li>
+          </ol>
+
+          <p>
+            The order of partials within each layer is fairly open; it is the sections themselves that are important to get in the correct order.
+          </p>
+
+          <p>
+            N.B. All partials—including your own—follow the &lt;section&gt;.&lt;file&gt; naming convention, e.g. _objects.box.scss, _components.carousel.scss.
+          </p>
+        </main>
+      </div>
+
+    </div>
+  </body>
+</html>

@@ -45,6 +45,7 @@
 // }
 //
 @mixin font-size($font-size, $line-height: auto, $global-line-height: $global-line-height) {
+
   font-size: rem-calc($font-size);
 
   @if $line-height == auto {

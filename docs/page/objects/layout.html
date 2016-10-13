@@ -1,0 +1,704 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSSkit CSS Framework</title>
+    <!-- Your styles -->
+    <link rel="stylesheet" href="../docs.css">
+    <link rel="stylesheet" href="../lib/prismjs.css">
+  </head>
+  <body class="language-markup">
+    <!-- Add your site or app content here -->
+    <div class="o-wrapper o-wrapper--small u-padding-top--large u-padding-bottom--large" id="top">
+
+      <div class="o-layout">
+        <aside class="o-layout__item u-margin-bottom u-3of12-medium">
+
+          <!-- sidebar -->
+          <ul class="c-sidebar">
+            <li class="c-sidebar__item">
+              <a href="../index.html" class="c-sidebar__link">&larr; Index</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="wrapper.html" class="c-sidebar__link">Wrapper</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="layout.html" class="c-sidebar__link">Layout</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="media.html" class="c-sidebar__link">Media</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="flag.html" class="c-sidebar__link">Flag</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="list.html" class="c-sidebar__link">List</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="box.html" class="c-sidebar__link">Box</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="ratio.html" class="c-sidebar__link">Ratio</a>
+            </li>
+            <li class="c-sidebar__item">
+              <a href="split.html" class="c-sidebar__link">Split</a>
+            </li>
+          </ul>
+          <!-- sidebar -->
+
+        </aside>
+        <main class="o-layout__item u-9of12-medium">
+          <h1>Grid-like Layout System</h1>
+          <p class="u-lede">
+            Grid-like layout system.
+          </p>
+          <p>
+            The Layout object provides us with a column-style layout system. This file
+            contains the basic structural elements, but classes should be complemented with width Utilities.
+          </p>
+
+          <section>
+            <h2>Single Full Column Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout"&gt;
+  &lt;div class="o-layout__item"&gt;
+    u-12of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout">
+              <div class="o-layout__item">
+                <div class="u-dummy">u-12of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>2 Equal Columns Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout"&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-12of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-12of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout">
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>3 Equal Columns Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout"&gt;
+  &lt;div class="o-layout__item u-4of12"&gt;
+    u-4of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-4of12"&gt;
+    u-4of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-4of12"&gt;
+    u-4of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout">
+              <div class="o-layout__item u-4of12">
+                <div class="u-dummy">u-4of12</div>
+              </div>
+              <div class="o-layout__item u-4of12">
+                <div class="u-dummy">u-4of12</div>
+              </div>
+              <div class="o-layout__item u-4of12">
+                <div class="u-dummy">u-4of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>12 Equal Columns Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout"&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-1of12"&gt;
+    u-1of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout">
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+              <div class="o-layout__item u-1of12">
+                <div class="u-dummy">u-1of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Nested layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout"&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+    &lt;div class="o-layout"&gt;
+      &lt;div class="o-layout__item u-6of12"&gt;
+        u-6of12
+      &lt;/div&gt;
+      &lt;div class="o-layout__item u-6of12"&gt;
+        u-6of12
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+    &lt;div class="o-layout"&gt;
+      &lt;div class="o-layout__item u-4of12"&gt;
+        u-4of12
+      &lt;/div&gt;
+      &lt;div class="o-layout__item u-4of12"&gt;
+        u-4of12
+      &lt;/div&gt;
+      &lt;div class="o-layout__item u-4of12"&gt;
+        u-4of12
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout">
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+                <div class="o-layout">
+                  <div class="o-layout__item u-6of12">
+                    <div class="dummy dummy--alt">u-6of12</div>
+                  </div>
+                  <div class="o-layout__item u-6of12">
+                    <div class="dummy dummy--alt">u-6of12</div>
+                  </div>
+                </div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+                <div class="o-layout">
+                  <div class="o-layout__item u-4of12">
+                    <div class="dummy dummy--alt">u-4of12</div>
+                  </div>
+                  <div class="o-layout__item u-4of12">
+                    <div class="dummy dummy--alt">u-4of12</div>
+                  </div>
+                  <div class="o-layout__item u-4of12">
+                    <div class="dummy dummy--alt">u-4of12</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+
+          <hr>
+
+          <section>
+            <h2>Bleed layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--bleed"&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--bleed">
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Tiny Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--tiny"&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--tiny">
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+            </div>
+          </section>
+
+
+          <hr>
+
+          <section>
+            <h2>Small Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--small"&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--small">
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Large Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--large"&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--large">
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Huge Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--huge"&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    u-3of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--huge">
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy">u-3of12</div>
+              </div>
+            </div>
+          </section>
+
+
+          <hr>
+
+          <section>
+            <h2>Middle Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--middle"&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    &lt;div style="height: 50px;"&gt;u-3of12&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    &lt;div style="height: 100px;"&gt;u-6of12&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    &lt;div style="height: 50px;"&gt;u-3of12&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--middle">
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy" style="height: 50px;">u-3of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy" style="height: 100px;">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy" style="height: 50px;">u-3of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Bottom Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--bottom"&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    &lt;div style="height: 50px;"&gt;u-3of12&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    &lt;div style="height: 100px;"&gt;u-6of12&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-3of12"&gt;
+    &lt;div style="height: 50px;"&gt;u-3of12&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--bottom">
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy" style="height: 50px;">u-3of12</div>
+              </div>
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy" style="height: 100px;">u-6of12</div>
+              </div>
+              <div class="o-layout__item u-3of12">
+                <div class="u-dummy" style="height: 50px;">u-3of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Centered Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--center"&gt;
+  &lt;div class="o-layout__item u-6of12"&gt;
+    u-6of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--center">
+              <div class="o-layout__item u-6of12">
+                <div class="u-dummy">u-6of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Reversed Layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout o-layout--reverse"&gt;
+  &lt;div class="o-layout__item u-4of12"&gt;
+    Order: 1
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-4of12"&gt;
+    Order: 2
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-4of12"&gt;
+    Order: 3
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout o-layout--reverse">
+              <div class="o-layout__item u-4of12">
+                <div class="u-dummy">Order: 1</div>
+              </div>
+              <div class="o-layout__item u-4of12">
+                <div class="u-dummy">Order: 2</div>
+              </div>
+              <div class="o-layout__item u-4of12">
+                <div class="u-dummy">Order: 3</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Push layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout"&gt;
+  &lt;div class="o-layout__item u-4of12 u-push-4of12"&gt;
+    u-4of12 u-push-4of12
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-4of12 u-push-4of12"&gt;
+    u-4of12 u-push-4of12
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout">
+              <div class="o-layout__item u-4of12 u-push-4of12">
+                <div class="u-dummy">u-4of12 u-push-4of12</div>
+              </div>
+
+              <div class="o-layout__item u-4of12 u-push-4of12">
+                <div class="u-dummy">u-4of12 u-push-4of12</div>
+              </div>
+            </div>
+          </section>
+
+          <hr>
+
+          <section>
+            <h2>Push &amp; Pull layout</h2>
+
+<!-- highlight -->
+<pre class="u-margin-bottom">
+<code>
+&lt;div class="o-layout u-margin-bottom"&gt;
+  &lt;div class="o-layout__item u-4of12 u-push-8of12"&gt;
+    u-4of12 u-push-12of12 (first in source code)
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-4of12 u-pull-4of12"&gt;
+    u-4of12 u-push-4of12 (second in source code)
+  &lt;/div&gt;
+  &lt;div class="o-layout__item u-4of12 u-pull-4of12"&gt;
+    u-4of12 u-push-4of12 (last in source code)
+  &lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+<!-- highlight -->
+
+            <div class="o-layout">
+              <div class="o-layout__item u-4of12 u-push-8of12">
+                <div class="u-dummy">u-4of12 u-push-12of12 (first in source code)</div>
+              </div>
+
+              <div class="o-layout__item u-4of12 u-pull-4of12">
+                <div class="u-dummy">u-4of12 u-push-4of12 (second in source code)</div>
+              </div>
+
+              <div class="o-layout__item u-4of12 u-pull-4of12">
+                <div class="u-dummy">u-4of12 u-push-4of12 (last in source code)</div>
+              </div>
+            </div>
+          </section>
+
+          <div class="o-box u-dummy u-text-center u-margin-top">
+            <a href="#top">Back to top &uarr;</a>
+          </div>
+
+        </main>
+      </div>
+
+    </div>
+
+    <script src="../lib/prismjs.js"></script>
+  </body>
+</html>
