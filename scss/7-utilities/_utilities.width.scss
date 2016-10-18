@@ -89,8 +89,8 @@ $offsets: false !default;
 
     // Build a class in the format `.push-6of12[-<breakpoint>]`.
     .u-push-#{$number}of#{$total-columns}#{$bp-name} {
-      position: relative;
-      right: auto; // 1
+      position: relative !important;
+      right: auto !important; // 1
       left: ($number / $total-columns) * 100% !important;
     }
 
