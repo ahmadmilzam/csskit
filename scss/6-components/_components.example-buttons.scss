@@ -89,9 +89,9 @@ $btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn
 .c-btn {
   display: inline-block; // 1
   vertical-align: middle; // 2
-  height: rem-calc($btn-height);
   margin: 0; // 4
   padding: rem-calc(halve($btn-default-padding) ($global-spacing-unit - $btn-border-width)); // 7
+  line-height: rem-calc($global-line-height);
 
   font: inherit; // 3
   font-weight: $btn-font-weight;
@@ -137,40 +137,22 @@ $btn-ghost-large-padding: $btn-height--large - $global-line-height - double($btn
 }
 
 
-// Disabled buttons.
-// 1. make it little bit transparent
-// 2. show not allowed cursor when hover
-
-// scss-lint:disable QualifyingElement
-button[disabled],
-.c-btn--disabled {
-  opacity: $btn-disabled-opacity; // 1
-
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    cursor: not-allowed; // 2
-  }
-}
 
 
 //
 // Size variants
 // ==========================================================================
-@if ($enable-btn--small == true){
+@if ($enable-btn--small == true) {
   .c-btn--small {
     @include font-size($btn-font-size--small, none);
-    height: rem-calc($btn-height--small);
     padding: rem-calc(halve($btn-small-padding) ($global-spacing-unit--small - $btn-border-width)); // 7
   }
 }
 
 
-@if ($enable-btn--large == true){
+@if ($enable-btn--large == true) {
   .c-btn--large {
     @include font-size($btn-font-size--large, none);
-    height: rem-calc($btn-height--large);
     padding: rem-calc(halve($btn-large-padding) ($global-spacing-unit--large - $btn-border-width)); // 7
   }
 }
@@ -181,7 +163,7 @@ button[disabled],
 //
 // Color variants
 // ==========================================================================
-@if ($enable-btn--primary == true){
+@if ($enable-btn--primary == true) {
   .c-btn--primary {
     border-color: $btn-primary-border-color;
     background-color: $btn-primary-bg-color;
@@ -206,12 +188,35 @@ button[disabled],
 }
 
 
+
+
+// Disabled buttons.
+// 1. make it little bit transparent
+// 2. show not allowed cursor when hover
+
+// scss-lint:disable QualifyingElement
+button[disabled],
+.c-btn[disabled],
+.c-btn--disabled {
+  opacity: $btn-disabled-opacity; // 1
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    cursor: not-allowed; // 2
+  }
+}
+
+
+
+
 //
 // Style variants [Pill | Block | Ghost | Groups]
 // ==========================================================================
 
 // Pill
-@if ($enable-btn--pill == true){
+@if ($enable-btn--pill == true) {
   .c-btn--pill {
     border-radius: 100px;
   }
@@ -219,7 +224,7 @@ button[disabled],
 
 
 // Block
-@if ($enable-btn--block == true){
+@if ($enable-btn--block == true) {
   .c-btn--block {
     width: 100%;
   }
@@ -228,9 +233,8 @@ button[disabled],
 
 // Ghost
 // This buttons have see-through backgrounds and are bordered.
-@if ($enable-btn--ghost == true){
+@if ($enable-btn--ghost == true) {
   .c-btn--ghost {
-    height: $btn-height;
     padding: rem-calc(halve($btn-ghost-default-padding) ($global-spacing-unit - $btn-ghost-border-width)); // 7
 
     border-style: solid;
@@ -255,15 +259,13 @@ button[disabled],
       color: color-level($btn-default-text-color, -1);
     }
 
-    @if ($enable-btn--small == true){
+    @if ($enable-btn--small == true) {
       &.c-btn--small {
-        height: $btn-height--small;
         padding: rem-calc(halve($btn-ghost-small-padding) ($global-spacing-unit - $btn-ghost-border-width)); // 7
       }
     }
-    @if ($enable-btn--large == true){
+    @if ($enable-btn--large == true) {
       &.c-btn--large {
-        height: $btn-height--large;
         padding: rem-calc(halve($btn-ghost-large-padding) ($global-spacing-unit - $btn-ghost-border-width)); // 7
       }
     }
@@ -284,7 +286,7 @@ button[disabled],
   }
 }
 
-@if ($enable-btn-group == true){
+@if ($enable-btn-group == true) {
 
   //
   // 1. Match .c-btn alignment
