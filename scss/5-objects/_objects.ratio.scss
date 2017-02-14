@@ -53,23 +53,26 @@
 //
 
 $ratios: (
-  2:1,
-  4:3,
-  16:9,
+  (2:1),
+  (4:3),
+  (16:9),
 ) !default;
 
-@each $width, $height in $ratios {
+@each $ratio in $ratios {
+  @each $width, $height in $ratio {
 
-  @if (type-of($width) != number) {
-    @error "`#{$width}` needs to be a number."
+    @if (type-of($width) != number) {
+      @error "`#{$width}` needs to be a number."
+    }
+
+    @if (type-of($height) != number) {
+      @error "`#{$height}` needs to be a number."
+    }
+
+    .o-ratio--#{$width}\:#{$height}:before {
+      padding-bottom: ($height / $width) * 100%;
+    }
+
   }
-
-  @if (type-of($height) != number) {
-    @error "`#{$height}` needs to be a number."
-  }
-
-  .o-ratio--#{$width}\:#{$height}:before {
-    padding-bottom: ($height / $width) * 100%;
-  }
-
 }
+
