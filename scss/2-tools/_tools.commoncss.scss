@@ -46,10 +46,10 @@
   $easing: ease-out,
   $delay: 0s
 ) {
-  @if($property == transform){
+  @if($property == transform) {
     transition: $property $length $easing $delay;
   }
-  @else{
+  @else {
     transition: $property $length $easing $delay;
   }
 }

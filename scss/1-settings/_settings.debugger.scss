@@ -17,7 +17,7 @@ $enable-debug-whitespace:                false !default;
 }
 
 
-@if $enable-debug-whitespace{
+@if ($enable-debug-whitespace == true) {
   h1,
   h2,
   h3,

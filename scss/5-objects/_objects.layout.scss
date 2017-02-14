@@ -126,7 +126,7 @@ $enable-layout--reverse:     false !default;
 
 // Gutter size modifiers.
 // ==========================================================================
-@if ($enable-layout--tiny) {
+@if ($enable-layout--tiny == true) {
   .o-layout--tiny {
     margin-left: rem-calc(-$global-spacing-unit--tiny);
 
@@ -138,7 +138,7 @@ $enable-layout--reverse:     false !default;
 }
 
 
-@if ($enable-layout--small) {
+@if ($enable-layout--small == true) {
   .o-layout--small {
     margin-left: rem-calc(-$global-spacing-unit--small);
 
@@ -150,7 +150,7 @@ $enable-layout--reverse:     false !default;
 }
 
 
-@if ($enable-layout--large) {
+@if ($enable-layout--large == true) {
   .o-layout--large {
     margin-left: rem-calc(-$global-spacing-unit--large);
 
@@ -162,7 +162,7 @@ $enable-layout--reverse:     false !default;
 }
 
 
-@if ($enable-layout--huge) {
+@if ($enable-layout--huge == true) {
   .o-layout--huge {
     margin-left: rem-calc(-$global-spacing-unit--huge);
 
@@ -174,7 +174,7 @@ $enable-layout--reverse:     false !default;
 }
 
 
-@if ($enable-layout--bleed) {
+@if ($enable-layout--bleed == true) {
   .o-layout--bleed {
     margin-left: 0;
 
@@ -191,7 +191,7 @@ $enable-layout--reverse:     false !default;
 //
 // Align all grid items to the middles of each other.
 //
-@if ($enable-layout--middle) {
+@if ($enable-layout--middle == true) {
 
   .o-layout--middle {
 
@@ -206,7 +206,7 @@ $enable-layout--reverse:     false !default;
 //
 // Align all grid items to the bottoms of each other.
 //
-@if ($enable-layout--bottom) {
+@if ($enable-layout--bottom == true) {
   .o-layout--bottom {
 
     > .o-layout__item {
@@ -222,7 +222,7 @@ $enable-layout--reverse:     false !default;
 //
 // Fill up the layout system from the centre.
 //
-@if ($enable-layout--center) {
+@if ($enable-layout--center == true) {
   .o-layout--center {
     text-align: center;
 
@@ -237,7 +237,7 @@ $enable-layout--reverse:     false !default;
 //
 // Fill up the layout system from the right-hand side.
 //
-@if ($enable-layout--right) {
+@if ($enable-layout--right == true) {
   .o-layout--right {
     text-align: right;
 
@@ -252,7 +252,7 @@ $enable-layout--reverse:     false !default;
 //
 // Reverse the rendered order of the grid system.
 //
-@if ($enable-layout--reverse) {
+@if ($enable-layout--reverse == true) {
   .o-layout--reverse {
     direction: rtl;
 

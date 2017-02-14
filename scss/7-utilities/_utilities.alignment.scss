@@ -11,9 +11,7 @@ $imported-global-settings: false !default;
   @warn "Oops! Have you included a global settings files?";
 }
 
-
 // Partial to align Text Left, Right, Center or Justify
-
 
 .u-text-center { text-align: center !important; }
 .u-text-left { text-align: left !important; }

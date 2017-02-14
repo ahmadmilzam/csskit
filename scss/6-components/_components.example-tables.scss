@@ -46,15 +46,14 @@ $enable-table--columns:              false !default;
   tbody tr:nth-of-type(odd) {
     background-color: $table-row-bg;
   }
-
-  &__caption {
-    padding-top: rem-calc($global-spacing-unit--small);
-    padding-bottom: rem-calc($global-spacing-unit--small);
-    color: $table-caption-color;
-    text-align: left;
-  }
 }
 
+.c-table__caption {
+  padding-top: rem-calc($global-spacing-unit--small);
+  padding-bottom: rem-calc($global-spacing-unit--small);
+  color: $table-caption-color;
+  text-align: left;
+}
 
 @if ($enable-table--equal == true) {
 

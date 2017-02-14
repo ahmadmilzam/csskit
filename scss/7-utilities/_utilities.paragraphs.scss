@@ -40,7 +40,7 @@ $lede-size:   16px !default;
 //
 
 // Set font weight
-@if variable-exists(heading-font-weight) and variable-exists(heading-line-height){
+@if variable-exists(heading-font-weight) and variable-exists(heading-line-height) {
 
   .u-h1,
   .u-h2,
