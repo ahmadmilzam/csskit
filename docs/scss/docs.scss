@@ -293,9 +293,9 @@ $enable-box--huge:                   true;
 
 // 7
 // $ratios: (
-//   2:1,
-//   4:3,
-//   16:9,
+//   (2:1),
+//   (4:3),
+//   (16:9),
 // );
 
 @import "../../scss/5-objects/objects.ratio";
