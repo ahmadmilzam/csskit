@@ -1,0 +1,27 @@
+{
+  "name": "csskit",
+  "version": "2.0.2",
+  "description": "SAAS Based, BEM, CSS Framework",
+  "main": "scss/example.main.scss",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahmadmilzam/csskit.git"
+  },
+  "keywords": [
+    "SASS",
+    "BEM",
+    "OOCSS"
+  ],
+  "author": "Ahmad Milzam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ahmadmilzam/csskit/issues"
+  },
+  "homepage": "https://github.com/ahmadmilzam/csskit#readme"
+}
