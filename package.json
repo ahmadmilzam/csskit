@@ -1,5 +1,5 @@
 {
-  "name": "csskit",
+  "name": "csskit-npm",
   "version": "2.0.2",
   "description": "SAAS Based, BEM, CSS Framework",
   "main": "scss/example.main.scss",
